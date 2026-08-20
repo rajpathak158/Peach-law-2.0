@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preach Law & Co. | Corporate Law, IPR, Litigation & Advisory</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons & GSAP -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#070E1A',
+              slate: '#0F1E36',
+              gold: '#C5A880',
+              goldLight: '#E8D5B5',
+              accent: '#EAB308'
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-navy text-slate-100 font-sans antialiased selection:bg-brand-gold selection:text-brand-navy">
+
+  <!-- 1. Bar Council Disclaimer Modal -->
+  <div id="disclaimer-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
+    <div class="bg-brand-slate border border-brand-gold/30 rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl relative text-slate-300">
+      <div class="flex items-center gap-3 text-brand-gold mb-4">
+        <i data-lucide="scale" class="w-6 h-6"></i>
+        <h3 class="font-serif text-xl font-bold text-white">Bar Council Disclaimer</h3>
+      </div>
+      <p class="text-sm leading-relaxed mb-6 text-slate-300">
+        As per the rules of the Bar Council of India, law firms are not permitted to solicit work or advertise. By proceeding, you acknowledge that you are visiting this website voluntarily to obtain general information about Preach Law & Co.
+      </p>
+      <div class="flex gap-4">
+        <button onclick="acceptDisclaimer()" class="flex-1 bg-brand-gold hover:bg-brand-goldLight text-brand-navy font-bold py-3 rounded-xl transition-all">
+          I Agree & Proceed
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Sticky Glass Navbar -->
+  <header class="sticky top-0 z-40 bg-brand-navy/80 backdrop-blur-lg border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+          <i data-lucide="scale" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <span class="font-serif font-bold text-lg text-white tracking-wider block leading-tight">PREACH LAW</span>
+          <span class="text-[10px] uppercase text-brand-gold tracking-widest font-semibold">Advocates & Legal Advisors</span>
+        </div>
+      </div>
+
+      <!-- Quick Action CTAs -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+919311664455" class="hidden sm:flex items-center gap-2 text-sm text-slate-300 hover:text-brand-gold transition px-3 py-2">
+          <i data-lucide="phone-call" class="w-4 h-4 text-brand-gold"></i>
+          +91 9311664455
+        </a>
+        <a href="#draft-section" class="bg-brand-gold hover:bg-brand-goldLight text-brand-navy font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-lg shadow-brand-gold/10">
+          Request Legal Draft
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Hero Section -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden px-4 py-16">
+    <div class="absolute w-96 h-96 bg-brand-gold/10 rounded-full blur-[120px] top-10 pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs font-semibold uppercase tracking-wider mb-6">
+        <i data-lucide="shield-check" class="w-4 h-4"></i> Advocates • CS • CA • IPR Attorneys
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
+        Strategic Legal Counsel & <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-goldLight to-amber-200">
+          Corporate Excellence
+        </span>
+      </h1>
+
+      <p class="text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+        Delivering end-to-end advocacy, IPR management, SEBI/RBI compliance, taxation, and company law advisory with speed and integrity.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#services-section" class="bg-brand-gold hover:bg-brand-goldLight text-brand-navy font-bold px-8 py-3.5 rounded-xl transition flex items-center justify-center gap-2 shadow-xl shadow-brand-gold/20">
+          Explore Practice Areas <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#draft-section" class="border border-slate-700 bg-brand-slate/50 hover:bg-brand-slate text-white px-8 py-3.5 rounded-xl transition flex items-center justify-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-brand-gold"></i> Quick Legal Draft
+        </a>
+      </div>
+
+      <!-- Trust Counters -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-8 border-t border-slate-800/80">
+        <div class="p-3">
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">3,000+</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Happy Clients</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">2,800+</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Cases Solved</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">300+</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Advocates & CAs</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-brand-gold">10+</div>
+          <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Offices in India</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Interactive Practice Areas / Services -->
+  <section id="services-section" class="py-16 px-4 max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="font-serif text-2xl sm:text-4xl font-bold text-white mb-3">Our Core Practice Areas</h2>
+      <p class="text-slate-400 text-sm max-w-xl mx-auto">Multidisciplinary legal, taxation, and secretarial expertise under one roof.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10" id="filter-container">
+      <button onclick="filterServices('all')" class="tab-btn active bg-brand-gold text-brand-navy font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg transition">All</button>
+      <button onclick="filterServices('litigation')" class="tab-btn bg-brand-slate border border-slate-800 text-slate-300 font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg transition">Litigation</button>
+      <button onclick="filterServices('ipr')" class="tab-btn bg-brand-slate border border-slate-800 text-slate-300 font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg transition">IPR & Trademarks</button>
+      <button onclick="filterServices('corporate')" class="tab-btn bg-brand-slate border border-slate-800 text-slate-300 font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg transition">Startups & Compliance</button>
+      <button onclick="filterServices('taxation')" class="tab-btn bg-brand-slate border border-slate-800 text-slate-300 font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg transition">Tax & SEBI/RBI</button>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="services-grid">
+      
+      <!-- Card 1 -->
+      <div class="service-card litigation bg-brand-slate/60 border border-slate-800 hover:border-brand-gold/40 p-6 rounded-2xl transition hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center mb-4">
+          <i data-lucide="scale" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-serif text-lg font-bold text-white mb-2">High Court & Supreme Court Litigation</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">Civil, criminal, NCLT insolvency, RERA disputes, and specialized appellate representation.</p>
+        <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Litigation Services</span>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card ipr bg-brand-slate/60 border border-slate-800 hover:border-brand-gold/40 p-6 rounded-2xl transition hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center mb-4">
+          <i data-lucide="trademark" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-serif text-lg font-bold text-white mb-2">IPR, Trademark & Patents</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">Trademark search, registration, infringement suits, patent landscapes, and copyright litigation.</p>
+        <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">IPR Protection</span>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card corporate bg-brand-slate/60 border border-slate-800 hover:border-brand-gold/40 p-6 rounded-2xl transition hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center mb-4">
+          <i data-lucide="building" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-serif text-lg font-bold text-white mb-2">Company Incorporation & Compliance</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">Pvt Ltd, LLP, Section 8, FDI in India, MSME, FSSAI, and annual secretarial compliance.</p>
+        <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Startups & Corporate</span>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="service-card taxation bg-brand-slate/60 border border-slate-800 hover:border-brand-gold/40 p-6 rounded-2xl transition hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center mb-4">
+          <i data-lucide="receipt" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-serif text-lg font-bold text-white mb-2">GST, Income Tax & Transfer Pricing</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">Adjudication before CESTAT, high-stake tax litigation, IT return filing, and international taxation.</p>
+        <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Tax Advisory</span>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="service-card taxation bg-brand-slate/60 border border-slate-800 hover:border-brand-gold/40 p-6 rounded-2xl transition hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center mb-4">
+          <i data-lucide="landmark" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-serif text-lg font-bold text-white mb-2">RBI, SEBI & NBFC Licenses</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">NBFC registration, prepaid wallet licenses, fintech compliance, and Venture Capital set-ups.</p>
+        <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Fintech & Banking</span>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="service-card corporate bg-brand-slate/60 border border-slate-800 hover:border-brand-gold/40 p-6 rounded-2xl transition hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center mb-4">
+          <i data-lucide="file-check" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-serif text-lg font-bold text-white mb-2">Contracts & Real Estate Deeds</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">Sale deeds, Gift deeds, Shareholder Agreements, MoUs, NDAs, and title search reports.</p>
+        <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Drafting & Conveyancing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Legal Draft Form -->
+  <section id="draft-section" class="py-16 px-4 bg-brand-slate/30 border-y border-slate-800">
+    <div class="max-w-3xl mx-auto bg-brand-slate border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+      <div class="text-center mb-8">
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">Request a Legal Draft / Advisory</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Submit your legal requirement for direct review by our senior advocates and consultants.</p>
+      </div>
+
+      <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Full Name *</label>
+            <input type="text" required placeholder="John Doe" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Phone Number *</label>
+            <input type="tel" required placeholder="+91 9876543210" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Email Address *</label>
+            <input type="email" required placeholder="john@example.com" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nature of Draft / Service</label>
+            <select class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-300 focus:outline-none focus:border-brand-gold">
+              <option>Non-Disclosure Agreement (NDA)</option>
+              <option>Founder / Shareholder Agreement</option>
+              <option>Trademark / Copyright Filing</option>
+              <option>Sale Deed / Relinquishment Deed</option>
+              <option>138 Negotiable Instruments Complaint</option>
+              <option>General Corporate Consultation</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Brief Summary of Requirement</label>
+          <textarea rows="3" placeholder="Describe the matter briefly..." class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-gold hover:bg-brand-goldLight text-brand-navy font-bold py-3.5 rounded-xl transition shadow-lg shadow-brand-gold/10">
+          Submit Legal Request
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 6. Footer -->
+  <footer class="bg-brand-navy border-t border-slate-800 text-slate-400 py-12 px-4">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-2 text-white font-serif font-bold text-lg mb-4">
+          <i data-lucide="scale" class="w-5 h-5 text-brand-gold"></i> Preach Law & Co.
+        </div>
+        <p class="text-xs leading-relaxed mb-4">
+          Reg. Office: E-111-B, Nawada Housing Complex, Dwarka Mor, New Delhi-110059.
+        </p>
+        <p class="text-xs text-brand-gold">📞 +91 9311664455 | 011-46574455</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-serif text-sm font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#services-section" class="hover:text-brand-gold">Litigation Services</a></li>
+          <li><a href="#services-section" class="hover:text-brand-gold">Intellectual Property Rights</a></li>
+          <li><a href="#services-section" class="hover:text-brand-gold">Fintech & NBFC Registration</a></li>
+          <li><a href="#services-section" class="hover:text-brand-gold">GST & Direct Taxation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-serif text-sm font-semibold mb-4">Compliance</h4>
+        <p class="text-[11px] leading-relaxed text-slate-500">
+          © 2015–2030 Preach Law LLP. All information on this portal is for informative purposes only and does not constitute formal legal solicitation.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    lucide.createIcons();
+
+    // Disclaimer logic
+    window.addEventListener('DOMContentLoaded', () => {
+      if (!localStorage.getItem('preach_law_disclaimer_accepted')) {
+        document.getElementById('disclaimer-modal').classList.remove('hidden');
+      }
+    });
+
+    function acceptDisclaimer() {
+      localStorage.setItem('preach_law_disclaimer_accepted', 'true');
+      document.getElementById('disclaimer-modal').classList.add('hidden');
+    }
+
+    // Dynamic Filter
+    function filterServices(category) {
+      const cards = document.querySelectorAll('.service-card');
+      const buttons = document.querySelectorAll('.tab-btn');
+      
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-brand-gold', 'text-brand-navy');
+        btn.classList.add('bg-brand-slate', 'text-slate-300');
+      });
+      event.target.classList.add('bg-brand-gold', 'text-brand-navy');
+      event.target.classList.remove('bg-brand-slate', 'text-slate-300');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out. A senior associate from Preach Law & Co. will contact you shortly.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
