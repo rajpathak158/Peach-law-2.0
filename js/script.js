@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.getElementById("menuButton");
   const mobileMenu = document.getElementById("mobileMenu");
 
+  let animationsStarted = false;
+
 
   /* =======================================================
      LUCIDE ICONS
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "true"
       );
     } catch (error) {
-      // Ignore storage errors
+      console.warn("LocalStorage unavailable.");
     }
 
   }
@@ -88,12 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (accepted) {
 
       disclaimer?.classList.add("hidden");
-
       document.body.classList.remove("no-scroll");
 
     } else {
 
-      document.body.classList.add("no-scroll");
+      if (disclaimer) {
+        document.body.classList.add("no-scroll");
+      }
 
     }
 
@@ -129,14 +132,21 @@ document.addEventListener("DOMContentLoaded", () => {
     "click",
     () => {
 
-      mobileMenu?.classList.toggle("open");
+      if (!mobileMenu) return;
+
+      mobileMenu.classList.toggle("open");
 
       const open =
-        mobileMenu?.classList.contains("open");
+        mobileMenu.classList.contains("open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(open)
+      );
 
       document.body.classList.toggle(
         "no-scroll",
-        Boolean(open)
+        open
       );
 
     }
@@ -152,6 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
 
           mobileMenu?.classList.remove("open");
+
+          menuButton?.setAttribute(
+            "aria-expanded",
+            "false"
+          );
 
           document.body.classList.remove(
             "no-scroll"
@@ -290,16 +305,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function hideLoader() {
 
-    if (!pageLoader) {
-
-      startAnimations();
-
-      return;
-
+    if (pageLoader) {
+      pageLoader.classList.add("loaded");
     }
-
-
-    pageLoader.classList.add("loaded");
 
     startAnimations();
 
@@ -319,9 +327,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
-  /*
-     Backup in case window.load behaves strangely.
-  */
+  /* =======================================================
+     LOADER BACKUP
+  ======================================================= */
 
   setTimeout(
     () => {
@@ -331,9 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
         !pageLoader.classList.contains("loaded")
       ) {
 
-        pageLoader.classList.add(
-          "loaded"
-        );
+        pageLoader.classList.add("loaded");
 
       }
 
@@ -348,9 +354,6 @@ document.addEventListener("DOMContentLoaded", () => {
      MAIN GSAP ANIMATION
   ======================================================= */
 
-  let animationsStarted = false;
-
-
   function startAnimations() {
 
     if (animationsStarted) return;
@@ -359,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* -----------------------------------------------------
-       CHECK GSAP
+       GSAP CHECK
     ----------------------------------------------------- */
 
     if (
@@ -381,7 +384,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* -----------------------------------------------------
-       CHECK SCROLLTRIGGER
+       SCROLLTRIGGER CHECK
     ----------------------------------------------------- */
 
     const hasScrollTrigger =
@@ -412,9 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-      /*
-         HERO LABEL
-      */
+      /* HERO LABEL */
 
       heroTimeline.fromTo(
         ".hero-label",
@@ -430,9 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
 
-      /*
-         HERO TITLE
-      */
+      /* HERO TITLE */
 
       heroTimeline.fromTo(
         ".hero-title .line > span",
@@ -443,20 +442,15 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           y: "0%",
           opacity: 1,
-
           duration: 1.15,
-
           stagger: 0.13,
-
           ease: "power4.out"
         },
         "-=0.35"
       );
 
 
-      /*
-         HERO DESCRIPTION
-      */
+      /* HERO DESCRIPTION */
 
       heroTimeline.fromTo(
         ".hero-description",
@@ -467,16 +461,13 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           opacity: 1,
           y: 0,
-
           duration: 0.8
         },
         "-=0.55"
       );
 
 
-      /*
-         HERO BUTTON
-      */
+      /* HERO BUTTON */
 
       heroTimeline.fromTo(
         ".hero-button",
@@ -487,7 +478,6 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           opacity: 1,
           y: 0,
-
           duration: 0.8
         },
         "-=0.55"
@@ -503,13 +493,9 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           x: 80,
           y: 100,
-
           duration: 7,
-
           repeat: -1,
-
           yoyo: true,
-
           ease: "sine.inOut"
         }
       );
@@ -520,13 +506,9 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           x: -70,
           y: -80,
-
           duration: 8,
-
           repeat: -1,
-
           yoyo: true,
-
           ease: "sine.inOut"
         }
       );
@@ -537,15 +519,8 @@ document.addEventListener("DOMContentLoaded", () => {
       =================================================== */
 
       document
-        .querySelectorAll(
-          ".reveal"
-        )
+        .querySelectorAll(".reveal")
         .forEach(element => {
-
-          /*
-             Skip hero elements because
-             hero already has its own timeline.
-          */
 
           if (
             element.closest(".hero")
@@ -558,28 +533,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             gsap.fromTo(
               element,
-
               {
                 opacity: 0,
                 y: 55
               },
-
               {
                 opacity: 1,
                 y: 0,
-
                 duration: 0.9,
-
                 ease: "power3.out",
 
                 scrollTrigger: {
-
                   trigger: element,
-
                   start: "top 88%",
-
                   once: true
-
                 }
 
               }
@@ -589,18 +556,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             gsap.fromTo(
               element,
-
               {
                 opacity: 0,
                 y: 55
               },
-
               {
                 opacity: 1,
                 y: 0,
-
                 duration: 0.9,
-
                 ease: "power3.out"
               }
             );
@@ -615,9 +578,7 @@ document.addEventListener("DOMContentLoaded", () => {
       =================================================== */
 
       document
-        .querySelectorAll(
-          ".counter"
-        )
+        .querySelectorAll(".counter")
         .forEach(counter => {
 
           const target =
@@ -686,11 +647,8 @@ document.addEventListener("DOMContentLoaded", () => {
       =================================================== */
 
       document
-        .querySelectorAll(
-          ".magnetic"
-        )
+        .querySelectorAll(".magnetic")
         .forEach(button => {
-
 
           button.addEventListener(
             "mousemove",
@@ -724,11 +682,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 {
                   x: x * 0.12,
                   y: y * 0.12,
-
                   duration: 0.35,
-
                   ease: "power3.out",
-
                   overwrite: true
                 }
               );
@@ -746,9 +701,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 {
                   x: 0,
                   y: 0,
-
                   duration: 0.6,
-
                   ease: "elastic.out(1, 0.4)"
                 }
               );
@@ -760,13 +713,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       /* ===================================================
-         EXPERTISE CARD HOVER
+         PRACTICE CARD HOVER
+         Matches .practice-card in index.html
       =================================================== */
 
       document
-        .querySelectorAll(
-          ".expertise-card"
-        )
+        .querySelectorAll(".practice-card")
         .forEach(card => {
 
           card.addEventListener(
@@ -784,9 +736,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 card,
                 {
                   y: -10,
-
                   duration: 0.45,
-
                   ease: "power3.out"
                 }
               );
@@ -803,65 +753,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 card,
                 {
                   y: 0,
-
                   duration: 0.5,
-
                   ease: "power3.out"
-                }
-              );
-
-            }
-          );
-
-        });
-
-
-      /* ===================================================
-         SERVICE HOVER
-      =================================================== */
-
-      document
-        .querySelectorAll(
-          ".service"
-        )
-        .forEach(service => {
-
-          service.addEventListener(
-            "mouseenter",
-            () => {
-
-              if (
-                window.innerWidth < 768
-              ) {
-                return;
-              }
-
-
-              gsap.to(
-                service.querySelector("svg"),
-                {
-                  x: 8,
-
-                  duration: 0.3,
-
-                  ease: "power2.out"
-                }
-              );
-
-            }
-          );
-
-
-          service.addEventListener(
-            "mouseleave",
-            () => {
-
-              gsap.to(
-                service.querySelector("svg"),
-                {
-                  x: 0,
-
-                  duration: 0.3
                 }
               );
 
@@ -883,15 +776,10 @@ document.addEventListener("DOMContentLoaded", () => {
             y: 150,
 
             scrollTrigger: {
-
               trigger: ".hero",
-
               start: "top top",
-
               end: "bottom top",
-
               scrub: true
-
             }
 
           }
@@ -904,15 +792,10 @@ document.addEventListener("DOMContentLoaded", () => {
             y: -100,
 
             scrollTrigger: {
-
               trigger: ".hero",
-
               start: "top top",
-
               end: "bottom top",
-
               scrub: true
-
             }
 
           }
@@ -922,7 +805,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       /* ===================================================
-         REFRESH
+         REFRESH SCROLLTRIGGER
       =================================================== */
 
       if (hasScrollTrigger) {
@@ -947,15 +830,11 @@ document.addEventListener("DOMContentLoaded", () => {
         error
       );
 
-      /*
-         Never leave the website blank.
-      */
-
       showEverything();
 
     }
 
-  });
+  }
 
 
   /* =======================================================
