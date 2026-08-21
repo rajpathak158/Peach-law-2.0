@@ -1,6 +1,7 @@
 /* =========================================================
    PREACH LAW & CO.
-   MAIN INTERACTION ENGINE
+   MAIN.JS
+   PREMIUM INTERACTION ENGINE
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,21 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
      PAGE LOADER
      ======================================================= */
 
-  const loader =
-    document.getElementById("pageLoader");
+  const loader = document.getElementById("pageLoader");
 
   if (loader) {
-
     window.addEventListener("load", () => {
-
       setTimeout(() => {
-
         loader.classList.add("loaded");
-
       }, 900);
-
     });
-
   }
 
 
@@ -31,12 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
      LUCIDE ICONS
      ======================================================= */
 
-  if (
-    typeof lucide !== "undefined"
-  ) {
-
+  if (typeof lucide !== "undefined") {
     lucide.createIcons();
-
   }
 
 
@@ -45,27 +35,21 @@ document.addEventListener("DOMContentLoaded", () => {
      ======================================================= */
 
   const progress =
-    document.getElementById(
-      "scrollProgress"
-    );
+    document.getElementById("scrollProgress");
 
   const updateProgress = () => {
 
     if (!progress) return;
 
-    const scrollTop =
-      window.scrollY;
+    const scrollTop = window.scrollY;
 
     const documentHeight =
-      document.documentElement
-        .scrollHeight -
+      document.documentElement.scrollHeight -
       window.innerHeight;
 
     if (documentHeight <= 0) {
-
       progress.style.width = "0%";
       return;
-
     }
 
     const percentage =
@@ -73,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     progress.style.width =
       `${percentage}%`;
-
   };
 
   window.addEventListener(
@@ -90,19 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
      ======================================================= */
 
   const disclaimer =
-    document.getElementById(
-      "disclaimer"
-    );
+    document.getElementById("disclaimer");
 
   const agreeBtn =
-    document.getElementById(
-      "agreeBtn"
-    );
+    document.getElementById("agreeBtn");
 
   const disagreeBtn =
-    document.getElementById(
-      "disagreeBtn"
-    );
+    document.getElementById("disagreeBtn");
 
 
   const disclaimerAccepted =
@@ -116,8 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     disclaimerAccepted === "true"
   ) {
 
-    disclaimer.style.display =
-      "none";
+    disclaimer.style.display = "none";
 
   }
 
@@ -138,6 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
           disclaimer.classList.add(
             "hidden"
           );
+
+          setTimeout(() => {
+
+            disclaimer.style.display =
+              "none";
+
+          }, 600);
 
         }
 
@@ -166,8 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     CUSTOM CURSOR
-     DESKTOP ONLY
+     TOUCH DETECTION
      ======================================================= */
 
   const isTouch =
@@ -175,32 +157,29 @@ document.addEventListener("DOMContentLoaded", () => {
       "(pointer: coarse)"
     ).matches;
 
+
+  /* =======================================================
+     CUSTOM CURSOR
+     ======================================================= */
+
   if (!isTouch) {
 
     const cursor =
-      document.createElement(
-        "div"
-      );
+      document.createElement("div");
 
     cursor.className =
       "custom-cursor";
 
-    document.body.appendChild(
-      cursor
-    );
+    document.body.appendChild(cursor);
 
 
     const cursorDot =
-      document.createElement(
-        "div"
-      );
+      document.createElement("div");
 
     cursorDot.className =
       "custom-cursor-dot";
 
-    document.body.appendChild(
-      cursorDot
-    );
+    document.body.appendChild(cursorDot);
 
 
     let mouseX = 0;
@@ -214,18 +193,16 @@ document.addEventListener("DOMContentLoaded", () => {
       "mousemove",
       (event) => {
 
-        mouseX =
-          event.clientX;
+        mouseX = event.clientX;
+        mouseY = event.clientY;
 
-        mouseY =
-          event.clientY;
 
         cursorDot.style.transform =
           `translate3d(
             ${mouseX}px,
             ${mouseY}px,
             0
-          )`;
+          ) translate(-50%, -50%)`;
 
       },
       { passive: true }
@@ -235,17 +212,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const animateCursor = () => {
 
       cursorX +=
-        (mouseX - cursorX) * .16;
+        (mouseX - cursorX) * 0.16;
 
       cursorY +=
-        (mouseY - cursorY) * .16;
+        (mouseY - cursorY) * 0.16;
+
 
       cursor.style.transform =
         `translate3d(
           ${cursorX}px,
           ${cursorY}px,
           0
-        )`;
+        ) translate(-50%, -50%)`;
+
 
       requestAnimationFrame(
         animateCursor
@@ -257,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CURSOR INTERACTIVE ELEMENTS
+       CURSOR HOVER EFFECT
        ===================================================== */
 
     const interactiveElements =
@@ -320,20 +299,23 @@ document.addEventListener("DOMContentLoaded", () => {
             const rect =
               element.getBoundingClientRect();
 
+
             const x =
               event.clientX -
               rect.left -
               rect.width / 2;
+
 
             const y =
               event.clientY -
               rect.top -
               rect.height / 2;
 
+
             element.style.transform =
               `translate(
-                ${x * .12}px,
-                ${y * .12}px
+                ${x * 0.12}px,
+                ${y * 0.12}px
               )`;
 
           }
@@ -344,8 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "mouseleave",
           () => {
 
-            element.style.transform =
-              "";
+            element.style.transform = "";
 
           }
         );
@@ -357,7 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     PRACTICE CARD DEPTH
+     PRACTICE CARD DEPTH + LIGHT
      ======================================================= */
 
   if (!isTouch) {
@@ -378,21 +359,44 @@ document.addEventListener("DOMContentLoaded", () => {
             const rect =
               card.getBoundingClientRect();
 
+
             const x =
               event.clientX -
               rect.left;
+
 
             const y =
               event.clientY -
               rect.top;
 
 
+            /* ---------------------------------------------
+               LIGHT POSITION
+               --------------------------------------------- */
+
+            card.style.setProperty(
+              "--mouse-x",
+              `${x}px`
+            );
+
+
+            card.style.setProperty(
+              "--mouse-y",
+              `${y}px`
+            );
+
+
+            /* ---------------------------------------------
+               3D TILT
+               --------------------------------------------- */
+
             const rotateX =
-              ((y / rect.height) - .5)
+              ((y / rect.height) - 0.5)
               * -5;
 
+
             const rotateY =
-              ((x / rect.width) - .5)
+              ((x / rect.width) - 0.5)
               * 5;
 
 
@@ -410,8 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "mouseleave",
           () => {
 
-            card.style.transform =
-              "";
+            card.style.transform = "";
 
           }
         );
@@ -438,25 +441,30 @@ document.addEventListener("DOMContentLoaded", () => {
           (event) => {
 
             const targetId =
-              link.getAttribute(
-                "href"
-              );
+              link.getAttribute("href");
+
 
             if (
               !targetId ||
               targetId === "#"
             ) {
+
               return;
+
             }
+
 
             const target =
               document.querySelector(
                 targetId
               );
 
+
             if (!target) return;
 
+
             event.preventDefault();
+
 
             target.scrollIntoView({
               behavior: "smooth",
@@ -488,6 +496,80 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
     }
+  );
+
+
+  /* =======================================================
+     PHASE 2 — MOUSE AMBIENT LIGHT
+     ======================================================= */
+
+  if (!isTouch) {
+
+    const hero =
+      document.querySelector(".hero");
+
+
+    if (hero) {
+
+      let lightX = 50;
+      let lightY = 50;
+
+
+      hero.addEventListener(
+        "mousemove",
+        (event) => {
+
+          const rect =
+            hero.getBoundingClientRect();
+
+
+          lightX =
+            ((event.clientX - rect.left)
+            / rect.width) * 100;
+
+
+          lightY =
+            ((event.clientY - rect.top)
+            / rect.height) * 100;
+
+
+          hero.style.setProperty(
+            "--mouse-light-x",
+            `${lightX}%`
+          );
+
+
+          hero.style.setProperty(
+            "--mouse-light-y",
+            `${lightY}%`
+          );
+
+        },
+        { passive: true }
+      );
+
+    }
+
+  }
+
+
+  /* =======================================================
+     PERFORMANCE SAFETY
+     ======================================================= */
+
+  document.documentElement.style.overflowX =
+    "hidden";
+
+  document.body.style.overflowX =
+    "hidden";
+
+
+  /* =======================================================
+     READY
+     ======================================================= */
+
+  document.body.classList.add(
+    "js-ready"
   );
 
 });
