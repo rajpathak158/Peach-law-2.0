@@ -6,51 +6,83 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =======================================================
-     LUCIDE ICONS
+     PAGE LOADER
      ======================================================= */
 
-  if (typeof lucide !== "undefined") {
-    lucide.createIcons();
+  const loader =
+    document.getElementById("pageLoader");
+
+  if (loader) {
+
+    window.addEventListener("load", () => {
+
+      setTimeout(() => {
+
+        loader.classList.add("loaded");
+
+      }, 900);
+
+    });
+
   }
 
 
   /* =======================================================
-     PAGE LOADER
+     LUCIDE ICONS
      ======================================================= */
 
-  const pageLoader =
-    document.getElementById("pageLoader");
+  if (
+    typeof lucide !== "undefined"
+  ) {
 
-  const hideLoader = () => {
+    lucide.createIcons();
 
-    if (!pageLoader) return;
+  }
 
-    pageLoader.classList.add("loaded");
 
-    setTimeout(() => {
+  /* =======================================================
+     SCROLL PROGRESS
+     ======================================================= */
 
-      pageLoader.style.pointerEvents = "none";
+  const progress =
+    document.getElementById(
+      "scrollProgress"
+    );
 
-    }, 900);
+  const updateProgress = () => {
+
+    if (!progress) return;
+
+    const scrollTop =
+      window.scrollY;
+
+    const documentHeight =
+      document.documentElement
+        .scrollHeight -
+      window.innerHeight;
+
+    if (documentHeight <= 0) {
+
+      progress.style.width = "0%";
+      return;
+
+    }
+
+    const percentage =
+      (scrollTop / documentHeight) * 100;
+
+    progress.style.width =
+      `${percentage}%`;
 
   };
 
+  window.addEventListener(
+    "scroll",
+    updateProgress,
+    { passive: true }
+  );
 
-  if (document.readyState === "complete") {
-
-    setTimeout(hideLoader, 400);
-
-  } else {
-
-    window.addEventListener(
-      "load",
-      () => {
-        setTimeout(hideLoader, 500);
-      },
-      { once: true }
-    );
-
-  }
+  updateProgress();
 
 
   /* =======================================================
@@ -58,83 +90,34 @@ document.addEventListener("DOMContentLoaded", () => {
      ======================================================= */
 
   const disclaimer =
-    document.getElementById("disclaimer");
+    document.getElementById(
+      "disclaimer"
+    );
 
   const agreeBtn =
-    document.getElementById("agreeBtn");
+    document.getElementById(
+      "agreeBtn"
+    );
 
   const disagreeBtn =
-    document.getElementById("disagreeBtn");
-
-
-  const closeDisclaimer = () => {
-
-    if (!disclaimer) return;
-
-    disclaimer.classList.add("hidden");
-
-    document.body.classList.remove(
-      "disclaimer-open"
+    document.getElementById(
+      "disagreeBtn"
     );
 
-    try {
 
-      sessionStorage.setItem(
-        "preachLawDisclaimer",
-        "accepted"
-      );
-
-    } catch (error) {
-
-      console.warn(
-        "Session storage unavailable."
-      );
-
-    }
-
-  };
-
-
-  const showDisclaimer = () => {
-
-    if (!disclaimer) return;
-
-    disclaimer.classList.remove("hidden");
-
-    document.body.classList.add(
-      "disclaimer-open"
+  const disclaimerAccepted =
+    localStorage.getItem(
+      "preachLawDisclaimer"
     );
 
-  };
 
+  if (
+    disclaimer &&
+    disclaimerAccepted === "true"
+  ) {
 
-  let disclaimerAccepted = false;
-
-  try {
-
-    disclaimerAccepted =
-      sessionStorage.getItem(
-        "preachLawDisclaimer"
-      ) === "accepted";
-
-  } catch (error) {
-
-    disclaimerAccepted = false;
-
-  }
-
-
-  if (disclaimer) {
-
-    if (disclaimerAccepted) {
-
-      disclaimer.classList.add("hidden");
-
-    } else {
-
-      showDisclaimer();
-
-    }
+    disclaimer.style.display =
+      "none";
 
   }
 
@@ -143,7 +126,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     agreeBtn.addEventListener(
       "click",
-      closeDisclaimer
+      () => {
+
+        localStorage.setItem(
+          "preachLawDisclaimer",
+          "true"
+        );
+
+        if (disclaimer) {
+
+          disclaimer.classList.add(
+            "hidden"
+          );
+
+        }
+
+        document.body.classList.remove(
+          "disclaimer-open"
+        );
+
+      }
     );
 
   }
@@ -155,29 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "click",
       () => {
 
-        /*
-         * We do not redirect the user to
-         * an external website.
-         *
-         * The page simply remains unavailable
-         * until they choose to continue.
-         */
-
-        if (disclaimer) {
-
-          disclaimer.classList.add(
-            "disagreement"
-          );
-
-          setTimeout(() => {
-
-            disclaimer.classList.remove(
-              "disagreement"
-            );
-
-          }, 500);
-
-        }
+        window.history.back();
 
       }
     );
@@ -186,471 +166,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     ESCAPE KEY FOR DISCLAIMER
+     CUSTOM CURSOR
+     DESKTOP ONLY
      ======================================================= */
 
-  document.addEventListener(
-    "keydown",
-    (event) => {
+  const isTouch =
+    window.matchMedia(
+      "(pointer: coarse)"
+    ).matches;
 
-      if (
-        event.key === "Escape" &&
-        disclaimer &&
-        !disclaimer.classList.contains("hidden")
-      ) {
+  if (!isTouch) {
 
-        const card =
-          disclaimer.querySelector(
-            ".disclaimer-card"
-          );
-
-        if (card) {
-
-          card.classList.add(
-            "disagreement"
-          );
-
-          setTimeout(() => {
-
-            card.classList.remove(
-              "disagreement"
-            );
-
-          }, 500);
-
-        }
-
-      }
-
-    }
-  );
-
-
-  /* =======================================================
-     SCROLL PROGRESS
-     ======================================================= */
-
-  const scrollProgress =
-    document.getElementById(
-      "scrollProgress"
-    );
-
-
-  const updateScrollProgress = () => {
-
-    if (!scrollProgress) return;
-
-    const scrollTop =
-      window.scrollY;
-
-    const documentHeight =
-      document.documentElement.scrollHeight -
-      window.innerHeight;
-
-    if (documentHeight <= 0) {
-
-      scrollProgress.style.width = "0%";
-
-      return;
-
-    }
-
-    const progress =
-      Math.min(
-        100,
-        Math.max(
-          0,
-          (scrollTop / documentHeight) * 100
-        )
-      );
-
-    scrollProgress.style.width =
-      `${progress}%`;
-
-  };
-
-
-  updateScrollProgress();
-
-
-  window.addEventListener(
-    "scroll",
-    updateScrollProgress,
-    { passive: true }
-  );
-
-
-  /* =======================================================
-     MAGNETIC BUTTONS
-     ======================================================= */
-
-  const magneticElements =
-    document.querySelectorAll(
-      ".magnetic"
-    );
-
-
-  magneticElements.forEach((element) => {
-
-    element.addEventListener(
-      "mousemove",
-      (event) => {
-
-        if (window.innerWidth < 768) return;
-
-        const rect =
-          element.getBoundingClientRect();
-
-        const x =
-          event.clientX -
-          rect.left -
-          rect.width / 2;
-
-        const y =
-          event.clientY -
-          rect.top -
-          rect.height / 2;
-
-        const strength = 0.18;
-
-        element.style.transform =
-          `translate(${x * strength}px, ${y * strength}px)`;
-
-      }
-    );
-
-
-    element.addEventListener(
-      "mouseleave",
-      () => {
-
-        element.style.transform =
-          "";
-
-      }
-    );
-
-  });
-
-
-  /* =======================================================
-     CARD TILT
-     ======================================================= */
-
-  const cards =
-    document.querySelectorAll(
-      ".practice-card"
-    );
-
-
-  cards.forEach((card) => {
-
-    card.addEventListener(
-      "mousemove",
-      (event) => {
-
-        if (window.innerWidth < 900) return;
-
-        const rect =
-          card.getBoundingClientRect();
-
-        const x =
-          event.clientX -
-          rect.left;
-
-        const y =
-          event.clientY -
-          rect.top;
-
-        const centerX =
-          rect.width / 2;
-
-        const centerY =
-          rect.height / 2;
-
-        const rotateX =
-          ((y - centerY) / centerY) * -2.5;
-
-        const rotateY =
-          ((x - centerX) / centerX) * 2.5;
-
-        card.style.transform =
-          `perspective(900px)
-           rotateX(${rotateX}deg)
-           rotateY(${rotateY}deg)
-           translateY(-5px)`;
-
-      }
-    );
-
-
-    card.addEventListener(
-      "mouseleave",
-      () => {
-
-        card.style.transform =
-          "";
-
-      }
-    );
-
-  });
-
-
-  /* =======================================================
-     PARALLAX BACKGROUND
-     ======================================================= */
-
-  const parallaxElements =
-    document.querySelectorAll(
-      ".hero-glow, .hero-grid"
-    );
-
-
-  let parallaxTicking = false;
-
-
-  const updateParallax = () => {
-
-    const scrollY =
-      window.scrollY;
-
-    parallaxElements.forEach(
-      (element, index) => {
-
-        const speed =
-          index === 0
-            ? 0.08
-            : 0.04;
-
-        element.style.transform =
-          `translate3d(0, ${scrollY * speed}px, 0)`;
-
-      }
-    );
-
-    parallaxTicking = false;
-
-  };
-
-
-  window.addEventListener(
-    "scroll",
-    () => {
-
-      if (!parallaxTicking) {
-
-        requestAnimationFrame(
-          updateParallax
-        );
-
-        parallaxTicking = true;
-
-      }
-
-    },
-    { passive: true }
-  );
-
-
-  /* =======================================================
-     COUNTERS
-     ======================================================= */
-
-  const counters =
-    document.querySelectorAll(
-      ".counter"
-    );
-
-
-  const animateCounter = (
-    counter
-  ) => {
-
-    const target =
-      Number(
-        counter.dataset.target
-      );
-
-    if (
-      !Number.isFinite(target)
-    ) {
-      return;
-    }
-
-    const duration =
-      1800;
-
-    const startTime =
-      performance.now();
-
-
-    const updateCounter = (
-      currentTime
-    ) => {
-
-      const elapsed =
-        currentTime -
-        startTime;
-
-      const progress =
-        Math.min(
-          elapsed / duration,
-          1
-        );
-
-      /*
-       * Smooth ease-out
-       */
-
-      const eased =
-        1 -
-        Math.pow(
-          1 - progress,
-          3
-        );
-
-      const current =
-        Math.floor(
-          eased * target
-        );
-
-      counter.textContent =
-        current.toLocaleString();
-
-      if (progress < 1) {
-
-        requestAnimationFrame(
-          updateCounter
-        );
-
-      } else {
-
-        counter.textContent =
-          target.toLocaleString();
-
-      }
-
-    };
-
-
-    requestAnimationFrame(
-      updateCounter
-    );
-
-  };
-
-
-  /* =======================================================
-     COUNTER OBSERVER
-     ======================================================= */
-
-  if (
-    counters.length &&
-    "IntersectionObserver" in window
-  ) {
-
-    const counterObserver =
-      new IntersectionObserver(
-        (entries, observer) => {
-
-          entries.forEach(
-            (entry) => {
-
-              if (
-                !entry.isIntersecting
-              ) {
-                return;
-              }
-
-              const counter =
-                entry.target;
-
-              if (
-                counter.dataset.animated
-              ) {
-                return;
-              }
-
-              counter.dataset.animated =
-                "true";
-
-              animateCounter(
-                counter
-              );
-
-              observer.unobserve(
-                counter
-              );
-
-            }
-          );
-
-        },
-        {
-          threshold: 0.5
-        }
-      );
-
-
-    counters.forEach(
-      (counter) => {
-
-        counterObserver.observe(
-          counter
-        );
-
-      }
-    );
-
-  } else {
-
-    counters.forEach(
-      animateCounter
-    );
-
-  }
-
-
-  /* =======================================================
-     CURSOR GLOW
-     ======================================================= */
-
-  const createCursorGlow = () => {
-
-    if (
-      window.innerWidth < 1000 ||
-      window.matchMedia(
-        "(pointer: coarse)"
-      ).matches
-    ) {
-
-      return;
-
-    }
-
-
-    const glow =
+    const cursor =
       document.createElement(
         "div"
       );
 
-    glow.className =
-      "cursor-glow";
+    cursor.className =
+      "custom-cursor";
 
     document.body.appendChild(
-      glow
+      cursor
+    );
+
+
+    const cursorDot =
+      document.createElement(
+        "div"
+      );
+
+    cursorDot.className =
+      "custom-cursor-dot";
+
+    document.body.appendChild(
+      cursorDot
     );
 
 
     let mouseX = 0;
     let mouseY = 0;
 
-    let currentX = 0;
-    let currentY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
 
 
-    document.addEventListener(
+    window.addEventListener(
       "mousemove",
       (event) => {
 
@@ -660,6 +220,13 @@ document.addEventListener("DOMContentLoaded", () => {
         mouseY =
           event.clientY;
 
+        cursorDot.style.transform =
+          `translate3d(
+            ${mouseX}px,
+            ${mouseY}px,
+            0
+          )`;
+
       },
       { passive: true }
     );
@@ -667,22 +234,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const animateCursor = () => {
 
-      currentX +=
-        (mouseX - currentX) *
-        0.12;
+      cursorX +=
+        (mouseX - cursorX) * .16;
 
-      currentY +=
-        (mouseY - currentY) *
-        0.12;
+      cursorY +=
+        (mouseY - cursorY) * .16;
 
-
-      glow.style.transform =
+      cursor.style.transform =
         `translate3d(
-          ${currentX}px,
-          ${currentY}px,
+          ${cursorX}px,
+          ${cursorY}px,
           0
         )`;
-
 
       requestAnimationFrame(
         animateCursor
@@ -690,73 +253,241 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
-
     animateCursor();
 
-  };
+
+    /* =====================================================
+       CURSOR INTERACTIVE ELEMENTS
+       ===================================================== */
+
+    const interactiveElements =
+      document.querySelectorAll(
+        "a, button, .practice-card, .magnetic"
+      );
 
 
-  createCursorGlow();
+    interactiveElements.forEach(
+      (element) => {
+
+        element.addEventListener(
+          "mouseenter",
+          () => {
+
+            cursor.classList.add(
+              "cursor-active"
+            );
+
+          }
+        );
+
+
+        element.addEventListener(
+          "mouseleave",
+          () => {
+
+            cursor.classList.remove(
+              "cursor-active"
+            );
+
+          }
+        );
+
+      }
+    );
+
+  }
 
 
   /* =======================================================
-     LINK HOVER STATE
+     MAGNETIC BUTTONS
      ======================================================= */
 
-  const links =
-    document.querySelectorAll(
-      "a"
-    );
+  if (!isTouch) {
+
+    const magneticElements =
+      document.querySelectorAll(
+        ".magnetic"
+      );
 
 
-  links.forEach((link) => {
+    magneticElements.forEach(
+      (element) => {
 
-    link.addEventListener(
-      "mouseenter",
-      () => {
+        element.addEventListener(
+          "mousemove",
+          (event) => {
 
-        document.body.classList.add(
-          "link-hover"
+            const rect =
+              element.getBoundingClientRect();
+
+            const x =
+              event.clientX -
+              rect.left -
+              rect.width / 2;
+
+            const y =
+              event.clientY -
+              rect.top -
+              rect.height / 2;
+
+            element.style.transform =
+              `translate(
+                ${x * .12}px,
+                ${y * .12}px
+              )`;
+
+          }
+        );
+
+
+        element.addEventListener(
+          "mouseleave",
+          () => {
+
+            element.style.transform =
+              "";
+
+          }
         );
 
       }
     );
 
-
-    link.addEventListener(
-      "mouseleave",
-      () => {
-
-        document.body.classList.remove(
-          "link-hover"
-        );
-
-      }
-    );
-
-  });
+  }
 
 
   /* =======================================================
-     PREVENT IMAGE DRAGGING
+     PRACTICE CARD DEPTH
+     ======================================================= */
+
+  if (!isTouch) {
+
+    const cards =
+      document.querySelectorAll(
+        ".practice-card"
+      );
+
+
+    cards.forEach(
+      (card) => {
+
+        card.addEventListener(
+          "mousemove",
+          (event) => {
+
+            const rect =
+              card.getBoundingClientRect();
+
+            const x =
+              event.clientX -
+              rect.left;
+
+            const y =
+              event.clientY -
+              rect.top;
+
+
+            const rotateX =
+              ((y / rect.height) - .5)
+              * -5;
+
+            const rotateY =
+              ((x / rect.width) - .5)
+              * 5;
+
+
+            card.style.transform =
+              `perspective(1000px)
+               rotateX(${rotateX}deg)
+               rotateY(${rotateY}deg)
+               translateY(-4px)`;
+
+          }
+        );
+
+
+        card.addEventListener(
+          "mouseleave",
+          () => {
+
+            card.style.transform =
+              "";
+
+          }
+        );
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     SMOOTH ANCHOR SCROLL
      ======================================================= */
 
   document
-    .querySelectorAll("img")
-    .forEach((image) => {
+    .querySelectorAll(
+      'a[href^="#"]'
+    )
+    .forEach(
+      (link) => {
 
-      image.setAttribute(
-        "draggable",
-        "false"
-      );
+        link.addEventListener(
+          "click",
+          (event) => {
 
-    });
+            const targetId =
+              link.getAttribute(
+                "href"
+              );
+
+            if (
+              !targetId ||
+              targetId === "#"
+            ) {
+              return;
+            }
+
+            const target =
+              document.querySelector(
+                targetId
+              );
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+          }
+        );
+
+      }
+    );
 
 
   /* =======================================================
-     INITIAL REFRESH
+     WINDOW RESIZE
      ======================================================= */
 
-  updateScrollProgress();
+  window.addEventListener(
+    "resize",
+    () => {
+
+      if (
+        typeof ScrollTrigger !==
+        "undefined"
+      ) {
+
+        ScrollTrigger.refresh();
+
+      }
+
+    }
+  );
 
 });
