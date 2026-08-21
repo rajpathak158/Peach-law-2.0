@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#11110f">
+
+  <title>Litigation & Dispute Resolution | Preach Law & Co.</title>
+
+  <meta
+    name="description"
+    content="Litigation and dispute resolution services by Preach Law & Co., covering civil, commercial, criminal and specialist disputes."
+  >
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+
+  <script
+    src="https://unpkg.com/lucide@latest"
+    defer
+  ></script>
+
+  <!-- =====================================================
+       GSAP
+  ====================================================== -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    defer
+  ></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    defer
+  ></script>
+
+  <!-- =====================================================
+       GLOBAL CSS
+  ====================================================== -->
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="stylesheet" href="./css/animations.css">
+
+  <link rel="stylesheet" href="./css/responsive.css">
+
+
+  <!-- =====================================================
+       PAGE CSS
+  ====================================================== -->
+
+  <style>
+
+    .litigation-page {
+      background: #11110f;
+      color: #f2eee6;
+    }
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .litigation-hero {
+      position: relative;
+      min-height: 82vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      padding: 160px 0 100px;
+    }
+
+    .litigation-hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 78% 35%,
+          rgba(200,169,107,.16),
+          transparent 32%
+        );
+    }
+
+    .litigation-grid {
+      position: absolute;
+      inset: 0;
+      opacity: .06;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.25) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.25) 1px,
+          transparent 1px
+        );
+
+      background-size: 80px 80px;
+    }
+
+    .litigation-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .practice-kicker {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      margin-bottom: 30px;
+
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+
+      opacity: .6;
+    }
+
+    .practice-kicker-line {
+      width: 45px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .litigation-hero h1 {
+      max-width: 1050px;
+
+      margin: 0;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(
+        55px,
+        9vw,
+        125px
+      );
+
+      line-height: .93;
+
+      font-weight: 500;
+
+      letter-spacing: -.045em;
+    }
+
+    .litigation-hero h1 em {
+      color: #c8a96b;
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+
+      margin-top: 45px;
+
+      font-size: 18px;
+      line-height: 1.8;
+
+      color: rgba(242,238,230,.65);
+    }
+
+    .hero-index {
+      position: absolute;
+
+      right: 7%;
+      bottom: 75px;
+
+      font-size: 12px;
+
+      letter-spacing: .2em;
+
+      opacity: .35;
+    }
+
+
+    /* =====================================================
+       INTRO
+    ====================================================== */
+
+    .litigation-intro {
+      padding: 130px 0;
+
+      border-top:
+        1px solid rgba(255,255,255,.1);
+    }
+
+    .intro-layout {
+      display: grid;
+
+      grid-template-columns:
+        1fr 2fr;
+
+      gap: 80px;
+    }
+
+    .intro-label {
+      font-size: 12px;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      opacity: .45;
+    }
+
+    .intro-content h2 {
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(40px, 5vw, 72px);
+
+      line-height: 1.05;
+
+      font-weight: 500;
+    }
+
+    .intro-content h2 em {
+      color: #c8a96b;
+    }
+
+    .intro-content p {
+      max-width: 760px;
+
+      margin-top: 30px;
+
+      font-size: 17px;
+
+      line-height: 1.9;
+
+      color:
+        rgba(242,238,230,.62);
+    }
+
+
+    /* =====================================================
+       PRACTICE AREAS
+    ====================================================== */
+
+    .litigation-practices {
+      padding: 100px 0 150px;
+    }
+
+    .practice-header {
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: flex-end;
+
+      gap: 40px;
+
+      margin-bottom: 55px;
+    }
+
+    .practice-header h2 {
+      margin: 15px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 78px);
+
+      font-weight: 500;
+
+      line-height: 1;
+    }
+
+    .practice-header p {
+      max-width: 430px;
+
+      margin: 0;
+
+      color:
+        rgba(242,238,230,.55);
+
+      line-height: 1.75;
+    }
+
+    .practice-list {
+      border-top:
+        1px solid rgba(255,255,255,.12);
+    }
+
+    .practice-row {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        90px 1.1fr 1fr 50px;
+
+      align-items: center;
+
+      gap: 35px;
+
+      min-height: 180px;
+
+      padding: 30px 10px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.12);
+
+      text-decoration: none;
+
+      color: inherit;
+
+      overflow: hidden;
+    }
+
+    .practice-row::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background: #c8a96b;
+
+      transform:
+        translateX(-101%);
+
+      transition:
+        transform .55s
+        cubic-bezier(.16,1,.3,1);
+    }
+
+    .practice-row:hover::before {
+      transform: translateX(0);
+    }
+
+    .practice-row > * {
+      position: relative;
+
+      z-index: 1;
+    }
+
+    .practice-number {
+      font-size: 13px;
+
+      letter-spacing: .15em;
+
+      opacity: .45;
+    }
+
+    .practice-row h3 {
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(25px, 3vw, 40px);
+
+      font-weight: 500;
+
+      line-height: 1.05;
+    }
+
+    .practice-row p {
+      margin: 0;
+
+      color:
+        rgba(242,238,230,.55);
+
+      line-height: 1.7;
+
+      transition:
+        color .4s ease;
+    }
+
+    .practice-row:hover p {
+      color:
+        rgba(17,17,15,.75);
+    }
+
+    .practice-row:hover
+    .practice-number {
+      color: #11110f;
+    }
+
+    .practice-arrow {
+      display: flex;
+
+      justify-content:
+        flex-end;
+    }
+
+    .practice-arrow i {
+      width: 22px;
+      height: 22px;
+    }
+
+
+    /* =====================================================
+       STRATEGY SECTION
+    ====================================================== */
+
+    .strategy-section {
+      padding: 150px 0;
+
+      border-top:
+        1px solid rgba(255,255,255,.1);
+    }
+
+    .strategy-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 100px;
+
+      align-items: start;
+    }
+
+    .strategy-heading {
+      position: sticky;
+
+      top: 120px;
+    }
+
+    .strategy-heading h2 {
+      margin: 20px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 75px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+    .strategy-heading em {
+      color: #c8a96b;
+    }
+
+    .strategy-list {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 0;
+    }
+
+    .strategy-item {
+      padding: 35px 0;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.12);
+    }
+
+    .strategy-item:first-child {
+      border-top:
+        1px solid rgba(255,255,255,.12);
+    }
+
+    .strategy-item-number {
+      display: block;
+
+      margin-bottom: 18px;
+
+      font-size: 11px;
+
+      letter-spacing: .16em;
+
+      opacity: .4;
+    }
+
+    .strategy-item h3 {
+      margin: 0 0 12px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 30px;
+
+      font-weight: 500;
+    }
+
+    .strategy-item p {
+      margin: 0;
+
+      color:
+        rgba(242,238,230,.58);
+
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .litigation-cta {
+      padding: 150px 0;
+
+      text-align: center;
+
+      border-top:
+        1px solid rgba(255,255,255,.1);
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(200,169,107,.1),
+          transparent 45%
+        );
+    }
+
+    .litigation-cta h2 {
+      max-width: 900px;
+
+      margin: 20px auto 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 7vw, 90px);
+
+      font-weight: 500;
+
+      line-height: 1;
+    }
+
+    .litigation-cta h2 em {
+      color: #c8a96b;
+    }
+
+    .litigation-cta p {
+      max-width: 550px;
+
+      margin: 30px auto;
+
+      color:
+        rgba(242,238,230,.6);
+
+      line-height: 1.8;
+    }
+
+    .litigation-button {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-top: 20px;
+
+      padding: 18px 30px;
+
+      border:
+        1px solid rgba(200,169,107,.7);
+
+      color: #f2eee6;
+
+      text-decoration: none;
+
+      text-transform: uppercase;
+
+      letter-spacing: .12em;
+
+      font-size: 12px;
+
+      transition:
+        all .35s ease;
+    }
+
+    .litigation-button:hover {
+      background: #c8a96b;
+
+      color: #11110f;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 768px) {
+
+      .litigation-hero {
+        min-height: 75vh;
+
+        padding:
+          130px 20px 80px;
+      }
+
+      .hero-index {
+        display: none;
+      }
+
+      .litigation-intro {
+        padding: 90px 20px;
+      }
+
+      .intro-layout {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .litigation-practices {
+        padding:
+          80px 20px 100px;
+      }
+
+      .practice-header {
+        display: block;
+      }
+
+      .practice-header p {
+        margin-top: 25px;
+      }
+
+      .practice-row {
+        grid-template-columns:
+          45px 1fr 35px;
+
+        gap: 15px;
+
+        min-height: 170px;
+      }
+
+      .practice-row p {
+        grid-column: 2 / 3;
+      }
+
+      .practice-arrow {
+        grid-column: 3;
+        grid-row: 1;
+      }
+
+      .strategy-section {
+        padding:
+          100px 20px;
+      }
+
+      .strategy-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+      }
+
+      .strategy-heading {
+        position: static;
+      }
+
+      .litigation-cta {
+        padding:
+          100px 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="litigation-page">
+
+
+  <!-- =====================================================
+       LOADER
+  ====================================================== -->
+
+  <div
+    class="page-loader"
+    id="pageLoader"
+  >
+
+    <div class="loader-inner">
+
+      <div class="loader-monogram">
+        <span>P</span>
+      </div>
+
+      <div class="loader-rule">
+        <span></span>
+      </div>
+
+      <p>
+        PREACH LAW &amp; CO.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="nav-container">
+
+
+      <a
+        href="./index.html"
+        class="brand"
+      >
+
+        <div class="brand-mark">
+          <span>P</span>
+        </div>
+
+        <div class="brand-text">
+
+          <strong>
+            Preach Law &amp; Co.
+          </strong>
+
+          <small>
+            Advocates &amp; Legal Advisory
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <nav
+        class="desktop-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a
+          href="./services.html"
+          aria-current="page"
+        >
+          Services
+        </a>
+
+        <a href="./team.html">
+          Team
+        </a>
+
+        <a href="./articles.html">
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          Offices
+        </a>
+
+      </nav>
+
+
+      <a
+        href="./contact.html"
+        class="nav-contact"
+      >
+
+        <span>
+          Contact Us
+        </span>
+
+        <i data-lucide="arrow-up-right"></i>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <div class="mobile-menu-inner">
+
+      <nav>
+
+        <a href="./index.html">
+          <span>01</span>
+          Home
+        </a>
+
+        <a href="./about.html">
+          <span>02</span>
+          About
+        </a>
+
+        <a href="./services.html">
+          <span>03</span>
+          Services
+        </a>
+
+        <a href="./team.html">
+          <span>04</span>
+          Our Team
+        </a>
+
+        <a href="./articles.html">
+          <span>05</span>
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          <span>06</span>
+          Offices
+        </a>
+
+        <a href="./contact.html">
+          <span>07</span>
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="mobile-menu-footer">
+
+        <span>
+          PREACH LAW &amp; CO.
+        </span>
+
+        <span>
+          ADVOCATES · ADVISORS · CONSULTANTS
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="litigation-hero">
+
+      <div class="litigation-hero-bg"></div>
+
+      <div class="litigation-grid"></div>
+
+
+      <div class="container litigation-hero-content">
+
+
+        <div class="practice-kicker reveal">
+
+          <span class="practice-kicker-line"></span>
+
+          <span>
+            PRACTICE AREA · 01
+          </span>
+
+        </div>
+
+
+        <h1 class="reveal">
+
+          Litigation &amp;
+
+          <br>
+
+          <em>Dispute Resolution.</em>
+
+        </h1>
+
+
+        <p class="hero-copy reveal">
+
+          Strategic representation built around
+          preparation, precision and a clear
+          understanding of the client's objectives.
+
+        </p>
+
+
+      </div>
+
+
+      <span class="hero-index">
+        01 / 05
+      </span>
+
+    </section>
+
+
+    <!-- ===================================================
+         INTRO
+    ==================================================== -->
+
+    <section class="litigation-intro">
+
+
+      <div class="container">
+
+
+        <div class="intro-layout">
+
+
+          <div class="intro-label reveal">
+
+            OUR APPROACH
+
+          </div>
+
+
+          <div class="intro-content">
+
+
+            <h2 class="reveal">
+
+              Strong advocacy begins
+
+              <br>
+
+              with <em>clear strategy.</em>
+
+            </h2>
+
+
+            <p class="reveal">
+
+              Litigation requires more than simply
+              presenting a case. It requires a careful
+              understanding of facts, applicable law,
+              evidence, procedure and the commercial
+              realities surrounding the dispute.
+
+            </p>
+
+
+            <p class="reveal">
+
+              Our approach focuses on developing a
+              structured strategy from the earliest stage,
+              identifying risks and opportunities while
+              keeping the client's desired outcome at
+              the centre of the process.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         PRACTICE AREAS
+    ==================================================== -->
+
+    <section class="litigation-practices">
+
+
+      <div class="container">
+
+
+        <div class="practice-header">
+
+
+          <div>
+
+            <span class="eyebrow reveal">
+              AREAS OF REPRESENTATION
+            </span>
+
+
+            <h2 class="reveal">
+              Where we act.
+            </h2>
+
+          </div>
+
+
+          <p class="reveal">
+
+            Representation and advisory support
+            across a broad range of contentious
+            and dispute-related matters.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="practice-list">
+
+
+          <!-- 01 -->
+
+          <a
+            href="./contact.html"
+            class="practice-row reveal"
+          >
+
+            <span class="practice-number">
+              01
+            </span>
+
+
+            <h3>
+              Civil Disputes
+            </h3>
+
+
+            <p>
+
+              Property, contractual, recovery,
+              injunction and other civil matters.
+
+            </p>
+
+
+            <span class="practice-arrow">
+
+              <i data-lucide="arrow-up-right"></i>
+
+            </span>
+
+          </a>
+
+
+          <!-- 02 -->
+
+          <a
+            href="./contact.html"
+            class="practice-row reveal"
+          >
+
+            <span class="practice-number">
+              02
+            </span>
+
+
+            <h3>
+              Commercial Disputes
+            </h3>
+
+
+            <p>
+
+              Business, contractual, shareholder
+              and commercial disagreements.
+
+            </p>
+
+
+            <span class="practice-arrow">
+
+              <i data-lucide="arrow-up-right"></i>
+
+            </span>
+
+          </a>
+
+
+          <!-- 03 -->
+
+          <a
+            href="./contact.html"
+            class="practice-row reveal"
+          >
+
+            <span class="practice-number">
+              03
+            </span>
+
+
+            <h3>
+              Criminal Matters
+            </h3>
+
+
+            <p>
+
+              Legal representation and advisory
+              support in appropriate criminal matters.
+
+            </p>
+
+
+            <span class="practice-arrow">
+
+              <i data-lucide="arrow-up-right"></i>
+
+            </span>
+
+          </a>
+
+
+          <!-- 04 -->
+
+          <a
+            href="./contact.html"
+            class="practice-row reveal"
+          >
+
+            <span class="practice-number">
+              04
+            </span>
+
+
+            <h3>
+              Arbitration
+            </h3>
+
+
+            <p>
+
+              Strategy and representation in
+              arbitration and alternative dispute
+              resolution proceedings.
+
+            </p>
+
+
+            <span class="practice-arrow">
+
+              <i data-lucide="arrow-up-right"></i>
+
+            </span>
+
+          </a>
+
+
+          <!-- 05 -->
+
+          <a
+            href="./contact.html"
+            class="practice-row reveal"
+          >
+
+            <span class="practice-number">
+              05
+            </span>
+
+
+            <h3>
+              Regulatory Disputes
+            </h3>
+
+
+            <p>
+
+              Assistance with regulatory issues,
+              notices, proceedings and related
+              legal responses.
+
+            </p>
+
+
+            <span class="practice-arrow">
+
+              <i data-lucide="arrow-up-right"></i>
+
+            </span>
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         STRATEGY
+    ==================================================== -->
+
+    <section class="strategy-section">
+
+
+      <div class="container">
+
+
+        <div class="strategy-grid">
+
+
+          <div class="strategy-heading">
+
+
+            <span class="eyebrow reveal">
+              THE PROCESS
+            </span>
+
+
+            <h2 class="reveal">
+
+              Precision at
+
+              <br>
+
+              <em>every stage.</em>
+
+            </h2>
+
+
+          </div>
+
+
+          <div class="strategy-list">
+
+
+            <div class="strategy-item reveal">
+
+              <span class="strategy-item-number">
+                01 · ASSESS
+              </span>
+
+              <h3>
+                Understand the matter
+              </h3>
+
+              <p>
+
+                We begin by understanding the facts,
+                documents, legal position and objectives
+                surrounding the matter.
+
+              </p>
+
+            </div>
+
+
+            <div class="strategy-item reveal">
+
+              <span class="strategy-item-number">
+                02 · STRATEGISE
+              </span>
+
+              <h3>
+                Build the legal strategy
+              </h3>
+
+              <p>
+
+                Potential risks, remedies, procedural
+                considerations and strategic options
+                are evaluated.
+
+              </p>
+
+            </div>
+
+
+            <div class="strategy-item reveal">
+
+              <span class="strategy-item-number">
+                03 · PREPARE
+              </span>
+
+              <h3>
+                Prepare with precision
+              </h3>
+
+              <p>
+
+                Relevant documents, evidence,
+                submissions and legal arguments are
+                carefully prepared.
+
+              </p>
+
+            </div>
+
+
+            <div class="strategy-item reveal">
+
+              <span class="strategy-item-number">
+                04 · REPRESENT
+              </span>
+
+              <h3>
+                Represent and respond
+              </h3>
+
+              <p>
+
+                We advocate for the client's interests
+                while adapting the strategy as the
+                matter develops.
+
+              </p>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         CTA
+    ==================================================== -->
+
+    <section class="litigation-cta">
+
+
+      <div class="container">
+
+
+        <span class="eyebrow reveal">
+          DISCUSS YOUR MATTER
+        </span>
+
+
+        <h2 class="reveal">
+
+          Every dispute needs
+
+          <br>
+
+          a <em>strategy.</em>
+
+        </h2>
+
+
+        <p class="reveal">
+
+          If you have a legal or dispute-related
+          matter, contact the firm to discuss the
+          circumstances and appropriate next steps.
+
+        </p>
+
+
+        <a
+          href="./contact.html"
+          class="litigation-button reveal"
+        >
+
+          <span>
+            Contact The Firm
+          </span>
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+
+          <a
+            href="./index.html"
+            class="brand"
+          >
+
+            <div class="brand-mark">
+              <span>P</span>
+            </div>
+
+
+            <div class="brand-text">
+
+              <strong>
+                Preach Law &amp; Co.
+              </strong>
+
+              <small>
+                Advocates &amp; Legal Advisory
+              </small>
+
+            </div>
+
+          </a>
+
+
+          <p>
+
+            Legal representation, regulatory advisory
+            and professional services for individuals,
+            businesses and institutions.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <div>
+
+            <span>
+              COMPANY
+            </span>
+
+            <a href="./about.html">
+              About
+            </a>
+
+            <a href="./team.html">
+              Our Team
+            </a>
+
+            <a href="./offices.html">
+              Offices
+            </a>
+
+            <a href="./articles.html">
+              Insights
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              PRACTICE
+            </span>
+
+            <a href="./litigation.html">
+              Litigation
+            </a>
+
+            <a href="./ipr.html">
+              IPR
+            </a>
+
+            <a href="./startup.html">
+              Startups
+            </a>
+
+            <a href="./consulting.html">
+              Consulting
+            </a>
+
+            <a href="./fintech.html">
+              Fintech
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              CONTACT
+            </span>
+
+            <a href="./contact.html">
+              Contact
+            </a>
+
+            <a href="tel:+919311664455">
+              +91 93116 64455
+            </a>
+
+            <a href="mailto:admin@preachlaw.com">
+              Email
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2015–2030 Preach Law LLP. All Rights Reserved.
+        </span>
+
+        <span>
+          DELHI · INDIA
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="./js/navigation.js"></script>
+
+  <script src="./js/animations.js"></script>
+
+  <script src="./js/main.js"></script>
+
+
+  <script>
+
+    window.addEventListener("load", function () {
+
+      if (
+        window.lucide &&
+        typeof window.lucide.createIcons === "function"
+      ) {
+        window.lucide.createIcons();
+      }
+
+
+      const loader =
+        document.getElementById("pageLoader");
+
+
+      if (loader) {
+
+        loader.classList.add("is-hidden");
+
+
+        setTimeout(function () {
+
+          loader.style.display = "none";
+
+        }, 700);
+
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
+  </html>
