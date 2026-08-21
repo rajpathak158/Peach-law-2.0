@@ -5,16 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preach Law & Co. | Advocate & Attorney</title>
   
-  <!-- Google Fonts required for your CSS -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
-  <!-- Link to your exact custom CSS file -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
   
-  <!-- Icons -->
+  <!-- Icons & GSAP Animation Libraries -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Ensure elements are hidden before GSAP animates them */
+    .hero-label, .hero-description, .hero-button, .hero-scroll, .hero-number { opacity: 0; }
+    .hero-title .line span { transform: translateY(100%); }
+    .gsap-reveal { opacity: 0; visibility: hidden; }
+  </style>
 </head>
 <body class="no-scroll">
 
@@ -103,18 +112,18 @@
   </section>
 
   <!-- ================= PHILOSOPHY ================= -->
-  <section class="section philosophy" id="philosophy">
+  <section class="section philosophy gsap-reveal" id="philosophy">
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading anim-fade-up">
         <div class="eyebrow">Our Philosophy <div class="gold-line"></div></div>
         <h2>Dedicated to <em>Excellence</em></h2>
       </div>
       <div class="philosophy-layout">
-        <div class="philosophy-number">02</div>
-        <div class="philosophy-text">
+        <div class="philosophy-number anim-fade-up">02</div>
+        <div class="philosophy-text anim-fade-up">
           <p class="large-text">Effective dispute resolution demands a tailored strategy aligned with our client's objectives.</p>
           <p>Our dedicated legal team places paramount importance on comprehending our clients and their unique circumstances. This deep understanding enables us to precisely identify our clients' aims and collaborate with them to chart the optimal path forward.</p>
-          <p>We constantly strive to uncover cost-effective resolutions, prioritizing economic efficiency whenever viable. Our commitment lies in ensuring that our dispute resolution methods serve as precise instruments, finely tuned to achieve our clients' desired outcomes while minimizing expenses and resources. This approach defines our client-centric, goal-driven, and fiscally responsible approach to dispute resolution.</p>
+          <p>We constantly strive to uncover cost-effective resolutions, prioritizing economic efficiency whenever viable. Our commitment lies in ensuring that our dispute resolution methods serve as precise instruments, finely tuned to achieve our clients' desired outcomes while minimizing expenses and resources.</p>
           <div class="signature">
             PREACH LAW BELIEVES <div></div>
           </div>
@@ -124,23 +133,23 @@
   </section>
 
   <!-- ================= STATS ================= -->
-  <section class="stats-section">
+  <section class="stats-section gsap-reveal">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-number">2800<sup>+</sup></div>
+        <div class="stat anim-fade-up">
+          <div class="stat-number"><span class="counter" data-target="2800">0</span><sup>+</sup></div>
           <span>Cases Solved</span>
         </div>
-        <div class="stat">
-          <div class="stat-number">3000<sup>+</sup></div>
+        <div class="stat anim-fade-up">
+          <div class="stat-number"><span class="counter" data-target="3000">0</span><sup>+</sup></div>
           <span>Happy Clients</span>
         </div>
-        <div class="stat">
-          <div class="stat-number">300<sup>+</sup></div>
+        <div class="stat anim-fade-up">
+          <div class="stat-number"><span class="counter" data-target="300">0</span><sup>+</sup></div>
           <span>Legal Associates</span>
         </div>
-        <div class="stat">
-          <div class="stat-number">10<sup>+</sup></div>
+        <div class="stat anim-fade-up">
+          <div class="stat-number"><span class="counter" data-target="10">0</span><sup>+</sup></div>
           <span>Regional Offices</span>
         </div>
       </div>
@@ -148,9 +157,9 @@
   </section>
 
   <!-- ================= EXPERTISE ================= -->
-  <section class="section expertise" id="expertise">
+  <section class="section expertise gsap-reveal" id="expertise">
     <div class="container">
-      <div class="section-top">
+      <div class="section-top anim-fade-up">
         <div>
           <div class="eyebrow">Core Practice Areas <div class="gold-line"></div></div>
           <h2 class="section-title">Legal <em>Expertise</em></h2>
@@ -158,7 +167,7 @@
         <div class="section-index">03</div>
       </div>
       <div class="expertise-grid">
-        <div class="expertise-card">
+        <div class="expertise-card anim-fade-up">
           <div class="card-number">01 /</div>
           <div class="card-icon"><i data-lucide="shield-check"></i></div>
           <h3>FSSAI</h3>
@@ -166,7 +175,7 @@
           <p>The Food Safety and Standards Act, 2006 has come into force with effect from 05th August, 2011. It defines a food Business Operator (FBO) as a person engaged in the business of food manufacture, processing, packaging, transportation, distribution, storage, and import etc.</p>
           <a href="#" class="text-link">Read More <i data-lucide="arrow-right"></i></a>
         </div>
-        <div class="expertise-card dark">
+        <div class="expertise-card dark anim-fade-up">
           <div class="card-number">02 /</div>
           <div class="card-icon"><i data-lucide="landmark"></i></div>
           <h3>Taxation</h3>
@@ -179,41 +188,41 @@
   </section>
 
   <!-- ================= SERVICES LIST ================= -->
-  <section class="section services" id="services">
+  <section class="section services gsap-reveal" id="services">
     <div class="container">
-      <div class="section-top">
+      <div class="section-top anim-fade-up">
         <div>
           <h2 class="section-title">Best <em>Services</em></h2>
         </div>
         <p class="section-intro">Comprehensive legal, financial, and regulatory solutions tailored for your requirements.</p>
       </div>
       <div class="services-list">
-        <div class="service">
+        <div class="service anim-service">
           <div class="service-number">01</div>
           <div class="service-name">Custom & Excise</div>
           <i data-lucide="arrow-up-right"></i>
         </div>
-        <div class="service">
+        <div class="service anim-service">
           <div class="service-number">02</div>
           <div class="service-name">Income Tax & GST Litigation</div>
           <i data-lucide="arrow-up-right"></i>
         </div>
-        <div class="service">
+        <div class="service anim-service">
           <div class="service-number">03</div>
           <div class="service-name">RERA & NCLT</div>
           <i data-lucide="arrow-up-right"></i>
         </div>
-        <div class="service">
+        <div class="service anim-service">
           <div class="service-number">04</div>
           <div class="service-name">FEMA, PMLA & NBFC</div>
           <i data-lucide="arrow-up-right"></i>
         </div>
-        <div class="service">
+        <div class="service anim-service">
           <div class="service-number">05</div>
           <div class="service-name">IPR, Trademark, Patent & Copyright</div>
           <i data-lucide="arrow-up-right"></i>
         </div>
-        <div class="service">
+        <div class="service anim-service">
           <div class="service-number">06</div>
           <div class="service-name">Company Registration & NGO</div>
           <i data-lucide="arrow-up-right"></i>
@@ -269,12 +278,12 @@
     </div>
   </footer>
 
-  <!-- ================= SCRIPTS ================= -->
+  <!-- ================= SCRIPTS & ANIMATIONS ================= -->
   <script>
     // 1. Initialize Icons
     lucide.createIcons();
 
-    // 2. Handle Loader Animation
+    // 2. Handle Loader Animation & Trigger GSAP
     window.addEventListener("load", function() {
       const loader = document.querySelector(".page-loader");
       const loaderLine = document.querySelector(".loader-line span");
@@ -289,6 +298,7 @@
         setTimeout(() => {
           loader.style.display = "none";
           checkDisclaimer();
+          initGSAPAnimations(); // Start animations after loader finishes
         }, 600);
       }, 500);
     });
@@ -320,6 +330,71 @@
       localStorage.setItem('preach_law_disclaimer_accepted', 'true');
       document.getElementById('disclaimer-modal').classList.add('hidden');
       document.body.classList.remove('no-scroll');
+    }
+
+    // 5. GSAP Animations Core
+    function initGSAPAnimations() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Make all reveal sections visible to GSAP
+      gsap.set(".gsap-reveal", { autoAlpha: 1 });
+
+      // -- HERO TIMELINE --
+      const heroTl = gsap.timeline();
+      heroTl.to(".hero-label", { opacity: 1, y: 0, duration: 1, ease: "power3.out" })
+            .to(".hero-title .line span", { y: "0%", duration: 1.2, stagger: 0.15, ease: "power4.out" }, "-=0.8")
+            .to(".hero-description", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=0.6")
+            .to(".hero-button", { opacity: 1, duration: 1, ease: "power3.out" }, "-=0.8")
+            .to(".hero-scroll, .hero-number", { opacity: 1, duration: 1, ease: "power3.out" }, "-=0.5");
+
+      // -- GENERAL FADE UPS (Philosophy, Expertise, Stats headers) --
+      gsap.utils.toArray(".anim-fade-up").forEach(element => {
+        gsap.fromTo(element, 
+          { opacity: 0, y: 40 },
+          {
+            scrollTrigger: {
+              trigger: element,
+              start: "top 85%", // Triggers when element is 85% down the screen
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out"
+          }
+        );
+      });
+
+      // -- SERVICES LIST STAGGER --
+      gsap.fromTo(".anim-service", 
+        { opacity: 0, x: -30 },
+        {
+          scrollTrigger: {
+            trigger: ".services-list",
+            start: "top 80%",
+          },
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power2.out"
+        }
+      );
+
+      // -- STAT COUNTERS --
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        gsap.to(counter, {
+          scrollTrigger: {
+            trigger: ".stats-grid",
+            start: "top 85%",
+          },
+          innerHTML: target,
+          duration: 2.5,
+          snap: { innerHTML: 1 }, // Rounds numbers
+          ease: "power2.out"
+        });
+      });
     }
   </script>
 </body>
