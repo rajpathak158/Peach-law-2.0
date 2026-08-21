@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -47,42 +46,46 @@
        ICONS
   ====================================================== -->
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script
+    src="https://unpkg.com/lucide@latest"
+    defer
+  ></script>
 
   <!-- =====================================================
        GSAP
   ====================================================== -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    defer
+  ></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    defer
+  ></script>
 
   <!-- =====================================================
        CSS
   ====================================================== -->
 
-  <link rel="stylesheet" href="style.css">
-
-  <link rel="stylesheet" href="animations.css">
-
-  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/responsive.css">
 
 </head>
-
 
 <body>
 
   <!-- =====================================================
-       PAGE LOADER (Hidden to fix infinite loading issue)
+       PAGE LOADER
   ====================================================== -->
 
   <div
     class="page-loader"
     id="pageLoader"
     aria-hidden="true"
-    style="display: none;"
   >
-
     <div class="loader-inner">
 
       <div class="loader-monogram">
@@ -93,10 +96,9 @@
         <span></span>
       </div>
 
-      <p>PREACH LAW & CO.</p>
+      <p>PREACH LAW &amp; CO.</p>
 
     </div>
-
   </div>
 
 
@@ -107,6 +109,7 @@
   <div
     class="scroll-progress"
     id="scrollProgress"
+    aria-hidden="true"
   ></div>
 
 
@@ -137,7 +140,7 @@
         </span>
 
         <h2 id="disclaimerTitle">
-          Disclaimer & Confirmation
+          Disclaimer &amp; Confirmation
         </h2>
 
         <div class="gold-line"></div>
@@ -176,13 +179,8 @@
             class="btn btn-primary"
             id="agreeBtn"
           >
-
-            <span>
-              Agree & Continue
-            </span>
-
+            <span>Agree &amp; Continue</span>
             <i data-lucide="arrow-right"></i>
-
           </button>
 
           <button
@@ -214,7 +212,7 @@
     <div class="nav-container">
 
       <a
-        href="index.html"
+        href="./index.html"
         class="brand"
         aria-label="Preach Law & Co. Home"
       >
@@ -226,11 +224,11 @@
         <div class="brand-text">
 
           <strong>
-            Preach Law & Co.
+            Preach Law &amp; Co.
           </strong>
 
           <small>
-            Advocates & Legal Advisory
+            Advocates &amp; Legal Advisory
           </small>
 
         </div>
@@ -243,30 +241,21 @@
         aria-label="Main navigation"
       >
 
-        <a href="about.html">About</a>
-
-        <a href="services.html">Services</a>
-
-        <a href="team.html">Team</a>
-
-        <a href="articles.html">Insights</a>
-
-        <a href="offices.html">Offices</a>
+        <a href="./about.html">About</a>
+        <a href="./services.html">Services</a>
+        <a href="./team.html">Team</a>
+        <a href="./articles.html">Insights</a>
+        <a href="./offices.html">Offices</a>
 
       </nav>
 
 
       <a
-        href="contact.html"
+        href="./contact.html"
         class="nav-contact"
       >
-
-        <span>
-          Contact Us
-        </span>
-
+        <span>Contact Us</span>
         <i data-lucide="arrow-up-right"></i>
-
       </a>
 
 
@@ -276,11 +265,10 @@
         type="button"
         aria-label="Open navigation"
         aria-expanded="false"
+        aria-controls="mobileMenu"
       >
-
         <span></span>
         <span></span>
-
       </button>
 
     </div>
@@ -299,39 +287,39 @@
 
     <div class="mobile-menu-inner">
 
-      <nav>
+      <nav aria-label="Mobile navigation">
 
-        <a href="index.html">
+        <a href="./index.html">
           <span>01</span>
           Home
         </a>
 
-        <a href="about.html">
+        <a href="./about.html">
           <span>02</span>
           About
         </a>
 
-        <a href="services.html">
+        <a href="./services.html">
           <span>03</span>
           Services
         </a>
 
-        <a href="team.html">
+        <a href="./team.html">
           <span>04</span>
           Our Team
         </a>
 
-        <a href="articles.html">
+        <a href="./articles.html">
           <span>05</span>
           Insights
         </a>
 
-        <a href="offices.html">
+        <a href="./offices.html">
           <span>06</span>
           Offices
         </a>
 
-        <a href="contact.html">
+        <a href="./contact.html">
           <span>07</span>
           Contact
         </a>
@@ -341,7 +329,7 @@
       <div class="mobile-menu-footer">
 
         <span>
-          PREACH LAW & CO.
+          PREACH LAW &amp; CO.
         </span>
 
         <span>
@@ -356,21 +344,21 @@
 
 
   <!-- =====================================================
-       MAIN
+       MAIN CONTENT
   ====================================================== -->
 
   <main>
 
-    <!-- HERO -->
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
     <section class="hero">
 
       <div class="hero-grid"></div>
-
       <div class="hero-noise"></div>
 
       <div class="hero-glow glow-one"></div>
-
       <div class="hero-glow glow-two"></div>
 
       <div class="hero-inner">
@@ -389,27 +377,19 @@
         <h1 class="hero-title">
 
           <span class="line">
-            <span>
-              Law with
-            </span>
+            <span>Law with</span>
           </span>
 
           <span class="line">
-            <span>
-              <em>clarity.</em>
-            </span>
+            <span><em>clarity.</em></span>
           </span>
 
           <span class="line">
-            <span>
-              Strategy with
-            </span>
+            <span>Strategy with</span>
           </span>
 
           <span class="line accent-line">
-            <span>
-              purpose.
-            </span>
+            <span>purpose.</span>
           </span>
 
         </h1>
@@ -420,7 +400,7 @@
           <div class="hero-description">
 
             <p>
-              Preach Law & Co. brings together legal
+              Preach Law &amp; Co. brings together legal
               representation, regulatory insight and
               professional advisory services for
               individuals, businesses and institutions.
@@ -429,7 +409,7 @@
           </div>
 
           <a
-            href="services.html"
+            href="./services.html"
             class="hero-button magnetic"
           >
 
@@ -450,13 +430,8 @@
 
       <div class="hero-side">
 
-        <span>
-          DELHI · INDIA
-        </span>
-
-        <span>
-          EST. 2015
-        </span>
+        <span>DELHI · INDIA</span>
+        <span>EST. 2015</span>
 
       </div>
 
@@ -503,55 +478,40 @@
 
           </div>
 
+
           <div class="philosophy-main">
 
             <h2 class="reveal">
-
               Strategy before action.
               <br>
-
-              <em>
-                Precision before everything.
-              </em>
-
+              <em>Precision before everything.</em>
             </h2>
 
             <p class="large-text reveal">
-
               Effective dispute resolution demands
               a tailored strategy aligned with our
               client's objectives.
-
             </p>
 
             <p class="reveal">
-
               Our dedicated legal team places paramount
               importance on comprehending our clients
               and their unique circumstances.
-
             </p>
 
             <p class="reveal">
-
               This deep understanding enables us to
               precisely identify our clients' aims and
               collaborate with them to chart the optimal
               path forward.
-
             </p>
 
             <a
-              href="about.html"
+              href="./about.html"
               class="text-link light reveal"
             >
-
-              <span>
-                More About The Firm
-              </span>
-
+              <span>More About The Firm</span>
               <i data-lucide="arrow-up-right"></i>
-
             </a>
 
           </div>
@@ -567,33 +527,36 @@
          MARQUEE
     ====================================================== -->
 
-    <section class="marquee-section">
+    <section
+      class="marquee-section"
+      aria-label="Firm principles"
+    >
 
       <div class="marquee">
 
         <span>LAW</span>
-        <i>✦</i>
+        <i aria-hidden="true">✦</i>
 
         <span>STRATEGY</span>
-        <i>✦</i>
+        <i aria-hidden="true">✦</i>
 
         <span>JUSTICE</span>
-        <i>✦</i>
+        <i aria-hidden="true">✦</i>
 
         <span>PRECISION</span>
-        <i>✦</i>
+        <i aria-hidden="true">✦</i>
 
         <span>LAW</span>
-        <i>✦</i>
+        <i aria-hidden="true">✦</i>
 
         <span>STRATEGY</span>
-        <i>✦</i>
+        <i aria-hidden="true">✦</i>
 
         <span>JUSTICE</span>
-        <i>✦</i>
+        <i aria-hidden="true">✦</i>
 
         <span>PRECISION</span>
-        <i>✦</i>
+        <i aria-hidden="true">✦</i>
 
       </div>
 
@@ -611,21 +574,14 @@
         <div class="stat reveal">
 
           <div class="stat-number">
-
             <span
               class="counter"
               data-target="3000"
-            >
-              0
-            </span>
-
+            >0</span>
             <sup>+</sup>
-
           </div>
 
-          <span>
-            Cases Solved
-          </span>
+          <span>Cases Solved</span>
 
         </div>
 
@@ -633,21 +589,14 @@
         <div class="stat reveal">
 
           <div class="stat-number">
-
             <span
               class="counter"
               data-target="3000"
-            >
-              0
-            </span>
-
+            >0</span>
             <sup>+</sup>
-
           </div>
 
-          <span>
-            Clients Served
-          </span>
+          <span>Clients Served</span>
 
         </div>
 
@@ -655,21 +604,14 @@
         <div class="stat reveal">
 
           <div class="stat-number">
-
             <span
               class="counter"
               data-target="20"
-            >
-              0
-            </span>
-
+            >0</span>
             <sup>+</sup>
-
           </div>
 
-          <span>
-            Practice Areas
-          </span>
+          <span>Practice Areas</span>
 
         </div>
 
@@ -677,21 +619,14 @@
         <div class="stat reveal">
 
           <div class="stat-number">
-
             <span
               class="counter"
               data-target="10"
-            >
-              0
-            </span>
-
+            >0</span>
             <sup>+</sup>
-
           </div>
 
-          <span>
-            Years of Experience
-          </span>
+          <span>Years of Experience</span>
 
         </div>
 
@@ -717,24 +652,17 @@
             </span>
 
             <h2 class="section-title reveal">
-
               Knowledge that
               <br>
-
-              <em>
-                protects.
-              </em>
-
+              <em>protects.</em>
             </h2>
 
           </div>
 
           <p class="section-intro reveal">
-
             Comprehensive legal services designed
             around complex business and individual
             requirements.
-
           </p>
 
         </div>
@@ -742,24 +670,20 @@
 
         <div class="practice-grid">
 
-
           <a
-            href="litigation.html"
+            href="./litigation.html"
             class="practice-card practice-card-large reveal"
           >
 
             <div class="practice-card-top">
-
               <span>01</span>
-
               <i data-lucide="gavel"></i>
-
             </div>
 
             <div class="practice-card-content">
 
               <h3>
-                Litigation &
+                Litigation &amp;
                 <br>
                 Dispute Resolution
               </h3>
@@ -781,16 +705,13 @@
 
 
           <a
-            href="ipr.html"
+            href="./ipr.html"
             class="practice-card reveal"
           >
 
             <div class="practice-card-top">
-
               <span>02</span>
-
               <i data-lucide="copyright"></i>
-
             </div>
 
             <div class="practice-card-content">
@@ -817,22 +738,19 @@
 
 
           <a
-            href="startup.html"
+            href="./startup.html"
             class="practice-card reveal"
           >
 
             <div class="practice-card-top">
-
               <span>03</span>
-
               <i data-lucide="rocket"></i>
-
             </div>
 
             <div class="practice-card-content">
 
               <h3>
-                Startups &
+                Startups &amp;
                 <br>
                 Corporate
               </h3>
@@ -853,22 +771,19 @@
 
 
           <a
-            href="consulting.html"
+            href="./consulting.html"
             class="practice-card reveal"
           >
 
             <div class="practice-card-top">
-
               <span>04</span>
-
               <i data-lucide="briefcase-business"></i>
-
             </div>
 
             <div class="practice-card-content">
 
               <h3>
-                Consulting &
+                Consulting &amp;
                 <br>
                 Advisory
               </h3>
@@ -889,22 +804,19 @@
 
 
           <a
-            href="fintech.html"
+            href="./fintech.html"
             class="practice-card practice-card-wide reveal"
           >
 
             <div class="practice-card-top">
-
               <span>05</span>
-
               <i data-lucide="landmark"></i>
-
             </div>
 
             <div class="practice-card-content">
 
               <h3>
-                Fintech &
+                Fintech &amp;
                 <br>
                 Financial Regulation
               </h3>
@@ -946,34 +858,22 @@
         </span>
 
         <h2 class="reveal">
-
           The right legal
           <br>
-
-          <em>
-            strategy starts here.
-          </em>
-
+          <em>strategy starts here.</em>
         </h2>
 
         <p class="cta-description reveal">
-
           Tell us about your legal, regulatory
           or business requirement.
-
         </p>
 
         <a
-          href="contact.html"
+          href="./contact.html"
           class="cta-button magnetic reveal"
         >
-
-          <span>
-            Contact The Firm
-          </span>
-
+          <span>Contact The Firm</span>
           <i data-lucide="arrow-up-right"></i>
-
         </a>
 
       </div>
@@ -998,14 +898,9 @@
             </span>
 
             <h2 class="contact-title reveal">
-
               Let's discuss
               <br>
-
-              <em>
-                your matter.
-              </em>
-
+              <em>your matter.</em>
             </h2>
 
           </div>
@@ -1015,18 +910,14 @@
 
             <div class="contact-item">
 
-              <span>
-                REGISTERED OFFICE
-              </span>
+              <span>REGISTERED OFFICE</span>
 
               <p>
-
                 E-111-B, Nawada Housing Complex,
                 <br>
                 Dwarka More,
                 <br>
                 New Delhi – 110059
-
               </p>
 
             </div>
@@ -1034,9 +925,7 @@
 
             <div class="contact-item">
 
-              <span>
-                PHONE
-              </span>
+              <span>PHONE</span>
 
               <a href="tel:+919311664455">
                 +91 93116 64455
@@ -1051,9 +940,7 @@
 
             <div class="contact-item">
 
-              <span>
-                EMAIL
-              </span>
+              <span>EMAIL</span>
 
               <a href="mailto:admin@preachlaw.com">
                 admin@preachlaw.com
@@ -1085,7 +972,7 @@
         <div class="footer-brand">
 
           <a
-            href="index.html"
+            href="./index.html"
             class="brand"
           >
 
@@ -1096,11 +983,11 @@
             <div class="brand-text">
 
               <strong>
-                Preach Law & Co.
+                Preach Law &amp; Co.
               </strong>
 
               <small>
-                Advocates & Legal Advisory
+                Advocates &amp; Legal Advisory
               </small>
 
             </div>
@@ -1122,13 +1009,10 @@
 
             <span>COMPANY</span>
 
-            <a href="about.html">About</a>
-
-            <a href="team.html">Our Team</a>
-
-            <a href="offices.html">Offices</a>
-
-            <a href="articles.html">Insights</a>
+            <a href="./about.html">About</a>
+            <a href="./team.html">Our Team</a>
+            <a href="./offices.html">Offices</a>
+            <a href="./articles.html">Insights</a>
 
           </div>
 
@@ -1137,15 +1021,11 @@
 
             <span>PRACTICE</span>
 
-            <a href="litigation.html">Litigation</a>
-
-            <a href="ipr.html">IPR</a>
-
-            <a href="startup.html">Startups</a>
-
-            <a href="consulting.html">Consulting</a>
-
-            <a href="fintech.html">Fintech</a>
+            <a href="./litigation.html">Litigation</a>
+            <a href="./ipr.html">IPR</a>
+            <a href="./startup.html">Startups</a>
+            <a href="./consulting.html">Consulting</a>
+            <a href="./fintech.html">Fintech</a>
 
           </div>
 
@@ -1154,7 +1034,7 @@
 
             <span>CONTACT</span>
 
-            <a href="contact.html">Contact</a>
+            <a href="./contact.html">Contact</a>
 
             <a href="tel:+919311664455">
               +91 93116 64455
@@ -1192,7 +1072,9 @@
        JAVASCRIPT
   ====================================================== -->
 
-  <script src="script.js"></script>
+  <script src="./js/navigation.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/main.js"></script>
 
 </body>
-</html>
+    </html>
