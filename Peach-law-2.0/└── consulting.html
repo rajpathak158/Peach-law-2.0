@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#11110f"
+  >
+
+  <title>
+    Consulting & Advisory | Preach Law & Co.
+  </title>
+
+  <meta
+    name="description"
+    content="Commercial, taxation, accounting, secretarial and regulatory consulting and advisory services by Preach Law & Co."
+  >
+
+  <meta
+    name="author"
+    content="Preach Law & Co."
+  >
+
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+
+  <script
+    src="https://unpkg.com/lucide@latest"
+    defer
+  ></script>
+
+
+  <!-- =====================================================
+       CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/animations.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/responsive.css"
+  >
+
+
+  <!-- =====================================================
+       PAGE-SPECIFIC CSS
+  ====================================================== -->
+
+  <style>
+
+    /* =====================================================
+       CONSULTING PAGE
+    ====================================================== */
+
+    .consulting-page {
+      background: #11110f;
+      color: #f2eee6;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .consulting-hero {
+      position: relative;
+
+      min-height: 82vh;
+
+      display: flex;
+      align-items: flex-end;
+
+      overflow: hidden;
+
+      padding:
+        160px 0
+        100px;
+    }
+
+
+    .consulting-grid-bg {
+      position: absolute;
+
+      inset: 0;
+
+      opacity: .05;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.3) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.3) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        85px 85px;
+    }
+
+
+    .consulting-glow {
+      position: absolute;
+
+      width: 720px;
+      height: 720px;
+
+      right: -280px;
+      top: -240px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200,169,107,.2),
+          transparent 68%
+        );
+
+      pointer-events: none;
+    }
+
+
+    .consulting-orbit {
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      right: -80px;
+      bottom: -250px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.12);
+
+      border-radius: 50%;
+
+      transform: rotate(-20deg);
+    }
+
+
+    .consulting-orbit::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 55px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.08);
+
+      border-radius: 50%;
+    }
+
+
+    .consulting-content {
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .consulting-kicker {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      opacity: .55;
+    }
+
+
+    .consulting-kicker span:first-child {
+      width: 45px;
+      height: 1px;
+
+      background:
+        currentColor;
+    }
+
+
+    .consulting-hero h1 {
+      max-width: 1100px;
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(55px, 9vw, 125px);
+
+      line-height: .9;
+
+      letter-spacing: -.055em;
+
+      font-weight: 500;
+    }
+
+
+    .consulting-hero h1 em {
+      color: #c8a96b;
+
+      font-weight: 500;
+    }
+
+
+    .consulting-description {
+      max-width: 680px;
+
+      margin-top: 45px;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.62);
+    }
+
+
+    .consulting-index {
+      position: absolute;
+
+      right: 7%;
+      bottom: 70px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      opacity: .3;
+    }
+
+
+    /* =====================================================
+       INTRO
+    ====================================================== */
+
+    .consulting-intro {
+      padding:
+        130px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .consulting-intro-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 2fr;
+
+      gap: 80px;
+    }
+
+
+    .consulting-label {
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      opacity: .4;
+    }
+
+
+    .consulting-intro-content h2 {
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(42px, 5vw, 72px);
+
+      line-height: 1.03;
+
+      font-weight: 500;
+    }
+
+
+    .consulting-intro-content h2 em {
+      color: #c8a96b;
+    }
+
+
+    .consulting-intro-content p {
+      max-width: 760px;
+
+      margin-top: 30px;
+
+      font-size: 17px;
+
+      line-height: 1.9;
+
+      color:
+        rgba(242,238,230,.6);
+    }
+
+
+    /* =====================================================
+       SERVICES
+    ====================================================== */
+
+    .consulting-services {
+      padding:
+        100px 0
+        150px;
+    }
+
+
+    .consulting-section-heading {
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: flex-end;
+
+      gap: 40px;
+
+      margin-bottom: 60px;
+    }
+
+
+    .consulting-section-heading h2 {
+      margin:
+        15px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 78px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .consulting-section-heading h2 em {
+      color: #c8a96b;
+    }
+
+
+    .consulting-section-heading p {
+      max-width: 430px;
+
+      margin: 0;
+
+      line-height: 1.75;
+
+      color:
+        rgba(242,238,230,.55);
+    }
+
+
+    /* =====================================================
+       SERVICE LIST
+    ====================================================== */
+
+    .consulting-list {
+      border-top:
+        1px solid
+        rgba(255,255,255,.13);
+    }
+
+
+    .consulting-item {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        90px 1fr 70px;
+
+      gap: 30px;
+
+      align-items: center;
+
+      padding:
+        38px 0;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.13);
+
+      overflow: hidden;
+
+      transition:
+        padding .4s ease;
+    }
+
+
+    .consulting-item::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        rgba(200,169,107,.08);
+
+      transform:
+        translateX(-101%);
+
+      transition:
+        transform .55s
+        cubic-bezier(.16,1,.3,1);
+
+      pointer-events: none;
+    }
+
+
+    .consulting-item:hover::before {
+      transform:
+        translateX(0);
+    }
+
+
+    .consulting-item:hover {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+
+    .consulting-number {
+      position: relative;
+
+      z-index: 1;
+
+      font-size: 11px;
+
+      letter-spacing: .15em;
+
+      opacity: .4;
+    }
+
+
+    .consulting-item-content {
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    .consulting-item h3 {
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(27px, 3vw, 38px);
+
+      line-height: 1.05;
+
+      font-weight: 500;
+    }
+
+
+    .consulting-item p {
+      max-width: 680px;
+
+      margin:
+        12px 0 0;
+
+      line-height: 1.7;
+
+      color:
+        rgba(242,238,230,.5);
+    }
+
+
+    .consulting-item-icon {
+      position: relative;
+
+      z-index: 1;
+
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid
+        rgba(255,255,255,.18);
+
+      border-radius: 50%;
+
+      transition:
+        transform .4s ease,
+        background .4s ease;
+    }
+
+
+    .consulting-item:hover
+    .consulting-item-icon {
+      transform:
+        rotate(45deg);
+
+      background:
+        rgba(200,169,107,.1);
+    }
+
+
+    .consulting-item-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+
+    /* =====================================================
+       ADVISORY MATRIX
+    ====================================================== */
+
+    .consulting-matrix {
+      padding:
+        140px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .matrix-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 100px;
+    }
+
+
+    .matrix-heading h2 {
+      margin:
+        20px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 76px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .matrix-heading h2 em {
+      color: #c8a96b;
+    }
+
+
+    .matrix-heading p {
+      max-width: 470px;
+
+      margin-top: 30px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.55);
+    }
+
+
+    .matrix-cards {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-left:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .matrix-card {
+      min-height: 190px;
+
+      padding: 30px;
+
+      border-right:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .matrix-card strong {
+      display: block;
+
+      margin-bottom: 12px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 24px;
+
+      font-weight: 500;
+    }
+
+
+    .matrix-card span {
+      display: block;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+
+      color:
+        rgba(242,238,230,.45);
+    }
+
+
+    /* =====================================================
+       PROCESS
+    ====================================================== */
+
+    .consulting-process {
+      padding:
+        140px 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(200,169,107,.035)
+        );
+    }
+
+
+    .process-heading {
+      margin-bottom: 70px;
+    }
+
+
+    .process-heading h2 {
+      margin:
+        18px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 78px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .process-heading h2 em {
+      color: #c8a96b;
+    }
+
+
+    .process-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .process-step {
+      position: relative;
+
+      min-height: 270px;
+
+      padding:
+        35px 30px;
+
+      border-right:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .process-step:last-child {
+      border-right: 0;
+    }
+
+
+    .process-step-number {
+      display: inline-flex;
+
+      width: 42px;
+      height: 42px;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 60px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.45);
+
+      border-radius: 50%;
+
+      font-size: 11px;
+
+      color: #c8a96b;
+    }
+
+
+    .process-step h3 {
+      margin: 0 0 12px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 27px;
+
+      font-weight: 500;
+    }
+
+
+    .process-step p {
+      margin: 0;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+
+      color:
+        rgba(242,238,230,.48);
+    }
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .consulting-cta {
+      padding:
+        150px 0;
+
+      text-align: center;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(200,169,107,.11),
+          transparent 45%
+        );
+    }
+
+
+    .consulting-cta h2 {
+      max-width: 950px;
+
+      margin:
+        20px auto 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 7vw, 90px);
+
+      line-height: .98;
+
+      font-weight: 500;
+    }
+
+
+    .consulting-cta h2 em {
+      color: #c8a96b;
+    }
+
+
+    .consulting-cta p {
+      max-width: 560px;
+
+      margin:
+        30px auto;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.58);
+    }
+
+
+    .consulting-button {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-top: 20px;
+
+      padding:
+        18px 30px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.7);
+
+      color: #f2eee6;
+
+      text-decoration: none;
+
+      font-size: 11px;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+      transition:
+        all .35s ease;
+    }
+
+
+    .consulting-button:hover {
+      background: #c8a96b;
+
+      color: #11110f;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 768px) {
+
+      .consulting-hero {
+        min-height: 75vh;
+
+        padding:
+          130px 20px
+          80px;
+      }
+
+
+      .consulting-index {
+        display: none;
+      }
+
+
+      .consulting-intro {
+        padding:
+          90px 20px;
+      }
+
+
+      .consulting-intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+
+      .consulting-services {
+        padding:
+          80px 20px
+          100px;
+      }
+
+
+      .consulting-section-heading {
+        display: block;
+      }
+
+
+      .consulting-section-heading p {
+        margin-top: 25px;
+      }
+
+
+      .consulting-item {
+        grid-template-columns:
+          45px 1fr 45px;
+
+        gap: 15px;
+
+        padding:
+          30px 0;
+      }
+
+
+      .consulting-item:hover {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+
+      .consulting-item p {
+        font-size: 13px;
+      }
+
+
+      .consulting-matrix {
+        padding:
+          90px 20px;
+      }
+
+
+      .matrix-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+      }
+
+
+      .matrix-cards {
+        grid-template-columns: 1fr;
+      }
+
+
+      .consulting-process {
+        padding:
+          90px 20px;
+      }
+
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .process-step {
+        min-height: auto;
+
+        border-right: 0;
+
+        border-bottom:
+          1px solid
+          rgba(255,255,255,.12);
+      }
+
+
+      .process-step:last-child {
+        border-bottom: 0;
+      }
+
+
+      .process-step-number {
+        margin-bottom: 35px;
+      }
+
+
+      .consulting-cta {
+        padding:
+          100px 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="consulting-page">
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="nav-container">
+
+
+      <a
+        href="./index.html"
+        class="brand"
+        aria-label="Preach Law & Co. Home"
+      >
+
+        <div class="brand-mark">
+          <span>P</span>
+        </div>
+
+
+        <div class="brand-text">
+
+          <strong>
+            Preach Law &amp; Co.
+          </strong>
+
+          <small>
+            Advocates &amp; Legal Advisory
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <nav
+        class="desktop-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a
+          href="./services.html"
+          aria-current="page"
+        >
+          Services
+        </a>
+
+        <a href="./team.html">
+          Team
+        </a>
+
+        <a href="./articles.html">
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          Offices
+        </a>
+
+      </nav>
+
+
+      <a
+        href="./contact.html"
+        class="nav-contact"
+      >
+
+        <span>
+          Contact Us
+        </span>
+
+        <i data-lucide="arrow-up-right"></i>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <div class="mobile-menu-inner">
+
+      <nav>
+
+        <a href="./index.html">
+          <span>01</span>
+          Home
+        </a>
+
+        <a href="./about.html">
+          <span>02</span>
+          About
+        </a>
+
+        <a href="./services.html">
+          <span>03</span>
+          Services
+        </a>
+
+        <a href="./team.html">
+          <span>04</span>
+          Our Team
+        </a>
+
+        <a href="./articles.html">
+          <span>05</span>
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          <span>06</span>
+          Offices
+        </a>
+
+        <a href="./contact.html">
+          <span>07</span>
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="mobile-menu-footer">
+
+        <span>
+          PREACH LAW &amp; CO.
+        </span>
+
+        <span>
+          ADVOCATES · ADVISORS · CONSULTANTS
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="consulting-hero">
+
+      <div class="consulting-grid-bg"></div>
+
+      <div class="consulting-glow"></div>
+
+      <div class="consulting-orbit"></div>
+
+
+      <div class="container consulting-content">
+
+
+        <div class="consulting-kicker">
+
+          <span></span>
+
+          <span>
+            PRACTICE AREA · 04
+          </span>
+
+        </div>
+
+
+        <h1>
+
+          Consulting &amp;
+
+          <br>
+
+          <em>Advisory.</em>
+
+        </h1>
+
+
+        <p class="consulting-description">
+
+          Commercial insight, regulatory guidance and
+          professional advisory services designed to
+          help individuals and businesses make informed,
+          confident decisions.
+
+        </p>
+
+
+      </div>
+
+
+      <span class="consulting-index">
+        04 / 05
+      </span>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="consulting-intro">
+
+
+      <div class="container">
+
+
+        <div class="consulting-intro-grid">
+
+
+          <div class="consulting-label">
+            OUR APPROACH
+          </div>
+
+
+          <div class="consulting-intro-content">
+
+
+            <h2>
+
+              Advice that connects
+
+              <br>
+
+              <em>law with business.</em>
+
+            </h2>
+
+
+            <p>
+
+              Businesses often face decisions that
+              sit between legal, financial, commercial
+              and regulatory considerations.
+
+            </p>
+
+
+            <p>
+
+              Our advisory approach brings these
+              considerations together so clients can
+              understand the implications of a decision
+              before taking action.
+
+            </p>
+
+
+            <p>
+
+              We focus on practical, commercially
+              relevant advice rather than unnecessary
+              complexity.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section class="consulting-services">
+
+
+      <div class="container">
+
+
+        <div class="consulting-section-heading">
+
+
+          <div>
+
+            <span class="eyebrow">
+              ADVISORY SERVICES
+            </span>
+
+
+            <h2>
+
+              Clarity for
+
+              <br>
+
+              <em>complex decisions.</em>
+
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            A multidisciplinary approach to commercial,
+            regulatory and professional advisory matters.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="consulting-list">
+
+
+          <!-- 01 -->
+
+          <article class="consulting-item">
+
+
+            <div class="consulting-number">
+              01
+            </div>
+
+
+            <div class="consulting-item-content">
+
+              <h3>
+                Commercial Advisory
+              </h3>
+
+              <p>
+
+                Practical guidance on commercial
+                arrangements, business decisions,
+                transactions and strategic matters.
+
+              </p>
+
+            </div>
+
+
+            <div class="consulting-item-icon">
+
+              <i data-lucide="briefcase-business"></i>
+
+            </div>
+
+
+          </article>
+
+
+          <!-- 02 -->
+
+          <article class="consulting-item">
+
+
+            <div class="consulting-number">
+              02
+            </div>
+
+
+            <div class="consulting-item-content">
+
+              <h3>
+                Taxation Advisory
+              </h3>
+
+              <p>
+
+                Advisory support concerning taxation
+                considerations and their interaction
+                with commercial and legal decisions.
+
+              </p>
+
+            </div>
+
+
+            <div class="consulting-item-icon">
+
+              <i data-lucide="calculator"></i>
+
+            </div>
+
+
+          </article>
+
+
+          <!-- 03 -->
+
+          <article class="consulting-item">
+
+
+            <div class="consulting-number">
+              03
+            </div>
+
+
+            <div class="consulting-item-content">
+
+              <h3>
+                Accounting Advisory
+              </h3>
+
+              <p>
+
+                Professional guidance designed to
+                help businesses understand accounting
+                considerations relevant to their operations.
+
+              </p>
+
+            </div>
+
+
+            <div class="consulting-item-icon">
+
+              <i data-lucide="chart-no-axes-combined"></i>
+
+            </div>
+
+
+          </article>
+
+
+          <!-- 04 -->
+
+          <article class="consulting-item">
+
+
+            <div class="consulting-number">
+              04
+            </div>
+
+
+            <div class="consulting-item-content">
+
+              <h3>
+                Secretarial Advisory
+              </h3>
+
+              <p>
+
+                Support relating to corporate records,
+                governance processes, statutory documentation
+                and secretarial requirements.
+
+              </p>
+
+            </div>
+
+
+            <div class="consulting-item-icon">
+
+              <i data-lucide="file-check-2"></i>
+
+            </div>
+
+
+          </article>
+
+
+          <!-- 05 -->
+
+          <article class="consulting-item">
+
+
+            <div class="consulting-number">
+              05
+            </div>
+
+
+            <div class="consulting-item-content">
+
+              <h3>
+                Regulatory Advisory
+              </h3>
+
+              <p>
+
+                Assistance in understanding regulatory
+                obligations and developing practical
+                approaches to compliance.
+
+              </p>
+
+            </div>
+
+
+            <div class="consulting-item-icon">
+
+              <i data-lucide="shield-check"></i>
+
+            </div>
+
+
+          </article>
+
+
+          <!-- 06 -->
+
+          <article class="consulting-item">
+
+
+            <div class="consulting-number">
+              06
+            </div>
+
+
+            <div class="consulting-item-content">
+
+              <h3>
+                Business Structuring
+              </h3>
+
+              <p>
+
+                Advisory support for evaluating
+                business structures, relationships,
+                responsibilities and commercial arrangements.
+
+              </p>
+
+            </div>
+
+
+            <div class="consulting-item-icon">
+
+              <i data-lucide="network"></i>
+
+            </div>
+
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         ADVISORY MATRIX
+    ====================================================== -->
+
+    <section class="consulting-matrix">
+
+
+      <div class="container">
+
+
+        <div class="matrix-grid">
+
+
+          <div class="matrix-heading">
+
+
+            <span class="eyebrow">
+              MULTIDISCIPLINARY
+            </span>
+
+
+            <h2>
+
+              More than
+
+              <br>
+
+              <em>one perspective.</em>
+
+            </h2>
+
+
+            <p>
+
+              Strong advisory work requires an
+              understanding of how different parts
+              of a business interact.
+
+            </p>
+
+
+          </div>
+
+
+          <div class="matrix-cards">
+
+
+            <div class="matrix-card">
+
+              <strong>
+                Legal
+              </strong>
+
+              <span>
+                Identifying legal considerations,
+                obligations and potential risks.
+              </span>
+
+            </div>
+
+
+            <div class="matrix-card">
+
+              <strong>
+                Commercial
+              </strong>
+
+              <span>
+                Understanding the business objective
+                behind the decision.
+              </span>
+
+            </div>
+
+
+            <div class="matrix-card">
+
+              <strong>
+                Regulatory
+              </strong>
+
+              <span>
+                Considering applicable regulatory
+                requirements and compliance.
+              </span>
+
+            </div>
+
+
+            <div class="matrix-card">
+
+              <strong>
+                Strategic
+              </strong>
+
+              <span>
+                Connecting individual decisions with
+                broader business objectives.
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         PROCESS
+    ====================================================== -->
+
+    <section class="consulting-process">
+
+
+      <div class="container">
+
+
+        <div class="process-heading">
+
+          <span class="eyebrow">
+            OUR METHOD
+          </span>
+
+
+          <h2>
+
+            Understand.
+
+            <br>
+
+            <em>Advise. Execute.</em>
+
+          </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+
+          <!-- STEP 01 -->
+
+          <div class="process-step">
+
+
+            <span class="process-step-number">
+              01
+            </span>
+
+
+            <h3>
+              Understand
+            </h3>
+
+
+            <p>
+
+              We first understand the facts,
+              objectives and circumstances
+              surrounding the matter.
+
+            </p>
+
+
+          </div>
+
+
+          <!-- STEP 02 -->
+
+          <div class="process-step">
+
+
+            <span class="process-step-number">
+              02
+            </span>
+
+
+            <h3>
+              Analyse
+            </h3>
+
+
+            <p>
+
+              Relevant legal, commercial and
+              regulatory considerations are
+              identified and assessed.
+
+            </p>
+
+
+          </div>
+
+
+          <!-- STEP 03 -->
+
+          <div class="process-step">
+
+
+            <span class="process-step-number">
+              03
+            </span>
+
+
+            <h3>
+              Advise
+            </h3>
+
+
+            <p>
+
+              We translate complex considerations
+              into clear and practical options.
+
+            </p>
+
+
+          </div>
+
+
+          <!-- STEP 04 -->
+
+          <div class="process-step">
+
+
+            <span class="process-step-number">
+              04
+            </span>
+
+
+            <h3>
+              Execute
+            </h3>
+
+
+            <p>
+
+              Where required, we assist with
+              implementation and ongoing support.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="consulting-cta">
+
+
+      <div class="container">
+
+
+        <span class="eyebrow">
+          CONSULTING &amp; ADVISORY
+        </span>
+
+
+        <h2>
+
+          Better decisions
+
+          <br>
+
+          begin with
+
+          <br>
+
+          <em>clear advice.</em>
+
+        </h2>
+
+
+        <p>
+
+          Tell us about your business, commercial
+          requirement or advisory matter.
+
+        </p>
+
+
+        <a
+          href="./contact.html"
+          class="consulting-button"
+        >
+
+          Start A Conversation
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+
+          <a
+            href="./index.html"
+            class="brand"
+          >
+
+            <div class="brand-mark">
+              <span>P</span>
+            </div>
+
+
+            <div class="brand-text">
+
+              <strong>
+                Preach Law &amp; Co.
+              </strong>
+
+              <small>
+                Advocates &amp; Legal Advisory
+              </small>
+
+            </div>
+
+          </a>
+
+
+          <p>
+
+            Legal representation, regulatory advisory
+            and professional services for individuals,
+            businesses and institutions.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <div>
+
+            <span>
+              COMPANY
+            </span>
+
+            <a href="./about.html">
+              About
+            </a>
+
+            <a href="./team.html">
+              Our Team
+            </a>
+
+            <a href="./offices.html">
+              Offices
+            </a>
+
+            <a href="./articles.html">
+              Insights
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              PRACTICE
+            </span>
+
+            <a href="./litigation.html">
+              Litigation
+            </a>
+
+            <a href="./ipr.html">
+              IPR
+            </a>
+
+            <a href="./startup.html">
+              Startups
+            </a>
+
+            <a href="./consulting.html">
+              Consulting
+            </a>
+
+            <a href="./fintech.html">
+              Fintech
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              CONTACT
+            </span>
+
+            <a href="./contact.html">
+              Contact
+            </a>
+
+            <a href="tel:+919311664455">
+              +91 93116 64455
+            </a>
+
+            <a href="mailto:admin@preachlaw.com">
+              Email
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2015–2030 Preach Law LLP. All Rights Reserved.
+        </span>
+
+        <span>
+          DELHI · INDIA
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="./js/navigation.js"></script>
+
+  <script src="./js/animations.js"></script>
+
+  <script src="./js/main.js"></script>
+
+
+  <script>
+
+    window.addEventListener(
+      "load",
+      function () {
+
+        if (
+          window.lucide &&
+          typeof window.lucide.createIcons === "function"
+        ) {
+
+          window.lucide.createIcons();
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+  </html>
