@@ -1,6 +1,7 @@
 /* =========================================================
    PREACH LAW & CO.
-   MAIN.JS — STABLE PERFORMANCE VERSION
+   MAIN.JS
+   STABLE PERFORMANCE VERSION
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,18 +19,27 @@ document.addEventListener("DOMContentLoaded", () => {
      PAGE LOADER
      ======================================================= */
 
-  const loader =
-    document.getElementById("pageLoader");
+  const loader = document.getElementById("pageLoader");
 
   if (loader) {
 
-    window.addEventListener("load", () => {
+    const hideLoader = () => {
 
       setTimeout(() => {
         loader.classList.add("loaded");
-      }, 700);
+      }, 500);
 
-    });
+    };
+
+    if (document.readyState === "complete") {
+      hideLoader();
+    } else {
+      window.addEventListener(
+        "load",
+        hideLoader,
+        { once: true }
+      );
+    }
 
   }
 
@@ -43,22 +53,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (progress) {
 
+    let ticking = false;
+
     const updateProgress = () => {
 
-      const scrollTop =
-        window.scrollY;
+      if (ticking) return;
 
-      const totalHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
+      ticking = true;
 
-      if (totalHeight <= 0) {
-        progress.style.width = "0%";
-        return;
-      }
+      requestAnimationFrame(() => {
 
-      progress.style.width =
-        `${(scrollTop / totalHeight) * 100}%`;
+        const scrollTop =
+          window.scrollY || window.pageYOffset;
+
+        const totalHeight =
+          document.documentElement.scrollHeight -
+          window.innerHeight;
+
+        if (totalHeight <= 0) {
+
+          progress.style.width = "0%";
+
+        } else {
+
+          const percentage =
+            Math.min(
+              100,
+              Math.max(
+                0,
+                (scrollTop / totalHeight) * 100
+              )
+            );
+
+          progress.style.width =
+            percentage + "%";
+
+        }
+
+        ticking = false;
+
+      });
 
     };
 
@@ -90,8 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /*
      IMPORTANT:
 
-     The disclaimer is shown unless the user
-     has previously accepted it.
+     The disclaimer appears on a new browser
+     unless the user has already agreed.
   */
 
   const accepted =
@@ -104,13 +138,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (accepted === "true") {
 
-      disclaimer.style.display =
-        "none";
+      disclaimer.style.display = "none";
 
     } else {
 
-      disclaimer.style.display =
-        "flex";
+      disclaimer.style.display = "flex";
 
       document.body.classList.add(
         "disclaimer-open"
@@ -143,7 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "hidden"
           );
 
-
           setTimeout(() => {
 
             disclaimer.style.display =
@@ -174,7 +205,23 @@ document.addEventListener("DOMContentLoaded", () => {
       "click",
       () => {
 
-        window.history.back();
+        /*
+           Going back may do nothing if the visitor
+           opened the site directly.
+
+           In that case, leave the page.
+        */
+
+        if (window.history.length > 1) {
+
+          window.history.back();
+
+        } else {
+
+          window.location.href =
+            "about:blank";
+
+        }
 
       }
     );
@@ -203,31 +250,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     magnetic.forEach((element) => {
 
+      let raf = null;
+
+
       element.addEventListener(
         "mousemove",
         (event) => {
 
-          const rect =
-            element.getBoundingClientRect();
+          if (raf) {
+            cancelAnimationFrame(raf);
+          }
 
 
-          const x =
-            event.clientX -
-            rect.left -
-            rect.width / 2;
+          raf =
+            requestAnimationFrame(() => {
+
+              const rect =
+                element.getBoundingClientRect();
 
 
-          const y =
-            event.clientY -
-            rect.top -
-            rect.height / 2;
+              const x =
+                event.clientX -
+                rect.left -
+                rect.width / 2;
 
 
-          element.style.transform =
-            `translate(
-              ${x * 0.08}px,
-              ${y * 0.08}px
-            )`;
+              const y =
+                event.clientY -
+                rect.top -
+                rect.height / 2;
+
+
+              element.style.transform =
+                `translate3d(
+                  ${x * 0.06}px,
+                  ${y * 0.06}px,
+                  0
+                )`;
+
+            });
 
         }
       );
@@ -237,8 +298,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "mouseleave",
         () => {
 
-          element.style.transform =
-            "";
+          if (raf) {
+            cancelAnimationFrame(raf);
+          }
+
+          element.style.transform = "";
 
         }
       );
@@ -295,28 +359,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     SCROLLTRIGGER
+     NO FORCED SCROLLTRIGGER REFRESH
      ======================================================= */
 
-  if (
-    typeof ScrollTrigger !==
-    "undefined"
-  ) {
+  /*
+     ScrollTrigger is controlled by animations.js.
 
-    ScrollTrigger.refresh();
+     We intentionally DO NOT call:
 
-  }
+     ScrollTrigger.refresh();
 
-
-  /* =======================================================
-     PERFORMANCE SAFETY
-     ======================================================= */
-
-  document.documentElement.style.overflowX =
-    "hidden";
-
-  document.body.style.overflowX =
-    "hidden";
+     here because doing so unnecessarily can cause
+     extra calculations and lag.
+  */
 
 
   /* =======================================================
@@ -326,5 +381,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add(
     "js-ready"
   );
+
 
 });
