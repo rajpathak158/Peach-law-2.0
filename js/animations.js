@@ -1,14 +1,14 @@
 /* =========================================================
    PREACH LAW & CO.
-   PREMIUM GSAP ANIMATION SYSTEM
-   PHASE 2 — STEP 2
-   HERO + SCROLL + 3D PRACTICE CARDS
+   ANIMATIONS.JS
+   PHASE 2 — STEP 3
+   CINEMATIC STATISTICS + EXISTING ANIMATIONS
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   if (typeof gsap === "undefined") {
-    console.warn("GSAP not loaded.");
+    console.warn("GSAP is not loaded.");
     return;
   }
 
@@ -21,99 +21,100 @@ document.addEventListener("DOMContentLoaded", () => {
      HERO
      ======================================================= */
 
-  const hero =
-    document.querySelector(".hero");
+  const hero = document.querySelector(".hero");
 
   if (hero) {
 
-    const heroLabel =
+    const label =
       hero.querySelector(".hero-label");
 
-    const heroLines =
+    const lines =
       hero.querySelectorAll(
         ".hero-title .line > span"
       );
 
-    const heroDescription =
+    const description =
       hero.querySelector(".hero-description");
 
-    const heroButton =
+    const button =
       hero.querySelector(".hero-button");
 
-    const heroSide =
+    const side =
       hero.querySelector(".hero-side");
 
-    const heroScroll =
+    const scroll =
       hero.querySelector(".hero-scroll");
 
-    const heroNumber =
+    const number =
       hero.querySelector(".hero-number");
 
 
-    /* Initial states */
-
-    gsap.set(heroLines, {
+    gsap.set(lines, {
       yPercent: 110,
       opacity: 0
     });
 
-    if (heroLabel) {
-      gsap.set(heroLabel, {
+
+    if (label) {
+      gsap.set(label, {
         y: 25,
         opacity: 0
       });
     }
 
-    if (heroDescription) {
-      gsap.set(heroDescription, {
+
+    if (description) {
+      gsap.set(description, {
         y: 30,
         opacity: 0
       });
     }
 
-    if (heroButton) {
-      gsap.set(heroButton, {
+
+    if (button) {
+      gsap.set(button, {
         y: 30,
         opacity: 0
       });
     }
 
-    if (heroSide) {
-      gsap.set(heroSide, {
+
+    if (side) {
+      gsap.set(side, {
         opacity: 0
       });
     }
 
-    if (heroScroll) {
-      gsap.set(heroScroll, {
-        opacity: 0,
-        y: 20
-      });
-    }
 
-    if (heroNumber) {
-      gsap.set(heroNumber, {
+    if (scroll) {
+      gsap.set(scroll, {
         opacity: 0,
         y: 20
       });
     }
 
 
-    /* Hero timeline */
+    if (number) {
+      gsap.set(number, {
+        opacity: 0,
+        y: 20
+      });
+    }
 
-    const heroTimeline =
+
+    const timeline =
       gsap.timeline({
+        delay: .2,
         defaults: {
           ease: "power4.out"
-        },
-        delay: 0.2
+        }
       });
 
 
-    if (heroLabel) {
+    if (label) {
 
-      heroTimeline.to(
-        heroLabel,
+      timeline.to(
+        label,
         {
           y: 0,
           opacity: 1,
@@ -125,186 +126,88 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    heroTimeline.to(
-      heroLines,
+    timeline.to(
+      lines,
       {
         yPercent: 0,
         opacity: 1,
-        duration: 1.1,
-        stagger: .11
+        duration: 1.15,
+        stagger: .12
       },
       .12
     );
 
 
-    if (heroDescription) {
+    if (description) {
 
-      heroTimeline.to(
-        heroDescription,
+      timeline.to(
+        description,
         {
           y: 0,
           opacity: 1,
           duration: .8
         },
-        .72
+        .75
       );
 
     }
 
 
-    if (heroButton) {
+    if (button) {
 
-      heroTimeline.to(
-        heroButton,
+      timeline.to(
+        button,
         {
           y: 0,
           opacity: 1,
           duration: .8
         },
-        .82
+        .85
       );
 
     }
 
 
-    if (heroSide) {
+    if (side) {
 
-      heroTimeline.to(
-        heroSide,
+      timeline.to(
+        side,
         {
           opacity: 1,
           duration: .7
         },
-        .95
+        1
       );
 
     }
 
 
-    if (heroScroll) {
+    if (scroll) {
 
-      heroTimeline.to(
-        heroScroll,
-        {
-          opacity: 1,
-          y: 0,
-          duration: .7
-        },
-        1.05
-      );
-
-    }
-
-
-    if (heroNumber) {
-
-      heroTimeline.to(
-        heroNumber,
+      timeline.to(
+        scroll,
         {
           opacity: 1,
           y: 0,
           duration: .7
         },
-        1.05
+        1.1
       );
 
     }
 
 
-    /* =====================================================
-       HERO PARALLAX
-       ===================================================== */
+    if (number) {
 
-    if (
-      typeof ScrollTrigger !==
-      "undefined"
-    ) {
-
-      const heroGrid =
-        document.querySelector(".hero-grid");
-
-      const glowOne =
-        document.querySelector(".glow-one");
-
-      const glowTwo =
-        document.querySelector(".glow-two");
-
-
-      if (heroGrid) {
-
-        gsap.to(heroGrid, {
-
-          y: 70,
-
-          ease: "none",
-
-          scrollTrigger: {
-
-            trigger: hero,
-
-            start: "top top",
-
-            end: "bottom top",
-
-            scrub: 1.2
-
-          }
-
-        });
-
-      }
-
-
-      if (glowOne) {
-
-        gsap.to(glowOne, {
-
-          x: -45,
-          y: 100,
-
-          ease: "none",
-
-          scrollTrigger: {
-
-            trigger: hero,
-
-            start: "top top",
-
-            end: "bottom top",
-
-            scrub: 1.5
-
-          }
-
-        });
-
-      }
-
-
-      if (glowTwo) {
-
-        gsap.to(glowTwo, {
-
-          x: 35,
-          y: -70,
-
-          ease: "none",
-
-          scrollTrigger: {
-
-            trigger: hero,
-
-            start: "top top",
-
-            end: "bottom top",
-
-            scrub: 1.8
-
-          }
-
-        });
-
-      }
+      timeline.to(
+        number,
+        {
+          opacity: 1,
+          y: 0,
+          duration: .7
+        },
+        1.1
+      );
 
     }
 
@@ -334,22 +237,18 @@ document.addEventListener("DOMContentLoaded", () => {
             hero.getBoundingClientRect();
 
           mouseX =
-            (event.clientX -
-              rect.left) /
-              rect.width -
-            .5;
+            (event.clientX - rect.left) /
+            rect.width - .5;
 
           mouseY =
-            (event.clientY -
-              rect.top) /
-              rect.height -
-            .5;
+            (event.clientY - rect.top) /
+            rect.height - .5;
 
         }
       );
 
 
-      const updateHeroDepth = () => {
+      function heroDepth() {
 
         currentX +=
           (mouseX - currentX) * .045;
@@ -358,34 +257,36 @@ document.addEventListener("DOMContentLoaded", () => {
           (mouseY - currentY) * .045;
 
 
-        if (heroLabel) {
-          gsap.set(heroLabel, {
+        if (label) {
+          gsap.set(label, {
             x: currentX * 8
           });
         }
 
-        if (heroDescription) {
-          gsap.set(heroDescription, {
+
+        if (description) {
+          gsap.set(description, {
             x: currentX * 5
           });
         }
 
-        if (heroButton) {
-          gsap.set(heroButton, {
+
+        if (button) {
+          gsap.set(button, {
             x: currentX * -5
           });
         }
 
 
         requestAnimationFrame(
-          updateHeroDepth
+          heroDepth
         );
 
-      };
+      }
 
 
       requestAnimationFrame(
-        updateHeroDepth
+        heroDepth
       );
 
     }
@@ -394,62 +295,397 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     SCROLL REVEALS
+     HERO PARALLAX
      ======================================================= */
 
   if (
-    typeof ScrollTrigger !==
-    "undefined"
+    typeof ScrollTrigger !== "undefined" &&
+    hero
   ) {
 
-    const reveals =
-      document.querySelectorAll(
-        ".reveal:not(.hero .reveal)"
+    const grid =
+      document.querySelector(".hero-grid");
+
+    const glowOne =
+      document.querySelector(".glow-one");
+
+    const glowTwo =
+      document.querySelector(".glow-two");
+
+
+    if (grid) {
+
+      gsap.to(
+        grid,
+        {
+          y: 100,
+
+          ease: "none",
+
+          scrollTrigger: {
+            trigger: hero,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.4
+          }
+        }
       );
 
+    }
 
-    reveals.forEach(
-      (element) => {
 
-        gsap.fromTo(
-          element,
+    if (glowOne) {
 
-          {
-            y: 45,
-            opacity: 0
-          },
+      gsap.to(
+        glowOne,
+        {
+          x: -70,
+          y: 120,
 
-          {
-            y: 0,
-            opacity: 1,
+          ease: "none",
 
-            duration: .9,
-
-            ease:
-              "power3.out",
-
-            scrollTrigger: {
-
-              trigger: element,
-
-              start:
-                "top 88%",
-
-              once: true
-
-            }
-
+          scrollTrigger: {
+            trigger: hero,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.6
           }
-        );
+        }
+      );
 
-      }
-    );
+    }
+
+
+    if (glowTwo) {
+
+      gsap.to(
+        glowTwo,
+        {
+          x: 60,
+          y: -80,
+
+          ease: "none",
+
+          scrollTrigger: {
+            trigger: hero,
+            start: "top top",
+            end: "bottom top",
+            scrub: 2
+          }
+        }
+      );
+
+    }
 
   }
 
 
   /* =======================================================
-     PRACTICE CARD SYSTEM
+     GENERAL REVEALS
+     ======================================================= */
+
+  if (
+    typeof ScrollTrigger !== "undefined"
+  ) {
+
+    document
+      .querySelectorAll(
+        ".reveal:not(.hero .reveal)"
+      )
+      .forEach(
+        (element) => {
+
+          gsap.fromTo(
+            element,
+
+            {
+              y: 55,
+              opacity: 0
+            },
+
+            {
+              y: 0,
+              opacity: 1,
+
+              duration: 1,
+
+              ease:
+                "power3.out",
+
+              scrollTrigger: {
+
+                trigger: element,
+
+                start:
+                  "top 88%",
+
+                once: true
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+  }
+
+
+  /* =======================================================
+     PREMIUM STATISTICS
+     ======================================================= */
+
+  const statsSection =
+    document.querySelector(
+      ".stats-section"
+    );
+
+
+  const counters =
+    document.querySelectorAll(
+      ".counter"
+    );
+
+
+  if (
+    statsSection &&
+    counters.length &&
+    typeof ScrollTrigger !== "undefined"
+  ) {
+
+
+    /* -----------------------------------------------------
+       Statistics section entrance
+       ----------------------------------------------------- */
+
+    const stats =
+      statsSection.querySelectorAll(
+        ".stat"
+      );
+
+
+    gsap.fromTo(
+      stats,
+
+      {
+        y: 70,
+        opacity: 0,
+        scale: .96
+      },
+
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+
+        duration: 1.1,
+
+        stagger: .12,
+
+        ease:
+          "power4.out",
+
+        scrollTrigger: {
+
+          trigger:
+            statsSection,
+
+          start:
+            "top 82%",
+
+          once: true,
+
+          onEnter: () => {
+
+            animateCounters();
+
+          }
+
+        }
+
+      }
+    );
+
+
+    /* -----------------------------------------------------
+       Counter animation
+       ----------------------------------------------------- */
+
+    function animateCounters() {
+
+      counters.forEach(
+        (counter) => {
+
+          const target =
+            Number(
+              counter.dataset.target
+            );
+
+
+          const object = {
+            value: 0
+          };
+
+
+          gsap.to(
+            object,
+            {
+
+              value:
+                target,
+
+              duration:
+                2.4,
+
+              ease:
+                "power3.out",
+
+              onUpdate: () => {
+
+                counter.textContent =
+                  Math.floor(
+                    object.value
+                  ).toLocaleString();
+
+              }
+
+            }
+          );
+
+
+          /* Gold flash */
+
+          gsap.fromTo(
+            counter,
+
+            {
+              textShadow:
+                "0 0 0 rgba(200,169,107,0)"
+            },
+
+            {
+
+              textShadow:
+                "0 0 35px rgba(200,169,107,.45)",
+
+              duration:
+                .8,
+
+              yoyo:
+                true,
+
+              repeat:
+                1,
+
+              ease:
+                "power2.inOut"
+
+            }
+          );
+
+        }
+      );
+
+    }
+
+  }
+
+
+  /* =======================================================
+     STAT HOVER
+     ======================================================= */
+
+  if (
+    window.matchMedia(
+      "(pointer: fine)"
+    ).matches
+  ) {
+
+    document
+      .querySelectorAll(
+        ".stat"
+      )
+      .forEach(
+        (stat) => {
+
+          const number =
+            stat.querySelector(
+              ".stat-number"
+            );
+
+
+          stat.addEventListener(
+            "mouseenter",
+            () => {
+
+              gsap.to(
+                stat,
+                {
+                  y: -8,
+                  duration: .45,
+                  ease: "power3.out"
+                }
+              );
+
+
+              if (number) {
+
+                gsap.to(
+                  number,
+                  {
+                    scale: 1.06,
+                    duration: .5,
+                    ease: "power3.out"
+                  }
+                );
+
+              }
+
+            }
+          );
+
+
+          stat.addEventListener(
+            "mouseleave",
+            () => {
+
+              gsap.to(
+                stat,
+                {
+                  y: 0,
+                  duration: .6,
+                  ease:
+                    "elastic.out(1,.5)"
+                }
+              );
+
+
+              if (number) {
+
+                gsap.to(
+                  number,
+                  {
+                    scale: 1,
+                    duration: .5,
+                    ease:
+                      "power3.out"
+                  }
+                );
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+  }
+
+
+  /* =======================================================
+     PREMIUM PRACTICE CARDS
      ======================================================= */
 
   const cards =
@@ -479,10 +715,6 @@ document.addEventListener("DOMContentLoaded", () => {
           );
 
 
-        /* ---------------------------------------------------
-           Mouse movement
-        --------------------------------------------------- */
-
         card.addEventListener(
           "mousemove",
           (event) => {
@@ -511,20 +743,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const rotateY =
               ((x - centerX) /
-                centerX) * 4;
+                centerX) * 5;
 
 
             const rotateX =
               ((centerY - y) /
-                centerY) * 4;
+                centerY) * 5;
 
-
-            /* CSS variables for light */
 
             card.style.setProperty(
               "--mouse-x",
               `${x}px`
             );
+
 
             card.style.setProperty(
               "--mouse-y",
@@ -535,15 +766,12 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.to(
               card,
               {
-                rotateX:
-                  rotateX,
+                rotateX,
+                rotateY,
+                y: -10,
 
-                rotateY:
-                  rotateY,
-
-                y: -8,
-
-                duration: .45,
+                duration:
+                  .45,
 
                 ease:
                   "power3.out",
@@ -559,9 +787,10 @@ document.addEventListener("DOMContentLoaded", () => {
               gsap.to(
                 content,
                 {
-                  z: 18,
+                  z: 20,
 
-                  duration: .45,
+                  duration:
+                    .45,
 
                   ease:
                     "power3.out",
@@ -579,11 +808,11 @@ document.addEventListener("DOMContentLoaded", () => {
               gsap.to(
                 icon,
                 {
-                  z: 30,
+                  z: 35,
+                  scale: 1.1,
 
-                  scale: 1.08,
-
-                  duration: .45,
+                  duration:
+                    .45,
 
                   ease:
                     "power3.out",
@@ -599,10 +828,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        /* ---------------------------------------------------
-           Mouse leave
-        --------------------------------------------------- */
-
         card.addEventListener(
           "mouseleave",
           () => {
@@ -614,7 +839,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 rotateY: 0,
                 y: 0,
 
-                duration: .7,
+                duration:
+                  .8,
 
                 ease:
                   "elastic.out(1,.55)",
@@ -632,7 +858,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 {
                   z: 0,
 
-                  duration: .6,
+                  duration:
+                    .6,
 
                   ease:
                     "power3.out",
@@ -653,66 +880,22 @@ document.addEventListener("DOMContentLoaded", () => {
                   z: 0,
                   scale: 1,
 
-                  duration: .6,
+                  duration:
+                    .6,
 
                   ease:
                     "power3.out",
 
                   overwrite:
                     "auto"
-                }
-              );
+                  }
+                );
 
             }
 
           }
         );
 
-
-        /* ---------------------------------------------------
-           Card entrance
-        --------------------------------------------------- */
-
-        if (
-          typeof ScrollTrigger !==
-          "undefined"
-        ) {
-
-          gsap.fromTo(
-            card,
-
-            {
-              y: 50,
-              opacity: 0
-            },
-
-            {
-              y: 0,
-              opacity: 1,
-
-              duration:
-                .9,
-
-              ease:
-                "power3.out",
-
-              scrollTrigger: {
-
-                trigger:
-                  card,
-
-                start:
-                  "top 90%",
-
-                once: true
-
-              }
-
-            }
-          );
-
-        }
-
       }
     );
 
@@ -720,29 +903,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     MOBILE CARD SAFETY
+     CTA PARALLAX
      ======================================================= */
 
+  const cta =
+    document.querySelector(
+      ".cta-section"
+    );
+
+
   if (
-    window.matchMedia(
-      "(pointer: coarse)"
-    ).matches
+    cta &&
+    typeof ScrollTrigger !== "undefined"
   ) {
 
-    cards.forEach(
-      (card) => {
+    const ctaBg =
+      cta.querySelector(
+        ".cta-bg"
+      );
 
-        card.style.transform =
-          "none";
 
-      }
-    );
+    if (ctaBg) {
+
+      gsap.to(
+        ctaBg,
+        {
+          y: -100,
+          scale: 1.12,
+
+          ease: "none",
+
+          scrollTrigger: {
+
+            trigger: cta,
+
+            start:
+              "top bottom",
+
+            end:
+              "bottom top",
+
+            scrub: 1.5
+
+          }
+
+        }
+      );
+
+    }
 
   }
 
 
   /* =======================================================
-     REFRESH AFTER PAGE LOAD
+     FINAL REFRESH
      ======================================================= */
 
   window.addEventListener(
