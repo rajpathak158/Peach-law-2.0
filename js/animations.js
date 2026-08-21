@@ -1,17 +1,18 @@
 /* =========================================================
    PREACH LAW & CO.
-   SCROLL ANIMATION ENGINE
-   GSAP + ScrollTrigger
+   PREMIUM GSAP ANIMATION SYSTEM
+   PHASE 2 — STEP 1
+   CINEMATIC HERO
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =======================================================
-     CHECK GSAP
-     ======================================================= */
+  /* -------------------------------------------------------
+     GSAP CHECK
+  ------------------------------------------------------- */
 
   if (typeof gsap === "undefined") {
-    console.warn("GSAP is not loaded.");
+    console.warn("GSAP not loaded.");
     return;
   }
 
@@ -21,140 +22,440 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     GLOBAL SETTINGS
-     ======================================================= */
-
-  gsap.defaults({
-    ease: "power3.out"
-  });
-
-
-  /* =======================================================
      HERO INTRO
-     ======================================================= */
+  ======================================================= */
+
+  const hero = document.querySelector(".hero");
+
+  if (!hero) return;
+
+
+  const heroLabel =
+    hero.querySelector(".hero-label");
 
   const heroLines =
-    document.querySelectorAll(
+    hero.querySelectorAll(
       ".hero-title .line > span"
     );
 
-  if (heroLines.length) {
+  const heroDescription =
+    hero.querySelector(".hero-description");
 
-    gsap.fromTo(
-      heroLines,
+  const heroButton =
+    hero.querySelector(".hero-button");
 
-      {
-        y: "110%",
-        opacity: 0
-      },
+  const heroSide =
+    hero.querySelector(".hero-side");
 
-      {
-        y: "0%",
-        opacity: 1,
-        duration: 1.1,
-        stagger: 0.12,
-        delay: 0.7
-      }
-    );
+  const heroScroll =
+    hero.querySelector(".hero-scroll");
 
-  }
+  const heroNumber =
+    hero.querySelector(".hero-number");
 
 
   /* =======================================================
-     HERO LABEL
-     ======================================================= */
+     INITIAL STATES
+  ======================================================= */
 
-  const heroLabel =
-    document.querySelector(
-      ".hero-label"
-    );
+  gsap.set(heroLines, {
+    yPercent: 110,
+    opacity: 0
+  });
+
 
   if (heroLabel) {
 
-    gsap.fromTo(
-      heroLabel,
-
-      {
-        y: 20,
-        opacity: 0
-      },
-
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        delay: 0.4
-      }
-    );
+    gsap.set(heroLabel, {
+      y: 25,
+      opacity: 0
+    });
 
   }
 
-
-  /* =======================================================
-     HERO DESCRIPTION
-     ======================================================= */
-
-  const heroDescription =
-    document.querySelector(
-      ".hero-description"
-    );
 
   if (heroDescription) {
 
-    gsap.fromTo(
-      heroDescription,
-
-      {
-        y: 35,
-        opacity: 0
-      },
-
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 1.15
-      }
-    );
+    gsap.set(heroDescription, {
+      y: 30,
+      opacity: 0
+    });
 
   }
 
-
-  /* =======================================================
-     HERO BUTTON
-     ======================================================= */
-
-  const heroButton =
-    document.querySelector(
-      ".hero-button"
-    );
 
   if (heroButton) {
 
-    gsap.fromTo(
-      heroButton,
+    gsap.set(heroButton, {
+      y: 30,
+      opacity: 0
+    });
 
-      {
-        y: 30,
-        opacity: 0,
-        scale: 0.96
+  }
+
+
+  if (heroSide) {
+
+    gsap.set(heroSide, {
+      opacity: 0
+    });
+
+  }
+
+
+  if (heroScroll) {
+
+    gsap.set(heroScroll, {
+      opacity: 0,
+      y: 20
+    });
+
+  }
+
+
+  if (heroNumber) {
+
+    gsap.set(heroNumber, {
+      opacity: 0,
+      y: 20
+    });
+
+  }
+
+
+  /* =======================================================
+     HERO TIMELINE
+  ======================================================= */
+
+  const heroTimeline =
+    gsap.timeline({
+      defaults: {
+        ease: "power4.out"
       },
+      delay: 0.25
+    });
 
+
+  /* Label */
+
+  if (heroLabel) {
+
+    heroTimeline.to(
+      heroLabel,
       {
         y: 0,
         opacity: 1,
-        scale: 1,
-        duration: 0.9,
-        delay: 1.35
-      }
+        duration: 0.8
+      },
+      0
+    );
+
+  }
+
+
+  /* Main title */
+
+  heroTimeline.to(
+    heroLines,
+    {
+      yPercent: 0,
+      opacity: 1,
+      duration: 1.15,
+      stagger: 0.12
+    },
+    0.15
+  );
+
+
+  /* Description */
+
+  if (heroDescription) {
+
+    heroTimeline.to(
+      heroDescription,
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9
+      },
+      0.75
+    );
+
+  }
+
+
+  /* Button */
+
+  if (heroButton) {
+
+    heroTimeline.to(
+      heroButton,
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9
+      },
+      0.85
+    );
+
+  }
+
+
+  /* Side information */
+
+  if (heroSide) {
+
+    heroTimeline.to(
+      heroSide,
+      {
+        opacity: 1,
+        duration: 0.8
+      },
+      1
+    );
+
+  }
+
+
+  /* Scroll indicator */
+
+  if (heroScroll) {
+
+    heroTimeline.to(
+      heroScroll,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8
+      },
+      1.15
+    );
+
+  }
+
+
+  /* Number */
+
+  if (heroNumber) {
+
+    heroTimeline.to(
+      heroNumber,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8
+      },
+      1.15
     );
 
   }
 
 
   /* =======================================================
-     GENERIC REVEALS
-     ======================================================= */
+     HERO PARALLAX
+  ======================================================= */
+
+  if (
+    typeof ScrollTrigger !== "undefined"
+  ) {
+
+    const heroGrid =
+      document.querySelector(".hero-grid");
+
+    const heroGlowOne =
+      document.querySelector(".glow-one");
+
+    const heroGlowTwo =
+      document.querySelector(".glow-two");
+
+
+    if (heroGrid) {
+
+      gsap.to(heroGrid, {
+
+        y: 80,
+
+        ease: "none",
+
+        scrollTrigger: {
+
+          trigger: hero,
+
+          start: "top top",
+
+          end: "bottom top",
+
+          scrub: 1.2
+
+        }
+
+      });
+
+    }
+
+
+    if (heroGlowOne) {
+
+      gsap.to(heroGlowOne, {
+
+        y: 120,
+
+        x: -50,
+
+        ease: "none",
+
+        scrollTrigger: {
+
+          trigger: hero,
+
+          start: "top top",
+
+          end: "bottom top",
+
+          scrub: 1.5
+
+        }
+
+      });
+
+    }
+
+
+    if (heroGlowTwo) {
+
+      gsap.to(heroGlowTwo, {
+
+        y: -80,
+
+        x: 40,
+
+        ease: "none",
+
+        scrollTrigger: {
+
+          trigger: hero,
+
+          start: "top top",
+
+          end: "bottom top",
+
+          scrub: 1.8
+
+        }
+
+      });
+
+    }
+
+  }
+
+
+  /* =======================================================
+     HERO MOUSE PARALLAX
+     DESKTOP ONLY
+  ======================================================= */
+
+  const desktop =
+    window.matchMedia(
+      "(pointer: fine)"
+    ).matches;
+
+
+  if (desktop) {
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    let currentX = 0;
+    let currentY = 0;
+
+
+    hero.addEventListener(
+      "mousemove",
+      (event) => {
+
+        const rect =
+          hero.getBoundingClientRect();
+
+
+        mouseX =
+          (event.clientX - rect.left)
+          / rect.width
+          - 0.5;
+
+
+        mouseY =
+          (event.clientY - rect.top)
+          / rect.height
+          - 0.5;
+
+      }
+    );
+
+
+    const animateMouse =
+      () => {
+
+        currentX +=
+          (mouseX - currentX) * 0.05;
+
+        currentY +=
+          (mouseY - currentY) * 0.05;
+
+
+        if (heroLabel) {
+
+          gsap.set(
+            heroLabel,
+            {
+              x: currentX * 8
+            }
+          );
+
+        }
+
+
+        if (heroDescription) {
+
+          gsap.set(
+            heroDescription,
+            {
+              x: currentX * 5
+            }
+          );
+
+        }
+
+
+        if (heroButton) {
+
+          gsap.set(
+            heroButton,
+            {
+              x: currentX * -6
+            }
+          );
+
+        }
+
+
+        requestAnimationFrame(
+          animateMouse
+        );
+
+      };
+
+
+    requestAnimationFrame(
+      animateMouse
+    );
+
+  }
+
+
+  /* =======================================================
+     SCROLL REVEALS
+  ======================================================= */
 
   if (
     typeof ScrollTrigger !== "undefined"
@@ -162,27 +463,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const revealElements =
       document.querySelectorAll(
-        ".reveal"
+        ".reveal:not(.hero .reveal)"
       );
 
 
     revealElements.forEach(
       (element) => {
 
-        /*
-         * Don't animate elements that
-         * already belong to the hero.
-         */
-
-        if (
-          element.closest(".hero")
-        ) {
-          return;
-        }
-
-
         gsap.fromTo(
-
           element,
 
           {
@@ -196,6 +484,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             duration: 1,
 
+            ease:
+              "power3.out",
+
             scrollTrigger: {
 
               trigger: element,
@@ -203,13 +494,11 @@ document.addEventListener("DOMContentLoaded", () => {
               start:
                 "top 88%",
 
-              toggleActions:
-                "play none none none"
+              once: true
 
             }
 
           }
-
         );
 
       }
@@ -219,529 +508,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     PHILOSOPHY SECTION
-     ======================================================= */
-
-  const philosophy =
-    document.querySelector(
-      ".philosophy"
-    );
-
-  if (
-    philosophy &&
-    typeof ScrollTrigger !== "undefined"
-  ) {
-
-    const heading =
-      philosophy.querySelector(
-        "h2"
-      );
-
-    const paragraphs =
-      philosophy.querySelectorAll(
-        "p"
-      );
-
-    if (heading) {
-
-      gsap.fromTo(
-
-        heading,
-
-        {
-          y: 70,
-          opacity: 0
-        },
-
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.1,
-
-          scrollTrigger: {
-
-            trigger: philosophy,
-
-            start:
-              "top 75%",
-
-            toggleActions:
-              "play none none none"
-
-          }
-
-        }
-
-      );
-
-    }
-
-
-    if (paragraphs.length) {
-
-      gsap.fromTo(
-
-        paragraphs,
-
-        {
-          y: 30,
-          opacity: 0
-        },
-
-        {
-          y: 0,
-          opacity: 1,
-          duration: .8,
-          stagger: .14,
-
-          scrollTrigger: {
-
-            trigger: philosophy,
-
-            start:
-              "top 65%",
-
-            toggleActions:
-              "play none none none"
-
-          }
-
-        }
-
-      );
-
-    }
-
-  }
-
-
-  /* =======================================================
-     PRACTICE CARDS STAGGER
-     ======================================================= */
-
-  const practiceCards =
-    document.querySelectorAll(
-      ".practice-card"
-    );
-
-  if (
-    practiceCards.length &&
-    typeof ScrollTrigger !== "undefined"
-  ) {
-
-    gsap.fromTo(
-
-      practiceCards,
-
-      {
-        y: 70,
-        opacity: 0
-      },
-
-      {
-        y: 0,
-        opacity: 1,
-
-        duration: .9,
-
-        stagger: .12,
-
-        scrollTrigger: {
-
-          trigger:
-            ".practice-grid",
-
-          start:
-            "top 80%",
-
-          toggleActions:
-            "play none none none"
-
-        }
-
-      }
-
-    );
-
-  }
-
-
-  /* =======================================================
-     STATS
-     ======================================================= */
-
-  const stats =
-    document.querySelectorAll(
-      ".stat"
-    );
-
-  if (
-    stats.length &&
-    typeof ScrollTrigger !== "undefined"
-  ) {
-
-    gsap.fromTo(
-
-      stats,
-
-      {
-        y: 45,
-        opacity: 0
-      },
-
-      {
-        y: 0,
-        opacity: 1,
-
-        duration: .8,
-
-        stagger: .15,
-
-        scrollTrigger: {
-
-          trigger:
-            ".stats-section",
-
-          start:
-            "top 80%",
-
-          toggleActions:
-            "play none none none"
-
-        }
-
-      }
-
-    );
-
-  }
-
-
-  /* =======================================================
-     MARQUEE PARALLAX
-     ======================================================= */
-
-  const marquee =
-    document.querySelector(
-      ".marquee"
-    );
-
-  if (
-    marquee &&
-    typeof ScrollTrigger !== "undefined"
-  ) {
-
-    gsap.to(
-
-      marquee,
-
-      {
-        xPercent: -10,
-
-        ease: "none",
-
-        scrollTrigger: {
-
-          trigger:
-            ".marquee-section",
-
-          start:
-            "top bottom",
-
-          end:
-            "bottom top",
-
-          scrub: 1
-
-        }
-
-      }
-
-    );
-
-  }
-
-
-  /* =======================================================
-     CTA REVEAL
-     ======================================================= */
-
-  const cta =
-    document.querySelector(
-      ".cta-section"
-    );
-
-  if (
-    cta &&
-    typeof ScrollTrigger !== "undefined"
-  ) {
-
-    const ctaItems =
-      cta.querySelectorAll(
-        ".reveal"
-      );
-
-    if (ctaItems.length) {
-
-      gsap.fromTo(
-
-        ctaItems,
-
-        {
-          y: 55,
-          opacity: 0
-        },
-
-        {
-          y: 0,
-          opacity: 1,
-
-          duration: 1,
-
-          stagger: .15,
-
-          scrollTrigger: {
-
-            trigger: cta,
-
-            start:
-              "top 75%",
-
-            toggleActions:
-              "play none none none"
-
-          }
-
-        }
-
-      );
-
-    }
-
-  }
-
-
-  /* =======================================================
-     CONTACT REVEAL
-     ======================================================= */
-
-  const contact =
-    document.querySelector(
-      ".contact-preview"
-    );
-
-  if (
-    contact &&
-    typeof ScrollTrigger !== "undefined"
-  ) {
-
-    gsap.fromTo(
-
-      contact.querySelectorAll(
-        ".contact-item"
-      ),
-
-      {
-        x: 40,
-        opacity: 0
-      },
-
-      {
-        x: 0,
-        opacity: 1,
-
-        duration: .9,
-
-        stagger: .15,
-
-        scrollTrigger: {
-
-          trigger: contact,
-
-          start:
-            "top 75%",
-
-          toggleActions:
-            "play none none none"
-
-        }
-
-      }
-
-    );
-
-  }
-
-
-  /* =======================================================
-     FOOTER
-     ======================================================= */
-
-  const footer =
-    document.querySelector(
-      ".site-footer"
-    );
-
-  if (
-    footer &&
-    typeof ScrollTrigger !== "undefined"
-  ) {
-
-    gsap.fromTo(
-
-      footer.querySelectorAll(
-        ".footer-brand, .footer-links"
-      ),
-
-      {
-        y: 35,
-        opacity: 0
-      },
-
-      {
-        y: 0,
-        opacity: 1,
-
-        duration: .9,
-
-        stagger: .15,
-
-        scrollTrigger: {
-
-          trigger: footer,
-
-          start:
-            "top 85%",
-
-          toggleActions:
-            "play none none none"
-
-        }
-
-      }
-
-    );
-
-  }
-
-
-  /* =======================================================
-     HERO PARALLAX
-     ======================================================= */
-
-  if (
-    typeof ScrollTrigger !== "undefined"
-  ) {
-
-    const hero =
-      document.querySelector(
-        ".hero"
-      );
-
-    if (hero) {
-
-      const heroContent =
-        hero.querySelector(
-          ".hero-inner"
-        );
-
-      if (heroContent) {
-
-        gsap.to(
-
-          heroContent,
-
-          {
-
-            y: 100,
-            opacity: 0.25,
-
-            ease: "none",
-
-            scrollTrigger: {
-
-              trigger: hero,
-
-              start:
-                "top top",
-
-              end:
-                "bottom top",
-
-              scrub: 1
-
-            }
-
-          }
-
-        );
-
-      }
-
-    }
-
-  }
-
-
-  /* =======================================================
-     REFRESH SCROLLTRIGGER
-     ======================================================= */
-
-  if (
-    typeof ScrollTrigger !== "undefined"
-  ) {
-
-    window.addEventListener(
-      "load",
-      () => {
-
-        setTimeout(
-          () => {
-
-            ScrollTrigger.refresh();
-
-          },
-          300
-        );
-
-      }
-    );
-
-  }
-
-
-  /* =======================================================
-     RESIZE SAFETY
-     ======================================================= */
-
-  let resizeTimer;
+     REFRESH
+  ======================================================= */
 
   window.addEventListener(
-    "resize",
+    "load",
     () => {
 
-      clearTimeout(
-        resizeTimer
-      );
+      if (
+        typeof ScrollTrigger !==
+        "undefined"
+      ) {
 
-      resizeTimer =
-        setTimeout(
-          () => {
+        ScrollTrigger.refresh();
 
-            if (
-              typeof ScrollTrigger !==
-              "undefined"
-            ) {
+      }
 
-              ScrollTrigger.refresh();
-
-            }
-
-          },
-          250
-        );
-
-    }
+    },
+    { once: true }
   );
 
 });
