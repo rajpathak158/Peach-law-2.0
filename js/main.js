@@ -92,7 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
     disclaimer &&
     disclaimerAccepted === "true"
   ) {
+
     disclaimer.style.display = "none";
+
   }
 
 
@@ -109,10 +111,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (disclaimer) {
 
-          disclaimer.classList.add("hidden");
+          disclaimer.classList.add(
+            "hidden"
+          );
 
           setTimeout(() => {
-            disclaimer.style.display = "none";
+
+            disclaimer.style.display =
+              "none";
+
           }, 600);
 
         }
@@ -132,7 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
     disagreeBtn.addEventListener(
       "click",
       () => {
+
         window.history.back();
+
       }
     );
 
@@ -187,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mouseX = event.clientX;
         mouseY = event.clientY;
 
+
         cursorDot.style.transform =
           `translate3d(
             ${mouseX}px,
@@ -207,12 +217,14 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorY +=
         (mouseY - cursorY) * 0.16;
 
+
       cursor.style.transform =
         `translate3d(
           ${cursorX}px,
           ${cursorY}px,
           0
         ) translate(-50%, -50%)`;
+
 
       requestAnimationFrame(
         animateCursor
@@ -222,6 +234,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animateCursor();
 
+
+    /* =====================================================
+       CURSOR HOVER EFFECT
+       ===================================================== */
 
     const interactiveElements =
       document.querySelectorAll(
@@ -235,9 +251,11 @@ document.addEventListener("DOMContentLoaded", () => {
         element.addEventListener(
           "mouseenter",
           () => {
+
             cursor.classList.add(
               "cursor-active"
             );
+
           }
         );
 
@@ -245,9 +263,11 @@ document.addEventListener("DOMContentLoaded", () => {
         element.addEventListener(
           "mouseleave",
           () => {
+
             cursor.classList.remove(
               "cursor-active"
             );
+
           }
         );
 
@@ -279,15 +299,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const rect =
               element.getBoundingClientRect();
 
+
             const x =
               event.clientX -
               rect.left -
               rect.width / 2;
 
+
             const y =
               event.clientY -
               rect.top -
               rect.height / 2;
+
 
             element.style.transform =
               `translate(
@@ -302,7 +325,9 @@ document.addEventListener("DOMContentLoaded", () => {
         element.addEventListener(
           "mouseleave",
           () => {
+
             element.style.transform = "";
+
           }
         );
 
@@ -334,19 +359,26 @@ document.addEventListener("DOMContentLoaded", () => {
             const rect =
               card.getBoundingClientRect();
 
+
             const x =
               event.clientX -
               rect.left;
+
 
             const y =
               event.clientY -
               rect.top;
 
 
+            /* ---------------------------------------------
+               LIGHT POSITION
+               --------------------------------------------- */
+
             card.style.setProperty(
               "--mouse-x",
               `${x}px`
             );
+
 
             card.style.setProperty(
               "--mouse-y",
@@ -354,9 +386,14 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
+            /* ---------------------------------------------
+               3D TILT
+               --------------------------------------------- */
+
             const rotateX =
               ((y / rect.height) - 0.5)
               * -5;
+
 
             const rotateY =
               ((x / rect.width) - 0.5)
@@ -376,147 +413,10 @@ document.addEventListener("DOMContentLoaded", () => {
         card.addEventListener(
           "mouseleave",
           () => {
+
             card.style.transform = "";
+
           }
-        );
-
-      }
-    );
-
-  }
-
-
-  /* =======================================================
-     ANIMATED STAT COUNTERS
-     ======================================================= */
-
-  const counters =
-    document.querySelectorAll(
-      ".counter"
-    );
-
-
-  const animateCounter = (counter) => {
-
-    const target =
-      Number(
-        counter.dataset.target
-      );
-
-
-    if (
-      !Number.isFinite(target)
-    ) {
-      return;
-    }
-
-
-    const duration = 1800;
-
-    const startTime =
-      performance.now();
-
-
-    const updateCounter =
-      (currentTime) => {
-
-        const elapsed =
-          currentTime -
-          startTime;
-
-
-        const progress =
-          Math.min(
-            elapsed / duration,
-            1
-          );
-
-
-        /* Smooth easing */
-
-        const eased =
-          1 -
-          Math.pow(
-            1 - progress,
-            3
-          );
-
-
-        const current =
-          Math.floor(
-            target * eased
-          );
-
-
-        counter.textContent =
-          current.toLocaleString();
-
-
-        if (progress < 1) {
-
-          requestAnimationFrame(
-            updateCounter
-          );
-
-        } else {
-
-          counter.textContent =
-            target.toLocaleString();
-
-        }
-
-      };
-
-
-    requestAnimationFrame(
-      updateCounter
-    );
-
-  };
-
-
-  /* =======================================================
-     COUNTER OBSERVER
-     ======================================================= */
-
-  if (counters.length) {
-
-    const counterObserver =
-      new IntersectionObserver(
-        (entries, observer) => {
-
-          entries.forEach(
-            (entry) => {
-
-              if (
-                entry.isIntersecting
-              ) {
-
-                animateCounter(
-                  entry.target
-                );
-
-                observer.unobserve(
-                  entry.target
-                );
-
-              }
-
-            }
-          );
-
-        },
-        {
-          threshold: 0.35
-        }
-      );
-
-
-    counters.forEach(
-      (counter) => {
-
-        counterObserver.observe(
-          counter
         );
 
       }
@@ -541,16 +441,16 @@ document.addEventListener("DOMContentLoaded", () => {
           (event) => {
 
             const targetId =
-              link.getAttribute(
-                "href"
-              );
+              link.getAttribute("href");
 
 
             if (
               !targetId ||
               targetId === "#"
             ) {
+
               return;
+
             }
 
 
@@ -560,9 +460,7 @@ document.addEventListener("DOMContentLoaded", () => {
               );
 
 
-            if (!target) {
-              return;
-            }
+            if (!target) return;
 
 
             event.preventDefault();
@@ -581,18 +479,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     HERO MOUSE LIGHT
+     WINDOW RESIZE
+     ======================================================= */
+
+  window.addEventListener(
+    "resize",
+    () => {
+
+      if (
+        typeof ScrollTrigger !==
+        "undefined"
+      ) {
+
+        ScrollTrigger.refresh();
+
+      }
+
+    }
+  );
+
+
+  /* =======================================================
+     PHASE 2 — MOUSE AMBIENT LIGHT
      ======================================================= */
 
   if (!isTouch) {
 
     const hero =
-      document.querySelector(
-        ".hero"
-      );
+      document.querySelector(".hero");
 
 
     if (hero) {
+
+      let lightX = 50;
+      let lightY = 50;
+
 
       hero.addEventListener(
         "mousemove",
@@ -602,12 +523,12 @@ document.addEventListener("DOMContentLoaded", () => {
             hero.getBoundingClientRect();
 
 
-          const lightX =
+          lightX =
             ((event.clientX - rect.left)
             / rect.width) * 100;
 
 
-          const lightY =
+          lightY =
             ((event.clientY - rect.top)
             / rect.height) * 100;
 
@@ -633,7 +554,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     HORIZONTAL OVERFLOW SAFETY
+     PERFORMANCE SAFETY
      ======================================================= */
 
   document.documentElement.style.overflowX =
@@ -641,27 +562,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.body.style.overflowX =
     "hidden";
-
-
-  /* =======================================================
-     SCROLLTRIGGER REFRESH
-     ======================================================= */
-
-  window.addEventListener(
-    "resize",
-    () => {
-
-      if (
-        typeof ScrollTrigger !==
-        "undefined"
-      ) {
-
-        ScrollTrigger.refresh();
-
-      }
-
-    }
-  );
 
 
   /* =======================================================
