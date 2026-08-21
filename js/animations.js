@@ -1,15 +1,11 @@
 /* =========================================================
    PREACH LAW & CO.
    PREMIUM GSAP ANIMATION SYSTEM
-   PHASE 2 — STEP 1
-   CINEMATIC HERO
+   PHASE 2 — STEP 2
+   HERO + SCROLL + 3D PRACTICE CARDS
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* -------------------------------------------------------
-     GSAP CHECK
-  ------------------------------------------------------- */
 
   if (typeof gsap === "undefined") {
     console.warn("GSAP not loaded.");
@@ -22,452 +18,397 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     HERO INTRO
-  ======================================================= */
+     HERO
+     ======================================================= */
 
-  const hero = document.querySelector(".hero");
+  const hero =
+    document.querySelector(".hero");
 
-  if (!hero) return;
+  if (hero) {
 
+    const heroLabel =
+      hero.querySelector(".hero-label");
 
-  const heroLabel =
-    hero.querySelector(".hero-label");
+    const heroLines =
+      hero.querySelectorAll(
+        ".hero-title .line > span"
+      );
 
-  const heroLines =
-    hero.querySelectorAll(
-      ".hero-title .line > span"
-    );
+    const heroDescription =
+      hero.querySelector(".hero-description");
 
-  const heroDescription =
-    hero.querySelector(".hero-description");
+    const heroButton =
+      hero.querySelector(".hero-button");
 
-  const heroButton =
-    hero.querySelector(".hero-button");
+    const heroSide =
+      hero.querySelector(".hero-side");
 
-  const heroSide =
-    hero.querySelector(".hero-side");
+    const heroScroll =
+      hero.querySelector(".hero-scroll");
 
-  const heroScroll =
-    hero.querySelector(".hero-scroll");
-
-  const heroNumber =
-    hero.querySelector(".hero-number");
-
-
-  /* =======================================================
-     INITIAL STATES
-  ======================================================= */
-
-  gsap.set(heroLines, {
-    yPercent: 110,
-    opacity: 0
-  });
+    const heroNumber =
+      hero.querySelector(".hero-number");
 
 
-  if (heroLabel) {
+    /* Initial states */
 
-    gsap.set(heroLabel, {
-      y: 25,
+    gsap.set(heroLines, {
+      yPercent: 110,
       opacity: 0
     });
 
-  }
-
-
-  if (heroDescription) {
-
-    gsap.set(heroDescription, {
-      y: 30,
-      opacity: 0
-    });
-
-  }
-
-
-  if (heroButton) {
-
-    gsap.set(heroButton, {
-      y: 30,
-      opacity: 0
-    });
-
-  }
-
-
-  if (heroSide) {
-
-    gsap.set(heroSide, {
-      opacity: 0
-    });
-
-  }
-
-
-  if (heroScroll) {
-
-    gsap.set(heroScroll, {
-      opacity: 0,
-      y: 20
-    });
-
-  }
-
-
-  if (heroNumber) {
-
-    gsap.set(heroNumber, {
-      opacity: 0,
-      y: 20
-    });
-
-  }
-
-
-  /* =======================================================
-     HERO TIMELINE
-  ======================================================= */
-
-  const heroTimeline =
-    gsap.timeline({
-      defaults: {
-        ease: "power4.out"
-      },
-      delay: 0.25
-    });
-
-
-  /* Label */
-
-  if (heroLabel) {
-
-    heroTimeline.to(
-      heroLabel,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8
-      },
-      0
-    );
-
-  }
-
-
-  /* Main title */
-
-  heroTimeline.to(
-    heroLines,
-    {
-      yPercent: 0,
-      opacity: 1,
-      duration: 1.15,
-      stagger: 0.12
-    },
-    0.15
-  );
-
-
-  /* Description */
-
-  if (heroDescription) {
-
-    heroTimeline.to(
-      heroDescription,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.9
-      },
-      0.75
-    );
-
-  }
-
-
-  /* Button */
-
-  if (heroButton) {
-
-    heroTimeline.to(
-      heroButton,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.9
-      },
-      0.85
-    );
-
-  }
-
-
-  /* Side information */
-
-  if (heroSide) {
-
-    heroTimeline.to(
-      heroSide,
-      {
-        opacity: 1,
-        duration: 0.8
-      },
-      1
-    );
-
-  }
-
-
-  /* Scroll indicator */
-
-  if (heroScroll) {
-
-    heroTimeline.to(
-      heroScroll,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8
-      },
-      1.15
-    );
-
-  }
-
-
-  /* Number */
-
-  if (heroNumber) {
-
-    heroTimeline.to(
-      heroNumber,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8
-      },
-      1.15
-    );
-
-  }
-
-
-  /* =======================================================
-     HERO PARALLAX
-  ======================================================= */
-
-  if (
-    typeof ScrollTrigger !== "undefined"
-  ) {
-
-    const heroGrid =
-      document.querySelector(".hero-grid");
-
-    const heroGlowOne =
-      document.querySelector(".glow-one");
-
-    const heroGlowTwo =
-      document.querySelector(".glow-two");
-
-
-    if (heroGrid) {
-
-      gsap.to(heroGrid, {
-
-        y: 80,
-
-        ease: "none",
-
-        scrollTrigger: {
-
-          trigger: hero,
-
-          start: "top top",
-
-          end: "bottom top",
-
-          scrub: 1.2
-
-        }
-
+    if (heroLabel) {
+      gsap.set(heroLabel, {
+        y: 25,
+        opacity: 0
       });
+    }
+
+    if (heroDescription) {
+      gsap.set(heroDescription, {
+        y: 30,
+        opacity: 0
+      });
+    }
+
+    if (heroButton) {
+      gsap.set(heroButton, {
+        y: 30,
+        opacity: 0
+      });
+    }
+
+    if (heroSide) {
+      gsap.set(heroSide, {
+        opacity: 0
+      });
+    }
+
+    if (heroScroll) {
+      gsap.set(heroScroll, {
+        opacity: 0,
+        y: 20
+      });
+    }
+
+    if (heroNumber) {
+      gsap.set(heroNumber, {
+        opacity: 0,
+        y: 20
+      });
+    }
+
+
+    /* Hero timeline */
+
+    const heroTimeline =
+      gsap.timeline({
+        defaults: {
+          ease: "power4.out"
+        },
+        delay: 0.2
+      });
+
+
+    if (heroLabel) {
+
+      heroTimeline.to(
+        heroLabel,
+        {
+          y: 0,
+          opacity: 1,
+          duration: .8
+        },
+        0
+      );
 
     }
 
 
-    if (heroGlowOne) {
+    heroTimeline.to(
+      heroLines,
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 1.1,
+        stagger: .11
+      },
+      .12
+    );
 
-      gsap.to(heroGlowOne, {
 
-        y: 120,
+    if (heroDescription) {
 
-        x: -50,
+      heroTimeline.to(
+        heroDescription,
+        {
+          y: 0,
+          opacity: 1,
+          duration: .8
+        },
+        .72
+      );
 
-        ease: "none",
+    }
 
-        scrollTrigger: {
 
-          trigger: hero,
+    if (heroButton) {
 
-          start: "top top",
-
-          end: "bottom top",
-
-          scrub: 1.5
-
-        }
-
-      });
+      heroTimeline.to(
+        heroButton,
+        {
+          y: 0,
+          opacity: 1,
+          duration: .8
+        },
+        .82
+      );
 
     }
 
 
-    if (heroGlowTwo) {
+    if (heroSide) {
 
-      gsap.to(heroGlowTwo, {
-
-        y: -80,
-
-        x: 40,
-
-        ease: "none",
-
-        scrollTrigger: {
-
-          trigger: hero,
-
-          start: "top top",
-
-          end: "bottom top",
-
-          scrub: 1.8
-
-        }
-
-      });
+      heroTimeline.to(
+        heroSide,
+        {
+          opacity: 1,
+          duration: .7
+        },
+        .95
+      );
 
     }
 
-  }
+
+    if (heroScroll) {
+
+      heroTimeline.to(
+        heroScroll,
+        {
+          opacity: 1,
+          y: 0,
+          duration: .7
+        },
+        1.05
+      );
+
+    }
 
 
-  /* =======================================================
-     HERO MOUSE PARALLAX
-     DESKTOP ONLY
-  ======================================================= */
+    if (heroNumber) {
 
-  const desktop =
-    window.matchMedia(
-      "(pointer: fine)"
-    ).matches;
+      heroTimeline.to(
+        heroNumber,
+        {
+          opacity: 1,
+          y: 0,
+          duration: .7
+        },
+        1.05
+      );
 
-
-  if (desktop) {
-
-    let mouseX = 0;
-    let mouseY = 0;
-
-    let currentX = 0;
-    let currentY = 0;
+    }
 
 
-    hero.addEventListener(
-      "mousemove",
-      (event) => {
+    /* =====================================================
+       HERO PARALLAX
+       ===================================================== */
 
-        const rect =
-          hero.getBoundingClientRect();
+    if (
+      typeof ScrollTrigger !==
+      "undefined"
+    ) {
+
+      const heroGrid =
+        document.querySelector(".hero-grid");
+
+      const glowOne =
+        document.querySelector(".glow-one");
+
+      const glowTwo =
+        document.querySelector(".glow-two");
 
 
-        mouseX =
-          (event.clientX - rect.left)
-          / rect.width
-          - 0.5;
+      if (heroGrid) {
 
+        gsap.to(heroGrid, {
 
-        mouseY =
-          (event.clientY - rect.top)
-          / rect.height
-          - 0.5;
+          y: 70,
+
+          ease: "none",
+
+          scrollTrigger: {
+
+            trigger: hero,
+
+            start: "top top",
+
+            end: "bottom top",
+
+            scrub: 1.2
+
+          }
+
+        });
 
       }
-    );
 
 
-    const animateMouse =
-      () => {
+      if (glowOne) {
+
+        gsap.to(glowOne, {
+
+          x: -45,
+          y: 100,
+
+          ease: "none",
+
+          scrollTrigger: {
+
+            trigger: hero,
+
+            start: "top top",
+
+            end: "bottom top",
+
+            scrub: 1.5
+
+          }
+
+        });
+
+      }
+
+
+      if (glowTwo) {
+
+        gsap.to(glowTwo, {
+
+          x: 35,
+          y: -70,
+
+          ease: "none",
+
+          scrollTrigger: {
+
+            trigger: hero,
+
+            start: "top top",
+
+            end: "bottom top",
+
+            scrub: 1.8
+
+          }
+
+        });
+
+      }
+
+    }
+
+
+    /* =====================================================
+       HERO MOUSE DEPTH
+       ===================================================== */
+
+    if (
+      window.matchMedia(
+        "(pointer: fine)"
+      ).matches
+    ) {
+
+      let mouseX = 0;
+      let mouseY = 0;
+
+      let currentX = 0;
+      let currentY = 0;
+
+
+      hero.addEventListener(
+        "mousemove",
+        (event) => {
+
+          const rect =
+            hero.getBoundingClientRect();
+
+          mouseX =
+            (event.clientX -
+              rect.left) /
+              rect.width -
+            .5;
+
+          mouseY =
+            (event.clientY -
+              rect.top) /
+              rect.height -
+            .5;
+
+        }
+      );
+
+
+      const updateHeroDepth = () => {
 
         currentX +=
-          (mouseX - currentX) * 0.05;
+          (mouseX - currentX) * .045;
 
         currentY +=
-          (mouseY - currentY) * 0.05;
+          (mouseY - currentY) * .045;
 
 
         if (heroLabel) {
-
-          gsap.set(
-            heroLabel,
-            {
-              x: currentX * 8
-            }
-          );
-
+          gsap.set(heroLabel, {
+            x: currentX * 8
+          });
         }
-
 
         if (heroDescription) {
-
-          gsap.set(
-            heroDescription,
-            {
-              x: currentX * 5
-            }
-          );
-
+          gsap.set(heroDescription, {
+            x: currentX * 5
+          });
         }
 
-
         if (heroButton) {
-
-          gsap.set(
-            heroButton,
-            {
-              x: currentX * -6
-            }
-          );
-
+          gsap.set(heroButton, {
+            x: currentX * -5
+          });
         }
 
 
         requestAnimationFrame(
-          animateMouse
+          updateHeroDepth
         );
 
       };
 
 
-    requestAnimationFrame(
-      animateMouse
-    );
+      requestAnimationFrame(
+        updateHeroDepth
+      );
+
+    }
 
   }
 
 
   /* =======================================================
      SCROLL REVEALS
-  ======================================================= */
+     ======================================================= */
 
   if (
-    typeof ScrollTrigger !== "undefined"
+    typeof ScrollTrigger !==
+    "undefined"
   ) {
 
-    const revealElements =
+    const reveals =
       document.querySelectorAll(
         ".reveal:not(.hero .reveal)"
       );
 
 
-    revealElements.forEach(
+    reveals.forEach(
       (element) => {
 
         gsap.fromTo(
@@ -482,7 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
             y: 0,
             opacity: 1,
 
-            duration: 1,
+            duration: .9,
 
             ease:
               "power3.out",
@@ -508,8 +449,301 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     REFRESH
-  ======================================================= */
+     PRACTICE CARD SYSTEM
+     ======================================================= */
+
+  const cards =
+    document.querySelectorAll(
+      ".practice-card"
+    );
+
+
+  if (
+    cards.length &&
+    window.matchMedia(
+      "(pointer: fine)"
+    ).matches
+  ) {
+
+    cards.forEach(
+      (card) => {
+
+        const content =
+          card.querySelector(
+            ".practice-card-content"
+          );
+
+        const icon =
+          card.querySelector(
+            ".practice-card-top i"
+          );
+
+
+        /* ---------------------------------------------------
+           Mouse movement
+        --------------------------------------------------- */
+
+        card.addEventListener(
+          "mousemove",
+          (event) => {
+
+            const rect =
+              card.getBoundingClientRect();
+
+
+            const x =
+              event.clientX -
+              rect.left;
+
+
+            const y =
+              event.clientY -
+              rect.top;
+
+
+            const centerX =
+              rect.width / 2;
+
+
+            const centerY =
+              rect.height / 2;
+
+
+            const rotateY =
+              ((x - centerX) /
+                centerX) * 4;
+
+
+            const rotateX =
+              ((centerY - y) /
+                centerY) * 4;
+
+
+            /* CSS variables for light */
+
+            card.style.setProperty(
+              "--mouse-x",
+              `${x}px`
+            );
+
+            card.style.setProperty(
+              "--mouse-y",
+              `${y}px`
+            );
+
+
+            gsap.to(
+              card,
+              {
+                rotateX:
+                  rotateX,
+
+                rotateY:
+                  rotateY,
+
+                y: -8,
+
+                duration: .45,
+
+                ease:
+                  "power3.out",
+
+                overwrite:
+                  "auto"
+              }
+            );
+
+
+            if (content) {
+
+              gsap.to(
+                content,
+                {
+                  z: 18,
+
+                  duration: .45,
+
+                  ease:
+                    "power3.out",
+
+                  overwrite:
+                    "auto"
+                }
+              );
+
+            }
+
+
+            if (icon) {
+
+              gsap.to(
+                icon,
+                {
+                  z: 30,
+
+                  scale: 1.08,
+
+                  duration: .45,
+
+                  ease:
+                    "power3.out",
+
+                  overwrite:
+                    "auto"
+                }
+              );
+
+            }
+
+          }
+        );
+
+
+        /* ---------------------------------------------------
+           Mouse leave
+        --------------------------------------------------- */
+
+        card.addEventListener(
+          "mouseleave",
+          () => {
+
+            gsap.to(
+              card,
+              {
+                rotateX: 0,
+                rotateY: 0,
+                y: 0,
+
+                duration: .7,
+
+                ease:
+                  "elastic.out(1,.55)",
+
+                overwrite:
+                  "auto"
+              }
+            );
+
+
+            if (content) {
+
+              gsap.to(
+                content,
+                {
+                  z: 0,
+
+                  duration: .6,
+
+                  ease:
+                    "power3.out",
+
+                  overwrite:
+                    "auto"
+                }
+              );
+
+            }
+
+
+            if (icon) {
+
+              gsap.to(
+                icon,
+                {
+                  z: 0,
+                  scale: 1,
+
+                  duration: .6,
+
+                  ease:
+                    "power3.out",
+
+                  overwrite:
+                    "auto"
+                }
+              );
+
+            }
+
+          }
+        );
+
+
+        /* ---------------------------------------------------
+           Card entrance
+        --------------------------------------------------- */
+
+        if (
+          typeof ScrollTrigger !==
+          "undefined"
+        ) {
+
+          gsap.fromTo(
+            card,
+
+            {
+              y: 50,
+              opacity: 0
+            },
+
+            {
+              y: 0,
+              opacity: 1,
+
+              duration:
+                .9,
+
+              ease:
+                "power3.out",
+
+              scrollTrigger: {
+
+                trigger:
+                  card,
+
+                start:
+                  "top 90%",
+
+                once: true
+
+              }
+
+            }
+          );
+
+        }
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     MOBILE CARD SAFETY
+     ======================================================= */
+
+  if (
+    window.matchMedia(
+      "(pointer: coarse)"
+    ).matches
+  ) {
+
+    cards.forEach(
+      (card) => {
+
+        card.style.transform =
+          "none";
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     REFRESH AFTER PAGE LOAD
+     ======================================================= */
 
   window.addEventListener(
     "load",
