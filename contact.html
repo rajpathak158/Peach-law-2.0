@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#11110f"
+  >
+
+  <title>Contact | Preach Law & Co.</title>
+
+  <meta
+    name="description"
+    content="Contact Preach Law & Co. for legal representation, regulatory advisory and business consulting."
+  >
+
+  <meta
+    name="author"
+    content="Preach Law & Co."
+  >
+
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+
+  <script
+    src="https://unpkg.com/lucide@latest"
+    defer
+  ></script>
+
+
+  <!-- =====================================================
+       CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/animations.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/responsive.css"
+  >
+
+
+  <!-- =====================================================
+       CONTACT PAGE CSS
+  ====================================================== -->
+
+  <style>
+
+    /* =====================================================
+       PAGE
+    ====================================================== */
+
+    .contact-page {
+      background: #11110f;
+      color: #f2eee6;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .contact-hero {
+      position: relative;
+
+      min-height: 72vh;
+
+      display: flex;
+      align-items: flex-end;
+
+      overflow: hidden;
+
+      padding:
+        160px 0
+        100px;
+    }
+
+
+    .contact-grid-bg {
+      position: absolute;
+
+      inset: 0;
+
+      opacity: .045;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.35) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.35) 1px,
+          transparent 1px
+        );
+
+      background-size: 80px 80px;
+    }
+
+
+    .contact-glow {
+      position: absolute;
+
+      width: 650px;
+      height: 650px;
+
+      right: -250px;
+      top: -250px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200,169,107,.18),
+          transparent 68%
+        );
+    }
+
+
+    .contact-ring {
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: 5%;
+      bottom: -350px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.12);
+
+      border-radius: 50%;
+    }
+
+
+    .contact-hero-content {
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .contact-kicker {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      opacity: .55;
+    }
+
+
+    .contact-kicker span:first-child {
+      width: 45px;
+      height: 1px;
+
+      background: currentColor;
+    }
+
+
+    .contact-hero h1 {
+      max-width: 1000px;
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(58px, 9vw, 125px);
+
+      line-height: .9;
+
+      letter-spacing: -.055em;
+
+      font-weight: 500;
+    }
+
+
+    .contact-hero h1 em {
+      color: #c8a96b;
+
+      font-weight: 500;
+    }
+
+
+    .contact-hero-description {
+      max-width: 650px;
+
+      margin-top: 45px;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.58);
+    }
+
+
+    .contact-index {
+      position: absolute;
+
+      right: 7%;
+      bottom: 65px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      opacity: .3;
+    }
+
+
+    /* =====================================================
+       MAIN CONTACT AREA
+    ====================================================== */
+
+    .contact-main {
+      padding:
+        120px 0
+        150px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .contact-layout {
+      display: grid;
+
+      grid-template-columns:
+        .85fr 1.15fr;
+
+      gap: 100px;
+    }
+
+
+    /* =====================================================
+       DETAILS
+    ====================================================== */
+
+    .contact-details-column {
+      padding-top: 10px;
+    }
+
+
+    .contact-details-column h2 {
+      margin:
+        18px 0 25px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(40px, 5vw, 65px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .contact-details-column h2 em {
+      color: #c8a96b;
+    }
+
+
+    .contact-intro {
+      max-width: 480px;
+
+      margin-bottom: 60px;
+
+      font-size: 15px;
+
+      line-height: 1.85;
+
+      color:
+        rgba(242,238,230,.48);
+    }
+
+
+    .contact-info-list {
+      display: flex;
+
+      flex-direction: column;
+    }
+
+
+    .contact-info {
+      display: grid;
+
+      grid-template-columns: 120px 1fr;
+
+      gap: 25px;
+
+      padding:
+        25px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.11);
+    }
+
+
+    .contact-info:last-child {
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.11);
+    }
+
+
+    .contact-info-label {
+      font-size: 9px;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(242,238,230,.38);
+    }
+
+
+    .contact-info-content {
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+
+    .contact-info-content a {
+      display: block;
+
+      width: fit-content;
+
+      color: #f2eee6;
+
+      text-decoration: none;
+
+      transition:
+        color .3s ease;
+    }
+
+
+    .contact-info-content a:hover {
+      color: #c8a96b;
+    }
+
+
+    /* =====================================================
+       FORM
+    ====================================================== */
+
+    .contact-form-wrapper {
+      padding: 50px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.13);
+
+      background:
+        rgba(255,255,255,.015);
+    }
+
+
+    .contact-form-header {
+      margin-bottom: 45px;
+    }
+
+
+    .contact-form-header h2 {
+      margin:
+        15px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 42px;
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .contact-form-header h2 em {
+      color: #c8a96b;
+    }
+
+
+    .contact-form {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 30px;
+    }
+
+
+    .form-row {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 25px;
+    }
+
+
+    .form-group {
+      position: relative;
+
+      display: flex;
+
+      flex-direction: column;
+    }
+
+
+    .form-group label {
+      margin-bottom: 10px;
+
+      font-size: 9px;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(242,238,230,.4);
+    }
+
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+
+      padding:
+        15px 0;
+
+      border: 0;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.18);
+
+      outline: none;
+
+      background: transparent;
+
+      color: #f2eee6;
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+      font-size: 14px;
+
+      transition:
+        border-color .3s ease;
+    }
+
+
+    .form-group select {
+      cursor: pointer;
+
+      appearance: none;
+
+      background-color: transparent;
+    }
+
+
+    .form-group select option {
+      background: #11110f;
+
+      color: #f2eee6;
+    }
+
+
+    .form-group textarea {
+      min-height: 130px;
+
+      resize: vertical;
+    }
+
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: #c8a96b;
+    }
+
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color:
+        rgba(242,238,230,.25);
+    }
+
+
+    .form-submit {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 14px;
+
+      width: fit-content;
+
+      margin-top: 10px;
+
+      padding:
+        17px 28px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.65);
+
+      background: transparent;
+
+      color: #f2eee6;
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      transition:
+        all .35s ease;
+    }
+
+
+    .form-submit i {
+      width: 16px;
+      height: 16px;
+
+      transition:
+        transform .3s ease;
+    }
+
+
+    .form-submit:hover {
+      background: #c8a96b;
+
+      color: #11110f;
+    }
+
+
+    .form-submit:hover i {
+      transform:
+        translate(3px, -3px);
+    }
+
+
+    .form-note {
+      margin-top: -10px;
+
+      font-size: 10px;
+
+      line-height: 1.6;
+
+      color:
+        rgba(242,238,230,.3);
+    }
+
+
+    /* =====================================================
+       OFFICE SECTION
+    ====================================================== */
+
+    .office-section {
+      padding:
+        100px 0
+        130px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .office-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-end;
+
+      gap: 40px;
+
+      margin-bottom: 55px;
+    }
+
+
+    .office-header h2 {
+      margin:
+        15px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(42px, 5vw, 70px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .office-header h2 em {
+      color: #c8a96b;
+    }
+
+
+    .office-header p {
+      max-width: 450px;
+
+      margin: 0;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.45);
+    }
+
+
+    .office-card {
+      position: relative;
+
+      min-height: 350px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+
+      padding: 45px;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(255,255,255,.13);
+
+      background:
+        radial-gradient(
+          circle at 75% 35%,
+          rgba(200,169,107,.1),
+          transparent 40%
+        );
+    }
+
+
+    .office-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      opacity: .1;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.2) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.2) 1px,
+          transparent 1px
+        );
+
+      background-size: 70px 70px;
+    }
+
+
+    .office-icon {
+      position: absolute;
+
+      right: 60px;
+      top: 55px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 110px;
+      height: 110px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.35);
+
+      border-radius: 50%;
+
+      color: #c8a96b;
+    }
+
+
+    .office-icon i {
+      width: 40px;
+      height: 40px;
+    }
+
+
+    .office-card-content {
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .office-card-label {
+      display: block;
+
+      margin-bottom: 12px;
+
+      font-size: 9px;
+
+      letter-spacing: .17em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(242,238,230,.38);
+    }
+
+
+    .office-card h3 {
+      margin: 0 0 12px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 42px;
+
+      font-weight: 500;
+    }
+
+
+    .office-card p {
+      margin: 0;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      color:
+        rgba(242,238,230,.52);
+    }
+
+
+    /* =====================================================
+       DISCLAIMER NOTE
+    ====================================================== */
+
+    .contact-disclaimer {
+      margin-top: 80px;
+
+      padding:
+        25px 30px;
+
+      border-left:
+        2px solid
+        #c8a96b;
+
+      background:
+        rgba(200,169,107,.035);
+    }
+
+
+    .contact-disclaimer strong {
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-size: 10px;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+      color: #c8a96b;
+    }
+
+
+    .contact-disclaimer p {
+      margin: 0;
+
+      font-size: 11px;
+
+      line-height: 1.7;
+
+      color:
+        rgba(242,238,230,.4);
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 950px) {
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+
+        gap: 80px;
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      .contact-hero {
+        min-height: 70vh;
+
+        padding:
+          130px 20px
+          80px;
+      }
+
+
+      .contact-index {
+        display: none;
+      }
+
+
+      .contact-main {
+        padding:
+          90px 20px
+          100px;
+      }
+
+
+      .contact-form-wrapper {
+        padding: 30px 22px;
+      }
+
+
+      .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+      }
+
+
+      .office-section {
+        padding:
+          80px 20px
+          100px;
+      }
+
+
+      .office-header {
+        display: block;
+      }
+
+
+      .office-header p {
+        margin-top: 25px;
+      }
+
+
+      .office-card {
+        min-height: 400px;
+
+        padding: 30px;
+      }
+
+
+      .office-icon {
+        right: 30px;
+        top: 30px;
+
+        width: 80px;
+        height: 80px;
+      }
+
+
+      .office-icon i {
+        width: 30px;
+        height: 30px;
+      }
+
+
+      .office-card h3 {
+        font-size: 36px;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .contact-info {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+      }
+
+
+      .contact-form-header h2 {
+        font-size: 36px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="contact-page">
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="nav-container">
+
+
+      <a
+        href="./index.html"
+        class="brand"
+        aria-label="Preach Law & Co. Home"
+      >
+
+        <div class="brand-mark">
+          <span>P</span>
+        </div>
+
+
+        <div class="brand-text">
+
+          <strong>
+            Preach Law &amp; Co.
+          </strong>
+
+          <small>
+            Advocates &amp; Legal Advisory
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <nav
+        class="desktop-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a href="./services.html">
+          Services
+        </a>
+
+        <a href="./team.html">
+          Team
+        </a>
+
+        <a href="./articles.html">
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          Offices
+        </a>
+
+      </nav>
+
+
+      <a
+        href="./contact.html"
+        class="nav-contact"
+        aria-current="page"
+      >
+
+        <span>
+          Contact Us
+        </span>
+
+        <i data-lucide="arrow-up-right"></i>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <div class="mobile-menu-inner">
+
+
+      <nav>
+
+        <a href="./index.html">
+          <span>01</span>
+          Home
+        </a>
+
+        <a href="./about.html">
+          <span>02</span>
+          About
+        </a>
+
+        <a href="./services.html">
+          <span>03</span>
+          Services
+        </a>
+
+        <a href="./team.html">
+          <span>04</span>
+          Our Team
+        </a>
+
+        <a href="./articles.html">
+          <span>05</span>
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          <span>06</span>
+          Offices
+        </a>
+
+        <a
+          href="./contact.html"
+          aria-current="page"
+        >
+          <span>07</span>
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="mobile-menu-footer">
+
+        <span>
+          PREACH LAW &amp; CO.
+        </span>
+
+        <span>
+          ADVOCATES · ADVISORS · CONSULTANTS
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="contact-hero">
+
+
+      <div class="contact-grid-bg"></div>
+
+      <div class="contact-glow"></div>
+
+      <div class="contact-ring"></div>
+
+
+      <div class="container contact-hero-content">
+
+
+        <div class="contact-kicker">
+
+          <span></span>
+
+          <span>
+            CONTACT · CONSULT · CONNECT
+          </span>
+
+        </div>
+
+
+        <h1>
+
+          Let's discuss
+
+          <br>
+
+          <em>your matter.</em>
+
+        </h1>
+
+
+        <p class="contact-hero-description">
+
+          Whether you require legal representation,
+          regulatory guidance or business advisory,
+          our team is available to understand your
+          requirements.
+
+        </p>
+
+
+      </div>
+
+
+      <span class="contact-index">
+        07 / 07
+      </span>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT MAIN
+    ====================================================== -->
+
+    <section class="contact-main">
+
+
+      <div class="container">
+
+
+        <div class="contact-layout">
+
+
+          <!-- =================================================
+               DETAILS
+          ================================================== -->
+
+          <div class="contact-details-column">
+
+
+            <span class="eyebrow">
+              START A CONVERSATION
+            </span>
+
+
+            <h2>
+
+              Tell us what
+
+              <br>
+
+              <em>you need.</em>
+
+            </h2>
+
+
+            <p class="contact-intro">
+
+              Every matter is different. Share a
+              brief overview of your requirement and
+              our team can determine the appropriate
+              next step.
+
+            </p>
+
+
+            <div class="contact-info-list">
+
+
+              <!-- OFFICE -->
+
+              <div class="contact-info">
+
+                <span class="contact-info-label">
+                  Office
+                </span>
+
+
+                <div class="contact-info-content">
+
+                  E-111-B, Nawada Housing Complex,
+
+                  <br>
+
+                  Dwarka More,
+
+                  <br>
+
+                  New Delhi – 110059
+
+                </div>
+
+              </div>
+
+
+              <!-- PHONE -->
+
+              <div class="contact-info">
+
+                <span class="contact-info-label">
+                  Phone
+                </span>
+
+
+                <div class="contact-info-content">
+
+                  <a href="tel:+919311664455">
+                    +91 93116 64455
+                  </a>
+
+                  <a href="tel:01146574455">
+                    011 4657 4455
+                  </a>
+
+                </div>
+
+              </div>
+
+
+              <!-- EMAIL -->
+
+              <div class="contact-info">
+
+                <span class="contact-info-label">
+                  Email
+                </span>
+
+
+                <div class="contact-info-content">
+
+                  <a href="mailto:admin@preachlaw.com">
+                    admin@preachlaw.com
+                  </a>
+
+                </div>
+
+              </div>
+
+
+              <!-- HOURS -->
+
+              <div class="contact-info">
+
+                <span class="contact-info-label">
+                  Hours
+                </span>
+
+
+                <div class="contact-info-content">
+
+                  Monday – Saturday
+
+                  <br>
+
+                  10:00 AM – 7:00 PM
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+          <!-- =================================================
+               FORM
+          ================================================== -->
+
+          <div class="contact-form-wrapper">
+
+
+            <div class="contact-form-header">
+
+              <span class="eyebrow">
+                ENQUIRY
+              </span>
+
+
+              <h2>
+
+                Send us a
+
+                <em>message.</em>
+
+              </h2>
+
+            </div>
+
+
+            <form
+              class="contact-form"
+              id="contactForm"
+            >
+
+
+              <!-- NAME + EMAIL -->
+
+              <div class="form-row">
+
+
+                <div class="form-group">
+
+                  <label for="name">
+                    Full Name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    required
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="email">
+                    Email
+                  </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                  >
+
+                </div>
+
+
+              </div>
+
+
+              <!-- PHONE + CATEGORY -->
+
+              <div class="form-row">
+
+
+                <div class="form-group">
+
+                  <label for="phone">
+                    Phone
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+91"
+                    autocomplete="tel"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="matter">
+                    Matter
