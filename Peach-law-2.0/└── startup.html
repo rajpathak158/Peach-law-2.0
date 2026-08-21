@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#11110f"
+  >
+
+  <title>Startups & Corporate | Preach Law & Co.</title>
+
+  <meta
+    name="description"
+    content="Startup and corporate legal advisory covering incorporation, contracts, governance, compliance and business structuring."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+  <script
+    src="https://unpkg.com/lucide@latest"
+    defer
+  ></script>
+
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/animations.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/responsive.css"
+  >
+
+  <style>
+
+    /* =====================================================
+       STARTUP PAGE
+    ====================================================== */
+
+    .startup-page {
+      background: #11110f;
+      color: #f2eee6;
+    }
+
+    /* HERO */
+
+    .startup-hero {
+      position: relative;
+      min-height: 82vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      padding: 160px 0 100px;
+    }
+
+    .startup-grid {
+      position: absolute;
+      inset: 0;
+      opacity: .055;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.25) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.25) 1px,
+          transparent 1px
+        );
+
+      background-size: 80px 80px;
+    }
+
+    .startup-glow {
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      right: -220px;
+      top: -180px;
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200,169,107,.18),
+          transparent 68%
+        );
+    }
+
+    .startup-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .startup-kicker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+
+      opacity: .55;
+    }
+
+    .startup-kicker span:first-child {
+      width: 45px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .startup-hero h1 {
+      max-width: 1100px;
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(55px, 9vw, 125px);
+
+      line-height: .92;
+
+      font-weight: 500;
+
+      letter-spacing: -.05em;
+    }
+
+    .startup-hero h1 em {
+      color: #c8a96b;
+      font-weight: 500;
+    }
+
+    .startup-description {
+      max-width: 670px;
+
+      margin-top: 45px;
+
+      font-size: 18px;
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.62);
+    }
+
+    .startup-index {
+      position: absolute;
+
+      right: 7%;
+      bottom: 70px;
+
+      font-size: 11px;
+      letter-spacing: .2em;
+
+      opacity: .3;
+    }
+
+
+    /* INTRO */
+
+    .startup-intro {
+      padding: 130px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+    .startup-intro-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 2fr;
+
+      gap: 80px;
+    }
+
+    .startup-label {
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+
+      opacity: .4;
+    }
+
+    .startup-intro-content h2 {
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(42px, 5vw, 72px);
+
+      line-height: 1.03;
+
+      font-weight: 500;
+    }
+
+    .startup-intro-content h2 em {
+      color: #c8a96b;
+    }
+
+    .startup-intro-content p {
+      max-width: 760px;
+
+      margin-top: 30px;
+
+      font-size: 17px;
+      line-height: 1.9;
+
+      color:
+        rgba(242,238,230,.6);
+    }
+
+
+    /* SERVICES */
+
+    .startup-services {
+      padding:
+        100px 0
+        150px;
+    }
+
+    .startup-heading {
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: flex-end;
+
+      gap: 40px;
+
+      margin-bottom: 55px;
+    }
+
+    .startup-heading h2 {
+      margin:
+        15px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 78px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+    .startup-heading p {
+      max-width: 430px;
+
+      margin: 0;
+
+      line-height: 1.75;
+
+      color:
+        rgba(242,238,230,.55);
+    }
+
+
+    /* SERVICE CARDS */
+
+    .startup-grid-cards {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-left:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+    .startup-card {
+      position: relative;
+
+      min-height: 315px;
+
+      padding: 40px;
+
+      border-right:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+
+      overflow: hidden;
+
+      transition:
+        color .4s ease;
+    }
+
+    .startup-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background: #c8a96b;
+
+      transform:
+        translateY(101%);
+
+      transition:
+        transform .55s
+        cubic-bezier(.16,1,.3,1);
+    }
+
+    .startup-card:hover::before {
+      transform:
+        translateY(0);
+    }
+
+    .startup-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .startup-card-top {
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: center;
+
+      margin-bottom: 65px;
+    }
+
+    .startup-number {
+      font-size: 11px;
+
+      letter-spacing: .15em;
+
+      opacity: .4;
+    }
+
+    .startup-icon {
+      width: 44px;
+      height: 44px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid
+        rgba(255,255,255,.2);
+
+      border-radius: 50%;
+    }
+
+    .startup-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .startup-card h3 {
+      margin:
+        0 0 15px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 32px;
+
+      font-weight: 500;
+
+      line-height: 1.05;
+    }
+
+    .startup-card p {
+      max-width: 450px;
+
+      margin: 0;
+
+      line-height: 1.7;
+
+      color:
+        rgba(242,238,230,.55);
+    }
+
+    .startup-card:hover p {
+      color:
+        rgba(17,17,15,.72);
+    }
+
+
+    /* JOURNEY */
+
+    .startup-journey {
+      padding:
+        150px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+    .journey-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 100px;
+    }
+
+    .journey-heading {
+      position: sticky;
+
+      top: 120px;
+
+      align-self: start;
+    }
+
+    .journey-heading h2 {
+      margin:
+        20px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 75px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+    .journey-heading em {
+      color: #c8a96b;
+    }
+
+    .journey-list {
+      border-top:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+    .journey-item {
+      position: relative;
+
+      padding:
+        38px 0;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+    .journey-item span {
+      display: block;
+
+      margin-bottom: 15px;
+
+      font-size: 10px;
+
+      letter-spacing: .18em;
+
+      opacity: .4;
+    }
+
+    .journey-item h3 {
+      margin:
+        0 0 12px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 29px;
+
+      font-weight: 500;
+    }
+
+    .journey-item p {
+      margin: 0;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.57);
+    }
+
+
+    /* CORPORATE STRIP */
+
+    .corporate-strip {
+      padding:
+        90px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+    .corporate-strip-inner {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 30px;
+    }
+
+    .corporate-point {
+      padding:
+        20px 0;
+    }
+
+    .corporate-point strong {
+      display: block;
+
+      margin-bottom: 10px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 25px;
+
+      font-weight: 500;
+    }
+
+    .corporate-point span {
+      font-size: 12px;
+
+      line-height: 1.6;
+
+      color:
+        rgba(242,238,230,.48);
+    }
+
+
+    /* CTA */
+
+    .startup-cta {
+      padding:
+        150px 0;
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(200,169,107,.1),
+          transparent 45%
+        );
+    }
+
+    .startup-cta h2 {
+      max-width: 950px;
+
+      margin:
+        20px auto 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 7vw, 90px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+    .startup-cta h2 em {
+      color: #c8a96b;
+    }
+
+    .startup-cta p {
+      max-width: 560px;
+
+      margin:
+        30px auto;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.58);
+    }
+
+    .startup-button {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-top: 20px;
+
+      padding:
+        18px 30px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.7);
+
+      color: #f2eee6;
+
+      text-decoration: none;
+
+      font-size: 11px;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+      transition:
+        all .35s ease;
+    }
+
+    .startup-button:hover {
+      background: #c8a96b;
+
+      color: #11110f;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+      .startup-hero {
+        min-height: 75vh;
+
+        padding:
+          130px 20px
+          80px;
+      }
+
+      .startup-index {
+        display: none;
+      }
+
+      .startup-intro {
+        padding:
+          90px 20px;
+      }
+
+      .startup-intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .startup-services {
+        padding:
+          80px 20px
+          100px;
+      }
+
+      .startup-heading {
+        display: block;
+      }
+
+      .startup-heading p {
+        margin-top: 25px;
+      }
+
+      .startup-grid-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .startup-card {
+        min-height: 280px;
+
+        padding: 30px;
+      }
+
+      .startup-journey {
+        padding:
+          100px 20px;
+      }
+
+      .journey-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+      }
+
+      .journey-heading {
+        position: static;
+      }
+
+      .corporate-strip {
+        padding:
+          70px 20px;
+      }
+
+      .corporate-strip-inner {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .startup-cta {
+        padding:
+          100px 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="startup-page">
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="nav-container">
+
+
+      <a
+        href="./index.html"
+        class="brand"
+        aria-label="Preach Law & Co. Home"
+      >
+
+        <div class="brand-mark">
+          <span>P</span>
+        </div>
+
+        <div class="brand-text">
+
+          <strong>
+            Preach Law &amp; Co.
+          </strong>
+
+          <small>
+            Advocates &amp; Legal Advisory
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <nav
+        class="desktop-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a
+          href="./services.html"
+          aria-current="page"
+        >
+          Services
+        </a>
+
+        <a href="./team.html">
+          Team
+        </a>
+
+        <a href="./articles.html">
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          Offices
+        </a>
+
+      </nav>
+
+
+      <a
+        href="./contact.html"
+        class="nav-contact"
+      >
+
+        <span>
+          Contact Us
+        </span>
+
+        <i data-lucide="arrow-up-right"></i>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <div class="mobile-menu-inner">
+
+      <nav>
+
+        <a href="./index.html">
+          <span>01</span>
+          Home
+        </a>
+
+        <a href="./about.html">
+          <span>02</span>
+          About
+        </a>
+
+        <a href="./services.html">
+          <span>03</span>
+          Services
+        </a>
+
+        <a href="./team.html">
+          <span>04</span>
+          Our Team
+        </a>
+
+        <a href="./articles.html">
+          <span>05</span>
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          <span>06</span>
+          Offices
+        </a>
+
+        <a href="./contact.html">
+          <span>07</span>
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="mobile-menu-footer">
+
+        <span>
+          PREACH LAW &amp; CO.
+        </span>
+
+        <span>
+          ADVOCATES · ADVISORS · CONSULTANTS
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="startup-hero">
+
+      <div class="startup-grid"></div>
+
+      <div class="startup-glow"></div>
+
+
+      <div class="container startup-content">
+
+
+        <div class="startup-kicker">
+
+          <span></span>
+
+          <span>
+            PRACTICE AREA · 03
+          </span>
+
+        </div>
+
+
+        <h1>
+
+          Startups &amp;
+
+          <br>
+
+          <em>Corporate.</em>
+
+        </h1>
+
+
+        <p class="startup-description">
+
+          Legal foundations for ambitious businesses —
+          from incorporation and contracts to governance,
+          compliance and strategic growth.
+
+        </p>
+
+
+      </div>
+
+
+      <span class="startup-index">
+        03 / 05
+      </span>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="startup-intro">
+
+      <div class="container">
+
+
+        <div class="startup-intro-grid">
+
+
+          <div class="startup-label">
+            OUR APPROACH
+          </div>
+
+
+          <div class="startup-intro-content">
+
+
+            <h2>
+
+              Build the business.
+
+              <br>
+
+              <em>Protect the foundation.</em>
+
+            </h2>
+
+
+            <p>
+
+              Growing a business requires more than
+              a strong commercial idea. The legal structure
+              supporting that idea should evolve alongside it.
+
+            </p>
+
+
+            <p>
+
+              We assist founders, companies and
+              organisations with practical legal solutions
+              designed around their stage of growth,
+              commercial objectives and regulatory
+              environment.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="startup-services">
+
+
+      <div class="container">
+
+
+        <div class="startup-heading">
+
+
+          <div>
+
+            <span class="eyebrow">
+              CORPORATE SERVICES
+            </span>
+
+            <h2>
+
+              Structure for
+
+              <br>
+
+              <em>growth.</em>
+
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            Legal and advisory support across the
+            business lifecycle — from the first
+            incorporation document to ongoing
+            corporate requirements.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="startup-grid-cards">
+
+
+          <!-- 01 -->
+
+          <article class="startup-card">
+
+
+            <div class="startup-card-top">
+
+              <span class="startup-number">
+                01
+              </span>
+
+              <span class="startup-icon">
+                <i data-lucide="building-2"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Incorporation
+            </h3>
+
+
+            <p>
+
+              Assistance with selecting an appropriate
+              business structure, incorporation processes
+              and foundational documentation.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- 02 -->
+
+          <article class="startup-card">
+
+
+            <div class="startup-card-top">
+
+              <span class="startup-number">
+                02
+              </span>
+
+              <span class="startup-icon">
+                <i data-lucide="file-signature"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Contracts
+            </h3>
+
+
+            <p>
+
+              Drafting, reviewing and negotiating
+              commercial agreements tailored to
+              business relationships and transactions.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- 03 -->
+
+          <article class="startup-card">
+
+
+            <div class="startup-card-top">
+
+              <span class="startup-number">
+                03
+              </span>
+
+              <span class="startup-icon">
+                <i data-lucide="users"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Shareholder Matters
+            </h3>
+
+
+            <p>
+
+              Support relating to shareholder
+              arrangements, founder relationships,
+              investments and corporate documentation.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- 04 -->
+
+          <article class="startup-card">
+
+
+            <div class="startup-card-top">
+
+              <span class="startup-number">
+                04
+              </span>
+
+              <span class="startup-icon">
+                <i data-lucide="landmark"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Corporate Governance
+            </h3>
+
+
+            <p>
+
+              Governance frameworks, board matters,
+              statutory requirements and ongoing
+              corporate compliance support.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- 05 -->
+
+          <article class="startup-card">
+
+
+            <div class="startup-card-top">
+
+              <span class="startup-number">
+                05
+              </span>
+
+              <span class="startup-icon">
+                <i data-lucide="rocket"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Startup Advisory
+            </h3>
+
+
+            <p>
+
+              Practical legal guidance for founders
+              navigating early-stage operations,
+              fundraising, partnerships and growth.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- 06 -->
+
+          <article class="startup-card">
+
+
+            <div class="startup-card-top">
+
+              <span class="startup-number">
+                06
+              </span>
+
+              <span class="startup-icon">
+                <i data-lucide="shield-check"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Compliance
+            </h3>
+
+
+            <p>
+
+              Assistance in understanding applicable
+              legal and regulatory requirements as
+              businesses develop and expand.
+
+            </p>
+
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- BUSINESS JOURNEY -->
+
+    <section class="startup-journey">
+
+
+      <div class="container">
+
+
+        <div class="journey-grid">
+
+
+          <div class="journey-heading">
+
+
+            <span class="eyebrow">
+              BUSINESS JOURNEY
+            </span>
+
+
+            <h2>
+
+              Legal support
+
+              <br>
+
+              at every
+
+              <br>
+
+              <em>stage.</em>
+
+            </h2>
+
+
+          </div>
+
+
+          <div class="journey-list">
+
+
+            <div class="journey-item">
+
+              <span>
+                01 · BEGIN
+              </span>
+
+              <h3>
+                From idea to entity
+              </h3>
+
+              <p>
+
+                Establishing the appropriate legal
+                structure and documentation for the
+                beginning of the business journey.
+
+              </p>
+
+            </div>
+
+
+            <div class="journey-item">
+
+              <span>
+                02 · BUILD
+              </span>
+
+              <h3>
+                From entity to operation
+              </h3>
+
+              <p>
+
+                Developing contracts, policies and
+                internal frameworks that support
+                day-to-day commercial activity.
+
+              </p>
+
+            </div>
+
+
+            <div class="journey-item">
+
+              <span>
+                03 · GROW
+              </span>
+
+              <h3>
+                From operation to expansion
+              </h3>
+
+              <p>
+
+                Supporting investment, partnerships,
+                new business relationships and
+                evolving corporate requirements.
+
+              </p>
+
+            </div>
+
+
+            <div class="journey-item">
+
+              <span>
+                04 · SCALE
+              </span>
+
+              <h3>
+                From growth to governance
+              </h3>
+
+              <p>
+
+                Strengthening governance and
+                compliance frameworks as the
+                organisation becomes more complex.
+
+              </p>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- CORPORATE STRIP -->
+
+    <section class="corporate-strip">
+
+
+      <div class="container">
+
+
+        <div class="corporate-strip-inner">
+
+
+          <div class="corporate-point">
+
+            <strong>
+              Founders
+            </strong>
+
+            <span>
+              Legal foundations and founder arrangements.
+            </span>
+
+          </div>
+
+
+          <div class="corporate-point">
+
+            <strong>
+              Companies
+            </strong>
+
+            <span>
+              Corporate governance and commercial support.
+            </span>
+
+          </div>
+
+
+          <div class="corporate-point">
+
+            <strong>
+              Investors
+            </strong>
+
+            <span>
+              Documentation and transaction support.
+            </span>
+
+          </div>
+
+
+          <div class="corporate-point">
+
+            <strong>
+              Businesses
+            </strong>
+
+            <span>
+              Ongoing legal and regulatory advisory.
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="startup-cta">
+
+
+      <div class="container">
+
+
+        <span class="eyebrow">
+          STARTUPS &amp; CORPORATE
+        </span>
+
+
+        <h2>
+
+          Build with confidence.
+
+          <br>
+
+          <em>Grow with clarity.</em>
+
+        </h2>
+
+
+        <p>
+
+          Tell us about your business, transaction
+          or corporate requirement and let's explore
+          the appropriate legal approach.
+
+        </p>
+
+
+        <a
+          href="./contact.html"
+          class="startup-button"
+        >
+
+          Contact The Firm
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+
+          <a
+            href="./index.html"
+            class="brand"
+          >
+
+            <div class="brand-mark">
+              <span>P</span>
+            </div>
+
+
+            <div class="brand-text">
+
+              <strong>
+                Preach Law &amp; Co.
+              </strong>
+
+              <small>
+                Advocates &amp; Legal Advisory
+              </small>
+
+            </div>
+
+          </a>
+
+
+          <p>
+
+            Legal representation, regulatory advisory
+            and professional services for individuals,
+            businesses and institutions.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <div>
+
+            <span>
+              COMPANY
+            </span>
+
+            <a href="./about.html">
+              About
+            </a>
+
+            <a href="./team.html">
+              Our Team
+            </a>
+
+            <a href="./offices.html">
+              Offices
+            </a>
+
+            <a href="./articles.html">
+              Insights
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              PRACTICE
+            </span>
+
+            <a href="./litigation.html">
+              Litigation
+            </a>
+
+            <a href="./ipr.html">
+              IPR
+            </a>
+
+            <a href="./startup.html">
+              Startups
+            </a>
+
+            <a href="./consulting.html">
+              Consulting
+            </a>
+
+            <a href="./fintech.html">
+              Fintech
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              CONTACT
+            </span>
+
+            <a href="./contact.html">
+              Contact
+            </a>
+
+            <a href="tel:+919311664455">
+              +91 93116 64455
+            </a>
+
+            <a href="mailto:admin@preachlaw.com">
+              Email
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2015–2030 Preach Law LLP. All Rights Reserved.
+        </span>
+
+        <span>
+          DELHI · INDIA
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="./js/navigation.js"></script>
+
+  <script src="./js/animations.js"></script>
+
+  <script src="./js/main.js"></script>
+
+
+  <script>
+
+    window.addEventListener(
+      "load",
+      function () {
+
+        if (
+          window.lucide &&
+          typeof window.lucide.createIcons === "function"
+        ) {
+          window.lucide.createIcons();
+        }
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+  </html>
