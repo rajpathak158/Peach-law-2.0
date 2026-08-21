@@ -2816,3 +2816,38 @@ img {
   }
 
    }
+/* =========================================================
+   GLOBAL HORIZONTAL OVERFLOW FIX
+   ========================================================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
+
+main,
+section,
+header,
+footer {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+
+/* Prevent animated elements from creating
+   horizontal scrolling */
+
+.hero,
+.practice,
+.philosophy,
+.cta-section,
+.contact-preview,
+.stats-section,
+.marquee-section {
+  overflow: hidden;
+}
