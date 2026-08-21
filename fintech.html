@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#11110f">
+
+  <title>Fintech & Financial Regulation | Preach Law & Co.</title>
+
+  <meta
+    name="description"
+    content="Fintech, financial regulation, payments, NBFC, FEMA and regulatory advisory services by Preach Law & Co."
+  >
+
+  <meta name="author" content="Preach Law & Co.">
+
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+
+  <script
+    src="https://unpkg.com/lucide@latest"
+    defer
+  ></script>
+
+
+  <!-- =====================================================
+       CSS
+  ====================================================== -->
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+
+
+  <!-- =====================================================
+       PAGE CSS
+  ====================================================== -->
+
+  <style>
+
+    /* =====================================================
+       BASE
+    ====================================================== */
+
+    .fintech-page {
+      background: #11110f;
+      color: #f2eee6;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .fintech-hero {
+      position: relative;
+
+      min-height: 84vh;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      padding: 150px 0 100px;
+    }
+
+
+    .fintech-grid {
+      position: absolute;
+
+      inset: 0;
+
+      opacity: .055;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.3) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.3) 1px,
+          transparent 1px
+        );
+
+      background-size: 70px 70px;
+    }
+
+
+    .fintech-glow {
+      position: absolute;
+
+      width: 700px;
+      height: 700px;
+
+      right: -280px;
+      top: -170px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200,169,107,.18),
+          transparent 68%
+        );
+    }
+
+
+    .fintech-ring {
+      position: absolute;
+
+      width: 600px;
+      height: 600px;
+
+      right: -160px;
+      bottom: -340px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.16);
+
+      border-radius: 50%;
+    }
+
+
+    .fintech-ring::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 70px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.08);
+
+      border-radius: 50%;
+    }
+
+
+    .fintech-content {
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .fintech-kicker {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      opacity: .55;
+    }
+
+
+    .fintech-kicker span:first-child {
+      width: 45px;
+      height: 1px;
+
+      background: currentColor;
+    }
+
+
+    .fintech-hero h1 {
+      max-width: 1100px;
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(52px, 9vw, 125px);
+
+      line-height: .9;
+
+      letter-spacing: -.055em;
+
+      font-weight: 500;
+    }
+
+
+    .fintech-hero h1 em {
+      color: #c8a96b;
+
+      font-weight: 500;
+    }
+
+
+    .fintech-description {
+      max-width: 700px;
+
+      margin-top: 45px;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.62);
+    }
+
+
+    .fintech-index {
+      position: absolute;
+
+      right: 7%;
+      bottom: 65px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      opacity: .3;
+    }
+
+
+    /* =====================================================
+       INTRO
+    ====================================================== */
+
+    .fintech-intro {
+      padding: 130px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .fintech-intro-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 2fr;
+
+      gap: 80px;
+    }
+
+
+    .fintech-label {
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      opacity: .4;
+    }
+
+
+    .fintech-intro-content h2 {
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(42px, 5vw, 72px);
+
+      line-height: 1.03;
+
+      font-weight: 500;
+    }
+
+
+    .fintech-intro-content h2 em {
+      color: #c8a96b;
+    }
+
+
+    .fintech-intro-content p {
+      max-width: 780px;
+
+      margin-top: 30px;
+
+      font-size: 17px;
+
+      line-height: 1.9;
+
+      color:
+        rgba(242,238,230,.6);
+    }
+
+
+    /* =====================================================
+       SERVICES
+    ====================================================== */
+
+    .fintech-services {
+      padding:
+        100px 0 150px;
+    }
+
+
+    .fintech-heading {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-end;
+
+      gap: 50px;
+
+      margin-bottom: 65px;
+    }
+
+
+    .fintech-heading h2 {
+      margin:
+        15px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 78px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .fintech-heading h2 em {
+      color: #c8a96b;
+    }
+
+
+    .fintech-heading p {
+      max-width: 450px;
+
+      margin: 0;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.52);
+    }
+
+
+    /* =====================================================
+       SERVICE CARDS
+    ====================================================== */
+
+    .fintech-cards {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 1px;
+
+      background:
+        rgba(255,255,255,.12);
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .fintech-card {
+      position: relative;
+
+      min-height: 330px;
+
+      padding: 40px;
+
+      background: #11110f;
+
+      overflow: hidden;
+
+      transition:
+        transform .45s ease;
+    }
+
+
+    .fintech-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 220px;
+      height: 220px;
+
+      right: -100px;
+      bottom: -100px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200,169,107,.12),
+          transparent 70%
+        );
+
+      transition:
+        transform .5s ease;
+    }
+
+
+    .fintech-card:hover {
+      transform:
+        translateY(-6px);
+    }
+
+
+    .fintech-card:hover::after {
+      transform:
+        scale(1.5);
+    }
+
+
+    .fintech-card-top {
+      position: relative;
+
+      z-index: 2;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 70px;
+    }
+
+
+    .fintech-card-number {
+      font-size: 11px;
+
+      letter-spacing: .15em;
+
+      opacity: .4;
+    }
+
+
+    .fintech-card-icon {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 48px;
+      height: 48px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.35);
+
+      border-radius: 50%;
+
+      color: #c8a96b;
+    }
+
+
+    .fintech-card-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+
+    .fintech-card h3 {
+      position: relative;
+
+      z-index: 2;
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(27px, 3vw, 38px);
+
+      line-height: 1.05;
+
+      font-weight: 500;
+    }
+
+
+    .fintech-card p {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 580px;
+
+      margin:
+        18px 0 0;
+
+      font-size: 14px;
+
+      line-height: 1.75;
+
+      color:
+        rgba(242,238,230,.48);
+    }
+
+
+    /* =====================================================
+       REGULATORY AREAS
+    ====================================================== */
+
+    .fintech-regulation {
+      padding:
+        140px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .regulation-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 100px;
+    }
+
+
+    .regulation-heading h2 {
+      margin:
+        18px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 76px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .regulation-heading h2 em {
+      color: #c8a96b;
+    }
+
+
+    .regulation-heading p {
+      max-width: 500px;
+
+      margin-top: 30px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.52);
+    }
+
+
+    .regulation-list {
+      border-top:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .regulation-item {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 30px;
+
+      padding: 25px 0;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .regulation-item span:first-child {
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 23px;
+    }
+
+
+    .regulation-item span:last-child {
+      width: 35px;
+      height: 35px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
+
+      border-radius: 50%;
+
+      font-size: 11px;
+
+      color: #c8a96b;
+    }
+
+
+    /* =====================================================
+       WHY US
+    ====================================================== */
+
+    .fintech-why {
+      padding:
+        140px 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(200,169,107,.035)
+        );
+    }
+
+
+    .why-heading {
+      margin-bottom: 65px;
+    }
+
+
+    .why-heading h2 {
+      margin:
+        18px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 78px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .why-heading h2 em {
+      color: #c8a96b;
+    }
+
+
+    .why-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-left:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .why-card {
+      min-height: 260px;
+
+      padding: 35px;
+
+      border-right:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .why-card-number {
+      color: #c8a96b;
+
+      font-size: 11px;
+
+      letter-spacing: .15em;
+    }
+
+
+    .why-card h3 {
+      margin:
+        55px 0 15px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 27px;
+
+      font-weight: 500;
+    }
+
+
+    .why-card p {
+      margin: 0;
+
+      font-size: 13px;
+
+      line-height: 1.75;
+
+      color:
+        rgba(242,238,230,.48);
+    }
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .fintech-cta {
+      padding:
+        150px 0;
+
+      text-align: center;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(200,169,107,.11),
+          transparent 45%
+        );
+    }
+
+
+    .fintech-cta h2 {
+      max-width: 1000px;
+
+      margin:
+        20px auto 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 7vw, 90px);
+
+      line-height: .98;
+
+      font-weight: 500;
+    }
+
+
+    .fintech-cta h2 em {
+      color: #c8a96b;
+    }
+
+
+    .fintech-cta p {
+      max-width: 600px;
+
+      margin:
+        30px auto;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.55);
+    }
+
+
+    .fintech-button {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-top: 20px;
+
+      padding:
+        18px 30px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.7);
+
+      color: #f2eee6;
+
+      text-decoration: none;
+
+      font-size: 11px;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+      transition:
+        all .35s ease;
+    }
+
+
+    .fintech-button:hover {
+      background: #c8a96b;
+
+      color: #11110f;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 768px) {
+
+      .fintech-hero {
+        min-height: 75vh;
+
+        padding:
+          130px 20px
+          80px;
+      }
+
+
+      .fintech-index {
+        display: none;
+      }
+
+
+      .fintech-intro {
+        padding:
+          90px 20px;
+      }
+
+
+      .fintech-intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+
+      .fintech-services {
+        padding:
+          80px 20px
+          100px;
+      }
+
+
+      .fintech-heading {
+        display: block;
+      }
+
+
+      .fintech-heading p {
+        margin-top: 25px;
+      }
+
+
+      .fintech-cards {
+        grid-template-columns: 1fr;
+      }
+
+
+      .fintech-card {
+        min-height: 300px;
+      }
+
+
+      .fintech-regulation {
+        padding:
+          90px 20px;
+      }
+
+
+      .regulation-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+      }
+
+
+      .fintech-why {
+        padding:
+          90px 20px;
+      }
+
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .fintech-cta {
+        padding:
+          100px 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="fintech-page">
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="nav-container">
+
+
+      <a
+        href="./index.html"
+        class="brand"
+        aria-label="Preach Law & Co. Home"
+      >
+
+        <div class="brand-mark">
+          <span>P</span>
+        </div>
+
+
+        <div class="brand-text">
+
+          <strong>
+            Preach Law &amp; Co.
+          </strong>
+
+          <small>
+            Advocates &amp; Legal Advisory
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <nav
+        class="desktop-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a
+          href="./services.html"
+          aria-current="page"
+        >
+          Services
+        </a>
+
+        <a href="./team.html">
+          Team
+        </a>
+
+        <a href="./articles.html">
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          Offices
+        </a>
+
+      </nav>
+
+
+      <a
+        href="./contact.html"
+        class="nav-contact"
+      >
+
+        <span>
+          Contact Us
+        </span>
+
+        <i data-lucide="arrow-up-right"></i>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <div class="mobile-menu-inner">
+
+      <nav>
+
+        <a href="./index.html">
+          <span>01</span>
+          Home
+        </a>
+
+        <a href="./about.html">
+          <span>02</span>
+          About
+        </a>
+
+        <a href="./services.html">
+          <span>03</span>
+          Services
+        </a>
+
+        <a href="./team.html">
+          <span>04</span>
+          Our Team
+        </a>
+
+        <a href="./articles.html">
+          <span>05</span>
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          <span>06</span>
+          Offices
+        </a>
+
+        <a href="./contact.html">
+          <span>07</span>
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="mobile-menu-footer">
+
+        <span>
+          PREACH LAW &amp; CO.
+        </span>
+
+        <span>
+          ADVOCATES · ADVISORS · CONSULTANTS
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="fintech-hero">
+
+      <div class="fintech-grid"></div>
+
+      <div class="fintech-glow"></div>
+
+      <div class="fintech-ring"></div>
+
+
+      <div class="container fintech-content">
+
+
+        <div class="fintech-kicker">
+
+          <span></span>
+
+          <span>
+            PRACTICE AREA · 05
+          </span>
+
+        </div>
+
+
+        <h1>
+
+          Fintech &amp;
+
+          <br>
+
+          <em>Financial Regulation.</em>
+
+        </h1>
+
+
+        <p class="fintech-description">
+
+          Regulatory and legal support for financial
+          businesses navigating payments, lending,
+          fintech operations, compliance and
+          cross-border requirements.
+
+        </p>
+
+
+      </div>
+
+
+      <span class="fintech-index">
+        05 / 05
+      </span>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="fintech-intro">
+
+
+      <div class="container">
+
+
+        <div class="fintech-intro-grid">
+
+
+          <div class="fintech-label">
+            THE DIGITAL ECONOMY
+          </div>
+
+
+          <div class="fintech-intro-content">
+
+
+            <h2>
+
+              Innovation moves fast.
+
+              <br>
+
+              <em>Regulation must follow.</em>
+
+            </h2>
+
+
+            <p>
+
+              Financial technology businesses operate
+              at the intersection of technology,
+              finance, data, regulation and commerce.
+
+            </p>
+
+
+            <p>
+
+              We help clients understand the legal and
+              regulatory framework surrounding their
+              business model and make informed decisions
+              as their operations evolve.
+
+            </p>
+
+
+            <p>
+
+              Our approach combines regulatory awareness
+              with practical commercial understanding.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section class="fintech-services">
+
+
+      <div class="container">
+
+
+        <div class="fintech-heading">
+
+
+          <div>
+
+            <span class="eyebrow">
+              FINTECH PRACTICE
+            </span>
+
+
+            <h2>
+
+              Built for
+
+              <br>
+
+              <em>regulated businesses.</em>
+
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            Advisory support for businesses operating
+            within India's evolving financial and
+            regulatory ecosystem.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="fintech-cards">
+
+
+          <!-- CARD 01 -->
+
+          <article class="fintech-card">
+
+
+            <div class="fintech-card-top">
+
+              <span class="fintech-card-number">
+                01
+              </span>
+
+              <div class="fintech-card-icon">
+                <i data-lucide="landmark"></i>
+              </div>
+
+            </div>
+
+
+            <h3>
+              Financial Regulation
+            </h3>
+
+
+            <p>
+
+              Guidance on regulatory frameworks,
+              obligations and compliance considerations
+              relevant to financial businesses.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- CARD 02 -->
+
+          <article class="fintech-card">
+
+
+            <div class="fintech-card-top">
+
+              <span class="fintech-card-number">
+                02
+              </span>
+
+              <div class="fintech-card-icon">
+                <i data-lucide="credit-card"></i>
+              </div>
+
+            </div>
+
+
+            <h3>
+              Payments &amp; Digital Finance
+            </h3>
+
+
+            <p>
+
+              Advisory support for businesses involved
+              in digital payments, financial technology
+              and related services.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- CARD 03 -->
+
+          <article class="fintech-card">
+
+
+            <div class="fintech-card-top">
+
+              <span class="fintech-card-number">
+                03
+              </span>
+
+              <div class="fintech-card-icon">
+                <i data-lucide="building-2"></i>
+              </div>
+
+            </div>
+
+
+            <h3>
+              NBFC &amp; Lending
+            </h3>
+
+
+            <p>
+
+              Legal and regulatory considerations for
+              lending businesses, financial structures
+              and related compliance matters.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- CARD 04 -->
+
+          <article class="fintech-card">
+
+
+            <div class="fintech-card-top">
+
+              <span class="fintech-card-number">
+                04
+              </span>
+
+              <div class="fintech-card-icon">
+                <i data-lucide="globe-2"></i>
+              </div>
+
+            </div>
+
+
+            <h3>
+              FEMA &amp; Cross-Border Matters
+            </h3>
+
+
+            <p>
+
+              Advisory on foreign exchange,
+              cross-border transactions and related
+              regulatory considerations.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- CARD 05 -->
+
+          <article class="fintech-card">
+
+
+            <div class="fintech-card-top">
+
+              <span class="fintech-card-number">
+                05
+              </span>
+
+              <div class="fintech-card-icon">
+                <i data-lucide="shield-check"></i>
+              </div>
+
+            </div>
+
+
+            <h3>
+              Compliance Frameworks
+            </h3>
+
+
+            <p>
+
+              Assistance with developing practical
+              compliance approaches appropriate to
+              business operations and regulatory needs.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- CARD 06 -->
+
+          <article class="fintech-card">
+
+
+            <div class="fintech-card-top">
+
+              <span class="fintech-card-number">
+                06
+              </span>
+
+              <div class="fintech-card-icon">
+                <i data-lucide="file-text"></i>
+              </div>
+
+            </div>
+
+
+            <h3>
+              Regulatory Documentation
+            </h3>
+
+
+            <p>
+
+              Support with policies, agreements,
+              regulatory documentation and
+              compliance-related materials.
+
+            </p>
+
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         REGULATION
+    ====================================================== -->
+
+    <section class="fintech-regulation">
+
+
+      <div class="container">
+
+
+        <div class="regulation-grid">
+
+
+          <div class="regulation-heading">
+
+
+            <span class="eyebrow">
+              REGULATORY LANDSCAPE
+            </span>
+
+
+            <h2>
+
+              Understanding
+
+              <br>
+
+              <em>the framework.</em>
+
+            </h2>
+
+
+            <p>
+
+              Financial technology businesses may
+              encounter multiple regulatory and
+              compliance considerations depending
+              on their activities and structure.
+
+            </p>
+
+
+          </div>
+
+
+          <div class="regulation-list">
+
+
+            <div class="regulation-item">
+
+              <span>
+                Payments
+              </span>
+
+              <span>01</span>
+
+            </div>
+
+
+            <div class="regulation-item">
+
+              <span>
+                Lending
+              </span>
+
+              <span>02</span>
+
+            </div>
+
+
+            <div class="regulation-item">
+
+              <span>
+                Financial Services
+              </span>
+
+              <span>03</span>
+
+            </div>
+
+
+            <div class="regulation-item">
+
+              <span>
+                Foreign Exchange
+              </span>
+
+              <span>04</span>
+
+            </div>
+
+
+            <div class="regulation-item">
+
+              <span>
+                Corporate Compliance
+              </span>
+
+              <span>05</span>
+
+            </div>
+
+
+            <div class="regulation-item">
+
+              <span>
+                Data &amp; Technology
+              </span>
+
+              <span>06</span>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         WHY US
+    ====================================================== -->
+
+    <section class="fintech-why">
+
+
+      <div class="container">
+
+
+        <div class="why-heading">
+
+
+          <span class="eyebrow">
+            OUR APPROACH
+          </span>
+
+
+          <h2>
+
+            Legal thinking.
+
+            <br>
+
+            <em>Commercial understanding.</em>
+
+          </h2>
+
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+          <article class="why-card">
+
+            <span class="why-card-number">
+              01
+            </span>
+
+            <h3>
+              Practical
+            </h3>
+
+            <p>
+
+              We focus on advice that can be
+              understood and applied in real
+              business situations.
+
+            </p>
+
+          </article>
+
+
+          <article class="why-card">
+
+            <span class="why-card-number">
+              02
+            </span>
+
+            <h3>
+              Integrated
+            </h3>
+
+            <p>
+
+              Legal, regulatory and commercial
+              considerations are viewed together
+              rather than in isolation.
+
+            </p>
+
+          </article>
+
+
+          <article class="why-card">
+
+            <span class="why-card-number">
+              03
+            </span>
+
+            <h3>
+              Forward-Looking
+            </h3>
+
+            <p>
+
+              We consider how today's regulatory
+              decisions may affect tomorrow's
+              business operations.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="fintech-cta">
+
+
+      <div class="container">
+
+
+        <span class="eyebrow">
+          FINTECH &amp; FINANCIAL REGULATION
+        </span>
+
+
+        <h2>
+
+          Navigate regulation
+
+          <br>
+
+          with
+
+          <br>
+
+          <em>greater confidence.</em>
+
+        </h2>
+
+
+        <p>
+
+          Tell us about your fintech, financial
+          services or regulatory requirement.
+
+        </p>
+
+
+        <a
+          href="./contact.html"
+          class="fintech-button"
+        >
+
+          Start A Conversation
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+
+          <a
+            href="./index.html"
+            class="brand"
+          >
+
+            <div class="brand-mark">
+              <span>P</span>
+            </div>
+
+
+            <div class="brand-text">
+
+              <strong>
+                Preach Law &amp; Co.
+              </strong>
+
+              <small>
+                Advocates &amp; Legal Advisory
+              </small>
+
+            </div>
+
+          </a>
+
+
+          <p>
+
+            Legal representation, regulatory advisory
+            and professional services for individuals,
+            businesses and institutions.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <div>
+
+            <span>
+              COMPANY
+            </span>
+
+            <a href="./about.html">
+              About
+            </a>
+
+            <a href="./team.html">
+              Our Team
+            </a>
+
+            <a href="./offices.html">
+              Offices
+            </a>
+
+            <a href="./articles.html">
+              Insights
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              PRACTICE
+            </span>
+
+            <a href="./litigation.html">
+              Litigation
+            </a>
+
+            <a href="./ipr.html">
+              IPR
+            </a>
+
+            <a href="./startup.html">
+              Startups
+            </a>
+
+            <a href="./consulting.html">
+              Consulting
+            </a>
+
+            <a href="./fintech.html">
+              Fintech
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              CONTACT
+            </span>
+
+            <a href="./contact.html">
+              Contact
+            </a>
+
+            <a href="tel:+919311664455">
+              +91 93116 64455
+            </a>
+
+            <a href="mailto:admin@preachlaw.com">
+              Email
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2015–2030 Preach Law LLP. All Rights Reserved.
+        </span>
+
+        <span>
+          DELHI · INDIA
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="./js/navigation.js"></script>
+
+  <script src="./js/animations.js"></script>
+
+  <script src="./js/main.js"></script>
+
+
+  <script>
+
+    window.addEventListener("load", function () {
+
+      if (
+        window.lucide &&
+        typeof window.lucide.createIcons === "function"
+      ) {
+        window.lucide.createIcons();
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
+  </html>
