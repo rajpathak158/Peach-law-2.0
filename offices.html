@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#11110f"
+  >
+
+  <title>
+    Offices | Preach Law & Co.
+  </title>
+
+  <meta
+    name="description"
+    content="Contact and office information for Preach Law & Co., Advocates and Legal Advisory."
+  >
+
+  <meta
+    name="author"
+    content="Preach Law & Co."
+  >
+
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+
+  <script
+    src="https://unpkg.com/lucide@latest"
+    defer
+  ></script>
+
+
+  <!-- =====================================================
+       CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/animations.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/responsive.css"
+  >
+
+
+  <!-- =====================================================
+       PAGE CSS
+  ====================================================== -->
+
+  <style>
+
+    /* =====================================================
+       BASE
+    ====================================================== */
+
+    .offices-page {
+      background: #11110f;
+      color: #f2eee6;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .offices-hero {
+      position: relative;
+
+      min-height: 78vh;
+
+      display: flex;
+      align-items: flex-end;
+
+      overflow: hidden;
+
+      padding:
+        160px 0
+        100px;
+    }
+
+
+    .offices-grid-bg {
+      position: absolute;
+
+      inset: 0;
+
+      opacity: .05;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.3) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.3) 1px,
+          transparent 1px
+        );
+
+      background-size: 80px 80px;
+    }
+
+
+    .offices-glow {
+      position: absolute;
+
+      width: 700px;
+      height: 700px;
+
+      right: -300px;
+      top: -240px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200,169,107,.18),
+          transparent 68%
+        );
+    }
+
+
+    .offices-circle {
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -100px;
+      bottom: -280px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.13);
+
+      border-radius: 50%;
+    }
+
+
+    .offices-circle::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 60px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.07);
+
+      border-radius: 50%;
+    }
+
+
+    .offices-hero-content {
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .offices-kicker {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      opacity: .55;
+    }
+
+
+    .offices-kicker span:first-child {
+      width: 45px;
+      height: 1px;
+
+      background: currentColor;
+    }
+
+
+    .offices-hero h1 {
+      max-width: 1000px;
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(58px, 9vw, 125px);
+
+      line-height: .9;
+
+      letter-spacing: -.055em;
+
+      font-weight: 500;
+    }
+
+
+    .offices-hero h1 em {
+      color: #c8a96b;
+
+      font-weight: 500;
+    }
+
+
+    .offices-hero-description {
+      max-width: 650px;
+
+      margin-top: 45px;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.6);
+    }
+
+
+    .offices-index {
+      position: absolute;
+
+      right: 7%;
+      bottom: 65px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      opacity: .3;
+    }
+
+
+    /* =====================================================
+       OFFICE INTRO
+    ====================================================== */
+
+    .office-intro {
+      padding:
+        130px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .office-intro-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 2fr;
+
+      gap: 80px;
+    }
+
+
+    .office-intro-label {
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      opacity: .4;
+    }
+
+
+    .office-intro-content h2 {
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(42px, 5vw, 72px);
+
+      line-height: 1.03;
+
+      font-weight: 500;
+    }
+
+
+    .office-intro-content h2 em {
+      color: #c8a96b;
+    }
+
+
+    .office-intro-content p {
+      max-width: 760px;
+
+      margin-top: 30px;
+
+      font-size: 17px;
+
+      line-height: 1.9;
+
+      color:
+        rgba(242,238,230,.58);
+    }
+
+
+    /* =====================================================
+       OFFICE CARD
+    ====================================================== */
+
+    .office-section {
+      padding:
+        80px 0
+        150px;
+    }
+
+
+    .office-card {
+      display: grid;
+
+      grid-template-columns:
+        1.1fr .9fr;
+
+      min-height: 620px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.13);
+    }
+
+
+    /* =====================================================
+       LEFT SIDE
+    ====================================================== */
+
+    .office-main {
+      position: relative;
+
+      padding: 65px;
+
+      overflow: hidden;
+
+      border-right:
+        1px solid
+        rgba(255,255,255,.13);
+    }
+
+
+    .office-main::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -250px;
+      top: -250px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200,169,107,.13),
+          transparent 70%
+        );
+    }
+
+
+    .office-number {
+      position: relative;
+
+      z-index: 2;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 52px;
+      height: 52px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.45);
+
+      border-radius: 50%;
+
+      font-size: 11px;
+
+      color: #c8a96b;
+    }
+
+
+    .office-main h2 {
+      position: relative;
+
+      z-index: 2;
+
+      margin:
+        55px 0 20px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(48px, 6vw, 82px);
+
+      line-height: .95;
+
+      font-weight: 500;
+    }
+
+
+    .office-main h2 em {
+      color: #c8a96b;
+    }
+
+
+    .office-main > p {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 540px;
+
+      margin: 30px 0 55px;
+
+      font-size: 16px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.55);
+    }
+
+
+    /* =====================================================
+       ADDRESS
+    ====================================================== */
+
+    .office-address {
+      position: relative;
+
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 35px;
+
+      padding-top: 35px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.13);
+    }
+
+
+    .office-detail span {
+      display: block;
+
+      margin-bottom: 12px;
+
+      font-size: 10px;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(242,238,230,.4);
+    }
+
+
+    .office-detail p,
+    .office-detail a {
+      margin: 0;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      color:
+        rgba(242,238,230,.75);
+
+      text-decoration: none;
+    }
+
+
+    .office-detail a {
+      display: block;
+
+      transition:
+        color .3s ease;
+    }
+
+
+    .office-detail a:hover {
+      color: #c8a96b;
+    }
+
+
+    /* =====================================================
+       RIGHT MAP / VISUAL
+    ====================================================== */
+
+    .office-visual {
+      position: relative;
+
+      min-height: 620px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(200,169,107,.07),
+          transparent 55%
+        );
+    }
+
+
+    .map-grid {
+      position: absolute;
+
+      inset: 0;
+
+      opacity: .13;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.15) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.15) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        55px 55px;
+    }
+
+
+    .map-circle {
+      position: relative;
+
+      width: 330px;
+      height: 330px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.25);
+
+      border-radius: 50%;
+    }
+
+
+    .map-circle::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 45px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.15);
+
+      border-radius: 50%;
+    }
+
+
+    .map-circle::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 95px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.12);
+
+      border-radius: 50%;
+    }
+
+
+    .map-line {
+      position: absolute;
+
+      width: 100%;
+
+      height: 1px;
+
+      top: 50%;
+      left: 0;
+
+      background:
+        rgba(200,169,107,.2);
+    }
+
+
+    .map-line.vertical {
+      width: 1px;
+      height: 100%;
+
+      left: 50%;
+      top: 0;
+    }
+
+
+    .map-marker {
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      width: 22px;
+      height: 22px;
+
+      border:
+        2px solid
+        #c8a96b;
+
+      border-radius: 50%;
+
+      background: #11110f;
+
+      box-shadow:
+        0 0 0 10px
+        rgba(200,169,107,.08),
+        0 0 35px
+        rgba(200,169,107,.2);
+    }
+
+
+    .map-label {
+      position: absolute;
+
+      left: 50%;
+      top: calc(50% + 48px);
+
+      transform:
+        translateX(-50%);
+
+      white-space: nowrap;
+
+      font-size: 10px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      color: #c8a96b;
+    }
+
+
+    /* =====================================================
+       CONTACT STRIP
+    ====================================================== */
+
+    .office-contact-strip {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      border:
+        1px solid
+        rgba(255,255,255,.13);
+
+      border-top: 0;
+    }
+
+
+    .office-contact-box {
+      min-height: 160px;
+
+      padding: 35px;
+
+      border-right:
+        1px solid
+        rgba(255,255,255,.13);
+    }
+
+
+    .office-contact-box:last-child {
+      border-right: 0;
+    }
+
+
+    .office-contact-box span {
+      display: block;
+
+      margin-bottom: 20px;
+
+      font-size: 10px;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      opacity: .4;
+    }
+
+
+    .office-contact-box a,
+    .office-contact-box p {
+      margin: 0;
+
+      color:
+        rgba(242,238,230,.75);
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    .office-contact-box a:hover {
+      color: #c8a96b;
+    }
+
+
+    /* =====================================================
+       VISIT SECTION
+    ====================================================== */
+
+    .visit-section {
+      padding:
+        140px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .visit-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 100px;
+    }
+
+
+    .visit-heading h2 {
+      margin:
+        18px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 6vw, 78px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .visit-heading h2 em {
+      color: #c8a96b;
+    }
+
+
+    .visit-heading p {
+      max-width: 500px;
+
+      margin-top: 30px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.5);
+    }
+
+
+    .visit-list {
+      border-top:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .visit-item {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 30px;
+
+      padding: 27px 0;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .visit-item strong {
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 22px;
+
+      font-weight: 500;
+    }
+
+
+    .visit-item span {
+      font-size: 12px;
+
+      color:
+        rgba(242,238,230,.45);
+    }
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .offices-cta {
+      padding:
+        150px 0;
+
+      text-align: center;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(200,169,107,.1),
+          transparent 45%
+        );
+    }
+
+
+    .offices-cta h2 {
+      max-width: 950px;
+
+      margin:
+        20px auto 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 7vw, 90px);
+
+      line-height: .98;
+
+      font-weight: 500;
+    }
+
+
+    .offices-cta h2 em {
+      color: #c8a96b;
+    }
+
+
+    .offices-cta p {
+      max-width: 570px;
+
+      margin:
+        30px auto;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.55);
+    }
+
+
+    .offices-button {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-top: 20px;
+
+      padding:
+        18px 30px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.7);
+
+      color: #f2eee6;
+
+      text-decoration: none;
+
+      font-size: 11px;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+      transition:
+        all .35s ease;
+    }
+
+
+    .offices-button:hover {
+      background: #c8a96b;
+
+      color: #11110f;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 768px) {
+
+      .offices-hero {
+        min-height: 72vh;
+
+        padding:
+          130px 20px
+          80px;
+      }
+
+
+      .offices-index {
+        display: none;
+      }
+
+
+      .office-intro {
+        padding:
+          90px 20px;
+      }
+
+
+      .office-intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+
+      .office-section {
+        padding:
+          70px 20px
+          100px;
+      }
+
+
+      .office-card {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+      }
+
+
+      .office-main {
+        padding: 40px 25px;
+
+        border-right: 0;
+
+        border-bottom:
+          1px solid
+          rgba(255,255,255,.13);
+      }
+
+
+      .office-visual {
+        min-height: 430px;
+      }
+
+
+      .office-address {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+      }
+
+
+      .office-contact-strip {
+        grid-template-columns: 1fr;
+      }
+
+
+      .office-contact-box {
+        min-height: auto;
+
+        border-right: 0;
+
+        border-bottom:
+          1px solid
+          rgba(255,255,255,.13);
+      }
+
+
+      .office-contact-box:last-child {
+        border-bottom: 0;
+      }
+
+
+      .visit-section {
+        padding:
+          90px 20px;
+      }
+
+
+      .visit-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+      }
+
+
+      .offices-cta {
+        padding:
+          100px 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="offices-page">
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="nav-container">
+
+
+      <a
+        href="./index.html"
+        class="brand"
+        aria-label="Preach Law & Co. Home"
+      >
+
+        <div class="brand-mark">
+          <span>P</span>
+        </div>
+
+
+        <div class="brand-text">
+
+          <strong>
+            Preach Law &amp; Co.
+          </strong>
+
+          <small>
+            Advocates &amp; Legal Advisory
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <nav
+        class="desktop-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a href="./services.html">
+          Services
+        </a>
+
+        <a href="./team.html">
+          Team
+        </a>
+
+        <a href="./articles.html">
+          Insights
+        </a>
+
+        <a
+          href="./offices.html"
+          aria-current="page"
+        >
+          Offices
+        </a>
+
+      </nav>
+
+
+      <a
+        href="./contact.html"
+        class="nav-contact"
+      >
+
+        <span>
+          Contact Us
+        </span>
+
+        <i data-lucide="arrow-up-right"></i>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <div class="mobile-menu-inner">
+
+      <nav>
+
+        <a href="./index.html">
+          <span>01</span>
+          Home
+        </a>
+
+        <a href="./about.html">
+          <span>02</span>
+          About
+        </a>
+
+        <a href="./services.html">
+          <span>03</span>
+          Services
+        </a>
+
+        <a href="./team.html">
+          <span>04</span>
+          Our Team
+        </a>
+
+        <a href="./articles.html">
+          <span>05</span>
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          <span>06</span>
+          Offices
+        </a>
+
+        <a href="./contact.html">
+          <span>07</span>
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="mobile-menu-footer">
+
+        <span>
+          PREACH LAW &amp; CO.
+        </span>
+
+        <span>
+          ADVOCATES · ADVISORS · CONSULTANTS
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="offices-hero">
+
+      <div class="offices-grid-bg"></div>
+
+      <div class="offices-glow"></div>
+
+      <div class="offices-circle"></div>
+
+
+      <div class="container offices-hero-content">
+
+
+        <div class="offices-kicker">
+
+          <span></span>
+
+          <span>
+            OUR PRESENCE
+          </span>
+
+        </div>
+
+
+        <h1>
+
+          One office.
+
+          <br>
+
+          <em>One standard.</em>
+
+        </h1>
+
+
+        <p class="offices-hero-description">
+
+          Our office in New Delhi serves as a central
+          point for legal representation, advisory
+          services and client coordination.
+
+        </p>
+
+
+      </div>
+
+
+      <span class="offices-index">
+        06 / 07
+      </span>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="office-intro">
+
+
+      <div class="container">
+
+
+        <div class="office-intro-grid">
+
+
+          <div class="office-intro-label">
+            WHERE WE WORK
+          </div>
+
+
+          <div class="office-intro-content">
+
+
+            <h2>
+
+              Accessible when it
+
+              <br>
+
+              <em>matters most.</em>
+
+            </h2>
+
+
+            <p>
+
+              Our office is designed to provide a
+              professional environment for client
+              consultations, meetings and legal work.
+
+            </p>
+
+
+            <p>
+
+              While our principal presence is in
+              New Delhi, our legal and advisory work
+              can extend across jurisdictions depending
+              on the requirements of each matter.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         OFFICE
+    ====================================================== -->
+
+    <section class="office-section">
+
+
+      <div class="container">
+
+
+        <div class="office-card">
+
+
+          <!-- LEFT -->
+
+          <div class="office-main">
+
+
+            <span class="office-number">
+              01
+            </span>
+
+
+            <h2>
+
+              New
+
+              <br>
+
+              <em>Delhi.</em>
+
+            </h2>
+
+
+            <p>
+
+              Our registered office provides a
+              dedicated setting for consultations,
+              meetings, documentation and professional
+              legal services.
+
+            </p>
+
+
+            <div class="office-address">
+
+
+              <div class="office-detail">
+
+                <span>
+                  REGISTERED OFFICE
+                </span>
+
+                <p>
+
+                  E-111-B, Nawada Housing Complex,
+
+                  <br>
+
+                  Dwarka More,
+
+                  <br>
+
+                  New Delhi – 110059
+
+                </p>
+
+              </div>
+
+
+              <div class="office-detail">
+
+                <span>
+                  OFFICE HOURS
+                </span>
+
+                <p>
+
+                  Monday – Saturday
+
+                  <br>
+
+                  By prior appointment
+
+                </p>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+          <!-- RIGHT -->
+
+          <div class="office-visual">
+
+
+            <div class="map-grid"></div>
+
+
+            <div class="map-circle">
+
+              <div class="map-line"></div>
+
+              <div class="map-line vertical"></div>
+
+              <div class="map-marker"></div>
+
+              <span class="map-label">
+                NEW DELHI · INDIA
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+        <!-- CONTACT STRIP -->
+
+        <div class="office-contact-strip">
+
+
+          <div class="office-contact-box">
+
+            <span>
+              PHONE
+            </span>
+
+            <a href="tel:+919311664455">
+              +91 93116 64455
+            </a>
+
+            <a href="tel:01146574455">
+              011 4657 4455
+            </a>
+
+          </div>
+
+
+          <div class="office-contact-box">
+
+            <span>
+              EMAIL
+            </span>
+
+            <a href="mailto:admin@preachlaw.com">
+              admin@preachlaw.com
+            </a>
+
+          </div>
+
+
+          <div class="office-contact-box">
+
+            <span>
+              APPOINTMENTS
+            </span>
+
+            <p>
+              Meetings are available
+              by prior appointment.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         VISIT
+    ====================================================== -->
+
+    <section class="visit-section">
+
+
+      <div class="container">
+
+
+        <div class="visit-grid">
+
+
+          <div class="visit-heading">
+
+
+            <span class="eyebrow">
+              CLIENT EXPERIENCE
+            </span>
+
+
+            <h2>
+
+              A professional
+
+              <br>
+
+              <em>space for serious matters.</em>
+
+            </h2>
+
+
+            <p>
+
+              We believe that the environment in which
+              a matter is discussed should reflect the
+              professionalism and confidentiality that
+              legal work requires.
+
+            </p>
+
+
+          </div>
+
+
+          <div class="visit-list">
+
+
+            <div class="visit-item">
+
+              <strong>
+                Private Consultations
+              </strong>
+
+              <span>
+                CONFIDENTIAL
+              </span>
+
+            </div>
+
+
+            <div class="visit-item">
+
+              <strong>
+                Client Meetings
+              </strong>
+
+              <span>
+                BY APPOINTMENT
+              </span>
+
+            </div>
+
+
+            <div class="visit-item">
+
+              <strong>
+                Legal Conferences
+              </strong>
+
+              <span>
+                PROFESSIONAL
+              </span>
+
+            </div>
+
+
+            <div class="visit-item">
+
+              <strong>
+                Document Meetings
+              </strong>
+
+              <span>
+                SECURE
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="offices-cta">
+
+
+      <div class="container">
+
+
+        <span class="eyebrow">
+          VISIT THE FIRM
+        </span>
+
+
+        <h2>
+
+          Let's meet
+
+          <br>
+
+          and discuss
+
+          <br>
+
+          <em>your matter.</em>
+
+        </h2>
+
+
+        <p>
+
+          Contact us to arrange a consultation
+          at our New Delhi office.
+
+        </p>
+
+
+        <a
+          href="./contact.html"
+          class="offices-button"
+        >
+
+          Contact The Firm
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+
+          <a
+            href="./index.html"
+            class="brand"
+          >
+
+            <div class="brand-mark">
+              <span>P</span>
+            </div>
+
+
+            <div class="brand-text">
+
+              <strong>
+                Preach Law &amp; Co.
+              </strong>
+
+              <small>
+                Advocates &amp; Legal Advisory
+              </small>
+
+            </div>
+
+          </a>
+
+
+          <p>
+
+            Legal representation, regulatory advisory
+            and professional services for individuals,
+            businesses and institutions.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <div>
+
+            <span>
+              COMPANY
+            </span>
+
+            <a href="./about.html">
+              About
+            </a>
+
+            <a href="./team.html">
+              Our Team
+            </a>
+
+            <a href="./offices.html">
+              Offices
+            </a>
+
+            <a href="./articles.html">
+              Insights
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              PRACTICE
+            </span>
+
+            <a href="./litigation.html">
+              Litigation
+            </a>
+
+            <a href="./ipr.html">
+              IPR
+            </a>
+
+            <a href="./startup.html">
+              Startups
+            </a>
+
+            <a href="./consulting.html">
+              Consulting
+            </a>
+
+            <a href="./fintech.html">
+              Fintech
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              CONTACT
+            </span>
+
+            <a href="./contact.html">
+              Contact
+            </a>
+
+            <a href="tel:+919311664455">
+              +91 93116 64455
+            </a>
+
+            <a href="mailto:admin@preachlaw.com">
+              Email
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2015–2030 Preach Law LLP. All Rights Reserved.
+        </span>
+
+        <span>
+          DELHI · INDIA
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="./js/navigation.js"></script>
+
+  <script src="./js/animations.js"></script>
+
+  <script src="./js/main.js"></script>
+
+
+  <script>
+
+    window.addEventListener("load", function () {
+
+      if (
+        window.lucide &&
+        typeof window.lucide.createIcons === "function"
+      ) {
+
+        window.lucide.createIcons();
+
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
+  </html>
