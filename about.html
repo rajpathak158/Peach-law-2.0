@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us | Preach Law LLP</title>
+
+  <meta
+    name="description"
+    content="Learn about Preach Law LLP, a Delhi-based legal and professional services firm providing legal consultancy, advisory, taxation, IPR, corporate, accounting and compliance services."
+  >
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* =====================================================
+       ABOUT PAGE
+    ===================================================== */
+
+    .about-hero {
+      min-height: 78vh;
+      background: #111;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 150px 0 100px;
+    }
+
+    .about-hero-grid {
+      position: absolute;
+      inset: 0;
+      opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    .about-hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: rgba(183, 145, 79, .12);
+      filter: blur(100px);
+      right: -200px;
+      top: -150px;
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+    }
+
+    .about-kicker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-weight: 600;
+      color: #c9a96e;
+      margin-bottom: 28px;
+    }
+
+    .about-kicker span {
+      width: 42px;
+      height: 1px;
+      background: #c9a96e;
+    }
+
+    .about-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(58px, 9vw, 130px);
+      line-height: .92;
+      font-weight: 600;
+      letter-spacing: -4px;
+      margin: 0;
+    }
+
+    .about-hero h1 em {
+      color: #c9a96e;
+      font-weight: 500;
+    }
+
+    .about-hero-description {
+      max-width: 650px;
+      margin-top: 42px;
+      color: rgba(255,255,255,.68);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .about-section {
+      padding: 130px 0;
+    }
+
+    .about-section.dark {
+      background: #111;
+      color: #fff;
+    }
+
+    .about-container {
+      width: min(1180px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    .about-two-column {
+      display: grid;
+      grid-template-columns: .8fr 1.5fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .about-eyebrow {
+      color: #b58b4b;
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .about-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: 1;
+      font-weight: 600;
+      margin: 20px 0 0;
+      letter-spacing: -2px;
+    }
+
+    .about-title em {
+      color: #b58b4b;
+      font-weight: 500;
+    }
+
+    .about-copy p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: #555;
+      margin: 0 0 24px;
+    }
+
+    .dark .about-copy p {
+      color: rgba(255,255,255,.65);
+    }
+
+    .about-highlight {
+      margin-top: 45px;
+      padding: 28px 30px;
+      border-left: 2px solid #b58b4b;
+      background: rgba(181,139,75,.06);
+    }
+
+    .about-highlight strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .about-highlight span {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .dark .about-highlight span {
+      color: rgba(255,255,255,.55);
+    }
+
+    /* STATS */
+
+    .about-stats {
+      background: #f5f2ed;
+      padding: 75px 0;
+    }
+
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .about-stat {
+      padding: 20px;
+      border-left: 1px solid rgba(0,0,0,.12);
+    }
+
+    .about-stat-number {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1;
+      color: #171717;
+    }
+
+    .about-stat-number span {
+      color: #b58b4b;
+    }
+
+    .about-stat-label {
+      display: block;
+      margin-top: 12px;
+      color: #666;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* VISION */
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .vision-quote {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 55px);
+      line-height: 1.15;
+    }
+
+    .vision-quote em {
+      color: #c9a96e;
+    }
+
+    .vision-copy p {
+      color: rgba(255,255,255,.65);
+      line-height: 1.9;
+      font-size: 16px;
+      margin-bottom: 22px;
+    }
+
+    /* INDUSTRIES */
+
+    .industries-heading {
+      max-width: 700px;
+      margin-bottom: 70px;
+    }
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(0,0,0,.12);
+      border-left: 1px solid rgba(0,0,0,.12);
+    }
+
+    .industry {
+      min-height: 150px;
+      padding: 28px;
+      border-right: 1px solid rgba(0,0,0,.12);
+      border-bottom: 1px solid rgba(0,0,0,.12);
+      transition: .35s ease;
+    }
+
+    .industry-number {
+      display: block;
+      font-size: 11px;
+      color: #b58b4b;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .industry h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .industry:hover {
+      background: #111;
+      color: #fff;
+      transform: translateY(-4px);
+    }
+
+    /* BELIEFS */
+
+    .beliefs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.12);
+      margin-top: 70px;
+    }
+
+    .belief {
+      background: #111;
+      padding: 45px 35px;
+      min-height: 280px;
+    }
+
+    .belief-number {
+      color: #c9a96e;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .belief h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin: 35px 0 18px;
+    }
+
+    .belief p {
+      color: rgba(255,255,255,.55);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .about-cta {
+      text-align: center;
+      padding: 140px 20px;
+      background: #f5f2ed;
+    }
+
+    .about-cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(45px, 6vw, 80px);
+      line-height: 1;
+      margin: 18px 0 35px;
+    }
+
+    .about-cta h2 em {
+      color: #b58b4b;
+    }
+
+    .about-cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 17px 28px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: .3s ease;
+    }
+
+    .about-cta-button:hover {
+      transform: translateY(-4px);
+      background: #b58b4b;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .about-hero {
+        min-height: 70vh;
+        padding: 130px 0 80px;
+      }
+
+      .about-hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .about-two-column,
+      .vision-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .about-section {
+        padding: 85px 0;
+      }
+
+      .about-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .beliefs-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .about-container {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .about-stats-grid,
+      .industries-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-stat {
+        border-left: 0;
+        border-bottom: 1px solid rgba(0,0,0,.12);
+        padding-bottom: 28px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NAVIGATION
+  ===================================================== -->
+
+  <header class="navbar" id="navbar">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="brand">
+
+        <div class="brand-mark">
+          <span>P</span>
+        </div>
+
+        <div class="brand-text">
+          <strong>Preach Law & Co.</strong>
+          <small>Advocate & Attorney</small>
+        </div>
+
+      </a>
+
+      <nav class="desktop-nav">
+
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+
+      </nav>
+
+      <a href="tel:+919311664455" class="nav-contact">
+        <span>Contact Us</span>
+        <i data-lucide="arrow-up-right"></i>
+      </a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ===================================================== -->
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="mobile-menu-footer">
+      <span>PREACH LAW & CO.</span>
+      <span>ADVOCATE & ATTORNEY</span>
+    </div>
+
+  </div>
+
+
+  <main>
+
+
+    <!-- ===================================================
+         HERO
+    =================================================== -->
+
+    <section class="about-hero">
+
+      <div class="about-hero-grid"></div>
+      <div class="about-hero-glow"></div>
+
+      <div class="about-container">
+
+        <div class="about-hero-content">
+
+          <div class="about-kicker reveal">
+            <span></span>
+            ABOUT PREACH LAW LLP
+          </div>
+
+          <h1 class="reveal">
+            Built on
+            <br>
+            <em>knowledge.</em>
+            <br>
+            Driven by
+            <br>
+            purpose.
+          </h1>
+
+          <p class="about-hero-description reveal">
+            Preach Law LLP is a Delhi-based professional services and
+            legal practice providing legal consultancy, advisory,
+            corporate support, taxation, intellectual property,
+            accounting and compliance services.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         INTRODUCTION
+    =================================================== -->
+
+    <section class="about-section">
+
+      <div class="about-container">
+
+        <div class="about-two-column">
+
+          <div>
+
+            <span class="about-eyebrow reveal">
+              WHO WE ARE
+            </span>
+
+            <h2 class="about-title reveal">
+              A modern
+              <br>
+              <em>legal practice.</em>
+            </h2>
+
+          </div>
+
+
+          <div class="about-copy reveal">
+
+            <p>
+              Preach Law LLP is a law and professional advisory firm
+              based in Delhi. The firm brings together legal and
+              professional expertise across a broad range of areas,
+              serving individuals, businesses, companies, financial
+              institutions, public-sector organisations and
+              non-governmental organisations.
+            </p>
+
+            <p>
+              The firm's stated areas of practice include civil and
+              criminal matters, commercial and corporate work,
+              insolvency and bankruptcy, taxation, banking and finance,
+              intellectual property, real estate, labour and industrial
+              disputes, consumer matters, regulatory advisory and
+              corporate compliance.
+            </p>
+
+            <p>
+              Preach Law also provides professional support in areas
+              including company formation, corporate affairs,
+              accounting, auditing, taxation, secretarial services,
+              due diligence and related business advisory functions.
+            </p>
+
+            <div class="about-highlight">
+
+              <strong>Established in February 2015</strong>
+
+              <span>
+                The firm was established by a group of experienced
+                professionals who had previously worked together in
+                the legal sector.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         STATS
+    =================================================== -->
+
+    <section class="about-stats">
+
+      <div class="about-container">
+
+        <div class="about-stats-grid">
+
+          <div class="about-stat reveal">
+
+            <div class="about-stat-number">
+              <span class="counter" data-target="3000">0</span>+
+            </div>
+
+            <span class="about-stat-label">
+              Happy Clients
+            </span>
+
+          </div>
+
+
+          <div class="about-stat reveal">
+
+            <div class="about-stat-number">
+              <span class="counter" data-target="300">0</span>+
+            </div>
+
+            <span class="about-stat-label">
+              Advocates, CA & CS
+            </span>
+
+          </div>
+
+
+          <div class="about-stat reveal">
+
+            <div class="about-stat-number">
+              <span class="counter" data-target="10">0</span>+
+            </div>
+
+            <span class="about-stat-label">
+              Associate Offices
+            </span>
+
+          </div>
+
+
+          <div class="about-stat reveal">
+
+            <div class="about-stat-number">
+              <span class="counter" data-target="2800">0</span>+
+            </div>
+
+            <span class="about-stat-label">
+              Cases Solved
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         VISION
+    =================================================== -->
+
+    <section class="about-section dark">
+
+      <div class="about-container">
+
+        <div class="vision-grid">
+
+          <div>
+
+            <span class="about-eyebrow reveal">
+              OUR VISION
+            </span>
+
+            <h2 class="vision-quote reveal">
+              Practical legal
+              <br>
+              solutions with
+              <br>
+              <em>real value.</em>
+            </h2>
+
+          </div>
+
+
+          <div class="vision-copy reveal">
+
+            <p>
+              Preach Law's professional model is focused on delivering
+              high-quality legal and advisory support while maintaining
+              efficiency and keeping unnecessary overhead under control.
+            </p>
+
+            <p>
+              The firm aims to provide practical, value-oriented
+              solutions suited to the commercial and legal realities
+              faced by its clients.
+            </p>
+
+            <p>
+              Its professionals work with clients across sectors and
+              seek to combine legal knowledge, business understanding
+              and regulatory awareness when addressing complex matters.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         INDUSTRIES
+    =================================================== -->
+
+    <section class="about-section">
+
+      <div class="about-container">
+
+        <div class="industries-heading">
+
+          <span class="about-eyebrow reveal">
+            INDUSTRIES EXPERTISE
+          </span>
+
+          <h2 class="about-title reveal">
+            Experience across
+            <br>
+            <em>diverse sectors.</em>
+          </h2>
+
+        </div>
+
+
+        <div class="industries-grid">
+
+          <article class="industry reveal">
+            <span class="industry-number">01</span>
+            <h3>Apparel & Garments</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">02</span>
+            <h3>Automobile & Automotive</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">03</span>
+            <h3>Food Safety & Legal Metrology</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">04</span>
+            <h3>Banking, Finance & Insurance</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">05</span>
+            <h3>Consumer Protection & Life Science</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">06</span>
+            <h3>E-Commerce & Information Technology</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">07</span>
+            <h3>Education & Human Resources</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">08</span>
+            <h3>Entertainment & Broadcasting</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">09</span>
+            <h3>Infrastructure, Energy & Environment</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">10</span>
+            <h3>Media — Print & Electronic</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">11</span>
+            <h3>Healthcare & Medical Science</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">12</span>
+            <h3>Pharmaceuticals, Food & Drugs</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">13</span>
+            <h3>Real Estate & Property Management</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">14</span>
+            <h3>Retail & Wholesale Business</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">15</span>
+            <h3>Telecommunication & Electricity</h3>
+          </article>
+
+          <article class="industry reveal">
+            <span class="industry-number">16</span>
+            <h3>Tours, Travels & Hospitality</h3>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         BELIEFS
+    =================================================== -->
+
+    <section class="about-section dark">
+
+      <div class="about-container">
+
+        <span class="about-eyebrow reveal">
+          PREACH LAW BELIEVES IN
+        </span>
+
+        <h2 class="about-title reveal">
+          Principles that
+          <br>
+          guide our <em>work.</em>
+        </h2>
+
+
+        <div class="beliefs-grid">
+
+          <article class="belief reveal">
+
+            <span class="belief-number">01</span>
+
+            <h3>Significance</h3>
+
+            <p>
+              Every client and every assignment has its own definition
+              of value. Understanding priorities, time and budget helps
+              create a service that is meaningful to the client.
+            </p>
+
+          </article>
+
+
+          <article class="belief reveal">
+
+            <span class="belief-number">02</span>
+
+            <h3>Integrity & Ethics</h3>
+
+            <p>
+              Professional responsibility, hard work and ethical
+              conduct form an important part of the firm's approach
+              to its clients and professional relationships.
+            </p>
+
+          </article>
+
+
+          <article class="belief reveal">
+
+            <span class="belief-number">03</span>
+
+            <h3>Savvy Thinking</h3>
+
+            <p>
+              Practical understanding, intelligence, common sense and
+              continuously developing legal knowledge help the team
+              approach complex problems effectively.
+            </p>
+
+          </article>
+
+
+          <article class="belief reveal">
+
+            <span class="belief-number">04</span>
+
+            <h3>Litigation</h3>
+
+            <p>
+              The firm's stated litigation experience covers civil,
+              criminal, corporate, industrial and labour matters before
+              courts, forums and appellate bodies.
+            </p>
+
+          </article>
+
+
+          <article class="belief reveal">
+
+            <span class="belief-number">05</span>
+
+            <h3>Approachability</h3>
+
+            <p>
+              Clear communication and accessibility are central to
+              maintaining productive relationships with clients and
+              associates.
+            </p>
+
+          </article>
+
+
+          <article class="belief reveal">
+
+            <span class="belief-number">06</span>
+
+            <h3>Quickness</h3>
+
+            <p>
+              The firm describes its working approach as streamlined,
+              with focused teams and simple procedures intended to
+              improve turnaround and efficiency.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CTA
+    =================================================== -->
+
+    <section class="about-cta">
+
+      <span class="about-eyebrow reveal">
+        PREACH LAW LLP
+      </span>
+
+      <h2 class="reveal">
+        Knowledge.
+        <br>
+        <em>Strategy. Action.</em>
+      </h2>
+
+      <a
+        href="contact.html"
+        class="about-cta-button reveal magnetic"
+      >
+        Discuss Your Matter
+        <i data-lucide="arrow-up-right"></i>
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+
+          <div class="brand-mark">
+            <span>P</span>
+          </div>
+
+          <h3>Preach Law & Co.</h3>
+
+          <p>Advocate & Attorney</p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <div>
+
+            <span>COMPANY</span>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="team.html">Our Team</a>
+            <a href="offices.html">Our Offices</a>
+
+          </div>
+
+
+          <div>
+
+            <span>SERVICES</span>
+
+            <a href="services.html">Services</a>
+            <a href="litigation.html">Litigation</a>
+            <a href="ipr.html">IPR</a>
+            <a href="consulting.html">Consulting</a>
+
+          </div>
+
+
+          <div>
+
+            <span>LEGAL</span>
+
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="contact.html">Contact</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2015–2030 Preach Law LLP. All Rights Reserved.
+        </span>
+
+        <span>
+          ADVOCATE & ATTORNEY
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+          </html>
