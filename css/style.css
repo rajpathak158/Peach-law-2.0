@@ -1,0 +1,52 @@
+/* =========================================
+   Preach Law & Co. - Custom Stylesheet
+========================================= */
+
+/* 1. Premium Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000a1f; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37; /* Gold */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E27D60; /* Copper */
+}
+
+/* 2. Text Selection Color */
+::selection {
+  background-color: #ff6b6b; /* Accent Red */
+  color: #ffffff;
+}
+
+/* 3. Prevent Animation Flashing (Hides elements before GSAP loads) */
+.gsap-hero-item,
+.gsap-fade-up,
+.gsap-service {
+  visibility: hidden;
+}
+
+/* 4. Custom Glassmorphism Utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 5. Custom Hover Glow Effect */
+.glow-on-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); /* Soft Gold Glow */
+  transform: translateY(-3px);
+}
