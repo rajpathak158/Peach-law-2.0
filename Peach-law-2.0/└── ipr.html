@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#11110f"
+  >
+
+  <title>Intellectual Property | Preach Law & Co.</title>
+
+  <meta
+    name="description"
+    content="Intellectual property legal services covering trademarks, copyrights, patents, designs, licensing and IP advisory."
+  >
+
+  <!-- FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ICONS -->
+
+  <script
+    src="https://unpkg.com/lucide@latest"
+    defer
+  ></script>
+
+  <!-- GLOBAL CSS -->
+
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/animations.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/responsive.css"
+  >
+
+
+  <style>
+
+    /* =====================================================
+       IPR PAGE
+    ===================================================== */
+
+    .ipr-page {
+      background: #11110f;
+      color: #f2eee6;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .ipr-hero {
+
+      position: relative;
+
+      min-height: 82vh;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      overflow: hidden;
+
+      padding:
+        160px 0
+        100px;
+    }
+
+
+    .ipr-hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 700px;
+      height: 700px;
+
+      right: -250px;
+      top: -180px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200,169,107,.18),
+          transparent 68%
+        );
+
+      pointer-events: none;
+    }
+
+
+    .ipr-grid {
+
+      position: absolute;
+
+      inset: 0;
+
+      opacity: .055;
+
+      background-image:
+
+        linear-gradient(
+          rgba(255,255,255,.25) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.25) 1px,
+          transparent 1px
+        );
+
+      background-size: 80px 80px;
+    }
+
+
+    .ipr-content {
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .ipr-kicker {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      opacity: .55;
+    }
+
+
+    .ipr-kicker span:first-child {
+
+      width: 45px;
+
+      height: 1px;
+
+      background:
+        currentColor;
+    }
+
+
+    .ipr-hero h1 {
+
+      max-width: 1100px;
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(
+          55px,
+          9vw,
+          125px
+        );
+
+      line-height: .92;
+
+      font-weight: 500;
+
+      letter-spacing: -.05em;
+    }
+
+
+    .ipr-hero h1 em {
+
+      color: #c8a96b;
+
+      font-weight: 500;
+    }
+
+
+    .ipr-description {
+
+      max-width: 650px;
+
+      margin-top: 45px;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.62);
+    }
+
+
+    .ipr-index {
+
+      position: absolute;
+
+      right: 7%;
+
+      bottom: 70px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      opacity: .3;
+    }
+
+
+    /* =====================================================
+       INTRO
+    ===================================================== */
+
+    .ipr-intro {
+
+      padding:
+        130px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .ipr-intro-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 2fr;
+
+      gap: 80px;
+    }
+
+
+    .ipr-label {
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      opacity: .4;
+    }
+
+
+    .ipr-intro-content h2 {
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(
+          42px,
+          5vw,
+          72px
+        );
+
+      line-height: 1.03;
+
+      font-weight: 500;
+    }
+
+
+    .ipr-intro-content h2 em {
+
+      color: #c8a96b;
+    }
+
+
+    .ipr-intro-content p {
+
+      max-width: 760px;
+
+      margin-top: 30px;
+
+      font-size: 17px;
+
+      line-height: 1.9;
+
+      color:
+        rgba(242,238,230,.6);
+    }
+
+
+    /* =====================================================
+       SERVICES
+    ===================================================== */
+
+    .ipr-services {
+
+      padding:
+        100px 0
+        150px;
+    }
+
+
+    .ipr-section-heading {
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: flex-end;
+
+      gap: 40px;
+
+      margin-bottom: 55px;
+    }
+
+
+    .ipr-section-heading h2 {
+
+      margin:
+        15px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(
+          45px,
+          6vw,
+          78px
+        );
+
+      font-weight: 500;
+
+      line-height: 1;
+    }
+
+
+    .ipr-section-heading p {
+
+      max-width: 430px;
+
+      margin: 0;
+
+      line-height: 1.75;
+
+      color:
+        rgba(242,238,230,.55);
+    }
+
+
+    .ipr-service-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-left:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .ipr-card {
+
+      position: relative;
+
+      min-height: 310px;
+
+      padding: 40px;
+
+      border-right:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+
+      overflow: hidden;
+
+      transition:
+        color .4s ease;
+    }
+
+
+    .ipr-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background: #c8a96b;
+
+      transform:
+        translateY(101%);
+
+      transition:
+        transform .55s
+        cubic-bezier(.16,1,.3,1);
+    }
+
+
+    .ipr-card:hover::before {
+
+      transform:
+        translateY(0);
+    }
+
+
+    .ipr-card > * {
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    .ipr-card-top {
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: center;
+
+      margin-bottom: 65px;
+    }
+
+
+    .ipr-number {
+
+      font-size: 11px;
+
+      letter-spacing: .15em;
+
+      opacity: .4;
+    }
+
+
+    .ipr-icon {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 44px;
+
+      height: 44px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.2);
+
+      border-radius: 50%;
+    }
+
+
+    .ipr-icon svg {
+
+      width: 19px;
+      height: 19px;
+    }
+
+
+    .ipr-card h3 {
+
+      margin: 0 0 15px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 32px;
+
+      font-weight: 500;
+
+      line-height: 1.05;
+    }
+
+
+    .ipr-card p {
+
+      max-width: 430px;
+
+      margin: 0;
+
+      line-height: 1.7;
+
+      color:
+        rgba(242,238,230,.55);
+    }
+
+
+    .ipr-card:hover p {
+
+      color:
+        rgba(17,17,15,.72);
+    }
+
+
+    /* =====================================================
+       PROTECTION
+    ===================================================== */
+
+    .ipr-protection {
+
+      padding:
+        150px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .protection-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 100px;
+    }
+
+
+    .protection-heading {
+
+      position: sticky;
+
+      top: 120px;
+    }
+
+
+    .protection-heading h2 {
+
+      margin:
+        20px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(
+          45px,
+          6vw,
+          75px
+        );
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .protection-heading em {
+
+      color: #c8a96b;
+    }
+
+
+    .protection-list {
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .protection-item {
+
+      padding:
+        35px 0;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .protection-item span {
+
+      display: block;
+
+      margin-bottom: 16px;
+
+      font-size: 10px;
+
+      letter-spacing: .18em;
+
+      opacity: .4;
+    }
+
+
+    .protection-item h3 {
+
+      margin: 0 0 12px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 29px;
+
+      font-weight: 500;
+    }
+
+
+    .protection-item p {
+
+      margin: 0;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.57);
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .ipr-cta {
+
+      padding:
+        150px 0;
+
+      text-align: center;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(200,169,107,.1),
+          transparent 45%
+        );
+    }
+
+
+    .ipr-cta h2 {
+
+      max-width: 900px;
+
+      margin:
+        20px auto 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(
+          45px,
+          7vw,
+          90px
+        );
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .ipr-cta h2 em {
+
+      color: #c8a96b;
+    }
+
+
+    .ipr-cta p {
+
+      max-width: 560px;
+
+      margin:
+        30px auto;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.58);
+    }
+
+
+    .ipr-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-top: 20px;
+
+      padding:
+        18px 30px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.7);
+
+      color: #f2eee6;
+
+      text-decoration: none;
+
+      font-size: 11px;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+      transition:
+        all .35s ease;
+    }
+
+
+    .ipr-button:hover {
+
+      background: #c8a96b;
+
+      color: #11110f;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 768px) {
+
+      .ipr-hero {
+
+        min-height: 75vh;
+
+        padding:
+          130px 20px
+          80px;
+      }
+
+
+      .ipr-index {
+
+        display: none;
+      }
+
+
+      .ipr-intro {
+
+        padding:
+          90px 20px;
+      }
+
+
+      .ipr-intro-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+
+      .ipr-services {
+
+        padding:
+          80px 20px
+          100px;
+      }
+
+
+      .ipr-section-heading {
+
+        display: block;
+      }
+
+
+      .ipr-section-heading p {
+
+        margin-top: 25px;
+      }
+
+
+      .ipr-service-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+
+      .ipr-card {
+
+        min-height: 280px;
+
+        padding: 30px;
+      }
+
+
+      .ipr-protection {
+
+        padding:
+          100px 20px;
+      }
+
+
+      .protection-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+      }
+
+
+      .protection-heading {
+
+        position: static;
+      }
+
+
+      .ipr-cta {
+
+        padding:
+          100px 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="ipr-page">
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="nav-container">
+
+
+      <a
+        href="./index.html"
+        class="brand"
+        aria-label="Preach Law & Co. Home"
+      >
+
+        <div class="brand-mark">
+          <span>P</span>
+        </div>
+
+
+        <div class="brand-text">
+
+          <strong>
+            Preach Law &amp; Co.
+          </strong>
+
+          <small>
+            Advocates &amp; Legal Advisory
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <nav
+        class="desktop-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a
+          href="./services.html"
+          aria-current="page"
+        >
+          Services
+        </a>
+
+        <a href="./team.html">
+          Team
+        </a>
+
+        <a href="./articles.html">
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          Offices
+        </a>
+
+      </nav>
+
+
+      <a
+        href="./contact.html"
+        class="nav-contact"
+      >
+
+        <span>
+          Contact Us
+        </span>
+
+        <i data-lucide="arrow-up-right"></i>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <div class="mobile-menu-inner">
+
+
+      <nav>
+
+        <a href="./index.html">
+          <span>01</span>
+          Home
+        </a>
+
+        <a href="./about.html">
+          <span>02</span>
+          About
+        </a>
+
+        <a href="./services.html">
+          <span>03</span>
+          Services
+        </a>
+
+        <a href="./team.html">
+          <span>04</span>
+          Our Team
+        </a>
+
+        <a href="./articles.html">
+          <span>05</span>
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          <span>06</span>
+          Offices
+        </a>
+
+        <a href="./contact.html">
+          <span>07</span>
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="mobile-menu-footer">
+
+        <span>
+          PREACH LAW &amp; CO.
+        </span>
+
+        <span>
+          ADVOCATES · ADVISORS · CONSULTANTS
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="ipr-hero">
+
+
+      <div class="ipr-grid"></div>
+
+
+      <div class="container ipr-content">
+
+
+        <div class="ipr-kicker">
+
+          <span></span>
+
+          <span>
+            PRACTICE AREA · 02
+          </span>
+
+        </div>
+
+
+        <h1>
+
+          Intellectual
+
+          <br>
+
+          <em>Property.</em>
+
+        </h1>
+
+
+        <p class="ipr-description">
+
+          Protecting ideas, brands and creative
+          assets through practical legal strategy
+          and long-term intellectual property planning.
+
+        </p>
+
+
+      </div>
+
+
+      <span class="ipr-index">
+        02 / 05
+      </span>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         INTRO
+    ==================================================== -->
+
+    <section class="ipr-intro">
+
+
+      <div class="container">
+
+
+        <div class="ipr-intro-grid">
+
+
+          <div class="ipr-label">
+
+            OUR APPROACH
+
+          </div>
+
+
+          <div class="ipr-intro-content">
+
+
+            <h2>
+
+              Your ideas deserve
+
+              <br>
+
+              <em>legal protection.</em>
+
+            </h2>
+
+
+            <p>
+
+              Intellectual property can represent one
+              of the most valuable assets of a business,
+              creator or organisation.
+
+            </p>
+
+
+            <p>
+
+              We assist clients in understanding,
+              protecting and managing intellectual
+              property rights across different stages
+              of their commercial and creative journey.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         SERVICES
+    ==================================================== -->
+
+    <section class="ipr-services">
+
+
+      <div class="container">
+
+
+        <div class="ipr-section-heading">
+
+
+          <div>
+
+            <span class="eyebrow">
+              IP SERVICES
+            </span>
+
+            <h2>
+              Protect what
+              <br>
+              you've created.
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            Legal support across registration,
+            protection, enforcement and
+            commercialisation of intellectual property.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="ipr-service-grid">
+
+
+          <!-- CARD 01 -->
+
+          <article class="ipr-card">
+
+
+            <div class="ipr-card-top">
+
+              <span class="ipr-number">
+                01
+              </span>
+
+              <span class="ipr-icon">
+                <i data-lucide="badge"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Trademarks
+            </h3>
+
+
+            <p>
+
+              Trademark strategy, searches,
+              applications, opposition matters,
+              renewals and portfolio management.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- CARD 02 -->
+
+          <article class="ipr-card">
+
+
+            <div class="ipr-card-top">
+
+              <span class="ipr-number">
+                02
+              </span>
+
+              <span class="ipr-icon">
+                <i data-lucide="lightbulb"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Patents
+            </h3>
+
+
+            <p>
+
+              Legal support relating to patent
+              strategy, applications and protection
+              of innovative concepts.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- CARD 03 -->
+
+          <article class="ipr-card">
+
+
+            <div class="ipr-card-top">
+
+              <span class="ipr-number">
+                03
+              </span>
+
+              <span class="ipr-icon">
+                <i data-lucide="copyright"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Copyright
+            </h3>
+
+
+            <p>
+
+              Protection and advisory services for
+              literary, artistic, digital and other
+              copyrightable works.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- CARD 04 -->
+
+          <article class="ipr-card">
+
+
+            <div class="ipr-card-top">
+
+              <span class="ipr-number">
+                04
+              </span>
+
+              <span class="ipr-icon">
+                <i data-lucide="pen-tool"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Designs
+            </h3>
+
+
+            <p>
+
+              Assistance with design protection,
+              registration, portfolio management
+              and related rights.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- CARD 05 -->
+
+          <article class="ipr-card">
+
+
+            <div class="ipr-card-top">
+
+              <span class="ipr-number">
+                05
+              </span>
+
+              <span class="ipr-icon">
+                <i data-lucide="file-signature"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              Licensing
+            </h3>
+
+
+            <p>
+
+              Structuring and reviewing licensing,
+              assignment and commercial IP agreements.
+
+            </p>
+
+
+          </article>
+
+
+          <!-- CARD 06 -->
+
+          <article class="ipr-card">
+
+
+            <div class="ipr-card-top">
+
+              <span class="ipr-number">
+                06
+              </span>
+
+              <span class="ipr-icon">
+                <i data-lucide="shield-check"></i>
+              </span>
+
+            </div>
+
+
+            <h3>
+              IP Enforcement
+            </h3>
+
+
+            <p>
+
+              Strategic assistance relating to
+              infringement concerns, notices and
+              appropriate enforcement measures.
+
+            </p>
+
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         PROTECTION
+    ==================================================== -->
+
+    <section class="ipr-protection">
+
+
+      <div class="container">
+
+
+        <div class="protection-grid">
+
+
+          <div class="protection-heading">
+
+
+            <span class="eyebrow">
+              IP STRATEGY
+            </span>
+
+
+            <h2>
+
+              Protection
+
+              <br>
+
+              beyond
+
+              <br>
+
+              <em>registration.</em>
+
+            </h2>
+
+
+          </div>
+
+
+          <div class="protection-list">
+
+
+            <div class="protection-item">
+
+              <span>
+                01 · IDENTIFY
+              </span>
+
+              <h3>
+                Identify valuable assets
+              </h3>
+
+              <p>
+
+                Understanding which ideas, brands,
+                designs and creative works require
+                legal protection.
+
+              </p>
+
+            </div>
+
+
+            <div class="protection-item">
+
+              <span>
+                02 · PROTECT
+              </span>
+
+              <h3>
+                Build the right protection
+              </h3>
+
+              <p>
+
+                Selecting suitable legal mechanisms
+                and developing a practical protection
+                strategy.
+
+              </p>
+
+            </div>
+
+
+            <div class="protection-item">
+
+              <span>
+                03 · MANAGE
+              </span>
+
+              <h3>
+                Manage the portfolio
+              </h3>
+
+              <p>
+
+                Keeping intellectual property organised,
+                documented and aligned with business
+                objectives.
+
+              </p>
+
+            </div>
+
+
+            <div class="protection-item">
+
+              <span>
+                04 · ENFORCE
+              </span>
+
+              <h3>
+                Respond when rights are challenged
+              </h3>
+
+              <p>
+
+                Evaluating appropriate responses when
+                intellectual property rights are disputed
+                or infringed.
+
+              </p>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         CTA
+    ==================================================== -->
+
+    <section class="ipr-cta">
+
+
+      <div class="container">
+
+
+        <span class="eyebrow">
+          INTELLECTUAL PROPERTY
+        </span>
+
+
+        <h2>
+
+          Turn your ideas
+
+          <br>
+
+          into <em>protected assets.</em>
+
+        </h2>
+
+
+        <p>
+
+          Tell us about your intellectual property
+          requirement and we can discuss the appropriate
+          legal approach.
+
+        </p>
+
+
+        <a
+          href="./contact.html"
+          class="ipr-button"
+        >
+
+          Contact The Firm
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+
+          <a
+            href="./index.html"
+            class="brand"
+          >
+
+            <div class="brand-mark">
+              <span>P</span>
+            </div>
+
+
+            <div class="brand-text">
+
+              <strong>
+                Preach Law &amp; Co.
+              </strong>
+
+              <small>
+                Advocates &amp; Legal Advisory
+              </small>
+
+            </div>
+
+          </a>
+
+
+          <p>
+
+            Legal representation, regulatory advisory
+            and professional services for individuals,
+            businesses and institutions.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <div>
+
+            <span>
+              COMPANY
+            </span>
+
+            <a href="./about.html">
+              About
+            </a>
+
+            <a href="./team.html">
+              Our Team
+            </a>
+
+            <a href="./offices.html">
+              Offices
+            </a>
+
+            <a href="./articles.html">
+              Insights
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              PRACTICE
+            </span>
+
+            <a href="./litigation.html">
+              Litigation
+            </a>
+
+            <a href="./ipr.html">
+              IPR
+            </a>
+
+            <a href="./startup.html">
+              Startups
+            </a>
+
+            <a href="./consulting.html">
+              Consulting
+            </a>
+
+            <a href="./fintech.html">
+              Fintech
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              CONTACT
+            </span>
+
+            <a href="./contact.html">
+              Contact
+            </a>
+
+            <a href="tel:+919311664455">
+              +91 93116 64455
+            </a>
+
+            <a href="mailto:admin@preachlaw.com">
+              Email
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2015–2030 Preach Law LLP. All Rights Reserved.
+        </span>
+
+        <span>
+          DELHI · INDIA
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="./js/navigation.js"></script>
+
+  <script src="./js/animations.js"></script>
+
+  <script src="./js/main.js"></script>
+
+
+  <script>
+
+    window.addEventListener(
+      "load",
+      function () {
+
+        if (
+          window.lucide &&
+          typeof window.lucide.createIcons === "function"
+        ) {
+
+          window.lucide.createIcons();
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+  </html>
