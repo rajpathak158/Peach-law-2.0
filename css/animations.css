@@ -1,7 +1,6 @@
 /* =========================================================
    PREACH LAW & CO.
-   CINEMATIC ANIMATION SYSTEM
-   SAFE VERSION
+   COMPLETE ANIMATION SYSTEM
    ========================================================= */
 
 
@@ -21,7 +20,7 @@
 
 
 /* =========================================================
-   HERO
+   HERO TITLE
    ========================================================= */
 
 .hero-title .line {
@@ -70,11 +69,19 @@
    ========================================================= */
 
 .glow-one {
-  animation: glowBreathing 8s ease-in-out infinite;
+  animation:
+    glowBreathing
+    8s
+    ease-in-out
+    infinite;
 }
 
 .glow-two {
-  animation: glowBreathingReverse 11s ease-in-out infinite;
+  animation:
+    glowBreathingReverse
+    11s
+    ease-in-out
+    infinite;
 }
 
 @keyframes glowBreathing {
@@ -119,13 +126,16 @@
 .hero-label .label-line {
   position: relative;
   display: inline-block;
+
   width: 45px;
   height: 1px;
+
   overflow: hidden;
 }
 
 .hero-label .label-line::after {
   content: "";
+
   position: absolute;
 
   top: 0;
@@ -134,9 +144,11 @@
   width: 100%;
   height: 100%;
 
-  background: var(--gold);
+  background:
+    var(--gold);
 
-  transform: translateX(-101%);
+  transform:
+    translateX(-101%);
 
   animation:
     labelLineReveal
@@ -151,51 +163,59 @@
 @keyframes labelLineReveal {
 
   to {
-    transform: translateX(101%);
+    transform:
+      translateX(101%);
   }
 
 }
 
 
 /* =========================================================
-   HERO SCROLL
+   HERO SCROLL INDICATOR
    ========================================================= */
 
 .hero-scroll {
-  animation: scrollFloat 3s ease-in-out infinite;
+  animation:
+    scrollFloat
+    3s
+    ease-in-out
+    infinite;
 }
 
 @keyframes scrollFloat {
 
   0%,
   100% {
-    transform: translateX(-50%) translateY(0);
+    transform:
+      translateX(-50%)
+      translateY(0);
   }
 
   50% {
-    transform: translateX(-50%) translateY(7px);
+    transform:
+      translateX(-50%)
+      translateY(7px);
   }
 
 }
 
 
 /* =========================================================
-   SCROLL REVEALS
+   REVEAL ELEMENTS
    ========================================================= */
 
 .reveal {
-  will-change: transform, opacity;
+  will-change:
+    transform,
+    opacity;
 }
-
-
-/* =========================================================
-   SECTION TITLES
-   ========================================================= */
 
 .section-title,
 .contact-title,
 .cta-content h2 {
-  will-change: transform, opacity;
+  will-change:
+    transform,
+    opacity;
 }
 
 
@@ -205,9 +225,19 @@
 
 .practice-card {
   position: relative;
+
   overflow: hidden;
-  transform-style: preserve-3d;
-  will-change: transform;
+
+  transform-style:
+    preserve-3d;
+
+  will-change:
+    transform;
+
+  transition:
+    border-color .5s ease,
+    box-shadow .5s ease,
+    background .5s ease;
 }
 
 .practice-card::after {
@@ -227,16 +257,15 @@
     linear-gradient(
       100deg,
       transparent,
-      rgba(255, 255, 255, .045),
+      rgba(255,255,255,.045),
       transparent
     );
 
-  transform: skewX(-18deg);
+  transform:
+    skewX(-18deg);
 
   transition:
-    left
-    .8s
-    ease;
+    left .8s ease;
 
   z-index: 2;
 }
@@ -245,25 +274,15 @@
   left: 140%;
 }
 
-
-/* =========================================================
-   CARD HOVER
-   ========================================================= */
-
-.practice-card {
-  transition:
-    border-color .5s ease,
-    box-shadow .5s ease,
-    background .5s ease;
-}
-
 .practice-card:hover {
+
   border-color:
-    rgba(200, 169, 107, .22);
+    rgba(200,169,107,.22);
 
   box-shadow:
     0 25px 70px
-    rgba(0, 0, 0, .25);
+    rgba(0,0,0,.25);
+
 }
 
 .practice-card-top span {
@@ -273,46 +292,59 @@
 
 .practice-card:hover
 .practice-card-top span {
-  color: var(--gold);
+  color:
+    var(--gold);
 }
 
 
 /* =========================================================
-   CARD ICON
+   PRACTICE CARD ICON
    ========================================================= */
 
 .practice-card-top i {
+
   transition:
     transform .6s ease,
     filter .4s ease;
+
 }
 
 .practice-card:hover
 .practice-card-top i {
-  transform: translateY(-4px);
+
+  transform:
+    translateY(-4px);
 
   filter:
     drop-shadow(
       0 0 8px
-      rgba(200, 169, 107, .45)
+      rgba(200,169,107,.45)
     );
+
 }
 
 
 /* =========================================================
-   CTA
+   CTA SECTION
    ========================================================= */
 
-.cta-bg {
-  will-change: transform;
+.cta-section {
+
+  position: relative;
+
+  overflow: hidden;
+
 }
 
-.cta-section {
-  position: relative;
-  overflow: hidden;
+.cta-bg {
+
+  will-change:
+    transform;
+
 }
 
 .cta-section::before {
+
   content: "";
 
   position: absolute;
@@ -329,17 +361,19 @@
     linear-gradient(
       100deg,
       transparent,
-      rgba(200, 169, 107, .04),
+      rgba(200,169,107,.04),
       transparent
     );
 
-  transform: skewX(-15deg);
+  transform:
+    skewX(-15deg);
 
   animation:
     ctaSweep
     9s
     linear
     infinite;
+
 }
 
 @keyframes ctaSweep {
@@ -360,12 +394,17 @@
    ========================================================= */
 
 .cta-button {
+
   position: relative;
+
   overflow: hidden;
+
   isolation: isolate;
+
 }
 
 .cta-button::before {
+
   content: "";
 
   position: absolute;
@@ -376,22 +415,26 @@
   width: 100%;
   height: 100%;
 
-  background: var(--gold);
+  background:
+    var(--gold);
 
-  transform: translateY(101%);
+  transform:
+    translateY(101%);
 
   transition:
-    transform
-    .55s
-    ease;
+    transform .55s ease;
 
   z-index: -1;
 
   pointer-events: none;
+
 }
 
 .cta-button:hover::before {
-  transform: translateY(0);
+
+  transform:
+    translateY(0);
+
 }
 
 
@@ -400,11 +443,15 @@
    ========================================================= */
 
 .contact-item {
+
   position: relative;
+
   overflow: hidden;
+
 }
 
 .contact-item::before {
+
   content: "";
 
   position: absolute;
@@ -415,26 +462,34 @@
   width: 0;
   height: 1px;
 
-  background: var(--gold);
+  background:
+    var(--gold);
 
   transition:
-    width
-    .6s
-    ease;
+    width .6s ease;
+
 }
 
 .contact-item:hover::before {
-  width: 100%;
+
+  width:
+    100%;
+
 }
 
 .contact-item a {
+
   transition:
     color .35s ease,
     transform .35s ease;
+
 }
 
 .contact-item a:hover {
-  transform: translateX(5px);
+
+  transform:
+    translateX(5px);
+
 }
 
 
@@ -443,33 +498,48 @@
    ========================================================= */
 
 .footer-links a {
+
   position: relative;
+
   transition:
     color .35s ease,
     transform .35s ease;
+
 }
 
 .footer-links a::before {
-  content: "→";
+
+  content:
+    "→";
 
   position: absolute;
 
-  left: -18px;
+  left:
+    -18px;
 
-  opacity: 0;
+  opacity:
+    0;
 
-  color: var(--gold);
+  color:
+    var(--gold);
 
-  transform: translateX(-5px);
+  transform:
+    translateX(-5px);
 
   transition:
     opacity .3s ease,
     transform .3s ease;
+
 }
 
 .footer-links a:hover::before {
-  opacity: 1;
-  transform: translateX(0);
+
+  opacity:
+    1;
+
+  transform:
+    translateX(0);
+
 }
 
 
@@ -478,13 +548,39 @@
    ========================================================= */
 
 .navbar {
+
   will-change:
     padding,
     background,
     backdrop-filter;
+
+  transition:
+    background .5s ease,
+    backdrop-filter .5s ease,
+    box-shadow .5s ease,
+    padding .5s ease;
+
+}
+
+.navbar.scrolled {
+
+  background:
+    rgba(17,17,15,.88);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  box-shadow:
+    0 10px 40px
+    rgba(0,0,0,.18);
+
 }
 
 .navbar::after {
+
   content: "";
 
   position: absolute;
@@ -495,29 +591,124 @@
   width: 0;
   height: 1px;
 
-  background: var(--gold);
+  background:
+    var(--gold);
 
   transition:
-    width
-    .8s
-    ease;
+    width .8s ease;
+
 }
 
 .navbar.scrolled::after {
-  width: 100%;
+
+  width:
+    100%;
+
 }
 
 
 /* =========================================================
-   BRAND
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+.desktop-nav a {
+
+  position: relative;
+
+}
+
+.desktop-nav a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 1px;
+
+  background:
+    var(--gold);
+
+  transition:
+    width .45s ease;
+
+}
+
+.desktop-nav a:hover::after {
+
+  width:
+    100%;
+
+}
+
+
+/* =========================================================
+   NAV CONTACT BUTTON
+   ========================================================= */
+
+.nav-contact {
+
+  position: relative;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+}
+
+.nav-contact::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    var(--gold);
+
+  transform:
+    translateY(101%);
+
+  transition:
+    transform .5s ease;
+
+  z-index: -1;
+
+}
+
+.nav-contact:hover::before {
+
+  transform:
+    translateY(0);
+
+}
+
+.nav-contact:hover {
+
+  color:
+    #11110f;
+
+}
+
+
+/* =========================================================
+   BRAND MARK
    ========================================================= */
 
 .brand-mark {
+
   position: relative;
+
   overflow: hidden;
+
 }
 
 .brand-mark::after {
+
   content: "";
 
   position: absolute;
@@ -528,20 +719,72 @@
   width: 100%;
   height: 100%;
 
-  background: var(--gold);
+  background:
+    var(--gold);
 
-  transform: translateY(101%);
+  transform:
+    translateY(101%);
 
   transition:
-    transform
-    .45s
-    ease;
+    transform .45s ease;
 
   z-index: -1;
+
 }
 
-.brand:hover .brand-mark::after {
-  transform: translateY(0);
+.brand:hover
+.brand-mark::after {
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* =========================================================
+   MENU BUTTON
+   ========================================================= */
+
+.menu-button {
+
+  position: relative;
+
+  transition:
+    transform .4s ease;
+
+}
+
+.menu-button:hover {
+
+  transform:
+    scale(1.05);
+
+}
+
+.menu-button span {
+
+  transition:
+    transform .5s ease,
+    width .4s ease;
+
+}
+
+.menu-button.active
+span:first-child {
+
+  transform:
+    translateY(4px)
+    rotate(45deg);
+
+}
+
+.menu-button.active
+span:last-child {
+
+  transform:
+    translateY(-4px)
+    rotate(-45deg);
+
 }
 
 
@@ -549,59 +792,131 @@
    MOBILE MENU
    ========================================================= */
 
+.mobile-menu {
+
+  visibility:
+    hidden;
+
+  pointer-events:
+    none;
+
+}
+
+.mobile-menu.active {
+
+  visibility:
+    visible;
+
+  pointer-events:
+    auto;
+
+}
+
 .mobile-menu nav a {
+
+  opacity:
+    0;
+
   will-change:
     transform,
     opacity;
+
 }
 
-.mobile-menu.active nav a {
+.mobile-menu.active
+nav a {
+
+  opacity:
+    1;
+
   animation:
     mobileMenuItem
     .7s
     ease
     both;
+
 }
 
-.mobile-menu.active nav a:nth-child(1) {
-  animation-delay: .15s;
-}
+.mobile-menu nav a.active {
 
-.mobile-menu.active nav a:nth-child(2) {
-  animation-delay: .20s;
-}
+  color:
+    var(--gold);
 
-.mobile-menu.active nav a:nth-child(3) {
-  animation-delay: .25s;
-}
-
-.mobile-menu.active nav a:nth-child(4) {
-  animation-delay: .30s;
-}
-
-.mobile-menu.active nav a:nth-child(5) {
-  animation-delay: .35s;
-}
-
-.mobile-menu.active nav a:nth-child(6) {
-  animation-delay: .40s;
-}
-
-.mobile-menu.active nav a:nth-child(7) {
-  animation-delay: .45s;
 }
 
 @keyframes mobileMenuItem {
 
   from {
-    opacity: 0;
-    transform: translateY(40px);
+
+    opacity:
+      0;
+
+    transform:
+      translateY(40px);
+
   }
 
   to {
-    opacity: 1;
-    transform: translateY(0);
+
+    opacity:
+      1;
+
+    transform:
+      translateY(0);
+
   }
+
+}
+
+
+/* =========================================================
+   MOBILE MENU STAGGER
+   ========================================================= */
+
+.mobile-menu.active
+nav a:nth-child(1) {
+  animation-delay: .15s;
+}
+
+.mobile-menu.active
+nav a:nth-child(2) {
+  animation-delay: .20s;
+}
+
+.mobile-menu.active
+nav a:nth-child(3) {
+  animation-delay: .25s;
+}
+
+.mobile-menu.active
+nav a:nth-child(4) {
+  animation-delay: .30s;
+}
+
+.mobile-menu.active
+nav a:nth-child(5) {
+  animation-delay: .35s;
+}
+
+.mobile-menu.active
+nav a:nth-child(6) {
+  animation-delay: .40s;
+}
+
+.mobile-menu.active
+nav a:nth-child(7) {
+  animation-delay: .45s;
+}
+
+
+/* =========================================================
+   BODY LOCK
+   ========================================================= */
+
+body.menu-open {
+
+  overflow:
+    hidden;
 
 }
 
@@ -611,27 +926,37 @@
    ========================================================= */
 
 .disclaimer-card {
+
   animation:
     disclaimerIn
     .8s
     ease
     both;
+
 }
 
 @keyframes disclaimerIn {
 
   from {
-    opacity: 0;
+
+    opacity:
+      0;
+
     transform:
       translateY(40px)
       scale(.96);
+
   }
 
   to {
-    opacity: 1;
+
+    opacity:
+      1;
+
     transform:
       translateY(0)
       scale(1);
+
   }
 
 }
@@ -642,22 +967,30 @@
    ========================================================= */
 
 .loader-monogram {
+
   animation:
     loaderLogo
     2s
     ease-in-out
     infinite
     alternate;
+
 }
 
 @keyframes loaderLogo {
 
   from {
-    transform: rotate(0deg);
+
+    transform:
+      rotate(0deg);
+
   }
 
   to {
-    transform: rotate(8deg);
+
+    transform:
+      rotate(8deg);
+
   }
 
 }
@@ -668,19 +1001,25 @@
    ========================================================= */
 
 .marquee {
-  will-change: transform;
+
+  will-change:
+    transform;
+
 }
 
 .marquee-section:hover
 .marquee {
-  animation-play-state: paused;
+
+  animation-play-state:
+    paused;
+
 }
 
 .marquee span {
+
   transition:
-    color
-    .4s
-    ease;
+    color .4s ease;
+
 }
 
 
@@ -692,6 +1031,7 @@
 .section-title em,
 .cta-content h2 em,
 .contact-title em {
+
   background:
     linear-gradient(
       110deg,
@@ -700,25 +1040,33 @@
       var(--gold) 60%
     );
 
-  background-size: 200% auto;
+  background-size:
+    200% auto;
 
-  -webkit-background-clip: text;
-  background-clip: text;
+  -webkit-background-clip:
+    text;
 
-  -webkit-text-fill-color: transparent;
+  background-clip:
+    text;
+
+  -webkit-text-fill-color:
+    transparent;
 
   animation:
     goldShimmer
     5s
     linear
     infinite;
+
 }
 
 @keyframes goldShimmer {
 
   to {
+
     background-position:
       200% center;
+
   }
 
 }
@@ -729,31 +1077,44 @@
    ========================================================= */
 
 .image-reveal {
-  position: relative;
-  overflow: hidden;
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
 }
 
 .image-reveal img {
-  transform: scale(1.08);
+
+  transform:
+    scale(1.08);
 
   transition:
     transform
     1.2s
     ease;
+
 }
 
 .image-reveal:hover img {
-  transform: scale(1.03);
+
+  transform:
+    scale(1.03);
+
 }
 
 
 /* =========================================================
-   MAGNETIC ELEMENT SAFETY
+   MAGNETIC ELEMENTS
    ========================================================= */
 
 .magnetic {
+
   will-change:
     transform;
+
 }
 
 
@@ -761,19 +1122,47 @@
    MOBILE SAFETY
    ========================================================= */
 
+@media (max-width: 900px) {
+
+  .desktop-nav,
+  .nav-contact {
+
+    display:
+      none;
+
+  }
+
+  .menu-button {
+
+    display:
+      flex;
+
+  }
+
+}
+
 @media (max-width: 768px) {
 
   .practice-card:hover {
-    transform: none;
+
+    transform:
+      none;
+
   }
 
   .glow-one,
   .glow-two {
-    animation-duration: 12s;
+
+    animation-duration:
+      12s;
+
   }
 
   .cta-section::before {
-    animation-duration: 12s;
+
+    animation-duration:
+      12s;
+
   }
 
 }
@@ -788,10 +1177,19 @@
   *,
   *::before,
   *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
+
+    animation-duration:
+      .01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    scroll-behavior:
+      auto !important;
+
+    transition-duration:
+      .01ms !important;
+
   }
 
 }
