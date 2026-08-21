@@ -1166,7 +1166,49 @@ body.menu-open {
   }
 
 }
+/* =========================================================
+   PREMIUM CURSOR GLOW
+   ========================================================= */
 
+.cursor-glow {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(200, 169, 107, .09) 0%,
+      rgba(200, 169, 107, .035) 30%,
+      transparent 70%
+    );
+
+  transform:
+    translate3d(-50%, -50%, 0);
+
+  margin-left: -130px;
+  margin-top: -130px;
+
+  mix-blend-mode: screen;
+
+  opacity: .8;
+}
+
+@media (pointer: coarse) {
+  .cursor-glow {
+    display: none;
+  }
+}
 
 /* =========================================================
    REDUCED MOTION
