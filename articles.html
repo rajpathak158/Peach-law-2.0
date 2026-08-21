@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#11110f"
+  >
+
+  <title>Insights | Preach Law & Co.</title>
+
+  <meta
+    name="description"
+    content="Legal insights, regulatory developments, business updates and practical perspectives from Preach Law & Co."
+  >
+
+  <meta
+    name="author"
+    content="Preach Law & Co."
+  >
+
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+
+  <script
+    src="https://unpkg.com/lucide@latest"
+    defer
+  ></script>
+
+
+  <!-- =====================================================
+       CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/animations.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/responsive.css"
+  >
+
+
+  <!-- =====================================================
+       PAGE-SPECIFIC CSS
+  ====================================================== -->
+
+  <style>
+
+    /* =====================================================
+       PAGE
+    ====================================================== */
+
+    .insights-page {
+      background: #11110f;
+      color: #f2eee6;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .insights-hero {
+      position: relative;
+
+      min-height: 75vh;
+
+      display: flex;
+      align-items: flex-end;
+
+      overflow: hidden;
+
+      padding:
+        160px 0
+        100px;
+    }
+
+
+    .insights-grid {
+      position: absolute;
+
+      inset: 0;
+
+      opacity: .045;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.35) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.35) 1px,
+          transparent 1px
+        );
+
+      background-size: 80px 80px;
+    }
+
+
+    .insights-glow {
+      position: absolute;
+
+      width: 650px;
+      height: 650px;
+
+      right: -250px;
+      top: -250px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200,169,107,.17),
+          transparent 68%
+        );
+    }
+
+
+    .insights-ring {
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      right: -100px;
+      bottom: -330px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.12);
+
+      border-radius: 50%;
+    }
+
+
+    .insights-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+
+    .insights-kicker {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      opacity: .55;
+    }
+
+
+    .insights-kicker span:first-child {
+      width: 45px;
+      height: 1px;
+
+      background: currentColor;
+    }
+
+
+    .insights-hero h1 {
+      max-width: 1050px;
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(58px, 9vw, 125px);
+
+      line-height: .9;
+
+      letter-spacing: -.055em;
+
+      font-weight: 500;
+    }
+
+
+    .insights-hero h1 em {
+      color: #c8a96b;
+
+      font-weight: 500;
+    }
+
+
+    .insights-hero-description {
+      max-width: 650px;
+
+      margin-top: 45px;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.58);
+    }
+
+
+    .insights-index {
+      position: absolute;
+
+      right: 7%;
+      bottom: 65px;
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+      opacity: .3;
+    }
+
+
+    /* =====================================================
+       FEATURED ARTICLE
+    ====================================================== */
+
+    .featured-section {
+      padding:
+        130px 0
+        100px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .featured-grid {
+      display: grid;
+
+      grid-template-columns:
+        1.15fr .85fr;
+
+      min-height: 570px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.13);
+    }
+
+
+    .featured-visual {
+      position: relative;
+
+      min-height: 570px;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 45%,
+          rgba(200,169,107,.14),
+          transparent 50%
+        );
+    }
+
+
+    .featured-visual::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      opacity: .18;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.12) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.12) 1px,
+          transparent 1px
+        );
+
+      background-size: 65px 65px;
+    }
+
+
+    .featured-orbit {
+      position: absolute;
+
+      width: 420px;
+      height: 420px;
+
+      top: 50%;
+      left: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      border:
+        1px solid
+        rgba(200,169,107,.2);
+
+      border-radius: 50%;
+    }
+
+
+    .featured-orbit::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 55px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.13);
+
+      border-radius: 50%;
+    }
+
+
+    .featured-orbit::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 110px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.1);
+
+      border-radius: 50%;
+    }
+
+
+    .featured-symbol {
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      width: 90px;
+      height: 90px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid
+        rgba(200,169,107,.55);
+
+      border-radius: 50%;
+
+      color: #c8a96b;
+    }
+
+
+    .featured-symbol i {
+      width: 35px;
+      height: 35px;
+    }
+
+
+    .featured-content {
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      padding: 65px;
+
+      border-left:
+        1px solid
+        rgba(255,255,255,.13);
+    }
+
+
+    .article-meta {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+      font-size: 10px;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(242,238,230,.42);
+    }
+
+
+    .article-meta .dot {
+      width: 4px;
+      height: 4px;
+
+      border-radius: 50%;
+
+      background: #c8a96b;
+    }
+
+
+    .featured-content h2 {
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(38px, 4vw, 60px);
+
+      line-height: 1.02;
+
+      font-weight: 500;
+    }
+
+
+    .featured-content h2 em {
+      color: #c8a96b;
+    }
+
+
+    .featured-content p {
+      margin:
+        30px 0 40px;
+
+      font-size: 15px;
+
+      line-height: 1.85;
+
+      color:
+        rgba(242,238,230,.53);
+    }
+
+
+    .article-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      width: fit-content;
+
+      color: #f2eee6;
+
+      text-decoration: none;
+
+      font-size: 11px;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+      transition:
+        color .3s ease;
+    }
+
+
+    .article-link i {
+      width: 15px;
+      height: 15px;
+
+      transition:
+        transform .3s ease;
+    }
+
+
+    .article-link:hover {
+      color: #c8a96b;
+    }
+
+
+    .article-link:hover i {
+      transform:
+        translate(3px, -3px);
+    }
+
+
+    /* =====================================================
+       ARTICLES
+    ====================================================== */
+
+    .articles-section {
+      padding:
+        100px 0
+        150px;
+    }
+
+
+    .articles-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-end;
+
+      gap: 50px;
+
+      margin-bottom: 60px;
+    }
+
+
+    .articles-header h2 {
+      margin: 15px 0 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(42px, 5vw, 72px);
+
+      line-height: 1;
+
+      font-weight: 500;
+    }
+
+
+    .articles-header h2 em {
+      color: #c8a96b;
+    }
+
+
+    .articles-header p {
+      max-width: 450px;
+
+      margin: 0;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.48);
+    }
+
+
+    /* =====================================================
+       FILTER
+    ====================================================== */
+
+    .article-filter {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-bottom: 45px;
+
+      padding-bottom: 25px;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .filter-button {
+      padding:
+        11px 18px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
+
+      background: transparent;
+
+      color:
+        rgba(242,238,230,.55);
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      transition:
+        all .3s ease;
+    }
+
+
+    .filter-button:hover,
+    .filter-button.active {
+      border-color: #c8a96b;
+
+      color: #c8a96b;
+    }
+
+
+    /* =====================================================
+       ARTICLE GRID
+    ====================================================== */
+
+    .article-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 1px;
+
+      background:
+        rgba(255,255,255,.12);
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+    }
+
+
+    .article-card {
+      position: relative;
+
+      display: flex;
+
+      flex-direction: column;
+
+      min-height: 450px;
+
+      padding: 35px;
+
+      background: #11110f;
+
+      text-decoration: none;
+
+      color: #f2eee6;
+
+      overflow: hidden;
+
+      transition:
+        background .4s ease,
+        transform .4s ease;
+    }
+
+
+    .article-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 200px;
+      height: 200px;
+
+      right: -120px;
+      bottom: -120px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(200,169,107,.13),
+          transparent 70%
+        );
+
+      transition:
+        transform .5s ease;
+    }
+
+
+    .article-card:hover {
+      background: #151512;
+    }
+
+
+    .article-card:hover::before {
+      transform: scale(2);
+    }
+
+
+    .article-card-top {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 80px;
+    }
+
+
+    .article-number {
+      font-size: 10px;
+
+      letter-spacing: .15em;
+
+      color:
+        rgba(242,238,230,.35);
+    }
+
+
+    .article-category {
+      padding:
+        7px 10px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.3);
+
+      color: #c8a96b;
+
+      font-size: 8px;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+
+    .article-card h3 {
+      position: relative;
+      z-index: 2;
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 30px;
+
+      line-height: 1.05;
+
+      font-weight: 500;
+    }
+
+
+    .article-card p {
+      position: relative;
+      z-index: 2;
+
+      margin:
+        22px 0 30px;
+
+      font-size: 13px;
+
+      line-height: 1.75;
+
+      color:
+        rgba(242,238,230,.48);
+    }
+
+
+    .article-card-bottom {
+      position: relative;
+
+      z-index: 2;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-top: auto;
+
+      padding-top: 25px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+    }
+
+
+    .article-date {
+      font-size: 9px;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(242,238,230,.35);
+    }
+
+
+    .article-arrow {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 36px;
+      height: 36px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
+
+      border-radius: 50%;
+
+      transition:
+        all .3s ease;
+    }
+
+
+    .article-card:hover .article-arrow {
+      border-color: #c8a96b;
+
+      color: #c8a96b;
+
+      transform:
+        translate(3px, -3px);
+    }
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .insights-cta {
+      padding:
+        150px 0;
+
+      text-align: center;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(200,169,107,.09),
+          transparent 45%
+        );
+    }
+
+
+    .insights-cta h2 {
+      max-width: 950px;
+
+      margin:
+        20px auto 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 7vw, 90px);
+
+      line-height: .98;
+
+      font-weight: 500;
+    }
+
+
+    .insights-cta h2 em {
+      color: #c8a96b;
+    }
+
+
+    .insights-cta p {
+      max-width: 550px;
+
+      margin:
+        30px auto;
+
+      line-height: 1.8;
+
+      color:
+        rgba(242,238,230,.5);
+    }
+
+
+    .insights-cta-button {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-top: 20px;
+
+      padding:
+        18px 30px;
+
+      border:
+        1px solid
+        rgba(200,169,107,.7);
+
+      color: #f2eee6;
+
+      text-decoration: none;
+
+      font-size: 10px;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+
+      transition:
+        all .35s ease;
+    }
+
+
+    .insights-cta-button:hover {
+      background: #c8a96b;
+
+      color: #11110f;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 900px) {
+
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .featured-content {
+        border-left: 0;
+
+        border-top:
+          1px solid
+          rgba(255,255,255,.13);
+      }
+
+
+      .article-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+      .insights-hero {
+        min-height: 70vh;
+
+        padding:
+          130px 20px
+          80px;
+      }
+
+
+      .insights-index {
+        display: none;
+      }
+
+
+      .featured-section {
+        padding:
+          90px 20px;
+      }
+
+
+      .featured-visual {
+        min-height: 400px;
+      }
+
+
+      .featured-orbit {
+        width: 290px;
+        height: 290px;
+      }
+
+
+      .featured-content {
+        padding: 35px 25px;
+      }
+
+
+      .articles-section {
+        padding:
+          80px 20px
+          100px;
+      }
+
+
+      .articles-header {
+        display: block;
+      }
+
+
+      .articles-header p {
+        margin-top: 25px;
+      }
+
+
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .article-card {
+        min-height: 420px;
+      }
+
+
+      .insights-cta {
+        padding:
+          100px 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="insights-page">
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="nav-container">
+
+
+      <a
+        href="./index.html"
+        class="brand"
+        aria-label="Preach Law & Co. Home"
+      >
+
+        <div class="brand-mark">
+          <span>P</span>
+        </div>
+
+
+        <div class="brand-text">
+
+          <strong>
+            Preach Law &amp; Co.
+          </strong>
+
+          <small>
+            Advocates &amp; Legal Advisory
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <nav
+        class="desktop-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a href="./services.html">
+          Services
+        </a>
+
+        <a href="./team.html">
+          Team
+        </a>
+
+        <a
+          href="./articles.html"
+          aria-current="page"
+        >
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          Offices
+        </a>
+
+      </nav>
+
+
+      <a
+        href="./contact.html"
+        class="nav-contact"
+      >
+
+        <span>
+          Contact Us
+        </span>
+
+        <i data-lucide="arrow-up-right"></i>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <div class="mobile-menu-inner">
+
+      <nav>
+
+        <a href="./index.html">
+          <span>01</span>
+          Home
+        </a>
+
+        <a href="./about.html">
+          <span>02</span>
+          About
+        </a>
+
+        <a href="./services.html">
+          <span>03</span>
+          Services
+        </a>
+
+        <a href="./team.html">
+          <span>04</span>
+          Our Team
+        </a>
+
+        <a
+          href="./articles.html"
+          aria-current="page"
+        >
+          <span>05</span>
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          <span>06</span>
+          Offices
+        </a>
+
+        <a href="./contact.html">
+          <span>07</span>
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="mobile-menu-footer">
+
+        <span>
+          PREACH LAW &amp; CO.
+        </span>
+
+        <span>
+          ADVOCATES · ADVISORS · CONSULTANTS
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="insights-hero">
+
+
+      <div class="insights-grid"></div>
+
+      <div class="insights-glow"></div>
+
+      <div class="insights-ring"></div>
+
+
+      <div class="container insights-hero-content">
+
+
+        <div class="insights-kicker">
+
+          <span></span>
+
+          <span>
+            KNOWLEDGE · PERSPECTIVE · ANALYSIS
+          </span>
+
+        </div>
+
+
+        <h1>
+
+          Ideas behind
+
+          <br>
+
+          <em>the law.</em>
+
+        </h1>
+
+
+        <p class="insights-hero-description">
+
+          Perspectives on legal developments,
+          regulatory change, business strategy
+          and issues shaping the professional world.
+
+        </p>
+
+
+      </div>
+
+
+      <span class="insights-index">
+        05 / 07
+      </span>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         FEATURED
+    ====================================================== -->
+
+    <section class="featured-section">
+
+
+      <div class="container">
+
+
+        <div class="featured-grid">
+
+
+          <div class="featured-visual">
+
+
+            <div class="featured-orbit">
+
+              <div class="featured-symbol">
+
+                <i data-lucide="scale"></i>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <article class="featured-content">
+
+
+            <div class="article-meta">
+
+              <span>
+                FEATURED INSIGHT
+              </span>
+
+              <span class="dot"></span>
+
+              <span>
+                LEGAL
+              </span>
+
+            </div>
+
+
+            <h2>
+
+              Understanding the
+
+              <br>
+
+              <em>strategy behind law.</em>
+
+            </h2>
+
+
+            <p>
+
+              Legal decisions rarely exist in isolation.
+              Understanding the commercial, regulatory
+              and practical context behind a matter can
+              be just as important as understanding the
+              law itself.
+
+            </p>
+
+
+            <a
+              href="#articles"
+              class="article-link"
+            >
+
+              Explore Insights
+
+              <i data-lucide="arrow-up-right"></i>
+
+            </a>
+
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         ARTICLES
+    ====================================================== -->
+
+    <section
+      class="articles-section"
+      id="articles"
+    >
+
+
+      <div class="container">
+
+
+        <div class="articles-header">
+
+
+          <div>
+
+            <span class="eyebrow">
+              LATEST THINKING
+            </span>
+
+
+            <h2>
+
+              From the
+
+              <br>
+
+              <em>firm.</em>
+
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            Selected perspectives covering
+            litigation, corporate law, intellectual
+            property, taxation, fintech and
+            regulatory developments.
+
+          </p>
+
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="article-filter">
+
+
+          <button
+            class="filter-button active"
+            type="button"
+            data-filter="all"
+          >
+            All
+          </button>
+
+
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="litigation"
+          >
+            Litigation
+          </button>
+
+
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="corporate"
+          >
+            Corporate
+          </button>
+
+
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="ipr"
+          >
+            IPR
+          </button>
+
+
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="fintech"
+          >
+            Fintech
+          </button>
+
+
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="regulatory"
+          >
+            Regulatory
+          </button>
+
+
+        </div>
+
+
+        <!-- ARTICLE GRID -->
+
+        <div class="article-grid">
+
+
+          <!-- ARTICLE 01 -->
+
+          <article
+            class="article-card"
+            data-category="litigation"
+          >
+
+            <div class="article-card-top">
+
+              <span class="article-number">
+                01
+              </span>
+
+              <span class="article-category">
+                Litigation
+              </span>
+
+            </div>
+
+
+            <h3>
+              Strategy before
+              action in disputes
+            </h3>
+
+
+            <p>
+
+              Why understanding the objective
+              behind a dispute can shape a more
+              effective legal strategy.
+
+            </p>
+
+
+            <div class="article-card-bottom">
+
+              <span class="article-date">
+                LEGAL PERSPECTIVE
+              </span>
+
+
+              <span class="article-arrow">
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- ARTICLE 02 -->
+
+          <article
+            class="article-card"
+            data-category="corporate"
+          >
+
+            <div class="article-card-top">
+
+              <span class="article-number">
+                02
+              </span>
+
+              <span class="article-category">
+                Corporate
+              </span>
+
+            </div>
+
+
+            <h3>
+              Building stronger
+              corporate foundations
+            </h3>
+
+
+            <p>
+
+              Governance, documentation and
+              compliance as businesses move
+              from idea to institution.
+
+            </p>
+
+
+            <div class="article-card-bottom">
+
+              <span class="article-date">
+                BUSINESS LAW
+              </span>
+
+
+              <span class="article-arrow">
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- ARTICLE 03 -->
+
+          <article
+            class="article-card"
+            data-category="ipr"
+          >
+
+            <div class="article-card-top">
+
+              <span class="article-number">
+                03
+              </span>
+
+              <span class="article-category">
+                IPR
+              </span>
+
+            </div>
+
+
+            <h3>
+              Protecting ideas
+              in a competitive market
+            </h3>
+
+
+            <p>
+
+              Intellectual property strategy
+              should begin before valuable
+              ideas become vulnerable.
+
+            </p>
+
+
+            <div class="article-card-bottom">
+
+              <span class="article-date">
+                IP PERSPECTIVE
+              </span>
+
+
+              <span class="article-arrow">
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- ARTICLE 04 -->
+
+          <article
+            class="article-card"
+            data-category="fintech"
+          >
+
+            <div class="article-card-top">
+
+              <span class="article-number">
+                04
+              </span>
+
+              <span class="article-category">
+                Fintech
+              </span>
+
+            </div>
+
+
+            <h3>
+              Regulation in the
+              fintech ecosystem
+            </h3>
+
+
+            <p>
+
+              The intersection of innovation,
+              financial regulation and
+              responsible growth.
+
+            </p>
+
+
+            <div class="article-card-bottom">
+
+              <span class="article-date">
+                FINANCIAL REGULATION
+              </span>
+
+
+              <span class="article-arrow">
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- ARTICLE 05 -->
+
+          <article
+            class="article-card"
+            data-category="regulatory"
+          >
+
+            <div class="article-card-top">
+
+              <span class="article-number">
+                05
+              </span>
+
+              <span class="article-category">
+                Regulatory
+              </span>
+
+            </div>
+
+
+            <h3>
+              Compliance as a
+              strategic advantage
+            </h3>
+
+
+            <p>
+
+              Moving beyond minimum compliance
+              towards systems that support
+              sustainable business growth.
+
+            </p>
+
+
+            <div class="article-card-bottom">
+
+              <span class="article-date">
+                REGULATORY
+              </span>
+
+
+              <span class="article-arrow">
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- ARTICLE 06 -->
+
+          <article
+            class="article-card"
+            data-category="corporate"
+          >
+
+            <div class="article-card-top">
+
+              <span class="article-number">
+                06
+              </span>
+
+              <span class="article-category">
+                Corporate
+              </span>
+
+            </div>
+
+
+            <h3>
+              Contracts that
+              protect business
+            </h3>
+
+
+            <p>
+
+              A well-structured contract can
+              prevent uncertainty before a
+              commercial relationship begins.
+
+            </p>
+
+
+            <div class="article-card-bottom">
+
+              <span class="article-date">
+                COMMERCIAL LAW
+              </span>
+
+
+              <span class="article-arrow">
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="insights-cta">
+
+
+      <div class="container">
+
+
+        <span class="eyebrow">
+          NEED LEGAL GUIDANCE?
+        </span>
+
+
+        <h2>
+
+          Knowledge is the
+
+          <br>
+
+          beginning of
+
+          <br>
+
+          <em>good strategy.</em>
+
+        </h2>
+
+
+        <p>
+
+          If you have a legal, regulatory or
+          business matter that requires professional
+          guidance, contact our team.
+
+        </p>
+
+
+        <a
+          href="./contact.html"
+          class="insights-cta-button"
+        >
+
+          Contact The Firm
+
+          <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+
+          <a
+            href="./index.html"
+            class="brand"
+          >
+
+            <div class="brand-mark">
+              <span>P</span>
+            </div>
+
+
+            <div class="brand-text">
+
+              <strong>
+                Preach Law &amp; Co.
+              </strong>
+
+              <small>
+                Advocates &amp; Legal Advisory
+              </small>
+
+            </div>
+
+          </a>
+
+
+          <p>
+
+            Legal representation, regulatory advisory
+            and professional services for individuals,
+            businesses and institutions.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <div>
+
+            <span>
+              COMPANY
+            </span>
+
+            <a href="./about.html">
+              About
+            </a>
+
+            <a href="./team.html">
+              Our Team
+            </a>
+
+            <a href="./offices.html">
+              Offices
+            </a>
+
+            <a
+              href="./articles.html"
+              aria-current="page"
+            >
+              Insights
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              PRACTICE
+            </span>
+
+            <a href="./litigation.html">
+              Litigation
+            </a>
+
+            <a href="./ipr.html">
+              IPR
+            </a>
+
+            <a href="./startup.html">
+              Startups
+            </a>
+
+            <a href="./consulting.html">
+              Consulting
+            </a>
+
+            <a href="./fintech.html">
+              Fintech
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              CONTACT
+            </span>
+
+            <a href="./contact.html">
+              Contact
+            </a>
+
+            <a href="tel:+919311664455">
+              +91 93116 64455
+            </a>
+
+            <a href="mailto:admin@preachlaw.com">
+              Email
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2015–2030 Preach Law LLP. All Rights Reserved.
+        </span>
+
+        <span>
+          DELHI · INDIA
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="./js/navigation.js"></script>
+
+  <script src="./js/animations.js"></script>
+
+  <script src="./js/main.js"></script>
+
+
+  <!-- =====================================================
+       ARTICLE FILTER
+  ====================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+        const buttons =
+          document.querySelectorAll(
+            ".filter-button"
+          );
+
+        const cards =
+          document.querySelectorAll(
+            ".article-card"
+          );
+
+
+        buttons.forEach(function (button) {
+
+          button.addEventListener(
+            "click",
+            function () {
+
+              const filter =
+                button.dataset.filter;
+
+
+              buttons.forEach(function (item) {
+
+                item.classList.remove(
+                  "active"
+                );
+
+              });
+
+
+              button.classList.add(
+                "active"
+              );
+
+
+              cards.forEach(function (card) {
+
+                const category =
+                  card.dataset.category;
+
+
+                if (
+                  filter === "all" ||
+                  category === filter
+                ) {
+
+                  card.style.display = "";
+
+                  requestAnimationFrame(
+                    function () {
+
+                      card.style.opacity = "1";
+
+                      card.style.transform =
+                        "translateY(0)";
+
+                    }
+                  );
+
+                } else {
+
+                  card.style.opacity = "0";
+
+                  card.style.transform =
+                    "translateY(15px)";
+
+                  setTimeout(
+                    function () {
+
+                      card.style.display = "none";
+
+                    },
+                    250
+                  );
+
+                }
+
+              });
+
+            }
+          );
+
+        });
+
+
+        /* Initialize Lucide */
+
+        if (
+          window.lucide &&
+          typeof window.lucide.createIcons ===
+          "function"
+        ) {
+
+          window.lucide.createIcons();
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+  </html>
