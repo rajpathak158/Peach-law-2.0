@@ -1,13 +1,12 @@
 /* =========================================================
    PREACH LAW & CO.
-   MAIN JAVASCRIPT
-   FAIL-SAFE GSAP ANIMATION SYSTEM
+   PREMIUM GSAP ANIMATION SYSTEM
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =======================================================
-     BASIC ELEMENTS
+     ELEMENTS
   ======================================================= */
 
   const pageLoader = document.getElementById("pageLoader");
@@ -21,52 +20,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.getElementById("menuButton");
   const mobileMenu = document.getElementById("mobileMenu");
 
+
   /* =======================================================
      LUCIDE ICONS
   ======================================================= */
 
-  function loadIcons() {
-    try {
-      if (window.lucide) {
+  function initIcons() {
+
+    if (
+      typeof window.lucide !== "undefined" &&
+      typeof window.lucide.createIcons === "function"
+    ) {
+      try {
         window.lucide.createIcons();
+      } catch (error) {
+        console.warn("Lucide error:", error);
       }
-    } catch (error) {
-      console.warn("Lucide icons could not be loaded.");
     }
+
   }
 
-  loadIcons();
-
-
-  /* =======================================================
-     PAGE LOADER
-  ======================================================= */
-
-  window.addEventListener("load", () => {
-
-    setTimeout(() => {
-
-      if (pageLoader) {
-        pageLoader.classList.add("loaded");
-      }
-
-      startAnimations();
-
-    }, 700);
-
-  });
-
-
-  /* =======================================================
-     SAFETY FALLBACK
-     If external scripts fail, text still appears.
-  ======================================================= */
-
-  setTimeout(() => {
-
-    document.body.classList.add("animations-ready");
-
-  }, 100);
+  initIcons();
 
 
   /* =======================================================
@@ -87,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "true"
       );
     } catch (error) {
-      console.warn("Local storage unavailable.");
+      // Ignore storage errors
     }
 
   }
@@ -98,17 +72,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let accepted = false;
 
     try {
+
       accepted =
         localStorage.getItem(
           "preachLawDisclaimerAccepted"
         ) === "true";
+
     } catch (error) {
+
       accepted = false;
+
     }
+
 
     if (accepted) {
 
       disclaimer?.classList.add("hidden");
+
       document.body.classList.remove("no-scroll");
 
     } else {
@@ -120,16 +100,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  agreeBtn?.addEventListener("click", closeDisclaimer);
+  agreeBtn?.addEventListener(
+    "click",
+    closeDisclaimer
+  );
 
 
-  disagreeBtn?.addEventListener("click", () => {
+  disagreeBtn?.addEventListener(
+    "click",
+    () => {
 
-    alert(
-      "You must agree to the disclaimer to continue browsing this website."
-    );
+      alert(
+        "You must agree to the disclaimer to continue browsing this website."
+      );
 
-  });
+    }
+  );
 
 
   checkDisclaimer();
@@ -139,66 +125,81 @@ document.addEventListener("DOMContentLoaded", () => {
      MOBILE MENU
   ======================================================= */
 
-  menuButton?.addEventListener("click", () => {
+  menuButton?.addEventListener(
+    "click",
+    () => {
 
-    mobileMenu?.classList.toggle("open");
+      mobileMenu?.classList.toggle("open");
 
-    const isOpen =
-      mobileMenu?.classList.contains("open");
+      const open =
+        mobileMenu?.classList.contains("open");
 
-    document.body.classList.toggle(
-      "no-scroll",
-      Boolean(isOpen)
-    );
+      document.body.classList.toggle(
+        "no-scroll",
+        Boolean(open)
+      );
 
-  });
+    }
+  );
 
 
-  document.querySelectorAll(".mobile-menu a").forEach(link => {
+  document
+    .querySelectorAll(".mobile-menu a")
+    .forEach(link => {
 
-    link.addEventListener("click", () => {
+      link.addEventListener(
+        "click",
+        () => {
 
-      mobileMenu?.classList.remove("open");
+          mobileMenu?.classList.remove("open");
 
-      document.body.classList.remove("no-scroll");
+          document.body.classList.remove(
+            "no-scroll"
+          );
+
+        }
+      );
 
     });
 
-  });
-
 
   /* =======================================================
-     SMOOTH ANCHOR SCROLL
+     SMOOTH ANCHOR LINKS
   ======================================================= */
 
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
 
-    link.addEventListener("click", event => {
+      link.addEventListener(
+        "click",
+        event => {
 
-      const targetId =
-        link.getAttribute("href");
+          const id =
+            link.getAttribute("href");
 
-      if (!targetId || targetId === "#") return;
+          if (!id || id === "#") return;
 
-      const target =
-        document.querySelector(targetId);
+          const target =
+            document.querySelector(id);
 
-      if (!target) return;
+          if (!target) return;
 
-      event.preventDefault();
+          event.preventDefault();
 
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
 
     });
 
-  });
-
 
   /* =======================================================
-     SCROLL HANDLER
+     SCROLL PROGRESS + NAVBAR
   ======================================================= */
 
   function updateScroll() {
@@ -206,32 +207,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollTop =
       window.scrollY;
 
-    const documentHeight =
+    const maxScroll =
       document.documentElement.scrollHeight -
       window.innerHeight;
 
-    const percentage =
-      documentHeight > 0
-        ? (scrollTop / documentHeight) * 100
+    const progress =
+      maxScroll > 0
+        ? (scrollTop / maxScroll) * 100
         : 0;
 
+
     if (scrollProgress) {
+
       scrollProgress.style.width =
-        `${percentage}%`;
+        progress + "%";
+
     }
 
 
     if (navbar) {
 
       if (scrollTop > 50) {
+
         navbar.classList.add("scrolled");
+
       } else {
+
         navbar.classList.remove("scrolled");
+
       }
 
     }
 
   }
+
 
   window.addEventListener(
     "scroll",
@@ -243,35 +252,125 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     GSAP ANIMATIONS
+     FAIL-SAFE
   ======================================================= */
+
+  function showEverything() {
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
+
+        element.style.opacity = "1";
+        element.style.visibility = "visible";
+        element.style.transform = "none";
+
+      });
+
+
+    document
+      .querySelectorAll(
+        ".hero-title .line > span"
+      )
+      .forEach(element => {
+
+        element.style.opacity = "1";
+        element.style.visibility = "visible";
+        element.style.transform =
+          "translateY(0)";
+
+      });
+
+  }
+
+
+  /* =======================================================
+     PAGE LOADER
+  ======================================================= */
+
+  function hideLoader() {
+
+    if (!pageLoader) {
+
+      startAnimations();
+
+      return;
+
+    }
+
+
+    pageLoader.classList.add("loaded");
+
+    startAnimations();
+
+  }
+
+
+  window.addEventListener(
+    "load",
+    () => {
+
+      setTimeout(
+        hideLoader,
+        500
+      );
+
+    }
+  );
+
+
+  /*
+     Backup in case window.load behaves strangely.
+  */
+
+  setTimeout(
+    () => {
+
+      if (
+        pageLoader &&
+        !pageLoader.classList.contains("loaded")
+      ) {
+
+        pageLoader.classList.add(
+          "loaded"
+        );
+
+      }
+
+      startAnimations();
+
+    },
+    2500
+  );
+
+
+  /* =======================================================
+     MAIN GSAP ANIMATION
+  ======================================================= */
+
+  let animationsStarted = false;
+
 
   function startAnimations() {
 
-    /*
-      IMPORTANT:
-      If GSAP doesn't load, everything remains visible.
-    */
+    if (animationsStarted) return;
+
+    animationsStarted = true;
+
+
+    /* -----------------------------------------------------
+       CHECK GSAP
+    ----------------------------------------------------- */
 
     if (
       typeof window.gsap === "undefined"
     ) {
 
       console.warn(
-        "GSAP unavailable. Using safe CSS mode."
+        "GSAP was not loaded."
       );
 
-      document.body.classList.remove(
-        "animations-ready"
-      );
-
-      document.querySelectorAll(".reveal").forEach(el => {
-
-        el.style.opacity = "1";
-        el.style.visibility = "visible";
-        el.style.transform = "none";
-
-      });
+      showEverything();
 
       return;
 
@@ -281,13 +380,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const gsap = window.gsap;
 
 
+    /* -----------------------------------------------------
+       CHECK SCROLLTRIGGER
+    ----------------------------------------------------- */
+
+    const hasScrollTrigger =
+      typeof window.ScrollTrigger !==
+      "undefined";
+
+
     try {
 
-      /*
-        Register ScrollTrigger if available.
-      */
-
-      if (window.ScrollTrigger) {
+      if (hasScrollTrigger) {
 
         gsap.registerPlugin(
           window.ScrollTrigger
@@ -296,17 +400,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
 
-      /*
-        Enable animated initial state.
-      */
-
-      document.body.classList.add(
-        "animations-ready"
-      );
-
-
       /* ===================================================
-         HERO
+         HERO TIMELINE
       =================================================== */
 
       const heroTimeline =
@@ -317,319 +412,475 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-      heroTimeline.to(
+      /*
+         HERO LABEL
+      */
+
+      heroTimeline.fromTo(
         ".hero-label",
+        {
+          opacity: 0,
+          y: 30
+        },
         {
           opacity: 1,
           y: 0,
-          duration: .8
+          duration: 0.8
         }
       );
 
 
-      heroTimeline.to(
+      /*
+         HERO TITLE
+      */
+
+      heroTimeline.fromTo(
         ".hero-title .line > span",
         {
-          y: "0%",
-          duration: 1.1,
-          stagger: .12
+          y: "120%",
+          opacity: 0
         },
-        "-=.45"
+        {
+          y: "0%",
+          opacity: 1,
+
+          duration: 1.15,
+
+          stagger: 0.13,
+
+          ease: "power4.out"
+        },
+        "-=0.35"
       );
 
 
-      heroTimeline.to(
+      /*
+         HERO DESCRIPTION
+      */
+
+      heroTimeline.fromTo(
         ".hero-description",
         {
-          opacity: 1,
-          y: 0,
-          duration: .8
+          opacity: 0,
+          y: 35
         },
-        "-=.55"
-      );
-
-
-      heroTimeline.to(
-        ".hero-button",
         {
           opacity: 1,
           y: 0,
-          duration: .8
+
+          duration: 0.8
         },
-        "-=.6"
+        "-=0.55"
+      );
+
+
+      /*
+         HERO BUTTON
+      */
+
+      heroTimeline.fromTo(
+        ".hero-button",
+        {
+          opacity: 0,
+          y: 30
+        },
+        {
+          opacity: 1,
+          y: 0,
+
+          duration: 0.8
+        },
+        "-=0.55"
       );
 
 
       /* ===================================================
-         REVEAL ELEMENTS
+         HERO GLOW
       =================================================== */
 
-      const revealElements =
-        document.querySelectorAll(
-          ".reveal"
-        );
+      gsap.to(
+        ".glow-one",
+        {
+          x: 80,
+          y: 100,
 
+          duration: 7,
 
-      revealElements.forEach(element => {
+          repeat: -1,
 
-        /*
-          Don't animate hero elements twice.
-        */
+          yoyo: true,
 
-        if (
-          element.closest(".hero")
-        ) {
-          return;
+          ease: "sine.inOut"
         }
+      );
 
 
-        if (
-          window.ScrollTrigger
-        ) {
+      gsap.to(
+        ".glow-two",
+        {
+          x: -70,
+          y: -80,
 
-          gsap.to(
-            element,
-            {
-              opacity: 1,
-              y: 0,
+          duration: 8,
 
-              duration: .9,
+          repeat: -1,
 
-              ease: "power3.out",
+          yoyo: true,
 
-              scrollTrigger: {
+          ease: "sine.inOut"
+        }
+      );
 
-                trigger: element,
 
-                start: "top 88%",
+      /* ===================================================
+         SCROLL REVEALS
+      =================================================== */
 
-                once: true
+      document
+        .querySelectorAll(
+          ".reveal"
+        )
+        .forEach(element => {
+
+          /*
+             Skip hero elements because
+             hero already has its own timeline.
+          */
+
+          if (
+            element.closest(".hero")
+          ) {
+            return;
+          }
+
+
+          if (hasScrollTrigger) {
+
+            gsap.fromTo(
+              element,
+
+              {
+                opacity: 0,
+                y: 55
+              },
+
+              {
+                opacity: 1,
+                y: 0,
+
+                duration: 0.9,
+
+                ease: "power3.out",
+
+                scrollTrigger: {
+
+                  trigger: element,
+
+                  start: "top 88%",
+
+                  once: true
+
+                }
 
               }
-            }
-          );
+            );
 
-        } else {
+          } else {
 
-          gsap.to(
-            element,
-            {
-              opacity: 1,
-              y: 0,
-              duration: .8,
-              ease: "power3.out"
-            }
-          );
+            gsap.fromTo(
+              element,
 
-        }
+              {
+                opacity: 0,
+                y: 55
+              },
 
-      });
+              {
+                opacity: 1,
+                y: 0,
+
+                duration: 0.9,
+
+                ease: "power3.out"
+              }
+            );
+
+          }
+
+        });
 
 
       /* ===================================================
          COUNTERS
       =================================================== */
 
-      document.querySelectorAll(
-        ".counter"
-      ).forEach(counter => {
+      document
+        .querySelectorAll(
+          ".counter"
+        )
+        .forEach(counter => {
 
-        const target =
-          Number(
-            counter.dataset.target
-          ) || 0;
+          const target =
+            Number(
+              counter.dataset.target
+            ) || 0;
 
 
-        if (window.ScrollTrigger) {
+          const counterObject = {
+            value: 0
+          };
 
-          gsap.to(
-            counter,
-            {
-              innerText: target,
 
-              duration: 2,
+          const animation = {
 
-              ease: "power2.out",
+            value: target,
 
-              snap: {
-                innerText: 1
-              },
+            duration: 2.2,
 
-              scrollTrigger: {
+            ease: "power2.out",
 
-                trigger: counter,
+            onUpdate: () => {
 
-                start: "top 85%",
+              counter.textContent =
+                Math.floor(
+                  counterObject.value
+                ).toLocaleString();
 
-                once: true
+            },
 
-              },
+            onComplete: () => {
 
-              onUpdate: function () {
-
-                counter.innerText =
-                  Math.floor(
-                    Number(
-                      counter.innerText
-                    )
-                  ).toLocaleString();
-
-              },
-
-              onComplete: function () {
-
-                counter.innerText =
-                  target.toLocaleString();
-
-              }
+              counter.textContent =
+                target.toLocaleString();
 
             }
+
+          };
+
+
+          if (hasScrollTrigger) {
+
+            animation.scrollTrigger = {
+
+              trigger: counter,
+
+              start: "top 85%",
+
+              once: true
+
+            };
+
+          }
+
+
+          gsap.to(
+            counterObject,
+            animation
           );
 
-        } else {
-
-          counter.innerText =
-            target.toLocaleString();
-
-        }
-
-      });
+        });
 
 
       /* ===================================================
          MAGNETIC BUTTONS
       =================================================== */
 
-      document.querySelectorAll(
-        ".magnetic"
-      ).forEach(button => {
+      document
+        .querySelectorAll(
+          ".magnetic"
+        )
+        .forEach(button => {
 
-        button.addEventListener(
-          "mousemove",
-          event => {
 
-            if (
-              window.innerWidth < 768
-            ) {
-              return;
+          button.addEventListener(
+            "mousemove",
+            event => {
+
+              if (
+                window.innerWidth < 768
+              ) {
+                return;
+              }
+
+
+              const rect =
+                button.getBoundingClientRect();
+
+
+              const x =
+                event.clientX -
+                rect.left -
+                rect.width / 2;
+
+
+              const y =
+                event.clientY -
+                rect.top -
+                rect.height / 2;
+
+
+              gsap.to(
+                button,
+                {
+                  x: x * 0.12,
+                  y: y * 0.12,
+
+                  duration: 0.35,
+
+                  ease: "power3.out",
+
+                  overwrite: true
+                }
+              );
+
             }
+          );
 
 
-            const rect =
-              button.getBoundingClientRect();
+          button.addEventListener(
+            "mouseleave",
+            () => {
 
+              gsap.to(
+                button,
+                {
+                  x: 0,
+                  y: 0,
 
-            const x =
-              event.clientX -
-              rect.left -
-              rect.width / 2;
+                  duration: 0.6,
 
+                  ease: "elastic.out(1, 0.4)"
+                }
+              );
 
-            const y =
-              event.clientY -
-              rect.top -
-              rect.height / 2;
+            }
+          );
 
-
-            gsap.to(
-              button,
-              {
-                x: x * .12,
-                y: y * .12,
-
-                duration: .35,
-
-                ease: "power2.out"
-              }
-            );
-
-          }
-        );
-
-
-        button.addEventListener(
-          "mouseleave",
-          () => {
-
-            gsap.to(
-              button,
-              {
-                x: 0,
-                y: 0,
-
-                duration: .5,
-
-                ease: "elastic.out(1, .4)"
-              }
-            );
-
-          }
-        );
-
-      });
+        });
 
 
       /* ===================================================
-         EXPERTISE CARDS
+         EXPERTISE CARD HOVER
       =================================================== */
 
-      document.querySelectorAll(
-        ".expertise-card"
-      ).forEach(card => {
+      document
+        .querySelectorAll(
+          ".expertise-card"
+        )
+        .forEach(card => {
 
-        card.addEventListener(
-          "mouseenter",
-          () => {
+          card.addEventListener(
+            "mouseenter",
+            () => {
 
-            if (
-              window.innerWidth < 768
-            ) {
-              return;
+              if (
+                window.innerWidth < 768
+              ) {
+                return;
+              }
+
+
+              gsap.to(
+                card,
+                {
+                  y: -10,
+
+                  duration: 0.45,
+
+                  ease: "power3.out"
+                }
+              );
+
             }
+          );
 
 
-            gsap.to(
-              card,
-              {
-                y: -8,
-                duration: .4,
-                ease: "power3.out"
-              }
-            );
+          card.addEventListener(
+            "mouseleave",
+            () => {
 
-          }
-        );
+              gsap.to(
+                card,
+                {
+                  y: 0,
 
+                  duration: 0.5,
 
-        card.addEventListener(
-          "mouseleave",
-          () => {
+                  ease: "power3.out"
+                }
+              );
 
-            gsap.to(
-              card,
-              {
-                y: 0,
-                duration: .5,
-                ease: "power3.out"
-              }
-            );
+            }
+          );
 
-          }
-        );
-
-      });
+        });
 
 
       /* ===================================================
-         PARALLAX GLOW
+         SERVICE HOVER
       =================================================== */
 
-      if (window.ScrollTrigger) {
+      document
+        .querySelectorAll(
+          ".service"
+        )
+        .forEach(service => {
+
+          service.addEventListener(
+            "mouseenter",
+            () => {
+
+              if (
+                window.innerWidth < 768
+              ) {
+                return;
+              }
+
+
+              gsap.to(
+                service.querySelector("svg"),
+                {
+                  x: 8,
+
+                  duration: 0.3,
+
+                  ease: "power2.out"
+                }
+              );
+
+            }
+          );
+
+
+          service.addEventListener(
+            "mouseleave",
+            () => {
+
+              gsap.to(
+                service.querySelector("svg"),
+                {
+                  x: 0,
+
+                  duration: 0.3
+                }
+              );
+
+            }
+          );
+
+        });
+
+
+      /* ===================================================
+         PARALLAX
+      =================================================== */
+
+      if (hasScrollTrigger) {
 
         gsap.to(
-          ".glow-one",
+          ".hero-grid",
           {
-            y: 250,
+            y: 150,
 
             scrollTrigger: {
 
@@ -642,14 +893,15 @@ document.addEventListener("DOMContentLoaded", () => {
               scrub: true
 
             }
+
           }
         );
 
 
         gsap.to(
-          ".glow-two",
+          ".hero-number",
           {
-            y: -200,
+            y: -100,
 
             scrollTrigger: {
 
@@ -662,101 +914,85 @@ document.addEventListener("DOMContentLoaded", () => {
               scrub: true
 
             }
+
           }
         );
 
       }
 
 
-      /*
-        Refresh ScrollTrigger after everything
-        has been initialized.
-      */
+      /* ===================================================
+         REFRESH
+      =================================================== */
 
-      if (
-        window.ScrollTrigger
-      ) {
+      if (hasScrollTrigger) {
 
         window.ScrollTrigger.refresh();
 
       }
 
 
-      /*
-        Re-create icons after animation setup.
-      */
+      initIcons();
 
-      loadIcons();
+
+      console.log(
+        "Preach Law animations initialized successfully."
+      );
 
 
     } catch (error) {
 
-      /*
-        CRITICAL FALLBACK:
-        Never leave the website blank because
-        an animation failed.
-      */
-
       console.error(
-        "Animation error:",
+        "GSAP animation error:",
         error
       );
 
+      /*
+         Never leave the website blank.
+      */
 
-      document.body.classList.remove(
-        "animations-ready"
-      );
-
-
-      document.querySelectorAll(
-        ".reveal"
-      ).forEach(element => {
-
-        element.style.opacity = "1";
-        element.style.visibility = "visible";
-        element.style.transform = "none";
-
-      });
-
-
-      document.querySelectorAll(
-        ".hero-title .line > span"
-      ).forEach(element => {
-
-        element.style.transform =
-          "translateY(0)";
-
-      });
+      showEverything();
 
     }
 
-  }
+  });
 
 
   /* =======================================================
      RESIZE
   ======================================================= */
 
-  let resizeTimer;
+  let resizeTimer = null;
+
 
   window.addEventListener(
     "resize",
     () => {
 
-      clearTimeout(resizeTimer);
+      clearTimeout(
+        resizeTimer
+      );
 
-      resizeTimer = setTimeout(() => {
 
-        if (window.ScrollTrigger) {
-          window.ScrollTrigger.refresh();
-        }
+      resizeTimer = setTimeout(
+        () => {
 
-        loadIcons();
+          if (
+            typeof window.ScrollTrigger !==
+            "undefined"
+          ) {
 
-      }, 250);
+            window.ScrollTrigger.refresh();
+
+          }
+
+          initIcons();
+
+        },
+        300
+      );
 
     }
   );
-
 
 });
