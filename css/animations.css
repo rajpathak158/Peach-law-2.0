@@ -1,6 +1,7 @@
 /* =========================================================
    PREACH LAW & CO.
-   COMPLETE ANIMATION SYSTEM
+   ANIMATIONS.CSS
+   STABLE CINEMATIC VERSION
    ========================================================= */
 
 
@@ -14,8 +15,10 @@
 .philosophy,
 .navbar,
 .site-footer {
+
   transform: translateZ(0);
   backface-visibility: hidden;
+
 }
 
 
@@ -24,18 +27,29 @@
    ========================================================= */
 
 .hero-title .line {
+
   overflow: hidden;
+
 }
 
 .hero-title .line > span {
+
   display: inline-block;
-  will-change: transform;
+
+  will-change:
+    transform,
+    opacity;
+
 }
 
 .hero-label,
 .hero-description,
 .hero-button {
-  will-change: transform, opacity;
+
+  will-change:
+    transform,
+    opacity;
+
 }
 
 
@@ -44,72 +58,103 @@
    ========================================================= */
 
 .hero-grid {
-  animation: heroGridMove 22s linear infinite;
+
+  animation:
+    heroGridMove
+    28s
+    linear
+    infinite;
+
+  will-change:
+    background-position;
+
 }
 
 @keyframes heroGridMove {
 
   0% {
-    transform: translate3d(0, 0, 0);
-  }
 
-  50% {
-    transform: translate3d(0, 20px, 0);
+    background-position:
+      0 0,
+      0 0;
+
   }
 
   100% {
-    transform: translate3d(0, 0, 0);
+
+    background-position:
+      80px 80px,
+      80px 80px;
+
   }
 
 }
 
 
 /* =========================================================
-   GOLD GLOW
+   HERO GLOW
    ========================================================= */
 
 .glow-one {
+
   animation:
-    glowBreathing
-    8s
+    glowOne
+    12s
     ease-in-out
-    infinite;
+    infinite
+    alternate;
+
 }
 
 .glow-two {
+
   animation:
-    glowBreathingReverse
-    11s
+    glowTwo
+    15s
     ease-in-out
-    infinite;
-}
-
-@keyframes glowBreathing {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: .45;
-  }
-
-  50% {
-    transform: scale(1.15);
-    opacity: .75;
-  }
+    infinite
+    alternate;
 
 }
 
-@keyframes glowBreathingReverse {
 
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: .35;
+@keyframes glowOne {
+
+  0% {
+
+    transform:
+      translate3d(0,0,0)
+      scale(1);
+
   }
 
-  50% {
-    transform: scale(1.2);
-    opacity: .6;
+  100% {
+
+    transform:
+      translate3d(-35px,25px,0)
+      scale(1.08);
+
+  }
+
+}
+
+
+@keyframes glowTwo {
+
+  0% {
+
+    transform:
+      translate3d(0,0,0)
+      scale(1);
+
+  }
+
+  100% {
+
+    transform:
+      translate3d(30px,-30px,0)
+      scale(1.08);
+
   }
 
 }
@@ -120,29 +165,33 @@
    ========================================================= */
 
 .hero-label {
+
   position: relative;
+
 }
 
+
 .hero-label .label-line {
+
   position: relative;
+
   display: inline-block;
 
   width: 45px;
   height: 1px;
 
   overflow: hidden;
+
 }
 
+
 .hero-label .label-line::after {
+
   content: "";
 
   position: absolute;
 
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
   background:
     var(--gold);
@@ -151,71 +200,79 @@
     translateX(-101%);
 
   animation:
-    labelLineReveal
-    1.4s
-    .8s
+    labelReveal
+    1.2s
+    .5s
     ease
     forwards;
 
-  pointer-events: none;
 }
 
-@keyframes labelLineReveal {
+
+@keyframes labelReveal {
 
   to {
+
     transform:
       translateX(101%);
+
   }
 
 }
 
 
 /* =========================================================
-   HERO SCROLL INDICATOR
+   HERO SCROLL
    ========================================================= */
 
 .hero-scroll {
+
   animation:
     scrollFloat
-    3s
+    4s
     ease-in-out
     infinite;
+
 }
+
+
+/*
+   IMPORTANT:
+   Do NOT use translateX(-50%) here.
+   It can conflict with the positioning in style.css
+   and cause sideways movement.
+*/
 
 @keyframes scrollFloat {
 
   0%,
   100% {
+
     transform:
-      translateX(-50%)
       translateY(0);
+
   }
 
   50% {
+
     transform:
-      translateX(-50%)
-      translateY(7px);
+      translateY(6px);
+
   }
 
 }
 
 
 /* =========================================================
-   REVEAL ELEMENTS
+   REVEAL
    ========================================================= */
 
 .reveal {
-  will-change:
-    transform,
-    opacity;
-}
 
-.section-title,
-.contact-title,
-.cta-content h2 {
   will-change:
     transform,
     opacity;
+
 }
 
 
@@ -224,6 +281,7 @@
    ========================================================= */
 
 .practice-card {
+
   position: relative;
 
   overflow: hidden;
@@ -231,83 +289,94 @@
   transform-style:
     preserve-3d;
 
-  will-change:
-    transform;
-
   transition:
-    border-color .5s ease,
-    box-shadow .5s ease,
-    background .5s ease;
+    transform .4s ease,
+    border-color .4s ease,
+    box-shadow .4s ease;
+
 }
 
+
 .practice-card::after {
+
   content: "";
 
   position: absolute;
 
   top: 0;
-  left: -120%;
+  left: -130%;
 
-  width: 70%;
+  width: 65%;
   height: 100%;
-
-  pointer-events: none;
 
   background:
     linear-gradient(
       100deg,
       transparent,
-      rgba(255,255,255,.045),
+      rgba(255,255,255,.035),
       transparent
     );
 
   transform:
     skewX(-18deg);
 
-  transition:
-    left .8s ease;
+  pointer-events: none;
 
   z-index: 2;
+
 }
 
+
 .practice-card:hover::after {
-  left: 140%;
+
+  animation:
+    cardSweep
+    .8s
+    ease
+    forwards;
+
 }
+
+
+@keyframes cardSweep {
+
+  from {
+
+    left:
+      -130%;
+
+  }
+
+  to {
+
+    left:
+      150%;
+
+  }
+
+}
+
 
 .practice-card:hover {
 
   border-color:
-    rgba(200,169,107,.22);
+    rgba(200,169,107,.30);
 
   box-shadow:
-    0 25px 70px
-    rgba(0,0,0,.25);
+    0 20px 55px
+    rgba(0,0,0,.20);
 
 }
 
-.practice-card-top span {
-  transition:
-    color .4s ease;
-}
-
-.practice-card:hover
-.practice-card-top span {
-  color:
-    var(--gold);
-}
-
-
-/* =========================================================
-   PRACTICE CARD ICON
-   ========================================================= */
 
 .practice-card-top i {
 
   transition:
-    transform .6s ease,
+    transform .4s ease,
     filter .4s ease;
 
 }
+
 
 .practice-card:hover
 .practice-card-top i {
@@ -317,15 +386,32 @@
 
   filter:
     drop-shadow(
-      0 0 8px
-      rgba(200,169,107,.45)
+      0 0 7px
+      rgba(200,169,107,.35)
     );
 
 }
 
 
+.practice-card-top span {
+
+  transition:
+    color .3s ease;
+
+}
+
+
+.practice-card:hover
+.practice-card-top span {
+
+  color:
+    var(--gold);
+
+}
+
+
 /* =========================================================
-   CTA SECTION
+   CTA
    ========================================================= */
 
 .cta-section {
@@ -336,12 +422,6 @@
 
 }
 
-.cta-bg {
-
-  will-change:
-    transform;
-
-}
 
 .cta-section::before {
 
@@ -350,40 +430,49 @@
   position: absolute;
 
   top: 0;
+
   left: -100%;
 
-  width: 50%;
-  height: 100%;
+  width: 40%;
 
-  pointer-events: none;
+  height: 100%;
 
   background:
     linear-gradient(
       100deg,
       transparent,
-      rgba(200,169,107,.04),
+      rgba(200,169,107,.035),
       transparent
     );
 
   transform:
     skewX(-15deg);
 
+  pointer-events: none;
+
   animation:
     ctaSweep
-    9s
+    12s
     linear
     infinite;
 
 }
 
+
 @keyframes ctaSweep {
 
-  0% {
-    left: -100%;
+  from {
+
+    left:
+      -100%;
+
   }
 
-  100% {
-    left: 200%;
+  to {
+
+    left:
+      220%;
+
   }
 
 }
@@ -403,17 +492,14 @@
 
 }
 
+
 .cta-button::before {
 
   content: "";
 
   position: absolute;
 
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
   background:
     var(--gold);
@@ -422,13 +508,12 @@
     translateY(101%);
 
   transition:
-    transform .55s ease;
+    transform .45s ease;
 
   z-index: -1;
 
-  pointer-events: none;
-
 }
+
 
 .cta-button:hover::before {
 
@@ -438,17 +523,24 @@
 }
 
 
+.cta-button:hover {
+
+  color:
+    #11110f;
+
+}
+
+
 /* =========================================================
-   CONTACT ITEMS
+   CONTACT
    ========================================================= */
 
 .contact-item {
 
   position: relative;
 
-  overflow: hidden;
-
 }
+
 
 .contact-item::before {
 
@@ -457,18 +549,21 @@
   position: absolute;
 
   left: 0;
+
   bottom: 0;
 
   width: 0;
+
   height: 1px;
 
   background:
     var(--gold);
 
   transition:
-    width .6s ease;
+    width .5s ease;
 
 }
+
 
 .contact-item:hover::before {
 
@@ -477,24 +572,29 @@
 
 }
 
+
 .contact-item a {
 
   transition:
-    color .35s ease,
-    transform .35s ease;
+    color .3s ease,
+    transform .3s ease;
 
 }
 
+
 .contact-item a:hover {
 
+  color:
+    var(--gold);
+
   transform:
-    translateX(5px);
+    translateX(4px);
 
 }
 
 
 /* =========================================================
-   FOOTER LINKS
+   FOOTER
    ========================================================= */
 
 .footer-links a {
@@ -502,10 +602,11 @@
   position: relative;
 
   transition:
-    color .35s ease,
-    transform .35s ease;
+    color .3s ease,
+    transform .3s ease;
 
 }
+
 
 .footer-links a::before {
 
@@ -515,22 +616,23 @@
   position: absolute;
 
   left:
-    -18px;
-
-  opacity:
-    0;
+    -17px;
 
   color:
     var(--gold);
 
+  opacity:
+    0;
+
   transform:
-    translateX(-5px);
+    translateX(-4px);
 
   transition:
-    opacity .3s ease,
-    transform .3s ease;
+    opacity .25s ease,
+    transform .25s ease;
 
 }
+
 
 .footer-links a:hover::before {
 
@@ -543,41 +645,45 @@
 }
 
 
+.footer-links a:hover {
+
+  color:
+    var(--text);
+
+}
+
+
 /* =========================================================
    NAVBAR
    ========================================================= */
 
 .navbar {
 
-  will-change:
-    padding,
-    background,
-    backdrop-filter;
-
   transition:
-    background .5s ease,
-    backdrop-filter .5s ease,
-    box-shadow .5s ease,
-    padding .5s ease;
+    background .4s ease,
+    box-shadow .4s ease,
+    padding .4s ease;
 
 }
+
 
 .navbar.scrolled {
 
   background:
-    rgba(17,17,15,.88);
+    rgba(17,17,15,.90);
 
   backdrop-filter:
-    blur(18px);
+    blur(14px);
 
   -webkit-backdrop-filter:
-    blur(18px);
+    blur(14px);
 
   box-shadow:
-    0 10px 40px
-    rgba(0,0,0,.18);
+    0 10px 35px
+    rgba(0,0,0,.16);
 
 }
+
 
 .navbar::after {
 
@@ -586,18 +692,21 @@
   position: absolute;
 
   left: 0;
+
   bottom: -1px;
 
   width: 0;
+
   height: 1px;
 
   background:
     var(--gold);
 
   transition:
-    width .8s ease;
+    width .7s ease;
 
 }
+
 
 .navbar.scrolled::after {
 
@@ -608,7 +717,7 @@
 
 
 /* =========================================================
-   DESKTOP NAVIGATION
+   NAV LINKS
    ========================================================= */
 
 .desktop-nav a {
@@ -617,6 +726,7 @@
 
 }
 
+
 .desktop-nav a::after {
 
   content: "";
@@ -624,18 +734,21 @@
   position: absolute;
 
   left: 0;
-  bottom: -8px;
+
+  bottom: -7px;
 
   width: 0;
+
   height: 1px;
 
   background:
     var(--gold);
 
   transition:
-    width .45s ease;
+    width .35s ease;
 
 }
+
 
 .desktop-nav a:hover::after {
 
@@ -646,7 +759,7 @@
 
 
 /* =========================================================
-   NAV CONTACT BUTTON
+   NAV CONTACT
    ========================================================= */
 
 .nav-contact {
@@ -658,6 +771,7 @@
   isolation: isolate;
 
 }
+
 
 .nav-contact::before {
 
@@ -674,11 +788,12 @@
     translateY(101%);
 
   transition:
-    transform .5s ease;
+    transform .45s ease;
 
   z-index: -1;
 
 }
+
 
 .nav-contact:hover::before {
 
@@ -686,6 +801,7 @@
     translateY(0);
 
 }
+
 
 .nav-contact:hover {
 
@@ -707,17 +823,14 @@
 
 }
 
+
 .brand-mark::after {
 
   content: "";
 
   position: absolute;
 
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
   background:
     var(--gold);
@@ -726,11 +839,12 @@
     translateY(101%);
 
   transition:
-    transform .45s ease;
+    transform .4s ease;
 
   z-index: -1;
 
 }
+
 
 .brand:hover
 .brand-mark::after {
@@ -750,24 +864,26 @@
   position: relative;
 
   transition:
-    transform .4s ease;
+    transform .3s ease;
 
 }
+
 
 .menu-button:hover {
 
   transform:
-    scale(1.05);
+    scale(1.04);
 
 }
+
 
 .menu-button span {
 
   transition:
-    transform .5s ease,
-    width .4s ease;
+    transform .4s ease;
 
 }
+
 
 .menu-button.active
 span:first-child {
@@ -777,6 +893,7 @@ span:first-child {
     rotate(45deg);
 
 }
+
 
 .menu-button.active
 span:last-child {
@@ -802,6 +919,7 @@ span:last-child {
 
 }
 
+
 .mobile-menu.active {
 
   visibility:
@@ -812,39 +930,28 @@ span:last-child {
 
 }
 
+
 .mobile-menu nav a {
 
   opacity:
     0;
 
-  will-change:
-    transform,
-    opacity;
-
 }
+
 
 .mobile-menu.active
 nav a {
 
-  opacity:
-    1;
-
   animation:
-    mobileMenuItem
-    .7s
+    mobileItem
+    .55s
     ease
-    both;
+    forwards;
 
 }
 
-.mobile-menu nav a.active {
 
-  color:
-    var(--gold);
-
-}
-
-@keyframes mobileMenuItem {
+@keyframes mobileItem {
 
   from {
 
@@ -852,7 +959,7 @@ nav a {
       0;
 
     transform:
-      translateY(40px);
+      translateY(25px);
 
   }
 
@@ -869,55 +976,39 @@ nav a {
 }
 
 
-/* =========================================================
-   MOBILE MENU STAGGER
-   ========================================================= */
-
 .mobile-menu.active
 nav a:nth-child(1) {
-  animation-delay: .15s;
+  animation-delay: .05s;
 }
 
 .mobile-menu.active
 nav a:nth-child(2) {
-  animation-delay: .20s;
+  animation-delay: .10s;
 }
 
 .mobile-menu.active
 nav a:nth-child(3) {
-  animation-delay: .25s;
+  animation-delay: .15s;
 }
 
 .mobile-menu.active
 nav a:nth-child(4) {
-  animation-delay: .30s;
+  animation-delay: .20s;
 }
 
 .mobile-menu.active
 nav a:nth-child(5) {
-  animation-delay: .35s;
+  animation-delay: .25s;
 }
 
 .mobile-menu.active
 nav a:nth-child(6) {
-  animation-delay: .40s;
+  animation-delay: .30s;
 }
 
 .mobile-menu.active
 nav a:nth-child(7) {
-  animation-delay: .45s;
-}
-
-
-/* =========================================================
-   BODY LOCK
-   ========================================================= */
-
-body.menu-open {
-
-  overflow:
-    hidden;
-
+  animation-delay: .35s;
 }
 
 
@@ -925,15 +1016,25 @@ body.menu-open {
    DISCLAIMER
    ========================================================= */
 
+.disclaimer {
+
+  transition:
+    opacity .45s ease,
+    visibility .45s ease;
+
+}
+
+
 .disclaimer-card {
 
   animation:
     disclaimerIn
-    .8s
+    .6s
     ease
     both;
 
 }
+
 
 @keyframes disclaimerIn {
 
@@ -943,8 +1044,8 @@ body.menu-open {
       0;
 
     transform:
-      translateY(40px)
-      scale(.96);
+      translateY(25px)
+      scale(.98);
 
   }
 
@@ -969,27 +1070,28 @@ body.menu-open {
 .loader-monogram {
 
   animation:
-    loaderLogo
-    2s
+    loaderPulse
+    2.5s
     ease-in-out
-    infinite
-    alternate;
+    infinite;
 
 }
 
-@keyframes loaderLogo {
 
-  from {
+@keyframes loaderPulse {
 
-    transform:
-      rotate(0deg);
+  0%,
+  100% {
+
+    opacity:
+      .65;
 
   }
 
-  to {
+  50% {
 
-    transform:
-      rotate(8deg);
+    opacity:
+      1;
 
   }
 
@@ -1007,6 +1109,7 @@ body.menu-open {
 
 }
 
+
 .marquee-section:hover
 .marquee {
 
@@ -1015,16 +1118,9 @@ body.menu-open {
 
 }
 
-.marquee span {
-
-  transition:
-    color .4s ease;
-
-}
-
 
 /* =========================================================
-   GOLD TEXT SHIMMER
+   GOLD TEXT
    ========================================================= */
 
 .hero-title em,
@@ -1032,703 +1128,20 @@ body.menu-open {
 .cta-content h2 em,
 .contact-title em {
 
-  background:
-    linear-gradient(
-      110deg,
-      var(--gold) 20%,
-      var(--gold-light) 40%,
-      var(--gold) 60%
-    );
-
-  background-size:
-    200% auto;
-
-  -webkit-background-clip:
-    text;
-
-  background-clip:
-    text;
-
-  -webkit-text-fill-color:
-    transparent;
-
-  animation:
-    goldShimmer
-    5s
-    linear
-    infinite;
-
-}
-
-@keyframes goldShimmer {
-
-  to {
-
-    background-position:
-      200% center;
-
-  }
+  color:
+    var(--gold);
 
 }
 
 
 /* =========================================================
-   IMAGE REVEAL
-   ========================================================= */
-
-.image-reveal {
-
-  position:
-    relative;
-
-  overflow:
-    hidden;
-
-}
-
-.image-reveal img {
-
-  transform:
-    scale(1.08);
-
-  transition:
-    transform
-    1.2s
-    ease;
-
-}
-
-.image-reveal:hover img {
-
-  transform:
-    scale(1.03);
-
-}
-
-
-/* =========================================================
-   MAGNETIC ELEMENTS
+   MAGNETIC
    ========================================================= */
 
 .magnetic {
 
   will-change:
     transform;
-
-}
-
-
-/* =========================================================
-   MOBILE SAFETY
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-  .desktop-nav,
-  .nav-contact {
-
-    display:
-      none;
-
-  }
-
-  .menu-button {
-
-    display:
-      flex;
-
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .practice-card:hover {
-
-    transform:
-      none;
-
-  }
-
-  .glow-one,
-  .glow-two {
-
-    animation-duration:
-      12s;
-
-  }
-
-  .cta-section::before {
-
-    animation-duration:
-      12s;
-
-  }
-
-}
-/* =========================================================
-   PREMIUM CURSOR GLOW
-   ========================================================= */
-
-.cursor-glow {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 260px;
-  height: 260px;
-
-  border-radius: 50%;
-
-  pointer-events: none;
-
-  z-index: 9999;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(200, 169, 107, .09) 0%,
-      rgba(200, 169, 107, .035) 30%,
-      transparent 70%
-    );
-
-  transform:
-    translate3d(-50%, -50%, 0);
-
-  margin-left: -130px;
-  margin-top: -130px;
-
-  mix-blend-mode: screen;
-
-  opacity: .8;
-}
-
-@media (pointer: coarse) {
-  .cursor-glow {
-    display: none;
-  }
-}
-/* =========================================================
-   PREMIUM CURSOR
-   ========================================================= */
-
-@media (pointer: fine) {
-
-  body {
-    cursor: none;
-  }
-
-  a,
-  button {
-    cursor: none;
-  }
-
-  .custom-cursor {
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 34px;
-    height: 34px;
-
-    border: 1px solid
-      rgba(200,169,107,.8);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    z-index: 100000;
-
-    transform:
-      translate3d(-100px,-100px,0)
-      translate(-50%,-50%);
-
-    transition:
-      width .35s cubic-bezier(.16,1,.3,1),
-      height .35s cubic-bezier(.16,1,.3,1),
-      background .35s ease,
-      border-color .35s ease;
-
-  }
-
-
-  .custom-cursor-dot {
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-      #c8a96b;
-
-    pointer-events: none;
-
-    z-index: 100001;
-
-    transform:
-      translate3d(-100px,-100px,0)
-      translate(-50%,-50%);
-
-  }
-
-
-  .custom-cursor.cursor-active {
-
-    width: 62px;
-    height: 62px;
-
-    background:
-      rgba(200,169,107,.08);
-
-    border-color:
-      rgba(200,169,107,1);
-
-  }
-
-}
-
-
-/* =========================================================
-   CARD INTERACTION
-   ========================================================= */
-
-.practice-card {
-
-  transform-style:
-    preserve-3d;
-
-  will-change:
-    transform;
-
-  transition:
-    transform .5s cubic-bezier(.16,1,.3,1),
-    border-color .4s ease;
-
-}
-
-
-/* =========================================================
-   MAGNETIC ELEMENT
-   ========================================================= */
-
-.magnetic {
-
-  will-change:
-    transform;
-
-}
-/* =========================================================
-   PHASE 2 — CINEMATIC BACKGROUND SYSTEM
-   ========================================================= */
-
-
-/* =========================================================
-   AMBIENT GOLD LIGHT
-   ========================================================= */
-
-.hero,
-.philosophy,
-.practice,
-.cta-section {
-  position: relative;
-}
-
-
-/* Main ambient light */
-
-.hero::after {
-
-  content: "";
-
-  position: absolute;
-
-  width: 700px;
-  height: 700px;
-
-  top: -250px;
-  right: -220px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(200,169,107,.12) 0%,
-      rgba(200,169,107,.05) 30%,
-      transparent 70%
-    );
-
-  filter: blur(20px);
-
-  pointer-events: none;
-
-  animation:
-    ambientGold 12s ease-in-out infinite alternate;
-
-  z-index: 0;
-}
-
-
-@keyframes ambientGold {
-
-  0% {
-    transform:
-      translate3d(0,0,0)
-      scale(1);
-  }
-
-  50% {
-    transform:
-      translate3d(-80px,50px,0)
-      scale(1.08);
-  }
-
-  100% {
-    transform:
-      translate3d(40px,100px,0)
-      scale(.95);
-  }
-
-}
-
-
-/* =========================================================
-   HERO GRID
-   ========================================================= */
-
-.hero-grid {
-
-  position: absolute;
-
-  inset: 0;
-
-  pointer-events: none;
-
-  opacity: .28;
-
-  background-image:
-
-    linear-gradient(
-      rgba(200,169,107,.055) 1px,
-      transparent 1px
-    ),
-
-    linear-gradient(
-      90deg,
-      rgba(200,169,107,.055) 1px,
-      transparent 1px
-    );
-
-  background-size:
-    80px 80px;
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black,
-      transparent 90%
-    );
-
-  animation:
-    gridMove 25s linear infinite;
-
-}
-
-
-@keyframes gridMove {
-
-  from {
-    background-position:
-      0 0,
-      0 0;
-  }
-
-  to {
-    background-position:
-      80px 80px,
-      80px 80px;
-  }
-
-}
-
-
-/* =========================================================
-   SECONDARY GLOW
-   ========================================================= */
-
-.glow-one,
-.glow-two {
-
-  pointer-events: none;
-
-  will-change:
-    transform;
-
-}
-
-
-.glow-one {
-
-  animation:
-    floatingGlowOne
-    14s
-    ease-in-out
-    infinite
-    alternate;
-
-}
-
-
-.glow-two {
-
-  animation:
-    floatingGlowTwo
-    18s
-    ease-in-out
-    infinite
-    alternate;
-
-}
-
-
-@keyframes floatingGlowOne {
-
-  0% {
-    transform:
-      translate3d(0,0,0);
-  }
-
-  100% {
-    transform:
-      translate3d(70px,-50px,0);
-  }
-
-}
-
-
-@keyframes floatingGlowTwo {
-
-  0% {
-    transform:
-      translate3d(0,0,0);
-  }
-
-  100% {
-    transform:
-      translate3d(-60px,60px,0);
-  }
-
-}
-
-
-/* =========================================================
-   CINEMATIC FILM GRAIN
-   ========================================================= */
-
-body::before {
-
-  content: "";
-
-  position: fixed;
-
-  inset: -50%;
-
-  width: 200%;
-  height: 200%;
-
-  pointer-events: none;
-
-  z-index: 99990;
-
-  opacity: .035;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-
-  animation:
-    filmGrain
-    .25s
-    steps(2)
-    infinite;
-
-}
-
-
-@keyframes filmGrain {
-
-  0% {
-    transform:
-      translate3d(0,0,0);
-  }
-
-  25% {
-    transform:
-      translate3d(-2%,1%,0);
-  }
-
-  50% {
-    transform:
-      translate3d(1%,-2%,0);
-  }
-
-  75% {
-    transform:
-      translate3d(2%,2%,0);
-  }
-
-  100% {
-    transform:
-      translate3d(-1%,-1%,0);
-  }
-
-}
-
-
-/* =========================================================
-   HERO CONTENT ABOVE BACKGROUND
-   ========================================================= */
-
-.hero-inner,
-.hero-side,
-.hero-scroll,
-.hero-number {
-
-  position: relative;
-
-  z-index: 3;
-
-}
-
-
-/* =========================================================
-   SECTION LIGHTING
-   ========================================================= */
-
-.philosophy::before {
-
-  content: "";
-
-  position: absolute;
-
-  width: 500px;
-  height: 500px;
-
-  left: -250px;
-  top: 15%;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(200,169,107,.055),
-      transparent 70%
-    );
-
-  filter: blur(30px);
-
-  pointer-events: none;
-
-  animation:
-    sectionGlow 16s
-    ease-in-out
-    infinite
-    alternate;
-
-}
-
-
-@keyframes sectionGlow {
-
-  from {
-    transform:
-      translate3d(0,0,0);
-  }
-
-  to {
-    transform:
-      translate3d(120px,80px,0);
-  }
-
-}
-
-
-/* =========================================================
-   PREMIUM PRACTICE CARD LIGHT
-   ========================================================= */
-
-.practice-card {
-
-  position: relative;
-
-  overflow: hidden;
-
-}
-
-
-.practice-card::after {
-
-  content: "";
-
-  position: absolute;
-
-  width: 250px;
-  height: 250px;
-
-  top: var(--mouse-y, 50%);
-  left: var(--mouse-x, 50%);
-
-  transform:
-    translate(-50%,-50%);
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(200,169,107,.10),
-      transparent 70%
-    );
-
-  opacity: 0;
-
-  pointer-events: none;
-
-  transition:
-    opacity .4s ease;
-
-}
-
-
-.practice-card:hover::after {
-  opacity: 1;
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .hero::after,
-  .hero-grid,
-  .glow-one,
-  .glow-two,
-  body::before,
-  .philosophy::before {
-
-    animation: none !important;
-
-  }
 
 }
 
@@ -1737,34 +1150,73 @@ body::before {
    MOBILE PERFORMANCE
    ========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
 
-  .hero::after {
-
-    width: 450px;
-    height: 450px;
-
-    right: -250px;
-    top: -120px;
-
-  }
+  /*
+     Disable expensive decorative effects
+     on phones.
+  */
 
   .hero-grid {
 
-    background-size:
-      55px 55px;
-
-    opacity: .18;
+    animation:
+      none;
 
   }
 
-  body::before {
 
-    opacity: .022;
+  .glow-one,
+  .glow-two {
+
+    animation:
+      none;
+
+  }
+
+
+  .cta-section::before {
+
+    animation:
+      none;
+
+  }
+
+
+  .practice-card:hover {
+
+    transform:
+      none;
+
+  }
+
+
+  .practice-card::after {
+
+    display:
+      none;
+
+  }
+
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (pointer: coarse) {
+
+  .practice-card::after {
+
+    display:
+      none;
 
   }
 
 }
+
+
 /* =========================================================
    REDUCED MOTION
    ========================================================= */
@@ -1775,17 +1227,14 @@ body::before {
   *::before,
   *::after {
 
-    animation-duration:
-      .01ms !important;
+    animation:
+      none !important;
 
-    animation-iteration-count:
-      1 !important;
+    transition:
+      none !important;
 
     scroll-behavior:
       auto !important;
-
-    transition-duration:
-      .01ms !important;
 
   }
 
