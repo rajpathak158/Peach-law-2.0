@@ -43,6 +43,35 @@
     .hero-inner, .hero-side, .hero-scroll, .hero-number { position: relative; z-index: 3; }
 
     /* =====================================================
+       MOBILE MENU BUTTON FIX
+    ====================================================== */
+    .menu-button {
+      background: transparent !important;
+      border: none !important;
+      outline: none !important;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 7px;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      cursor: pointer;
+    }
+    .menu-button span {
+      display: block;
+      width: 28px;
+      height: 2px;
+      background-color: #d4af37; /* Gold color */
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+    .menu-button span:nth-child(2) {
+      width: 20px; /* Makes the bottom line shorter for a modern look */
+    }
+
+    /* =====================================================
        NEW FOOTER STYLES
     ====================================================== */
     .footer-top-expanded {
@@ -156,7 +185,7 @@
       justify-content: center;
       font-size: 26px;
       color: #ffffff;
-      z-index: 99; /* Keeps it above everything except the disclaimer */
+      z-index: 99;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none;
@@ -168,12 +197,12 @@
     }
     .phone-btn {
       left: 25px;
-      background-color: #0c1844; /* Dark blue to match your image */
+      background-color: #0c1844;
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .whatsapp-btn {
       right: 25px;
-      background-color: #128C7E; /* Deep WhatsApp Green */
+      background-color: #128C7E;
     }
   </style>
 
