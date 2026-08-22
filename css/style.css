@@ -2657,3 +2657,21 @@ footer {
   position: relative;
   z-index: 3;
 }
+.hero-title {
+  font-size: clamp(2rem, 3.2vw, 3.4rem) !important;
+  line-height: 1.2 !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+@media (min-width: 1600px) {
+  .hero-title {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.8rem, 8vw, 2.4rem) !important;
+  }
+}
