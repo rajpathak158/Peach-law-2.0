@@ -39,6 +39,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js" defer></script>
 
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/animations.css">
@@ -60,6 +61,85 @@
     }
     html:not(.gsap-ready) .reveal {
       opacity: 0;
+    }
+
+    /* ===== HERO IMAGE + OVERLAY + ORBS ===== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.1);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        rgba(17, 17, 15, 0.55) 0%,
+        rgba(17, 17, 15, 0.75) 55%,
+        rgba(17, 17, 15, 0.95) 100%
+      );
+    }
+    .hero-orbs {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      overflow: hidden;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.55;
+      will-change: transform;
+    }
+    .orb-1 {
+      width: 420px;
+      height: 420px;
+      top: -120px;
+      left: -100px;
+      background: radial-gradient(circle at 30% 30%, #d4af6a, transparent 70%);
+    }
+    .orb-2 {
+      width: 360px;
+      height: 360px;
+      bottom: -140px;
+      right: -80px;
+      background: radial-gradient(circle at 30% 30%, #8a6d3b, transparent 70%);
+    }
+    .orb-3 {
+      width: 300px;
+      height: 300px;
+      top: 35%;
+      right: 8%;
+      background: radial-gradient(circle at 30% 30%, #ffffff33, transparent 70%);
+    }
+    .orb-4 {
+      width: 260px;
+      height: 260px;
+      bottom: 8%;
+      left: 15%;
+      background: radial-gradient(circle at 30% 30%, #d4af6a, transparent 70%);
+    }
+    .hero-inner,
+    .hero-side,
+    .hero-scroll,
+    .hero-number {
+      position: relative;
+      z-index: 3;
     }
   </style>
 
@@ -155,6 +235,19 @@
   <main>
 
     <section class="hero">
+
+      <div class="hero-image">
+        <img src="./img/hero-office.jpg" alt="Preach Law & Co. office">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+        <span class="orb orb-4"></span>
+      </div>
+
       <div class="hero-grid"></div>
       <div class="hero-noise"></div>
       <div class="hero-glow glow-one"></div>
@@ -405,6 +498,7 @@
 
   <script src="./js/navigation.js" defer></script>
   <script src="./js/animations.js" defer></script>
+  <script src="./js/motion-background.js" defer></script>
   <script src="./js/main.js" defer></script>
 
   <script>
@@ -444,4 +538,4 @@
   </script>
 
 </body>
-</html>
+    </html>
