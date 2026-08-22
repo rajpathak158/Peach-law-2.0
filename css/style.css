@@ -2600,3 +2600,60 @@ footer {
   max-width: 100%;
 
    }
+.hero-orbs {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.orb-1 {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  left: -100px;
+  background: radial-gradient(circle at 30% 30%, #d4af6a, transparent 70%);
+}
+
+.orb-2 {
+  width: 360px;
+  height: 360px;
+  bottom: -140px;
+  right: -80px;
+  background: radial-gradient(circle at 30% 30%, #8a6d3b, transparent 70%);
+}
+
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  top: 35%;
+  right: 8%;
+  background: radial-gradient(circle at 30% 30%, #ffffff33, transparent 70%);
+}
+
+.orb-4 {
+  width: 260px;
+  height: 260px;
+  bottom: 8%;
+  left: 15%;
+  background: radial-gradient(circle at 30% 30%, #d4af6a, transparent 70%);
+}
+
+/* keep real content above the orbs */
+.hero-inner,
+.hero-side,
+.hero-scroll,
+.hero-number {
+  position: relative;
+  z-index: 3;
+}
