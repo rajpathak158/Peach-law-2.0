@@ -1,42 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="theme-color"
-    content="#11110f"
-  >
-
-  <title>
-    Preach Law &amp; Co. | Advocates, Legal &amp; Business Advisory
-  </title>
-
-  <meta
-    name="description"
-    content="Preach Law &amp; Co. provides legal, regulatory, taxation, intellectual property, corporate, fintech and business advisory services."
-  >
-
-  <meta
-    name="author"
-    content="Preach Law &amp; Co."
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11110f">
+  <title>Preach Law &amp; Co. | Advocates, Legal &amp; Business Advisory</title>
+  <meta name="description" content="Preach Law &amp; Co. provides legal, regulatory, taxation, intellectual property, corporate, fintech and business advisory services.">
+  <meta name="author" content="Preach Law &amp; Co.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <script src="https://unpkg.com/lucide@latest" defer></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js" defer></script>
@@ -46,101 +22,22 @@
   <link rel="stylesheet" href="./css/responsive.css">
 
   <style>
-    .page-loader.is-hidden {
-      opacity: 0 !important;
-      visibility: hidden !important;
-      pointer-events: none !important;
-    }
-    .disclaimer.is-hidden {
-      opacity: 0 !important;
-      visibility: hidden !important;
-      pointer-events: none !important;
-    }
-    body.disclaimer-open {
-      overflow: hidden;
-    }
-    html:not(.gsap-ready) .reveal {
-      opacity: 0;
-    }
+    .page-loader.is-hidden { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+    .disclaimer.is-hidden { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+    body.disclaimer-open { overflow: hidden; }
+    html:not(.gsap-ready) .reveal { opacity: 0; }
 
-    /* ===== HERO IMAGE + OVERLAY + ORBS ===== */
-    .hero {
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-image {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-    }
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.1);
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(
-        180deg,
-        rgba(17, 17, 15, 0.55) 0%,
-        rgba(17, 17, 15, 0.75) 55%,
-        rgba(17, 17, 15, 0.95) 100%
-      );
-    }
-    .hero-orbs {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      overflow: hidden;
-      pointer-events: none;
-      mix-blend-mode: screen;
-    }
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.55;
-      will-change: transform;
-    }
-    .orb-1 {
-      width: 420px;
-      height: 420px;
-      top: -120px;
-      left: -100px;
-      background: radial-gradient(circle at 30% 30%, #d4af6a, transparent 70%);
-    }
-    .orb-2 {
-      width: 360px;
-      height: 360px;
-      bottom: -140px;
-      right: -80px;
-      background: radial-gradient(circle at 30% 30%, #8a6d3b, transparent 70%);
-    }
-    .orb-3 {
-      width: 300px;
-      height: 300px;
-      top: 35%;
-      right: 8%;
-      background: radial-gradient(circle at 30% 30%, #ffffff33, transparent 70%);
-    }
-    .orb-4 {
-      width: 260px;
-      height: 260px;
-      bottom: 8%;
-      left: 15%;
-      background: radial-gradient(circle at 30% 30%, #d4af6a, transparent 70%);
-    }
-    .hero-inner,
-    .hero-side,
-    .hero-scroll,
-    .hero-number {
-      position: relative;
-      z-index: 3;
-    }
+    .hero { position: relative; overflow: hidden; }
+    .hero-image { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); }
+    .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(17,17,15,0.55) 0%, rgba(17,17,15,0.75) 55%, rgba(17,17,15,0.95) 100%); }
+    .hero-orbs { position: absolute; inset: 0; z-index: 2; overflow: hidden; pointer-events: none; mix-blend-mode: screen; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.55; will-change: transform; }
+    .orb-1 { width: 420px; height: 420px; top: -120px; left: -100px; background: radial-gradient(circle at 30% 30%, #d4af6a, transparent 70%); }
+    .orb-2 { width: 360px; height: 360px; bottom: -140px; right: -80px; background: radial-gradient(circle at 30% 30%, #8a6d3b, transparent 70%); }
+    .orb-3 { width: 300px; height: 300px; top: 35%; right: 8%; background: radial-gradient(circle at 30% 30%, #ffffff33, transparent 70%); }
+    .orb-4 { width: 260px; height: 260px; bottom: 8%; left: 15%; background: radial-gradient(circle at 30% 30%, #d4af6a, transparent 70%); }
+    .hero-inner, .hero-side, .hero-scroll, .hero-number { position: relative; z-index: 3; }
   </style>
 
   <script>
@@ -151,7 +48,6 @@
       setTimeout(function () { loader.style.display = "none"; }, 700);
     });
   </script>
-
 </head>
 <body>
 
@@ -237,7 +133,7 @@
     <section class="hero">
 
       <div class="hero-image">
-        <img src="./img/hero-office.jpg" alt="Preach Law & Co. office">
+        <img src="./1787380943943.png" alt="Preach Law & Co. office">
       </div>
       <div class="hero-overlay"></div>
 
@@ -538,4 +434,4 @@
   </script>
 
 </body>
-    </html>
+  </html>
