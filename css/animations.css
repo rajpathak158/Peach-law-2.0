@@ -1,46 +1,95 @@
 /* =========================================================
    PREACH LAW & CO.
    ANIMATIONS.CSS
-   PREMIUM + STABLE VERSION
+   PREMIUM + STABLE + CROSS-BROWSER
    ========================================================= */
 
-
 /* =========================================================
-   PERFORMANCE BASE
-   ========================================================= */
-
-.hero,
-.practice-card,
-.cta-section,
-.philosophy,
-.navbar,
-.site-footer {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-
-/* =========================================================
-   IMPORTANT — NORMAL MOUSE CURSOR
+   GLOBAL SAFETY
    ========================================================= */
 
 html,
 body {
-  cursor: auto;
+  overflow-x: hidden;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/* Never hide the normal mouse cursor */
+body,
 a,
 button,
 input,
 textarea,
-select,
-label {
-  cursor: pointer;
+select {
+  cursor: auto;
 }
 
-input,
-textarea {
-  cursor: text;
+
+/* =========================================================
+   PAGE LOADER
+   ========================================================= */
+
+.page-loader {
+  transition:
+    opacity .7s ease,
+    visibility .7s ease;
+}
+
+.page-loader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-logo {
+  animation: loaderFloat 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes loaderFloat {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+
+/* =========================================================
+   SCROLL PROGRESS
+   ========================================================= */
+
+.scroll-progress {
+  transform-origin: left center;
+}
+
+
+/* =========================================================
+   HERO REVEAL
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.js-ready .reveal {
+  animation:
+    revealUp
+    .9s
+    cubic-bezier(.16,1,.3,1)
+    forwards;
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -48,19 +97,17 @@ textarea {
    HERO TITLE
    ========================================================= */
 
-.hero-title .line {
+.hero-title .line,
+.page-title {
   overflow: hidden;
 }
 
-.hero-title .line > span {
-  display: inline-block;
-  will-change: transform;
-}
-
-.hero-label,
-.hero-description,
-.hero-button {
-  will-change: transform, opacity;
+.hero-title em,
+.page-title em,
+.section-title em,
+.cta-content h2 em,
+.contact-title em {
+  color: var(--gold);
 }
 
 
@@ -68,168 +115,219 @@ textarea {
    HERO GRID
    ========================================================= */
 
-.hero-grid {
-  animation: heroGridMove 22s ease-in-out infinite;
+.hero-grid,
+.page-hero-grid {
+  pointer-events: none;
 }
 
-@keyframes heroGridMove {
+.hero-grid {
+  animation:
+    gridDrift
+    30s
+    linear
+    infinite;
+}
 
-  0% {
-    transform: translate3d(0, 0, 0);
+@keyframes gridDrift {
+
+  from {
+    background-position: 0 0;
   }
 
-  50% {
-    transform: translate3d(0, 20px, 0);
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0);
+  to {
+    background-position: 80px 80px;
   }
 
 }
 
 
 /* =========================================================
-   GOLD GLOW
+   HERO GLOW
    ========================================================= */
 
+.glow-one,
+.glow-two,
+.hero::after {
+  pointer-events: none;
+}
+
 .glow-one {
-  animation: glowBreathing 8s ease-in-out infinite;
+  animation:
+    glowOne
+    14s
+    ease-in-out
+    infinite
+    alternate;
 }
 
 .glow-two {
-  animation: glowBreathingReverse 11s ease-in-out infinite;
+  animation:
+    glowTwo
+    18s
+    ease-in-out
+    infinite
+    alternate;
 }
 
-@keyframes glowBreathing {
+@keyframes glowOne {
 
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: .45;
+  0% {
+    transform: translate3d(0,0,0) scale(1);
   }
 
-  50% {
-    transform: scale(1.15);
-    opacity: .75;
+  100% {
+    transform: translate3d(55px,-35px,0) scale(1.08);
   }
 
 }
 
-@keyframes glowBreathingReverse {
+@keyframes glowTwo {
 
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: .35;
+  0% {
+    transform: translate3d(0,0,0) scale(1);
   }
 
-  50% {
-    transform: scale(1.2);
-    opacity: .6;
+  100% {
+    transform: translate3d(-45px,45px,0) scale(1.05);
   }
 
 }
 
 
 /* =========================================================
-   HERO LABEL
+   HERO AMBIENT LIGHT
    ========================================================= */
 
-.hero-label {
-  position: relative;
-}
+.hero::after {
 
-.hero-label .label-line {
-  position: relative;
-  display: inline-block;
-
-  width: 45px;
-  height: 1px;
-
-  overflow: hidden;
-}
-
-.hero-label .label-line::after {
   content: "";
 
   position: absolute;
 
-  inset: 0;
+  width: 650px;
+  height: 650px;
 
-  background: var(--gold);
+  top: -260px;
+  right: -230px;
 
-  transform: translateX(-101%);
+  border-radius: 50%;
 
-  animation: labelLineReveal 1.4s .8s ease forwards;
+  background:
+    radial-gradient(
+      circle,
+      rgba(200,169,107,.12) 0%,
+      rgba(200,169,107,.04) 38%,
+      transparent 72%
+    );
+
+  filter: blur(18px);
 
   pointer-events: none;
+
+  z-index: 0;
+
+  animation:
+    ambientMove
+    14s
+    ease-in-out
+    infinite
+    alternate;
 }
 
-@keyframes labelLineReveal {
+@keyframes ambientMove {
+
+  from {
+    transform: translate3d(0,0,0) scale(1);
+  }
 
   to {
-    transform: translateX(101%);
+    transform: translate3d(-55px,45px,0) scale(1.08);
   }
 
 }
 
 
 /* =========================================================
-   HERO SCROLL INDICATOR
+   HERO CONTENT
+   ========================================================= */
+
+.hero-inner,
+.hero-side,
+.hero-scroll,
+.hero-number,
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
    ========================================================= */
 
 .hero-scroll {
-  animation: scrollFloat 3s ease-in-out infinite;
+  animation:
+    scrollFloat
+    3s
+    ease-in-out
+    infinite;
 }
 
 @keyframes scrollFloat {
 
   0%,
   100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
 
   50% {
-    transform: translateX(-50%) translateY(7px);
+    transform: translateY(7px);
   }
 
 }
 
 
 /* =========================================================
-   REVEAL ELEMENTS
+   PRACTICE / TEAM / CONTENT CARDS
    ========================================================= */
 
-.reveal {
-  will-change: transform, opacity;
+.practice-card,
+.team-category,
+.value-item {
+  transition:
+    transform .45s cubic-bezier(.16,1,.3,1),
+    border-color .35s ease,
+    box-shadow .35s ease,
+    background .35s ease;
 }
 
-.section-title,
-.contact-title,
-.cta-content h2 {
-  will-change: transform, opacity;
+.practice-card:hover,
+.team-category:hover {
+
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(200,169,107,.35);
+
+  box-shadow:
+    0 20px 55px rgba(0,0,0,.18);
 }
 
 
 /* =========================================================
-   PRACTICE CARDS
+   CARD LIGHT SWEEP
    ========================================================= */
 
-.practice-card {
+.practice-card,
+.team-category {
   position: relative;
   overflow: hidden;
-
-  transform-style: preserve-3d;
-
-  transition:
-    transform .5s cubic-bezier(.16, 1, .3, 1),
-    border-color .5s ease,
-    box-shadow .5s ease,
-    background .5s ease;
 }
 
-.practice-card::after {
+.practice-card::after,
+.team-category::after {
+
   content: "";
 
   position: absolute;
@@ -237,14 +335,14 @@ textarea {
   top: 0;
   left: -120%;
 
-  width: 70%;
+  width: 65%;
   height: 100%;
 
   pointer-events: none;
 
   background:
     linear-gradient(
-      100deg,
+      105deg,
       transparent,
       rgba(255,255,255,.045),
       transparent
@@ -252,56 +350,47 @@ textarea {
 
   transform: skewX(-18deg);
 
-  transition: left .8s ease;
-
-  z-index: 2;
+  transition:
+    left .8s ease;
 }
 
-.practice-card:hover::after {
+.practice-card:hover::after,
+.team-category:hover::after {
   left: 140%;
 }
 
-.practice-card:hover {
-  border-color: rgba(200,169,107,.22);
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,.25);
-}
-
-.practice-card-top span {
-  transition: color .4s ease;
-}
-
-.practice-card:hover
-.practice-card-top span {
-  color: var(--gold);
-}
-
 
 /* =========================================================
-   PRACTICE CARD ICON
+   ICON HOVER
    ========================================================= */
 
-.practice-card-top i {
+.practice-card i,
+.team-category i,
+.text-link i {
+
   transition:
-    transform .6s ease,
-    filter .4s ease;
+    transform .4s cubic-bezier(.16,1,.3,1);
+
 }
 
-.practice-card:hover
-.practice-card-top i {
-  transform: translateY(-4px);
+.practice-card:hover i,
+.team-category:hover i {
 
-  filter:
-    drop-shadow(
-      0 0 8px
-      rgba(200,169,107,.45)
-    );
+  transform:
+    translateY(-3px);
+
+}
+
+.text-link:hover i {
+
+  transform:
+    translate(4px,-4px);
+
 }
 
 
 /* =========================================================
-   CTA SECTION
+   CTA
    ========================================================= */
 
 .cta-section {
@@ -309,11 +398,8 @@ textarea {
   overflow: hidden;
 }
 
-.cta-bg {
-  will-change: transform;
-}
-
 .cta-section::before {
+
   content: "";
 
   position: absolute;
@@ -321,31 +407,35 @@ textarea {
   top: 0;
   left: -100%;
 
-  width: 50%;
+  width: 45%;
   height: 100%;
-
-  pointer-events: none;
 
   background:
     linear-gradient(
       100deg,
       transparent,
-      rgba(200,169,107,.04),
+      rgba(200,169,107,.045),
       transparent
     );
 
   transform: skewX(-15deg);
 
-  animation: ctaSweep 9s linear infinite;
+  animation:
+    ctaSweep
+    10s
+    linear
+    infinite;
+
+  pointer-events: none;
 }
 
 @keyframes ctaSweep {
 
-  0% {
+  from {
     left: -100%;
   }
 
-  100% {
+  to {
     left: 200%;
   }
 
@@ -356,119 +446,47 @@ textarea {
    CTA BUTTON
    ========================================================= */
 
-.cta-button {
+.cta-button,
+.nav-contact {
+
   position: relative;
-
   overflow: hidden;
-
-  isolation: isolate;
 
   transition:
     transform .4s ease,
+    color .4s ease,
     border-color .4s ease;
 }
 
-.cta-button::before {
+.cta-button::before,
+.nav-contact::before {
+
   content: "";
 
   position: absolute;
 
   inset: 0;
 
-  background: var(--gold);
+  background:
+    var(--gold);
 
-  transform: translateY(101%);
+  transform:
+    translateY(101%);
 
-  transition: transform .55s ease;
+  transition:
+    transform .45s cubic-bezier(.16,1,.3,1);
 
   z-index: -1;
-
-  pointer-events: none;
 }
 
-.cta-button:hover::before {
+.cta-button:hover::before,
+.nav-contact:hover::before {
   transform: translateY(0);
 }
 
-.cta-button:hover {
+.cta-button:hover,
+.nav-contact:hover {
   color: #11110f;
-}
-
-
-/* =========================================================
-   CONTACT ITEMS
-   ========================================================= */
-
-.contact-item {
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-item::before {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 0;
-  height: 1px;
-
-  background: var(--gold);
-
-  transition: width .6s ease;
-}
-
-.contact-item:hover::before {
-  width: 100%;
-}
-
-.contact-item a {
-  transition:
-    color .35s ease,
-    transform .35s ease;
-}
-
-.contact-item a:hover {
-  transform: translateX(5px);
-}
-
-
-/* =========================================================
-   FOOTER LINKS
-   ========================================================= */
-
-.footer-links a {
-  position: relative;
-
-  transition:
-    color .35s ease,
-    transform .35s ease;
-}
-
-.footer-links a::before {
-  content: "→";
-
-  position: absolute;
-
-  left: -18px;
-
-  opacity: 0;
-
-  color: var(--gold);
-
-  transform: translateX(-5px);
-
-  transition:
-    opacity .3s ease,
-    transform .3s ease;
-}
-
-.footer-links a:hover::before {
-  opacity: 1;
-
-  transform: translateX(0);
 }
 
 
@@ -478,45 +496,29 @@ textarea {
 
 .navbar {
   transition:
-    background .5s ease,
-    backdrop-filter .5s ease,
-    box-shadow .5s ease,
-    padding .5s ease;
+    background .4s ease,
+    box-shadow .4s ease,
+    backdrop-filter .4s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(17,17,15,.88);
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background:
+    rgba(17,17,15,.90);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  backdrop-filter:
+    blur(14px);
 
   box-shadow:
-    0 10px 40px rgba(0,0,0,.18);
-}
-
-.navbar::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: -1px;
-
-  width: 0;
-  height: 1px;
-
-  background: var(--gold);
-
-  transition: width .8s ease;
-}
-
-.navbar.scrolled::after {
-  width: 100%;
+    0 10px 35px rgba(0,0,0,.18);
 }
 
 
 /* =========================================================
-   DESKTOP NAVIGATION
+   DESKTOP NAV
    ========================================================= */
 
 .desktop-nav a {
@@ -524,128 +526,42 @@ textarea {
 }
 
 .desktop-nav a::after {
+
   content: "";
 
   position: absolute;
 
   left: 0;
-  bottom: -8px;
+  bottom: -7px;
 
   width: 0;
   height: 1px;
 
-  background: var(--gold);
+  background:
+    var(--gold);
 
-  transition: width .45s ease;
+  transition:
+    width .4s ease;
 }
 
-.desktop-nav a:hover::after {
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
   width: 100%;
 }
 
 
 /* =========================================================
-   NAV CONTACT
-   ========================================================= */
-
-.nav-contact {
-  position: relative;
-
-  overflow: hidden;
-
-  isolation: isolate;
-
-  transition: color .4s ease;
-}
-
-.nav-contact::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background: var(--gold);
-
-  transform: translateY(101%);
-
-  transition: transform .5s ease;
-
-  z-index: -1;
-}
-
-.nav-contact:hover::before {
-  transform: translateY(0);
-}
-
-.nav-contact:hover {
-  color: #11110f;
-}
-
-
-/* =========================================================
-   BRAND MARK
+   BRAND
    ========================================================= */
 
 .brand-mark {
-  position: relative;
-  overflow: hidden;
-}
-
-.brand-mark::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background: var(--gold);
-
-  transform: translateY(101%);
-
-  transition: transform .45s ease;
-
-  z-index: -1;
-}
-
-.brand:hover
-.brand-mark::after {
-  transform: translateY(0);
-}
-
-
-/* =========================================================
-   MENU BUTTON
-   ========================================================= */
-
-.menu-button {
-  position: relative;
-
-  transition: transform .4s ease;
-}
-
-.menu-button:hover {
-  transform: scale(1.05);
-}
-
-.menu-button span {
   transition:
-    transform .5s ease,
-    width .4s ease;
+    transform .4s ease,
+    border-color .4s ease;
 }
 
-.menu-button.active
-span:first-child {
-  transform:
-    translateY(4px)
-    rotate(45deg);
-}
-
-.menu-button.active
-span:last-child {
-  transform:
-    translateY(-4px)
-    rotate(-45deg);
+.brand:hover .brand-mark {
+  transform: translateY(-2px);
 }
 
 
@@ -654,44 +570,65 @@ span:last-child {
    ========================================================= */
 
 .mobile-menu {
+
   visibility: hidden;
+  opacity: 0;
   pointer-events: none;
+
+  transition:
+    opacity .45s ease,
+    visibility .45s ease;
 }
 
 .mobile-menu.active {
+
   visibility: visible;
+  opacity: 1;
   pointer-events: auto;
 }
 
 .mobile-menu nav a {
+
   opacity: 0;
 
-  will-change:
-    transform,
-    opacity;
+  transform:
+    translateY(25px);
 }
 
-.mobile-menu.active
-nav a {
-  opacity: 1;
+.mobile-menu.active nav a {
 
   animation:
-    mobileMenuItem
-    .7s
-    ease
-    both;
+    mobileItem
+    .6s
+    cubic-bezier(.16,1,.3,1)
+    forwards;
 }
 
-.mobile-menu nav a.active {
-  color: var(--gold);
+.mobile-menu.active nav a:nth-child(1) {
+  animation-delay: .08s;
 }
 
-@keyframes mobileMenuItem {
+.mobile-menu.active nav a:nth-child(2) {
+  animation-delay: .13s;
+}
 
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
+.mobile-menu.active nav a:nth-child(3) {
+  animation-delay: .18s;
+}
+
+.mobile-menu.active nav a:nth-child(4) {
+  animation-delay: .23s;
+}
+
+.mobile-menu.active nav a:nth-child(5) {
+  animation-delay: .28s;
+}
+
+.mobile-menu.active nav a:nth-child(6) {
+  animation-delay: .33s;
+}
+
+@keyframes mobileItem {
 
   to {
     opacity: 1;
@@ -699,44 +636,6 @@ nav a {
   }
 
 }
-
-
-/* =========================================================
-   MOBILE MENU STAGGER
-   ========================================================= */
-
-.mobile-menu.active nav a:nth-child(1) {
-  animation-delay: .15s;
-}
-
-.mobile-menu.active nav a:nth-child(2) {
-  animation-delay: .20s;
-}
-
-.mobile-menu.active nav a:nth-child(3) {
-  animation-delay: .25s;
-}
-
-.mobile-menu.active nav a:nth-child(4) {
-  animation-delay: .30s;
-}
-
-.mobile-menu.active nav a:nth-child(5) {
-  animation-delay: .35s;
-}
-
-.mobile-menu.active nav a:nth-child(6) {
-  animation-delay: .40s;
-}
-
-.mobile-menu.active nav a:nth-child(7) {
-  animation-delay: .45s;
-}
-
-
-/* =========================================================
-   BODY LOCK
-   ========================================================= */
 
 body.menu-open {
   overflow: hidden;
@@ -748,10 +647,11 @@ body.menu-open {
    ========================================================= */
 
 .disclaimer-card {
+
   animation:
     disclaimerIn
-    .8s
-    ease
+    .7s
+    cubic-bezier(.16,1,.3,1)
     both;
 }
 
@@ -759,15 +659,13 @@ body.menu-open {
 
   from {
     opacity: 0;
-
     transform:
-      translateY(40px)
-      scale(.96);
+      translateY(30px)
+      scale(.97);
   }
 
   to {
     opacity: 1;
-
     transform:
       translateY(0)
       scale(1);
@@ -777,85 +675,54 @@ body.menu-open {
 
 
 /* =========================================================
-   LOADER
+   CONTACT ITEMS
    ========================================================= */
 
-.loader-monogram {
-  animation:
-    loaderLogo
-    2s
-    ease-in-out
-    infinite
-    alternate;
+.contact-item {
+  position: relative;
 }
 
-@keyframes loaderLogo {
+.contact-item::after {
 
-  from {
-    transform: rotate(0deg);
-  }
+  content: "";
 
-  to {
-    transform: rotate(8deg);
-  }
+  position: absolute;
 
-}
+  left: 0;
+  bottom: 0;
 
+  width: 0;
+  height: 1px;
 
-/* =========================================================
-   MARQUEE
-   ========================================================= */
-
-.marquee {
-  will-change: transform;
-}
-
-.marquee-section:hover
-.marquee {
-  animation-play-state: paused;
-}
-
-.marquee span {
-  transition: color .4s ease;
-}
-
-
-/* =========================================================
-   GOLD TEXT SHIMMER
-   ========================================================= */
-
-.hero-title em,
-.section-title em,
-.cta-content h2 em,
-.contact-title em {
   background:
-    linear-gradient(
-      110deg,
-      var(--gold) 20%,
-      var(--gold-light) 40%,
-      var(--gold) 60%
-    );
+    var(--gold);
 
-  background-size: 200% auto;
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  -webkit-text-fill-color: transparent;
-
-  animation:
-    goldShimmer
-    5s
-    linear
-    infinite;
+  transition:
+    width .5s ease;
 }
 
-@keyframes goldShimmer {
+.contact-item:hover::after {
+  width: 100%;
+}
 
-  to {
-    background-position: 200% center;
-  }
 
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer-links a {
+  transition:
+    color .3s ease,
+    transform .3s ease;
+}
+
+.footer-links a:hover {
+
+  color:
+    var(--gold);
+
+  transform:
+    translateX(4px);
 }
 
 
@@ -864,449 +731,84 @@ body.menu-open {
    ========================================================= */
 
 .image-reveal {
-  position: relative;
   overflow: hidden;
 }
 
 .image-reveal img {
-  transform: scale(1.08);
+
+  transform:
+    scale(1.04);
 
   transition:
-    transform 1.2s ease;
+    transform
+    1.2s
+    cubic-bezier(.16,1,.3,1);
 }
 
 .image-reveal:hover img {
-  transform: scale(1.03);
+  transform: scale(1.01);
 }
 
 
 /* =========================================================
-   MAGNETIC ELEMENTS
+   GOLD TEXT
    ========================================================= */
 
-.magnetic {
-  will-change: transform;
-}
+.hero-title em,
+.page-title em,
+.section-title em,
+.cta-content h2 em,
+.contact-title em {
 
+  color:
+    var(--gold);
 
-/* =========================================================
-   PHASE 2 — CINEMATIC BACKGROUND
-   ========================================================= */
-
-.hero,
-.philosophy,
-.practice,
-.cta-section {
-  position: relative;
-}
-
-
-/* =========================================================
-   AMBIENT GOLD LIGHT
-   ========================================================= */
-
-.hero::after {
-  content: "";
-
-  position: absolute;
-
-  width: 700px;
-  height: 700px;
-
-  top: -250px;
-  right: -220px;
-
-  border-radius: 50%;
+  -webkit-text-fill-color:
+    initial;
 
   background:
-    radial-gradient(
-      circle,
-      rgba(200,169,107,.12) 0%,
-      rgba(200,169,107,.05) 30%,
-      transparent 70%
-    );
-
-  filter: blur(20px);
-
-  pointer-events: none;
-
-  animation:
-    ambientGold
-    12s
-    ease-in-out
-    infinite alternate;
-
-  z-index: 0;
-}
-
-@keyframes ambientGold {
-
-  0% {
-    transform:
-      translate3d(0,0,0)
-      scale(1);
-  }
-
-  50% {
-    transform:
-      translate3d(-80px,50px,0)
-      scale(1.08);
-  }
-
-  100% {
-    transform:
-      translate3d(40px,100px,0)
-      scale(.95);
-  }
-
+    none;
 }
 
 
 /* =========================================================
-   HERO GRID
+   CURSOR — IMPORTANT
    ========================================================= */
 
-.hero-grid {
-  position: absolute;
+/*
+   We intentionally DO NOT hide the browser cursor.
+   This fixes the PC issue where the arrow disappeared.
+*/
 
-  inset: 0;
-
-  pointer-events: none;
-
-  opacity: .28;
-
-  background-image:
-
-    linear-gradient(
-      rgba(200,169,107,.055) 1px,
-      transparent 1px
-    ),
-
-    linear-gradient(
-      90deg,
-      rgba(200,169,107,.055) 1px,
-      transparent 1px
-    );
-
-  background-size: 80px 80px;
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black,
-      transparent 90%
-    );
-
-  animation:
-    gridMove
-    25s
-    linear
-    infinite;
-}
-
-@keyframes gridMove {
-
-  from {
-    background-position:
-      0 0,
-      0 0;
-  }
-
-  to {
-    background-position:
-      80px 80px,
-      80px 80px;
-  }
-
+.custom-cursor,
+.custom-cursor-dot,
+.cursor-glow {
+  display: none !important;
 }
 
 
 /* =========================================================
-   SECONDARY GLOW
-   ========================================================= */
-
-.glow-one,
-.glow-two {
-  pointer-events: none;
-
-  will-change: transform;
-}
-
-.glow-one {
-  animation:
-    floatingGlowOne
-    14s
-    ease-in-out
-    infinite alternate;
-}
-
-.glow-two {
-  animation:
-    floatingGlowTwo
-    18s
-    ease-in-out
-    infinite alternate;
-}
-
-@keyframes floatingGlowOne {
-
-  0% {
-    transform:
-      translate3d(0,0,0);
-  }
-
-  100% {
-    transform:
-      translate3d(70px,-50px,0);
-  }
-
-}
-
-@keyframes floatingGlowTwo {
-
-  0% {
-    transform:
-      translate3d(0,0,0);
-  }
-
-  100% {
-    transform:
-      translate3d(-60px,60px,0);
-  }
-
-}
-
-
-/* =========================================================
-   CINEMATIC FILM GRAIN
-   ========================================================= */
-
-body::before {
-  content: "";
-
-  position: fixed;
-
-  inset: -50%;
-
-  width: 200%;
-  height: 200%;
-
-  pointer-events: none;
-
-  z-index: 99990;
-
-  opacity: .025;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-
-  animation:
-    filmGrain
-    .25s
-    steps(2)
-    infinite;
-}
-
-@keyframes filmGrain {
-
-  0% {
-    transform: translate3d(0,0,0);
-  }
-
-  25% {
-    transform: translate3d(-2%,1%,0);
-  }
-
-  50% {
-    transform: translate3d(1%,-2%,0);
-  }
-
-  75% {
-    transform: translate3d(2%,2%,0);
-  }
-
-  100% {
-    transform: translate3d(-1%,-1%,0);
-  }
-
-}
-
-
-/* =========================================================
-   HERO CONTENT ABOVE BACKGROUND
-   ========================================================= */
-
-.hero-inner,
-.hero-side,
-.hero-scroll,
-.hero-number {
-  position: relative;
-  z-index: 3;
-}
-
-
-/* =========================================================
-   SECTION LIGHTING
-   ========================================================= */
-
-.philosophy::before {
-  content: "";
-
-  position: absolute;
-
-  width: 500px;
-  height: 500px;
-
-  left: -250px;
-  top: 15%;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(200,169,107,.055),
-      transparent 70%
-    );
-
-  filter: blur(30px);
-
-  pointer-events: none;
-
-  animation:
-    sectionGlow
-    16s
-    ease-in-out
-    infinite alternate;
-}
-
-@keyframes sectionGlow {
-
-  from {
-    transform:
-      translate3d(0,0,0);
-  }
-
-  to {
-    transform:
-      translate3d(120px,80px,0);
-  }
-
-}
-
-
-/* =========================================================
-   PRACTICE CARD LIGHT
-   ========================================================= */
-
-.practice-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.practice-card::after {
-  content: "";
-
-  position: absolute;
-
-  width: 250px;
-  height: 250px;
-
-  top: var(--mouse-y, 50%);
-  left: var(--mouse-x, 50%);
-
-  transform:
-    translate(-50%,-50%);
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(200,169,107,.10),
-      transparent 70%
-    );
-
-  opacity: 0;
-
-  pointer-events: none;
-
-  transition:
-    opacity .4s ease;
-}
-
-.practice-card:hover::after {
-  opacity: 1;
-}
-
-
-/* =========================================================
-   GENERAL PREMIUM HOVER
-   ========================================================= */
-
-.text-link {
-  transition:
-    color .35s ease,
-    transform .35s ease;
-}
-
-.text-link:hover {
-  color: var(--gold);
-  transform: translateX(4px);
-}
-
-
-/* =========================================================
-   SAFE MOBILE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 900px) {
 
-  .desktop-nav,
-  .nav-contact {
-    display: none;
+  .practice-card:hover,
+  .team-category:hover {
+
+    transform:
+      none;
+
   }
-
-  .menu-button {
-    display: flex;
-  }
-
-}
-
-
-@media (max-width: 768px) {
-
-  .practice-card:hover {
-    transform: none;
-  }
-
-  .glow-one,
-  .glow-two {
-    animation-duration: 12s;
-  }
-
-  .cta-section::before {
-    animation-duration: 12s;
-  }
-
-}
-
-
-@media (max-width: 650px) {
 
   .hero::after {
+
     width: 450px;
     height: 450px;
 
     right: -250px;
     top: -120px;
-  }
 
-  .hero-grid {
-    background-size: 55px 55px;
-    opacity: .18;
-  }
-
-  body::before {
-    opacity: .018;
   }
 
 }
@@ -1322,13 +824,18 @@ body::before {
   *::before,
   *::after {
 
-    animation-duration: .01ms !important;
+    animation-duration:
+      .01ms !important;
 
-    animation-iteration-count: 1 !important;
+    animation-iteration-count:
+      1 !important;
 
-    scroll-behavior: auto !important;
+    transition-duration:
+      .01ms !important;
 
-    transition-duration: .01ms !important;
+    scroll-behavior:
+      auto !important;
+
   }
 
-   }
+}
