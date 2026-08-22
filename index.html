@@ -141,6 +141,40 @@
       color: #d4af37;
       border-bottom-color: #d4af37;
     }
+
+    /* =====================================================
+       FLOATING CONTACT BUTTONS
+    ====================================================== */
+    .float-btn {
+      position: fixed;
+      bottom: 25px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #ffffff;
+      z-index: 99; /* Keeps it above everything except the disclaimer */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+    .float-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+    }
+    .phone-btn {
+      left: 25px;
+      background-color: #0c1844; /* Dark blue to match your image */
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .whatsapp-btn {
+      right: 25px;
+      background-color: #128C7E; /* Deep WhatsApp Green */
+    }
   </style>
 
   <script>
@@ -530,6 +564,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- =====================================================
+       FLOATING CONTACT BUTTONS
+  ====================================================== -->
+  <a href="tel:+919311664455" class="float-btn phone-btn" aria-label="Call Us">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+  <a href="https://wa.me/919311664455" class="float-btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script src="./js/navigation.js" defer></script>
   <script src="./js/animations.js" defer></script>
