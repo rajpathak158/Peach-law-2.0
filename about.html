@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Us | Preach Law LLP</title>
+  <title>About ASTRONIS | Strategic Legal Counsel</title>
 
   <meta
     name="description"
-    content="Learn about Preach Law LLP, a Delhi-based legal and professional services firm providing legal consultancy, advisory, taxation, IPR, corporate, accounting and compliance services."
+    content="Learn about ASTRONIS — strategic legal counsel providing legal representation, regulatory insight and professional advisory services."
   >
 
-  <!-- Fonts -->
+  <meta name="theme-color" content="#06152f">
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -20,383 +25,1180 @@
     rel="stylesheet"
   >
 
-  <!-- Icons -->
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- GSAP -->
+  <!-- =====================================================
+       GSAP
+  ====================================================== -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <!-- =====================================================
+       MAIN CSS
+  ====================================================== -->
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+
+  <!-- =====================================================
+       ASTRONIS ABOUT PAGE OVERRIDES
+  ====================================================== -->
 
   <style>
-    /* =====================================================
-       ABOUT PAGE
-    ===================================================== */
 
-    .about-hero {
-      min-height: 78vh;
-      background: #111;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
+    :root {
+      --astronis-bg: #06152f;
+      --astronis-deep: #020a1a;
+      --astronis-soft: #0a2042;
+      --astronis-blue: #3f9cff;
+      --astronis-light: #72bdff;
+      --astronis-soft-blue: #9bd2ff;
+
+      --astronis-white: #ffffff;
+      --astronis-text: #eaf4ff;
+      --astronis-muted: rgba(234,244,255,.66);
+
+      --astronis-border: rgba(114,189,255,.15);
+      --astronis-border-light: rgba(255,255,255,.10);
+    }
+
+
+    /* =====================================================
+       GLOBAL
+    ====================================================== */
+
+    body {
+      background:
+        radial-gradient(
+          circle at 80% 10%,
+          rgba(63,156,255,.12),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 10% 70%,
+          rgba(63,156,255,.08),
+          transparent 30%
+        ),
+        var(--astronis-deep);
+
+      color: var(--astronis-text);
+      overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       LOGO
+    ====================================================== */
+
+    .astronis-logo {
+      width: 190px;
+      max-width: 100%;
+      height: auto;
+      max-height: 65px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-mark,
+    .brand-text {
+      display: none !important;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ====================================================== */
+
+    .navbar {
+      background: rgba(2,10,26,.72) !important;
+      border-bottom: 1px solid rgba(114,189,255,.10);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .navbar .brand {
       display: flex;
       align-items: center;
-      padding: 150px 0 100px;
     }
+
+    .desktop-nav a {
+      color: rgba(234,244,255,.72) !important;
+      transition:
+        color .3s ease,
+        text-shadow .3s ease;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
+      color: var(--astronis-light) !important;
+      text-shadow: 0 0 18px rgba(63,156,255,.35);
+    }
+
+    .nav-contact {
+      background: linear-gradient(
+        135deg,
+        var(--astronis-blue),
+        #237bd5
+      ) !important;
+
+      color: #fff !important;
+
+      box-shadow:
+        0 10px 35px rgba(63,156,255,.18);
+    }
+
+    .nav-contact:hover {
+      box-shadow:
+        0 14px 45px rgba(63,156,255,.30);
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ====================================================== */
+
+    .mobile-menu {
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(63,156,255,.15),
+          transparent 35%
+        ),
+        var(--astronis-deep) !important;
+    }
+
+    .mobile-menu nav a {
+      color: #fff !important;
+    }
+
+    .mobile-menu-footer {
+      color: rgba(155,210,255,.65) !important;
+    }
+
+
+    /* =====================================================
+       ABOUT HERO
+    ====================================================== */
+
+    .about-hero {
+      min-height: 86vh;
+      padding: 170px 0 110px;
+
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+
+      color: #fff;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(63,156,255,.16),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(37,108,190,.10),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #020a1a 0%,
+          #06152f 50%,
+          #020a1a 100%
+        );
+    }
+
+
+    /* cinematic grid */
 
     .about-hero-grid {
       position: absolute;
       inset: 0;
-      opacity: .08;
+
+      opacity: .075;
+
       background-image:
-        linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
-      background-size: 80px 80px;
+        linear-gradient(
+          rgba(114,189,255,.32) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(114,189,255,.32) 1px,
+          transparent 1px
+        );
+
+      background-size: 90px 90px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent
+        );
     }
+
+
+    /* main glow */
 
     .about-hero-glow {
       position: absolute;
-      width: 600px;
-      height: 600px;
+
+      width: 650px;
+      height: 650px;
+
       border-radius: 50%;
-      background: rgba(183, 145, 79, .12);
-      filter: blur(100px);
-      right: -200px;
-      top: -150px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(63,156,255,.22),
+          rgba(63,156,255,.05) 45%,
+          transparent 70%
+        );
+
+      filter: blur(30px);
+
+      right: -220px;
+      top: -170px;
+
+      pointer-events: none;
     }
+
+
+    /* secondary glow */
+
+    .about-hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 420px;
+      height: 420px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(114,189,255,.12),
+          transparent 70%
+        );
+
+      left: -180px;
+      bottom: -200px;
+
+      filter: blur(20px);
+
+      pointer-events: none;
+    }
+
+
+    .about-container {
+      width: min(1180px, calc(100% - 48px));
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
 
     .about-hero-content {
       position: relative;
-      z-index: 2;
-      max-width: 1000px;
+      z-index: 3;
+      max-width: 1050px;
     }
+
+
+    /* =====================================================
+       KICKER
+    ====================================================== */
 
     .about-kicker {
       display: flex;
       align-items: center;
       gap: 14px;
-      font-size: 11px;
-      letter-spacing: 3px;
-      font-weight: 600;
-      color: #c9a96e;
-      margin-bottom: 28px;
-    }
 
-    .about-kicker span {
-      width: 42px;
-      height: 1px;
-      background: #c9a96e;
-    }
+      margin-bottom: 30px;
 
-    .about-hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(58px, 9vw, 130px);
-      line-height: .92;
-      font-weight: 600;
-      letter-spacing: -4px;
-      margin: 0;
-    }
+      color: var(--astronis-light);
 
-    .about-hero h1 em {
-      color: #c9a96e;
-      font-weight: 500;
-    }
-
-    .about-hero-description {
-      max-width: 650px;
-      margin-top: 42px;
-      color: rgba(255,255,255,.68);
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .about-section {
-      padding: 130px 0;
-    }
-
-    .about-section.dark {
-      background: #111;
-      color: #fff;
-    }
-
-    .about-container {
-      width: min(1180px, calc(100% - 48px));
-      margin: auto;
-    }
-
-    .about-two-column {
-      display: grid;
-      grid-template-columns: .8fr 1.5fr;
-      gap: 100px;
-      align-items: start;
-    }
-
-    .about-eyebrow {
-      color: #b58b4b;
       font-size: 11px;
       letter-spacing: 3px;
       font-weight: 700;
+
+      text-transform: uppercase;
     }
+
+    .about-kicker span {
+      width: 48px;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--astronis-blue),
+          transparent
+        );
+
+      box-shadow:
+        0 0 12px rgba(63,156,255,.6);
+    }
+
+
+    /* =====================================================
+       HERO TITLE
+    ====================================================== */
+
+    .about-hero h1 {
+      margin: 0;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(
+        58px,
+        9vw,
+        130px
+      );
+
+      line-height: .91;
+
+      font-weight: 600;
+
+      letter-spacing: -5px;
+
+      color: #fff;
+
+      text-shadow:
+        0 10px 50px rgba(0,0,0,.35);
+    }
+
+    .about-hero h1 em {
+      color: var(--astronis-light);
+      font-weight: 500;
+
+      font-style: italic;
+
+      text-shadow:
+        0 0 35px rgba(63,156,255,.32);
+    }
+
+
+    /* =====================================================
+       HERO DESCRIPTION
+    ====================================================== */
+
+    .about-hero-description {
+      max-width: 680px;
+
+      margin-top: 46px;
+
+      color: rgba(234,244,255,.68);
+
+      font-size: 17px;
+
+      line-height: 1.85;
+
+      letter-spacing: .1px;
+    }
+
+
+    /* =====================================================
+       SECTIONS
+    ====================================================== */
+
+    .about-section {
+      position: relative;
+
+      padding: 135px 0;
+
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(63,156,255,.05),
+          transparent 28%
+        ),
+        var(--astronis-bg);
+    }
+
+    .about-section.dark {
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(63,156,255,.08),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #020a1a,
+          #06152f
+        );
+
+      color: #fff;
+    }
+
+
+    /* =====================================================
+       TWO COLUMN
+    ====================================================== */
+
+    .about-two-column {
+      display: grid;
+
+      grid-template-columns:
+        .8fr 1.5fr;
+
+      gap: 100px;
+
+      align-items: start;
+    }
+
+
+    /* =====================================================
+       EYEBROW
+    ====================================================== */
+
+    .about-eyebrow {
+      display: inline-block;
+
+      color: var(--astronis-blue);
+
+      font-size: 11px;
+
+      letter-spacing: 3px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =====================================================
+       SECTION TITLE
+    ====================================================== */
 
     .about-title {
       font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 5vw, 72px);
+
+      font-size:
+        clamp(
+          42px,
+          5vw,
+          72px
+        );
+
       line-height: 1;
+
       font-weight: 600;
+
       margin: 20px 0 0;
-      letter-spacing: -2px;
+
+      letter-spacing: -2.5px;
+
+      color: #fff;
+    }
+
+    .about-section:not(.dark) .about-title {
+      color: #fff;
     }
 
     .about-title em {
-      color: #b58b4b;
+      color: var(--astronis-light);
+
       font-weight: 500;
+
+      font-style: italic;
+
+      text-shadow:
+        0 0 25px rgba(63,156,255,.25);
     }
 
+
+    /* =====================================================
+       BODY COPY
+    ====================================================== */
+
     .about-copy p {
-      font-size: 17px;
+      font-size: 16px;
+
       line-height: 1.9;
-      color: #555;
-      margin: 0 0 24px;
+
+      color: rgba(234,244,255,.66);
+
+      margin: 0 0 25px;
     }
 
     .dark .about-copy p {
-      color: rgba(255,255,255,.65);
+      color: rgba(234,244,255,.66);
     }
 
+
+    /* =====================================================
+       HIGHLIGHT
+    ====================================================== */
+
     .about-highlight {
-      margin-top: 45px;
-      padding: 28px 30px;
-      border-left: 2px solid #b58b4b;
-      background: rgba(181,139,75,.06);
+      margin-top: 48px;
+
+      padding: 30px 32px;
+
+      border-left:
+        2px solid var(--astronis-blue);
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(63,156,255,.09),
+          rgba(63,156,255,.02),
+          transparent
+        );
+
+      box-shadow:
+        inset 1px 0 0 rgba(114,189,255,.10);
     }
 
     .about-highlight strong {
       display: block;
+
       font-family: "Playfair Display", serif;
+
       font-size: 25px;
-      margin-bottom: 8px;
+
+      margin-bottom: 9px;
+
+      color: #fff;
     }
 
     .about-highlight span {
-      color: #777;
+      color: rgba(234,244,255,.55);
+
       font-size: 14px;
+
+      line-height: 1.7;
     }
 
-    .dark .about-highlight span {
-      color: rgba(255,255,255,.55);
-    }
 
-    /* STATS */
+    /* =====================================================
+       STATS
+    ====================================================== */
 
     .about-stats {
-      background: #f5f2ed;
-      padding: 75px 0;
+      padding: 80px 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          #06152f,
+          #0a2042
+        );
+
+      border-top:
+        1px solid rgba(114,189,255,.10);
+
+      border-bottom:
+        1px solid rgba(114,189,255,.10);
     }
 
     .about-stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 25px;
     }
 
     .about-stat {
-      padding: 20px;
-      border-left: 1px solid rgba(0,0,0,.12);
+      padding: 25px;
+
+      border-left:
+        1px solid rgba(114,189,255,.20);
+
+      transition:
+        transform .35s ease,
+        border-color .35s ease;
+    }
+
+    .about-stat:hover {
+      transform: translateY(-6px);
+
+      border-color:
+        rgba(63,156,255,.65);
     }
 
     .about-stat-number {
       font-family: "Playfair Display", serif;
-      font-size: clamp(40px, 5vw, 64px);
+
+      font-size:
+        clamp(
+          40px,
+          5vw,
+          64px
+        );
+
       line-height: 1;
-      color: #171717;
+
+      color: #fff;
+
+      text-shadow:
+        0 0 25px rgba(63,156,255,.15);
     }
 
     .about-stat-number span {
-      color: #b58b4b;
+      color: var(--astronis-light);
     }
 
     .about-stat-label {
       display: block;
-      margin-top: 12px;
-      color: #666;
-      font-size: 12px;
-      letter-spacing: 1.5px;
+
+      margin-top: 14px;
+
+      color: rgba(234,244,255,.55);
+
+      font-size: 11px;
+
+      letter-spacing: 1.8px;
+
       text-transform: uppercase;
     }
 
-    /* VISION */
+
+    /* =====================================================
+       VISION
+    ====================================================== */
 
     .vision-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 80px;
+
       align-items: center;
     }
 
     .vision-quote {
       font-family: "Playfair Display", serif;
-      font-size: clamp(32px, 4vw, 55px);
+
+      font-size:
+        clamp(
+          32px,
+          4vw,
+          55px
+        );
+
       line-height: 1.15;
+
+      color: #fff;
+
+      letter-spacing: -1.5px;
     }
 
     .vision-quote em {
-      color: #c9a96e;
+      color: var(--astronis-light);
+
+      font-style: italic;
+
+      text-shadow:
+        0 0 30px rgba(63,156,255,.3);
     }
 
     .vision-copy p {
-      color: rgba(255,255,255,.65);
+      color: rgba(234,244,255,.62);
+
       line-height: 1.9;
+
       font-size: 16px;
-      margin-bottom: 22px;
+
+      margin-bottom: 23px;
     }
 
-    /* INDUSTRIES */
+
+    /* =====================================================
+       INDUSTRIES
+    ====================================================== */
 
     .industries-heading {
       max-width: 700px;
+
       margin-bottom: 70px;
     }
 
     .industries-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid rgba(0,0,0,.12);
-      border-left: 1px solid rgba(0,0,0,.12);
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      border-top:
+        1px solid rgba(114,189,255,.13);
+
+      border-left:
+        1px solid rgba(114,189,255,.13);
     }
 
     .industry {
-      min-height: 150px;
-      padding: 28px;
-      border-right: 1px solid rgba(0,0,0,.12);
-      border-bottom: 1px solid rgba(0,0,0,.12);
-      transition: .35s ease;
+      min-height: 160px;
+
+      padding: 30px;
+
+      border-right:
+        1px solid rgba(114,189,255,.13);
+
+      border-bottom:
+        1px solid rgba(114,189,255,.13);
+
+      background:
+        rgba(6,21,47,.48);
+
+      transition:
+        transform .4s ease,
+        background .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .industry::before {
+      content: "";
+
+      position: absolute;
+
+      width: 100px;
+      height: 100px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(63,156,255,.12);
+
+      filter: blur(35px);
+
+      right: -50px;
+      top: -50px;
+
+      opacity: 0;
+
+      transition: opacity .4s ease;
+    }
+
+    .industry:hover {
+      transform:
+        translateY(-5px);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(10,32,66,.95),
+          rgba(6,21,47,.95)
+        );
+
+      border-color:
+        rgba(63,156,255,.38);
+
+      box-shadow:
+        0 15px 45px rgba(0,0,0,.22);
+    }
+
+    .industry:hover::before {
+      opacity: 1;
     }
 
     .industry-number {
       display: block;
+
       font-size: 11px;
-      color: #b58b4b;
+
+      color: var(--astronis-blue);
+
       letter-spacing: 2px;
-      margin-bottom: 25px;
+
+      margin-bottom: 27px;
     }
 
     .industry h3 {
-      font-family: "Playfair Display", serif;
+      font-family:
+        "Playfair Display",
+        serif;
+
       font-size: 20px;
+
       font-weight: 600;
+
       margin: 0;
-    }
 
-    .industry:hover {
-      background: #111;
       color: #fff;
-      transform: translateY(-4px);
+
+      line-height: 1.3;
     }
 
-    /* BELIEFS */
+
+    /* =====================================================
+       BELIEFS
+    ====================================================== */
 
     .beliefs-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 1px;
-      background: rgba(255,255,255,.12);
+
+      background:
+        rgba(114,189,255,.12);
+
       margin-top: 70px;
     }
 
     .belief {
-      background: #111;
+      background:
+        linear-gradient(
+          145deg,
+          #06152f,
+          #020a1a
+        );
+
       padding: 45px 35px;
+
       min-height: 280px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition:
+        transform .4s ease,
+        background .4s ease;
+    }
+
+    .belief::after {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(63,156,255,.08);
+
+      filter: blur(55px);
+
+      right: -90px;
+      bottom: -90px;
+
+      opacity: 0;
+
+      transition: opacity .4s ease;
+    }
+
+    .belief:hover {
+      background:
+        linear-gradient(
+          145deg,
+          #0a2042,
+          #06152f
+        );
+
+      transform:
+        translateY(-5px);
+    }
+
+    .belief:hover::after {
+      opacity: 1;
     }
 
     .belief-number {
-      color: #c9a96e;
+      color: var(--astronis-light);
+
       font-size: 12px;
+
       letter-spacing: 2px;
     }
 
     .belief h3 {
-      font-family: "Playfair Display", serif;
+      font-family:
+        "Playfair Display",
+        serif;
+
       font-size: 28px;
+
       margin: 35px 0 18px;
+
+      color: #fff;
     }
 
     .belief p {
-      color: rgba(255,255,255,.55);
+      color:
+        rgba(234,244,255,.55);
+
       line-height: 1.8;
+
       font-size: 14px;
+
+      margin: 0;
     }
 
-    /* CTA */
+
+    /* =====================================================
+       CTA
+    ====================================================== */
 
     .about-cta {
       text-align: center;
-      padding: 140px 20px;
-      background: #f5f2ed;
+
+      padding:
+        150px 20px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(63,156,255,.16),
+          transparent 38%
+        ),
+        linear-gradient(
+          135deg,
+          #06152f,
+          #020a1a
+        );
+
+      border-top:
+        1px solid rgba(114,189,255,.10);
+    }
+
+    .about-cta::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(114,189,255,.08) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(114,189,255,.08) 1px,
+          transparent 1px
+        );
+
+      background-size: 80px 80px;
+
+      opacity: .35;
+
+      mask-image:
+        radial-gradient(
+          circle at center,
+          black,
+          transparent 65%
+        );
+    }
+
+    .about-cta > * {
+      position: relative;
+      z-index: 2;
     }
 
     .about-cta h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(45px, 6vw, 80px);
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(
+          45px,
+          6vw,
+          80px
+        );
+
       line-height: 1;
-      margin: 18px 0 35px;
+
+      margin:
+        18px 0 38px;
+
+      color: #fff;
+
+      letter-spacing: -3px;
     }
 
     .about-cta h2 em {
-      color: #b58b4b;
+      color: var(--astronis-light);
+
+      font-style: italic;
+
+      text-shadow:
+        0 0 35px rgba(63,156,255,.30);
     }
 
     .about-cta-button {
       display: inline-flex;
+
       align-items: center;
+
       gap: 14px;
-      padding: 17px 28px;
-      background: #111;
+
+      padding:
+        17px 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--astronis-blue),
+          #237bd5
+        );
+
       color: #fff;
+
       text-decoration: none;
+
       font-size: 13px;
+
       letter-spacing: 1px;
-      transition: .3s ease;
+
+      border:
+        1px solid rgba(155,210,255,.25);
+
+      box-shadow:
+        0 15px 45px rgba(63,156,255,.18);
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
     }
 
     .about-cta-button:hover {
-      transform: translateY(-4px);
-      background: #b58b4b;
+      transform:
+        translateY(-5px);
+
+      box-shadow:
+        0 20px 60px rgba(63,156,255,.32);
     }
 
-    /* MOBILE */
 
-    @media (max-width: 800px) {
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    footer {
+      background:
+        linear-gradient(
+          180deg,
+          #020a1a,
+          #010611
+        ) !important;
+
+      border-top:
+        1px solid rgba(114,189,255,.10);
+
+      color: #fff;
+    }
+
+    footer .footer-brand h3 {
+      color: #fff;
+    }
+
+    footer .footer-brand p {
+      color:
+        rgba(234,244,255,.52);
+    }
+
+    footer .footer-links span {
+      color:
+        var(--astronis-blue);
+    }
+
+    footer .footer-links a {
+      color:
+        rgba(234,244,255,.62);
+
+      transition:
+        color .3s ease;
+    }
+
+    footer .footer-links a:hover {
+      color:
+        var(--astronis-light);
+    }
+
+    footer .footer-bottom {
+      border-top:
+        1px solid rgba(114,189,255,.10);
+
+      color:
+        rgba(234,244,255,.42);
+    }
+
+
+    /* =====================================================
+       SELECTION
+    ====================================================== */
+
+    ::selection {
+      background:
+        rgba(63,156,255,.35);
+
+      color: #fff;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 900px) {
 
       .about-hero {
-        min-height: 70vh;
-        padding: 130px 0 80px;
+        min-height: 76vh;
+
+        padding:
+          140px 0 90px;
       }
 
       .about-hero h1 {
-        letter-spacing: -2px;
+        letter-spacing: -3px;
       }
 
       .about-two-column,
       .vision-grid {
         grid-template-columns: 1fr;
-        gap: 45px;
+
+        gap: 50px;
       }
 
       .about-section {
-        padding: 85px 0;
+        padding:
+          95px 0;
       }
 
       .about-stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .industries-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .beliefs-grid {
@@ -405,10 +1207,46 @@
 
     }
 
-    @media (max-width: 500px) {
+
+    @media (max-width: 600px) {
+
+      .astronis-logo {
+        width: 150px;
+        max-height: 55px;
+      }
 
       .about-container {
-        width: min(100% - 32px, 1180px);
+        width:
+          min(
+            100% - 32px,
+            1180px
+          );
+      }
+
+      .about-hero {
+        padding:
+          125px 0 80px;
+
+        min-height:
+          72vh;
+      }
+
+      .about-hero h1 {
+        font-size:
+          clamp(
+            48px,
+            15vw,
+            78px
+          );
+
+        letter-spacing:
+          -2.5px;
+      }
+
+      .about-hero-description {
+        font-size: 15px;
+
+        margin-top: 35px;
       }
 
       .about-stats-grid,
@@ -418,59 +1256,133 @@
 
       .about-stat {
         border-left: 0;
-        border-bottom: 1px solid rgba(0,0,0,.12);
-        padding-bottom: 28px;
+
+        border-bottom:
+          1px solid rgba(
+            114,
+            189,
+            255,
+            .15
+          );
+
+        padding:
+          25px 0 30px;
+      }
+
+      .about-stat:last-child {
+        border-bottom: 0;
+      }
+
+      .about-title {
+        letter-spacing: -1.5px;
+      }
+
+      .about-highlight {
+        padding:
+          25px 22px;
+      }
+
+      .belief {
+        min-height: auto;
+
+        padding:
+          40px 28px;
+      }
+
+      .about-cta {
+        padding:
+          110px 20px;
+      }
+
+      .about-cta h2 {
+        letter-spacing:
+          -2px;
       }
 
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
   <!-- =====================================================
        NAVIGATION
-  ===================================================== -->
+  ====================================================== -->
 
   <header class="navbar" id="navbar">
 
     <div class="nav-container">
 
-      <a href="index.html" class="brand">
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="ASTRONIS Home"
+      >
 
-        <div class="brand-mark">
-          <span>P</span>
-        </div>
-
-        <div class="brand-text">
-          <strong>Preach Law & Co.</strong>
-          <small>Advocate & Attorney</small>
-        </div>
+        <img
+          src="./IMG-20260906-WA0008.jpg"
+          alt="ASTRONIS — Strategic Legal Counsel"
+          class="astronis-logo"
+        >
 
       </a>
+
 
       <nav class="desktop-nav">
 
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="services.html">Services</a>
-        <a href="team.html">Team</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html">
+          Home
+        </a>
+
+        <a
+          href="about.html"
+          class="active"
+        >
+          About
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+        <a href="team.html">
+          Team
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
 
       </nav>
 
-      <a href="tel:+919311664455" class="nav-contact">
-        <span>Contact Us</span>
+
+      <a
+        href="tel:+919311664455"
+        class="nav-contact"
+      >
+
+        <span>
+          Contact Us
+        </span>
+
         <i data-lucide="arrow-up-right"></i>
+
       </a>
+
 
       <button
         class="menu-button"
         id="menuButton"
         aria-label="Open navigation"
       >
+
         <span></span>
         <span></span>
+
       </button>
 
     </div>
@@ -480,63 +1392,112 @@
 
   <!-- =====================================================
        MOBILE MENU
-  ===================================================== -->
+  ====================================================== -->
 
-  <div class="mobile-menu" id="mobileMenu">
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="team.html">Team</a>
-      <a href="contact.html">Contact</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="team.html">
+        Team
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
     </nav>
 
+
     <div class="mobile-menu-footer">
-      <span>PREACH LAW & CO.</span>
-      <span>ADVOCATE & ATTORNEY</span>
+
+      <span>
+        ASTRONIS
+      </span>
+
+      <span>
+        STRATEGIC LEGAL COUNSEL
+      </span>
+
     </div>
 
   </div>
 
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
 
   <main>
 
 
     <!-- ===================================================
          HERO
-    =================================================== -->
+    ==================================================== -->
 
     <section class="about-hero">
 
       <div class="about-hero-grid"></div>
+
       <div class="about-hero-glow"></div>
+
 
       <div class="about-container">
 
         <div class="about-hero-content">
 
+
           <div class="about-kicker reveal">
+
             <span></span>
-            ABOUT PREACH LAW LLP
+
+            ABOUT ASTRONIS
+
           </div>
 
+
           <h1 class="reveal">
+
             Built on
             <br>
+
             <em>knowledge.</em>
+
             <br>
+
             Driven by
             <br>
+
             purpose.
+
           </h1>
 
+
           <p class="about-hero-description reveal">
-            Preach Law LLP is a Delhi-based professional services and
-            legal practice providing legal consultancy, advisory,
-            corporate support, taxation, intellectual property,
-            accounting and compliance services.
+
+            ASTRONIS brings together legal representation,
+            regulatory insight and professional advisory
+            services for individuals, businesses and
+            institutions seeking clarity, confidence and
+            strategic direction.
+
           </p>
+
 
         </div>
 
@@ -547,7 +1508,7 @@
 
     <!-- ===================================================
          INTRODUCTION
-    =================================================== -->
+    ==================================================== -->
 
     <section class="about-section">
 
@@ -555,16 +1516,23 @@
 
         <div class="about-two-column">
 
+
           <div>
 
             <span class="about-eyebrow reveal">
+
               WHO WE ARE
+
             </span>
 
+
             <h2 class="about-title reveal">
+
               A modern
               <br>
+
               <em>legal practice.</em>
+
             </h2>
 
           </div>
@@ -573,38 +1541,44 @@
           <div class="about-copy reveal">
 
             <p>
-              Preach Law LLP is a law and professional advisory firm
-              based in Delhi. The firm brings together legal and
-              professional expertise across a broad range of areas,
-              serving individuals, businesses, companies, financial
-              institutions, public-sector organisations and
-              non-governmental organisations.
+              ASTRONIS is a professional legal and advisory
+              practice based in Delhi. The firm brings together
+              legal and professional expertise across a broad
+              range of areas, serving individuals, businesses,
+              companies, financial institutions, public-sector
+              organisations and non-governmental organisations.
             </p>
 
+
             <p>
-              The firm's stated areas of practice include civil and
+              The firm's areas of practice include civil and
               criminal matters, commercial and corporate work,
-              insolvency and bankruptcy, taxation, banking and finance,
-              intellectual property, real estate, labour and industrial
-              disputes, consumer matters, regulatory advisory and
-              corporate compliance.
+              insolvency and bankruptcy, taxation, banking and
+              finance, intellectual property, real estate,
+              labour and industrial disputes, consumer matters,
+              regulatory advisory and corporate compliance.
             </p>
 
+
             <p>
-              Preach Law also provides professional support in areas
-              including company formation, corporate affairs,
-              accounting, auditing, taxation, secretarial services,
-              due diligence and related business advisory functions.
+              ASTRONIS also provides professional support in
+              areas including company formation, corporate
+              affairs, accounting, auditing, taxation,
+              secretarial services, due diligence and related
+              business advisory functions.
             </p>
+
 
             <div class="about-highlight">
 
-              <strong>Established in February 2015</strong>
+              <strong>
+                Established in February 2015
+              </strong>
 
               <span>
-                The firm was established by a group of experienced
-                professionals who had previously worked together in
-                the legal sector.
+                The practice was established by a group of
+                experienced professionals who had previously
+                worked together in the legal sector.
               </span>
 
             </div>
@@ -620,7 +1594,7 @@
 
     <!-- ===================================================
          STATS
-    =================================================== -->
+    ==================================================== -->
 
     <section class="about-stats">
 
@@ -628,10 +1602,18 @@
 
         <div class="about-stats-grid">
 
+
           <div class="about-stat reveal">
 
             <div class="about-stat-number">
-              <span class="counter" data-target="3000">0</span>+
+
+              <span
+                class="counter"
+                data-target="3000"
+              >
+                0
+              </span>+
+
             </div>
 
             <span class="about-stat-label">
@@ -644,7 +1626,14 @@
           <div class="about-stat reveal">
 
             <div class="about-stat-number">
-              <span class="counter" data-target="300">0</span>+
+
+              <span
+                class="counter"
+                data-target="300"
+              >
+                0
+              </span>+
+
             </div>
 
             <span class="about-stat-label">
@@ -657,7 +1646,14 @@
           <div class="about-stat reveal">
 
             <div class="about-stat-number">
-              <span class="counter" data-target="10">0</span>+
+
+              <span
+                class="counter"
+                data-target="10"
+              >
+                0
+              </span>+
+
             </div>
 
             <span class="about-stat-label">
@@ -670,7 +1666,14 @@
           <div class="about-stat reveal">
 
             <div class="about-stat-number">
-              <span class="counter" data-target="2800">0</span>+
+
+              <span
+                class="counter"
+                data-target="2800"
+              >
+                0
+              </span>+
+
             </div>
 
             <span class="about-stat-label">
@@ -678,6 +1681,7 @@
             </span>
 
           </div>
+
 
         </div>
 
@@ -688,7 +1692,7 @@
 
     <!-- ===================================================
          VISION
-    =================================================== -->
+    ==================================================== -->
 
     <section class="about-section dark">
 
@@ -696,18 +1700,24 @@
 
         <div class="vision-grid">
 
+
           <div>
 
             <span class="about-eyebrow reveal">
               OUR VISION
             </span>
 
+
             <h2 class="vision-quote reveal">
+
               Practical legal
               <br>
+
               solutions with
               <br>
+
               <em>real value.</em>
+
             </h2>
 
           </div>
@@ -716,21 +1726,25 @@
           <div class="vision-copy reveal">
 
             <p>
-              Preach Law's professional model is focused on delivering
-              high-quality legal and advisory support while maintaining
-              efficiency and keeping unnecessary overhead under control.
+              ASTRONIS's professional model is focused on
+              delivering high-quality legal and advisory support
+              while maintaining efficiency and keeping
+              unnecessary overhead under control.
             </p>
 
-            <p>
-              The firm aims to provide practical, value-oriented
-              solutions suited to the commercial and legal realities
-              faced by its clients.
-            </p>
 
             <p>
-              Its professionals work with clients across sectors and
-              seek to combine legal knowledge, business understanding
-              and regulatory awareness when addressing complex matters.
+              The practice aims to provide practical,
+              value-oriented solutions suited to the commercial
+              and legal realities faced by its clients.
+            </p>
+
+
+            <p>
+              Its professionals work with clients across sectors
+              and seek to combine legal knowledge, business
+              understanding and regulatory awareness when
+              addressing complex matters.
             </p>
 
           </div>
@@ -744,11 +1758,12 @@
 
     <!-- ===================================================
          INDUSTRIES
-    =================================================== -->
+    ==================================================== -->
 
     <section class="about-section">
 
       <div class="about-container">
+
 
         <div class="industries-heading">
 
@@ -756,10 +1771,14 @@
             INDUSTRIES EXPERTISE
           </span>
 
+
           <h2 class="about-title reveal">
+
             Experience across
             <br>
+
             <em>diverse sectors.</em>
+
           </h2>
 
         </div>
@@ -767,85 +1786,102 @@
 
         <div class="industries-grid">
 
+
           <article class="industry reveal">
             <span class="industry-number">01</span>
             <h3>Apparel & Garments</h3>
           </article>
+
 
           <article class="industry reveal">
             <span class="industry-number">02</span>
             <h3>Automobile & Automotive</h3>
           </article>
 
+
           <article class="industry reveal">
             <span class="industry-number">03</span>
             <h3>Food Safety & Legal Metrology</h3>
           </article>
+
 
           <article class="industry reveal">
             <span class="industry-number">04</span>
             <h3>Banking, Finance & Insurance</h3>
           </article>
 
+
           <article class="industry reveal">
             <span class="industry-number">05</span>
             <h3>Consumer Protection & Life Science</h3>
           </article>
+
 
           <article class="industry reveal">
             <span class="industry-number">06</span>
             <h3>E-Commerce & Information Technology</h3>
           </article>
 
+
           <article class="industry reveal">
             <span class="industry-number">07</span>
             <h3>Education & Human Resources</h3>
           </article>
+
 
           <article class="industry reveal">
             <span class="industry-number">08</span>
             <h3>Entertainment & Broadcasting</h3>
           </article>
 
+
           <article class="industry reveal">
             <span class="industry-number">09</span>
             <h3>Infrastructure, Energy & Environment</h3>
           </article>
+
 
           <article class="industry reveal">
             <span class="industry-number">10</span>
             <h3>Media — Print & Electronic</h3>
           </article>
 
+
           <article class="industry reveal">
             <span class="industry-number">11</span>
             <h3>Healthcare & Medical Science</h3>
           </article>
+
 
           <article class="industry reveal">
             <span class="industry-number">12</span>
             <h3>Pharmaceuticals, Food & Drugs</h3>
           </article>
 
+
           <article class="industry reveal">
             <span class="industry-number">13</span>
             <h3>Real Estate & Property Management</h3>
           </article>
+
 
           <article class="industry reveal">
             <span class="industry-number">14</span>
             <h3>Retail & Wholesale Business</h3>
           </article>
 
+
           <article class="industry reveal">
             <span class="industry-number">15</span>
             <h3>Telecommunication & Electricity</h3>
           </article>
 
+
           <article class="industry reveal">
             <span class="industry-number">16</span>
             <h3>Tours, Travels & Hospitality</h3>
           </article>
+
 
         </div>
 
@@ -856,35 +1892,46 @@
 
     <!-- ===================================================
          BELIEFS
-    =================================================== -->
+    ==================================================== -->
 
     <section class="about-section dark">
 
       <div class="about-container">
 
+
         <span class="about-eyebrow reveal">
-          PREACH LAW BELIEVES IN
+          ASTRONIS BELIEVES IN
         </span>
 
+
         <h2 class="about-title reveal">
+
           Principles that
           <br>
+
           guide our <em>work.</em>
+
         </h2>
 
 
         <div class="beliefs-grid">
 
+
           <article class="belief reveal">
 
-            <span class="belief-number">01</span>
+            <span class="belief-number">
+              01
+            </span>
 
-            <h3>Significance</h3>
+            <h3>
+              Significance
+            </h3>
 
             <p>
-              Every client and every assignment has its own definition
-              of value. Understanding priorities, time and budget helps
-              create a service that is meaningful to the client.
+              Every client and every assignment has its own
+              definition of value. Understanding priorities,
+              time and budget helps create a service that is
+              meaningful to the client.
             </p>
 
           </article>
@@ -892,14 +1939,19 @@
 
           <article class="belief reveal">
 
-            <span class="belief-number">02</span>
+            <span class="belief-number">
+              02
+            </span>
 
-            <h3>Integrity & Ethics</h3>
+            <h3>
+              Integrity & Ethics
+            </h3>
 
             <p>
               Professional responsibility, hard work and ethical
-              conduct form an important part of the firm's approach
-              to its clients and professional relationships.
+              conduct form an important part of the firm's
+              approach to its clients and professional
+              relationships.
             </p>
 
           </article>
@@ -907,14 +1959,18 @@
 
           <article class="belief reveal">
 
-            <span class="belief-number">03</span>
+            <span class="belief-number">
+              03
+            </span>
 
-            <h3>Savvy Thinking</h3>
+            <h3>
+              Savvy Thinking
+            </h3>
 
             <p>
-              Practical understanding, intelligence, common sense and
-              continuously developing legal knowledge help the team
-              approach complex problems effectively.
+              Practical understanding, intelligence, common sense
+              and continuously developing legal knowledge help
+              the team approach complex problems effectively.
             </p>
 
           </article>
@@ -922,14 +1978,18 @@
 
           <article class="belief reveal">
 
-            <span class="belief-number">04</span>
+            <span class="belief-number">
+              04
+            </span>
 
-            <h3>Litigation</h3>
+            <h3>
+              Litigation
+            </h3>
 
             <p>
-              The firm's stated litigation experience covers civil,
-              criminal, corporate, industrial and labour matters before
-              courts, forums and appellate bodies.
+              The firm's stated litigation experience covers
+              civil, criminal, corporate, industrial and labour
+              matters before courts, forums and appellate bodies.
             </p>
 
           </article>
@@ -937,14 +1997,18 @@
 
           <article class="belief reveal">
 
-            <span class="belief-number">05</span>
+            <span class="belief-number">
+              05
+            </span>
 
-            <h3>Approachability</h3>
+            <h3>
+              Approachability
+            </h3>
 
             <p>
-              Clear communication and accessibility are central to
-              maintaining productive relationships with clients and
-              associates.
+              Clear communication and accessibility are central
+              to maintaining productive relationships with
+              clients and associates.
             </p>
 
           </article>
@@ -952,17 +2016,22 @@
 
           <article class="belief reveal">
 
-            <span class="belief-number">06</span>
+            <span class="belief-number">
+              06
+            </span>
 
-            <h3>Quickness</h3>
+            <h3>
+              Quickness
+            </h3>
 
             <p>
-              The firm describes its working approach as streamlined,
-              with focused teams and simple procedures intended to
+              The firm's working approach is streamlined, with
+              focused teams and simple procedures intended to
               improve turnaround and efficiency.
             </p>
 
           </article>
+
 
         </div>
 
@@ -973,27 +2042,37 @@
 
     <!-- ===================================================
          CTA
-    =================================================== -->
+    ==================================================== -->
 
     <section class="about-cta">
 
+
       <span class="about-eyebrow reveal">
-        PREACH LAW LLP
+        ASTRONIS
       </span>
 
+
       <h2 class="reveal">
+
         Knowledge.
         <br>
+
         <em>Strategy. Action.</em>
+
       </h2>
+
 
       <a
         href="contact.html"
         class="about-cta-button reveal magnetic"
       >
+
         Discuss Your Matter
+
         <i data-lucide="arrow-up-right"></i>
+
       </a>
+
 
     </section>
 
@@ -1002,62 +2081,108 @@
 
   <!-- =====================================================
        FOOTER
-  ===================================================== -->
+  ====================================================== -->
 
   <footer>
 
     <div class="container">
 
+
       <div class="footer-top">
+
 
         <div class="footer-brand">
 
-          <div class="brand-mark">
-            <span>P</span>
-          </div>
+          <img
+            src="./IMG-20260906-WA0008.jpg"
+            alt="ASTRONIS"
+            class="astronis-logo"
+          >
 
-          <h3>Preach Law & Co.</h3>
+          <h3>
+            ASTRONIS
+          </h3>
 
-          <p>Advocate & Attorney</p>
+          <p>
+            Strategic Legal Counsel
+          </p>
 
         </div>
 
 
         <div class="footer-links">
 
+
           <div>
 
-            <span>COMPANY</span>
+            <span>
+              COMPANY
+            </span>
 
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="team.html">Our Team</a>
-            <a href="offices.html">Our Offices</a>
+            <a href="index.html">
+              Home
+            </a>
+
+            <a href="about.html">
+              About
+            </a>
+
+            <a href="team.html">
+              Our Team
+            </a>
+
+            <a href="offices.html">
+              Our Offices
+            </a>
 
           </div>
 
 
           <div>
 
-            <span>SERVICES</span>
+            <span>
+              SERVICES
+            </span>
 
-            <a href="services.html">Services</a>
-            <a href="litigation.html">Litigation</a>
-            <a href="ipr.html">IPR</a>
-            <a href="consulting.html">Consulting</a>
+            <a href="services.html">
+              Services
+            </a>
+
+            <a href="litigation.html">
+              Litigation
+            </a>
+
+            <a href="ipr.html">
+              IPR
+            </a>
+
+            <a href="consulting.html">
+              Consulting
+            </a>
 
           </div>
 
 
           <div>
 
-            <span>LEGAL</span>
+            <span>
+              LEGAL
+            </span>
 
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="contact.html">Contact</a>
+            <a href="#">
+              Terms & Conditions
+            </a>
+
+            <a href="#">
+              Privacy Policy
+            </a>
+
+            <a href="contact.html">
+              Contact
+            </a>
 
           </div>
+
 
         </div>
 
@@ -1066,13 +2191,16 @@
 
       <div class="footer-bottom">
 
-        <span>
-          © 2015–2030 Preach Law LLP. All Rights Reserved.
-        </span>
 
         <span>
-          ADVOCATE & ATTORNEY
+          © 2015–2030 ASTRONIS. All Rights Reserved.
         </span>
+
+
+        <span>
+          DELHI · INDIA
+        </span>
+
 
       </div>
 
@@ -1083,11 +2211,154 @@
 
   <!-- =====================================================
        JAVASCRIPT
-  ===================================================== -->
+  ====================================================== -->
 
-  <script src="js/navigation.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/main.js"></script>
+  <script src="./js/navigation.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/main.js"></script>
+
+
+  <script>
+
+    /* =====================================================
+       LUCIDE ICONS
+    ====================================================== */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       COUNTERS
+    ====================================================== */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        const counters =
+          document.querySelectorAll(".counter");
+
+        counters.forEach(counter => {
+
+          const target =
+            Number(
+              counter.dataset.target
+            );
+
+          if (!target) return;
+
+          if (
+            "IntersectionObserver"
+            in window
+          ) {
+
+            const observer =
+              new IntersectionObserver(
+                entries => {
+
+                  entries.forEach(
+                    entry => {
+
+                      if (
+                        !entry.isIntersecting
+                      ) return;
+
+                      let start =
+                        0;
+
+                      const duration =
+                        1800;
+
+                      const startTime =
+                        performance.now();
+
+                      function update(
+                        currentTime
+                      ) {
+
+                        const progress =
+                          Math.min(
+                            (
+                              currentTime -
+                              startTime
+                            ) / duration,
+                            1
+                          );
+
+                        const eased =
+                          1 -
+                          Math.pow(
+                            1 - progress,
+                            3
+                          );
+
+                        start =
+                          Math.floor(
+                            eased * target
+                          );
+
+                        counter.textContent =
+                          start.toLocaleString();
+
+                        if (
+                          progress < 1
+                        ) {
+
+                          requestAnimationFrame(
+                            update
+                          );
+
+                        } else {
+
+                          counter.textContent =
+                            target.toLocaleString();
+
+                        }
+
+                      }
+
+                      requestAnimationFrame(
+                        update
+                      );
+
+                      observer.unobserve(
+                        counter
+                      );
+
+                    }
+                  );
+
+                },
+                {
+                  threshold: .35
+                }
+              );
+
+            observer.observe(counter);
+
+          } else {
+
+            counter.textContent =
+              target.toLocaleString();
+
+          }
+
+        });
+
+      }
+    );
+
+  </script>
+
 
 </body>
-          </html>
+        </html>
