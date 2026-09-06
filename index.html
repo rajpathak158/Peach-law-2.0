@@ -2,648 +2,3032 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#11110f">
-  <title>Preach Law &amp; Co. | Advocates, Legal &amp; Business Advisory</title>
-  <meta name="description" content="Preach Law &amp; Co. provides legal, regulatory, taxation, intellectual property, corporate, fintech and business advisory services.">
-  <meta name="author" content="Preach Law &amp; Co.">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta name="theme-color" content="#06152f">
+
+  <title>ASTRONIS | Strategic Legal Counsel</title>
+
+  <meta
+    name="description"
+    content="ASTRONIS — Strategic legal counsel built for clarity, confidence and lasting impact."
+  >
+
+  <meta name="author" content="ASTRONIS">
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome added for Social Media Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
 
   <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js" defer></script>
 
+  <!-- =====================================================
+       ANIMATION LIBRARIES
+  ====================================================== -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    defer
+  ></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    defer
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"
+    defer
+  ></script>
+
+  <!-- =====================================================
+       SITE CSS
+  ====================================================== -->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/animations.css">
   <link rel="stylesheet" href="./css/responsive.css">
 
+  <!-- =====================================================
+       ASTRONIS BLUE OVERRIDES
+  ====================================================== -->
   <style>
-    .page-loader.is-hidden { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
-    .disclaimer.is-hidden { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
-    body.disclaimer-open { overflow: hidden; }
-    html:not(.gsap-ready) .reveal { opacity: 0; }
-
-    .hero { position: relative; overflow: hidden; }
-    .hero-image { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-    .hero-image img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); }
-    .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(17,17,15,0.55) 0%, rgba(17,17,15,0.75) 55%, rgba(17,17,15,0.95) 100%); }
-    .hero-orbs { position: absolute; inset: 0; z-index: 2; overflow: hidden; pointer-events: none; mix-blend-mode: screen; }
-    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.55; will-change: transform; }
-    .orb-1 { width: 420px; height: 420px; top: -120px; left: -100px; background: radial-gradient(circle at 30% 30%, #d4af6a, transparent 70%); }
-    .orb-2 { width: 360px; height: 360px; bottom: -140px; right: -80px; background: radial-gradient(circle at 30% 30%, #8a6d3b, transparent 70%); }
-    .orb-3 { width: 300px; height: 300px; top: 35%; right: 8%; background: radial-gradient(circle at 30% 30%, #ffffff33, transparent 70%); }
-    .orb-4 { width: 260px; height: 260px; bottom: 8%; left: 15%; background: radial-gradient(circle at 30% 30%, #d4af6a, transparent 70%); }
-    .hero-inner, .hero-side, .hero-scroll, .hero-number { position: relative; z-index: 3; }
 
     /* =====================================================
-       MOBILE MENU BUTTON FIX
+       CORE ASTRONIS COLOR SYSTEM
     ====================================================== */
+
+    :root {
+      --astronis-bg: #06152f;
+      --astronis-bg-deep: #020a1a;
+      --astronis-bg-soft: #0a2042;
+
+      --astronis-blue: #3f9cff;
+      --astronis-blue-light: #72bdff;
+      --astronis-blue-soft: #9bd2ff;
+
+      --astronis-white: #f5f9ff;
+      --astronis-text: #dce8f7;
+      --astronis-muted: #8fa7c4;
+
+      --astronis-border: rgba(117, 181, 255, 0.18);
+      --astronis-border-soft: rgba(255, 255, 255, 0.08);
+
+      --astronis-glow: rgba(55, 146, 255, 0.30);
+    }
+
+
+    /* =====================================================
+       PAGE LOADER
+    ====================================================== */
+
+    .page-loader {
+      background:
+        radial-gradient(
+          circle at 50% 40%,
+          rgba(40, 117, 220, 0.18),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          #020817,
+          #06152f 55%,
+          #081d3d
+        ) !important;
+    }
+
+    .loader-monogram {
+      border-color: rgba(95, 174, 255, 0.5) !important;
+      background:
+        radial-gradient(
+          circle,
+          rgba(59, 153, 255, 0.18),
+          transparent 70%
+        ) !important;
+      box-shadow:
+        0 0 45px rgba(48, 144, 255, 0.18);
+    }
+
+    .loader-monogram span {
+      color: #72bdff !important;
+    }
+
+    .loader-rule {
+      background: rgba(255,255,255,0.12) !important;
+    }
+
+    .loader-rule span {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #5eaeff,
+        transparent
+      ) !important;
+    }
+
+    .loader-inner p {
+      color: #9bb7d5 !important;
+      letter-spacing: 0.3em;
+    }
+
+
+    /* =====================================================
+       GLOBAL BLUE BACKGROUND
+    ====================================================== */
+
+    body {
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(42, 118, 216, 0.09),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 60%,
+          rgba(23, 91, 180, 0.08),
+          transparent 30%
+        ),
+        #06152f !important;
+
+      color: var(--astronis-white);
+    }
+
+
+    /* =====================================================
+       DISCLAIMER
+    ====================================================== */
+
+    .disclaimer {
+      background: rgba(1, 7, 18, 0.82) !important;
+    }
+
+    .disclaimer-backdrop {
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(42, 120, 230, 0.12),
+          transparent 55%
+        ) !important;
+    }
+
+    .disclaimer-card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(8, 30, 62, 0.98),
+          rgba(3, 14, 31, 0.98)
+        ) !important;
+
+      border-color: rgba(103, 180, 255, 0.22) !important;
+
+      box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.55),
+        0 0 80px rgba(35, 125, 230, 0.10);
+    }
+
+    .disclaimer-symbol {
+      color: #70baff !important;
+      border-color: rgba(112, 186, 255, 0.25) !important;
+      background: rgba(61, 148, 245, 0.08) !important;
+    }
+
+    .gold-line {
+      background: linear-gradient(
+        90deg,
+        #3f9cff,
+        #9bd2ff,
+        transparent
+      ) !important;
+    }
+
+    .disclaimer .btn-primary {
+      background:
+        linear-gradient(
+          135deg,
+          #247edc,
+          #49a6ff
+        ) !important;
+
+      color: white !important;
+      box-shadow:
+        0 12px 35px rgba(41, 135, 230, 0.25);
+    }
+
+    .disagree-btn {
+      color: #9bb1ca !important;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ====================================================== */
+
+    .navbar {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(3, 13, 29, 0.88),
+          rgba(3, 13, 29, 0.38)
+        ) !important;
+
+      border-bottom-color:
+        rgba(103, 181, 255, 0.10) !important;
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .brand-mark {
+      background:
+        linear-gradient(
+          145deg,
+          #0a2852,
+          #123f75
+        ) !important;
+
+      border-color:
+        rgba(111, 190, 255, 0.35) !important;
+
+      box-shadow:
+        inset 0 0 20px rgba(74, 164, 255, 0.08),
+        0 0 25px rgba(50, 139, 240, 0.08);
+    }
+
+    .brand-mark span {
+      color: #8ac9ff !important;
+    }
+
+    .brand-text strong {
+      color: #f4f8ff !important;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-text small {
+      color: #8faacc !important;
+    }
+
+    .desktop-nav a {
+      color: #a9bfd9 !important;
+    }
+
+    .desktop-nav a:hover {
+      color: #72bdff !important;
+    }
+
+    .nav-contact {
+      color: #dcecff !important;
+      border-color:
+        rgba(105, 186, 255, 0.25) !important;
+
+      background:
+        rgba(55, 145, 240, 0.06) !important;
+    }
+
+    .nav-contact:hover {
+      background:
+        rgba(61, 156, 255, 0.15) !important;
+
+      border-color:
+        rgba(112, 193, 255, 0.45) !important;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU BUTTON
+    ====================================================== */
+
     .menu-button {
       background: transparent !important;
       border: none !important;
       outline: none !important;
+
       display: flex !important;
       flex-direction: column;
       justify-content: center;
       align-items: flex-end;
+
       gap: 7px;
+
       width: 44px;
       height: 44px;
+
       padding: 0;
       cursor: pointer;
     }
+
     .menu-button span {
       display: block;
+
       width: 28px;
       height: 2px;
-      background-color: #d4af37; /* Gold color */
+
+      background:
+        linear-gradient(
+          90deg,
+          #8ecaff,
+          #3f9cff
+        ) !important;
+
       transition: all 0.3s ease;
       border-radius: 2px;
-    }
-    .menu-button span:nth-child(2) {
-      width: 20px; /* Makes the bottom line shorter for a modern look */
+
+      box-shadow:
+        0 0 10px rgba(63, 156, 255, 0.35);
     }
 
+    .menu-button span:nth-child(2) {
+      width: 20px;
+    }
+
+
     /* =====================================================
-       NEW FOOTER STYLES
+       MOBILE MENU
     ====================================================== */
+
+    .mobile-menu {
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(48, 134, 235, 0.14),
+          transparent 30%
+        ),
+        linear-gradient(
+          145deg,
+          #031027,
+          #06152f 55%,
+          #081d3d
+        ) !important;
+    }
+
+    .mobile-menu nav a {
+      color: #dcecff !important;
+    }
+
+    .mobile-menu nav a:hover {
+      color: #69b7ff !important;
+    }
+
+    .mobile-menu nav a span {
+      color: #508fc9 !important;
+    }
+
+    .mobile-menu-footer {
+      color: #6e8dab !important;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 30%,
+          rgba(26, 102, 202, 0.18),
+          transparent 45%
+        ),
+        #06152f;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transform: scale(1.1);
+
+      filter:
+        saturate(0.75)
+        contrast(1.05)
+        brightness(0.62);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+
+      z-index: 1;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(3, 14, 32, 0.45) 0%,
+          rgba(4, 20, 44, 0.68) 48%,
+          rgba(3, 12, 28, 0.97) 100%
+        ) !important;
+    }
+
+
+    /* =====================================================
+       HERO BLUE ORBS
+    ====================================================== */
+
+    .hero-orbs {
+      position: absolute;
+      inset: 0;
+
+      z-index: 2;
+
+      overflow: hidden;
+
+      pointer-events: none;
+
+      mix-blend-mode: screen;
+    }
+
+    .orb {
+      position: absolute;
+
+      border-radius: 50%;
+
+      filter: blur(80px);
+
+      opacity: 0.52;
+
+      will-change: transform;
+    }
+
+    .orb-1 {
+      width: 420px;
+      height: 420px;
+
+      top: -120px;
+      left: -100px;
+
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          #2f91ff,
+          rgba(26, 96, 190, 0.2) 40%,
+          transparent 70%
+        );
+    }
+
+    .orb-2 {
+      width: 360px;
+      height: 360px;
+
+      bottom: -140px;
+      right: -80px;
+
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          #166ac7,
+          rgba(14, 63, 130, 0.18) 45%,
+          transparent 70%
+        );
+    }
+
+    .orb-3 {
+      width: 300px;
+      height: 300px;
+
+      top: 35%;
+      right: 8%;
+
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          rgba(119, 202, 255, 0.35),
+          transparent 70%
+        );
+    }
+
+    .orb-4 {
+      width: 260px;
+      height: 260px;
+
+      bottom: 8%;
+      left: 15%;
+
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          #2386e9,
+          transparent 70%
+        );
+    }
+
+    .hero-inner,
+    .hero-side,
+    .hero-scroll,
+    .hero-number {
+      position: relative;
+      z-index: 3;
+    }
+
+
+    /* =====================================================
+       HERO TYPOGRAPHY
+    ====================================================== */
+
+    .hero-label {
+      color: #91bde8 !important;
+    }
+
+    .label-line {
+      background:
+        linear-gradient(
+          90deg,
+          #3f9cff,
+          #86caff
+        ) !important;
+
+      box-shadow:
+        0 0 14px rgba(63, 156, 255, 0.4);
+    }
+
+    .hero-title {
+      color: #f5f9ff !important;
+    }
+
+    .hero-title em {
+      color: #76bfff !important;
+      text-shadow:
+        0 0 35px rgba(68, 161, 255, 0.18);
+    }
+
+    .accent-line {
+      color: #b9dcff !important;
+    }
+
+    .hero-description p {
+      color: #b4c9df !important;
+    }
+
+    .hero-button {
+      border-color:
+        rgba(103, 186, 255, 0.32) !important;
+
+      background:
+        rgba(53, 142, 235, 0.07) !important;
+
+      color: #e7f3ff !important;
+    }
+
+    .hero-button:hover {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(42, 132, 226, 0.20),
+          rgba(78, 171, 255, 0.13)
+        ) !important;
+
+      border-color:
+        rgba(112, 193, 255, 0.55) !important;
+    }
+
+    .button-icon {
+      color: #78c2ff !important;
+    }
+
+    .hero-side {
+      color: #82a6c9 !important;
+    }
+
+    .hero-scroll {
+      color: #7e9fbe !important;
+    }
+
+    .scroll-line {
+      background:
+        linear-gradient(
+          180deg,
+          #4da5ff,
+          transparent
+        ) !important;
+
+      box-shadow:
+        0 0 12px rgba(65, 160, 255, 0.25);
+    }
+
+    .hero-number {
+      color:
+        rgba(107, 177, 239, 0.22) !important;
+    }
+
+
+    /* =====================================================
+       HERO GRID / GLOW
+    ====================================================== */
+
+    .hero-grid {
+      opacity: 0.28 !important;
+
+      background-image:
+        linear-gradient(
+          rgba(103, 184, 255, 0.045) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(103, 184, 255, 0.045) 1px,
+          transparent 1px
+        ) !important;
+    }
+
+    .hero-glow {
+      background:
+        radial-gradient(
+          circle,
+          rgba(40, 137, 244, 0.16),
+          transparent 70%
+        ) !important;
+    }
+
+
+    /* =====================================================
+       PHILOSOPHY
+    ====================================================== */
+
+    .philosophy {
+      background:
+        radial-gradient(
+          circle at 15% 40%,
+          rgba(35, 112, 211, 0.11),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #06152f,
+          #071a37 60%,
+          #041126
+        ) !important;
+    }
+
+    .philosophy-bg {
+      background:
+        radial-gradient(
+          circle at 70% 30%,
+          rgba(48, 141, 240, 0.09),
+          transparent 38%
+        ) !important;
+    }
+
+    .eyebrow {
+      color: #76a9d5 !important;
+    }
+
+    .philosophy-index {
+      color: #6385a8 !important;
+    }
+
+    .philosophy h2 {
+      color: #f3f8ff !important;
+    }
+
+    .philosophy h2 em {
+      color: #70baff !important;
+    }
+
+    .philosophy p {
+      color: #9eb5cf !important;
+    }
+
+    .philosophy .large-text {
+      color: #d6e5f5 !important;
+    }
+
+    .text-link {
+      color: #8bc8ff !important;
+    }
+
+    .text-link:hover {
+      color: #c5e6ff !important;
+    }
+
+
+    /* =====================================================
+       MARQUEE
+    ====================================================== */
+
+    .marquee-section {
+      background:
+        linear-gradient(
+          90deg,
+          #041025,
+          #0a2144,
+          #041025
+        ) !important;
+
+      border-top:
+        1px solid rgba(93, 174, 255, 0.10);
+
+      border-bottom:
+        1px solid rgba(93, 174, 255, 0.10);
+    }
+
+    .marquee-track {
+      color: #b9dbf7 !important;
+    }
+
+    .marquee-track i {
+      color: #4da5ff !important;
+
+      text-shadow:
+        0 0 14px rgba(68, 160, 255, 0.55);
+    }
+
+
+    /* =====================================================
+       STATS
+    ====================================================== */
+
+    .stats-section {
+      background:
+        linear-gradient(
+          180deg,
+          #06152f,
+          #071a36
+        ) !important;
+
+      border-bottom:
+        1px solid rgba(97, 176, 255, 0.08);
+    }
+
+    .stat-number {
+      color: #edf7ff !important;
+    }
+
+    .stat-number sup {
+      color: #64b2ff !important;
+    }
+
+    .stat > span {
+      color: #7696b6 !important;
+    }
+
+
+    /* =====================================================
+       PRACTICE SECTION
+    ====================================================== */
+
+    .practice {
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(37, 119, 218, 0.10),
+          transparent 30%
+        ),
+        #06152f !important;
+    }
+
+    .section-title {
+      color: #f1f7ff !important;
+    }
+
+    .section-title em {
+      color: #6eb9ff !important;
+    }
+
+    .section-intro {
+      color: #91aac5 !important;
+    }
+
+
+    /* =====================================================
+       PRACTICE CARDS
+    ====================================================== */
+
+    .practice-card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(10, 35, 71, 0.82),
+          rgba(4, 19, 41, 0.90)
+        ) !important;
+
+      border:
+        1px solid rgba(100, 181, 255, 0.13) !important;
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.025);
+    }
+
+    .practice-card::before {
+      background:
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(54, 151, 250, 0.14),
+          transparent 65%
+        ) !important;
+    }
+
+    .practice-card:hover {
+      border-color:
+        rgba(102, 186, 255, 0.38) !important;
+
+      box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.30),
+        0 0 40px rgba(39, 129, 226, 0.09);
+    }
+
+    .practice-card-top {
+      color: #6388ad !important;
+    }
+
+    .practice-card-top i {
+      color: #69b7ff !important;
+
+      filter:
+        drop-shadow(
+          0 0 10px rgba(73, 165, 255, 0.25)
+        );
+    }
+
+    .practice-card-content h3 {
+      color: #edf6ff !important;
+    }
+
+    .practice-card-content p {
+      color: #8fa9c4 !important;
+    }
+
+    .card-link {
+      color: #75bdff !important;
+    }
+
+    .card-link:hover {
+      color: #c3e5ff !important;
+    }
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .cta-section {
+      background:
+        linear-gradient(
+          135deg,
+          #06152f,
+          #0a2349,
+          #06152f
+        ) !important;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-bg {
+      background:
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(52, 150, 255, 0.18),
+          transparent 55%
+        ) !important;
+    }
+
+    .cta-section h2 {
+      color: #f3f8ff !important;
+    }
+
+    .cta-section h2 em {
+      color: #70bbff !important;
+    }
+
+    .cta-description {
+      color: #9ab3cd !important;
+    }
+
+    .cta-button {
+      color: #f2f8ff !important;
+
+      background:
+        linear-gradient(
+          135deg,
+          #247edb,
+          #4aa8ff
+        ) !important;
+
+      border-color:
+        rgba(137, 207, 255, 0.35) !important;
+
+      box-shadow:
+        0 15px 45px rgba(31, 119, 218, 0.25);
+    }
+
+    .cta-button:hover {
+      box-shadow:
+        0 20px 60px rgba(42, 145, 242, 0.34);
+    }
+
+
+    /* =====================================================
+       CONTACT PREVIEW
+    ====================================================== */
+
+    .contact-preview {
+      background:
+        linear-gradient(
+          180deg,
+          #06152f,
+          #041025
+        ) !important;
+    }
+
+    .contact-title {
+      color: #f2f7ff !important;
+    }
+
+    .contact-title em {
+      color: #6dbaff !important;
+    }
+
+    .contact-item span {
+      color: #7194b8 !important;
+    }
+
+    .contact-item p,
+    .contact-item a {
+      color: #a9c0d9 !important;
+    }
+
+    .contact-item a:hover {
+      color: #74bdff !important;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    .site-footer {
+      background:
+        linear-gradient(
+          145deg,
+          #020b1b,
+          #06152f 55%,
+          #031027
+        ) !important;
+
+      border-top:
+        1px solid rgba(101, 181, 255, 0.12);
+    }
+
     .footer-top-expanded {
       display: flex;
       flex-direction: column;
       gap: 40px;
+
       padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      border-bottom:
+        1px solid rgba(113, 180, 240, 0.12);
     }
+
     @media (min-width: 992px) {
       .footer-top-expanded {
         flex-direction: row;
         justify-content: space-between;
       }
     }
+
     .footer-brand-section {
       max-width: 400px;
     }
+
+
+    /* =====================================================
+       SOCIAL LINKS
+    ====================================================== */
+
     .social-links {
       display: flex;
+
       gap: 15px;
+
       margin: 25px 0;
     }
+
     .social-links a {
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       width: 45px;
       height: 45px;
-      border: 1px solid #d4af37; 
+
+      border:
+        1px solid rgba(86, 171, 255, 0.28);
+
       border-radius: 50%;
-      color: #d4af37;
-      transition: all 0.3s ease;
+
+      color: #71bcff;
+
+      background:
+        rgba(56, 143, 234, 0.05);
+
+      transition:
+        all 0.3s ease;
+
+      text-decoration: none;
     }
+
     .social-links a:hover {
-      background-color: #d4af37;
-      color: #11110f; 
-      transform: translateY(-3px);
+      background:
+        linear-gradient(
+          135deg,
+          #247edb,
+          #4aa7ff
+        );
+
+      color: #ffffff;
+
+      border-color:
+        rgba(129, 206, 255, 0.65);
+
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 10px 30px rgba(33, 128, 225, 0.25);
     }
-    
-    /* Updated for FontAwesome */
+
     .social-links i {
       font-size: 20px;
     }
 
+
+    /* =====================================================
+       FOOTER CONTACT
+    ====================================================== */
+
     .contact-info-footer h3 {
       font-size: 1.25rem;
+
       margin-bottom: 15px;
-      color: #ffffff;
+
+      color: #edf6ff !important;
     }
-    .contact-info-footer p, 
+
+    .contact-info-footer p,
     .contact-info-footer a {
-      color: #a0a0a0;
+      color: #8fa8c2 !important;
+
       line-height: 1.6;
+
       margin-bottom: 10px;
+
       font-size: 0.95rem;
+
       text-decoration: none;
     }
+
+    .contact-info-footer a:hover {
+      color: #73bdff !important;
+    }
+
+
+    /* =====================================================
+       USEFUL LINKS
+    ====================================================== */
+
     .footer-useful-links {
       flex-grow: 1;
     }
+
     .footer-useful-links h3 {
       font-size: 1.25rem;
+
       margin-bottom: 25px;
-      color: #ffffff;
+
+      color: #edf6ff !important;
     }
+
     .links-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); 
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 20px 10px;
     }
+
     @media (min-width: 768px) {
       .links-grid {
-        grid-template-columns: repeat(4, 1fr); 
+        grid-template-columns:
+          repeat(4, 1fr);
       }
     }
+
     .links-grid ul {
       list-style: none;
+
       padding: 0;
       margin: 0;
     }
+
     .links-grid li {
       margin-bottom: 0;
     }
+
     .links-grid a {
       text-decoration: none;
-      color: #a0a0a0;
+
+      color: #7895b3 !important;
+
       font-size: 0.8rem;
+
       text-transform: uppercase;
+
       display: block;
+
       padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: color 0.3s ease, border-color 0.3s ease;
+
+      border-bottom:
+        1px solid rgba(111, 177, 231, 0.10);
+
+      transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
     }
+
     .links-grid a:hover {
-      color: #d4af37;
-      border-bottom-color: #d4af37;
+      color: #74bdff !important;
+
+      border-bottom-color:
+        rgba(90, 174, 255, 0.55);
     }
+
+
+    /* =====================================================
+       FOOTER BOTTOM
+    ====================================================== */
+
+    .footer-bottom {
+      color: #627f9f !important;
+    }
+
 
     /* =====================================================
        FLOATING CONTACT BUTTONS
     ====================================================== */
+
     .float-btn {
       position: fixed;
+
       bottom: 25px;
+
       width: 55px;
       height: 55px;
+
       border-radius: 50%;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       font-size: 26px;
+
       color: #ffffff;
+
       z-index: 99;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
       text-decoration: none;
     }
+
     .float-btn:hover {
       transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+
+      box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.5);
+
       color: #ffffff;
     }
+
     .phone-btn {
       left: 25px;
-      background-color: #0c1844;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      background:
+        linear-gradient(
+          135deg,
+          #0c4e96,
+          #167bd8
+        );
+
+      border:
+        1px solid rgba(117, 193, 255, 0.30);
     }
+
     .whatsapp-btn {
       right: 25px;
-      background-color: #128C7E;
+
+      background:
+        linear-gradient(
+          135deg,
+          #087e71,
+          #13a895
+        );
     }
+
+
+    /* =====================================================
+       SCROLL PROGRESS
+    ====================================================== */
+
+    .scroll-progress {
+      background:
+        linear-gradient(
+          90deg,
+          #2d8fff,
+          #79c5ff
+        ) !important;
+
+      box-shadow:
+        0 0 12px rgba(61, 157, 255, 0.45);
+    }
+
+
+    /* =====================================================
+       SELECTION
+    ====================================================== */
+
+    ::selection {
+      background: rgba(60, 151, 244, 0.35);
+      color: #ffffff;
+    }
+
+    ::-moz-selection {
+      background: rgba(60, 151, 244, 0.35);
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       LINKS / FOCUS
+    ====================================================== */
+
+    a:focus-visible,
+    button:focus-visible {
+      outline:
+        2px solid #65b7ff !important;
+
+      outline-offset: 4px;
+    }
+
+
+    /* =====================================================
+       MOBILE FLOATING BUTTONS
+    ====================================================== */
+
+    @media (max-width: 600px) {
+
+      .float-btn {
+        width: 48px;
+        height: 48px;
+
+        bottom: 18px;
+
+        font-size: 21px;
+      }
+
+      .phone-btn {
+        left: 16px;
+      }
+
+      .whatsapp-btn {
+        right: 16px;
+      }
+
+      .orb-1 {
+        width: 260px;
+        height: 260px;
+      }
+
+      .orb-2 {
+        width: 240px;
+        height: 240px;
+      }
+
+      .orb-3 {
+        width: 180px;
+        height: 180px;
+      }
+
+      .orb-4 {
+        width: 170px;
+        height: 170px;
+      }
+    }
+
   </style>
+
+
+  <!-- =====================================================
+       LOADER SCRIPT
+  ====================================================== -->
 
   <script>
     window.addEventListener("load", function () {
-      var loader = document.getElementById("pageLoader");
+
+      var loader =
+        document.getElementById("pageLoader");
+
       if (!loader) return;
+
       loader.classList.add("is-hidden");
-      setTimeout(function () { loader.style.display = "none"; }, 700);
+
+      setTimeout(function () {
+        loader.style.display = "none";
+      }, 700);
+
     });
   </script>
+
 </head>
+
+
 <body>
 
-  <div class="page-loader" id="pageLoader" aria-hidden="true">
+  <!-- =====================================================
+       PAGE LOADER
+  ====================================================== -->
+
+  <div
+    class="page-loader"
+    id="pageLoader"
+    aria-hidden="true"
+  >
+
     <div class="loader-inner">
-      <div class="loader-monogram"><span>P</span></div>
-      <div class="loader-rule"><span></span></div>
-      <p>PREACH LAW &amp; CO.</p>
-    </div>
-  </div>
 
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <div class="disclaimer" id="disclaimer" role="dialog" aria-modal="true" aria-labelledby="disclaimerTitle">
-    <div class="disclaimer-backdrop"></div>
-    <div class="disclaimer-card">
-      <div class="disclaimer-symbol"><i data-lucide="scale"></i></div>
-      <div class="disclaimer-content">
-        <span class="eyebrow">LEGAL DISCLAIMER</span>
-        <h2 id="disclaimerTitle">Disclaimer &amp; Confirmation</h2>
-        <div class="gold-line"></div>
-        <p>As per the rules of the Bar Council of India, we are not permitted to solicit work or advertise.</p>
-        <p>There has been no advertisement, personal communication, solicitation, invitation or inducement of any sort whatsoever from us or any of our members to solicit any work through this website.</p>
-        <p>The user wishes to gain information about us for their own information and use. Information provided through this website does not create a lawyer-client relationship.</p>
-        <p>The information available on this website is for informational purposes only and should not be interpreted as legal advice. Users with legal issues should seek independent legal advice.</p>
-        <div class="disclaimer-actions">
-          <button type="button" class="btn btn-primary" id="agreeBtn">
-            <span>Agree &amp; Continue</span>
-            <i data-lucide="arrow-right"></i>
-          </button>
-          <button type="button" class="disagree-btn" id="disagreeBtn">Disagree</button>
-        </div>
+      <div class="loader-monogram">
+        <span>A</span>
       </div>
+
+      <div class="loader-rule">
+        <span></span>
+      </div>
+
+      <p>ASTRONIS</p>
+
     </div>
+
   </div>
 
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="./index.html" class="brand" aria-label="Preach Law & Co. Home">
-        <div class="brand-mark"><span>P</span></div>
-        <div class="brand-text">
-          <strong>Preach Law &amp; Co.</strong>
-          <small>Advocates &amp; Legal Advisory</small>
+
+  <!-- =====================================================
+       SCROLL PROGRESS
+  ====================================================== -->
+
+  <div
+    class="scroll-progress"
+    id="scrollProgress"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =====================================================
+       LEGAL DISCLAIMER
+  ====================================================== -->
+
+  <div
+    class="disclaimer"
+    id="disclaimer"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="disclaimerTitle"
+  >
+
+    <div class="disclaimer-backdrop"></div>
+
+    <div class="disclaimer-card">
+
+      <div class="disclaimer-symbol">
+        <i data-lucide="scale"></i>
+      </div>
+
+      <div class="disclaimer-content">
+
+        <span class="eyebrow">
+          LEGAL DISCLAIMER
+        </span>
+
+        <h2 id="disclaimerTitle">
+          Disclaimer &amp; Confirmation
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <p>
+          As per the rules of the Bar Council of India,
+          we are not permitted to solicit work or advertise.
+        </p>
+
+        <p>
+          There has been no advertisement, personal
+          communication, solicitation, invitation or
+          inducement of any sort whatsoever from us or
+          any of our members to solicit any work through
+          this website.
+        </p>
+
+        <p>
+          The user wishes to gain information about us
+          for their own information and use. Information
+          provided through this website does not create
+          a lawyer-client relationship.
+        </p>
+
+        <p>
+          The information available on this website is
+          for informational purposes only and should not
+          be interpreted as legal advice. Users with
+          legal issues should seek independent legal advice.
+        </p>
+
+        <div class="disclaimer-actions">
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="agreeBtn"
+          >
+
+            <span>
+              Agree &amp; Continue
+            </span>
+
+            <i data-lucide="arrow-right"></i>
+
+          </button>
+
+          <button
+            type="button"
+            class="disagree-btn"
+            id="disagreeBtn"
+          >
+            Disagree
+          </button>
+
         </div>
-      </a>
-      <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="./about.html">About</a>
-        <a href="./services.html">Services</a>
-        <a href="./team.html">Team</a>
-        <a href="./articles.html">Insights</a>
-        <a href="./offices.html">Offices</a>
-      </nav>
-      <a href="./contact.html" class="nav-contact">
-        <span>Contact Us</span>
-        <i data-lucide="arrow-up-right"></i>
-      </a>
-      <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span>
-      </button>
+
+      </div>
+
     </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="nav-container">
+
+      <a
+        href="./index.html"
+        class="brand"
+        aria-label="ASTRONIS Home"
+      >
+
+        <div class="brand-mark">
+          <span>A</span>
+        </div>
+
+        <div class="brand-text">
+
+          <strong>
+            ASTRONIS
+          </strong>
+
+          <small>
+            Strategic Legal Counsel
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <nav
+        class="desktop-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a href="./services.html">
+          Services
+        </a>
+
+        <a href="./team.html">
+          Team
+        </a>
+
+        <a href="./articles.html">
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          Offices
+        </a>
+
+      </nav>
+
+
+      <a
+        href="./contact.html"
+        class="nav-contact"
+      >
+
+        <span>
+          Contact Us
+        </span>
+
+        <i data-lucide="arrow-up-right"></i>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
   </header>
 
-  <div class="mobile-menu" id="mobileMenu">
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
     <div class="mobile-menu-inner">
+
       <nav aria-label="Mobile navigation">
-        <a href="./index.html"><span>01</span>Home</a>
-        <a href="./about.html"><span>02</span>About</a>
-        <a href="./services.html"><span>03</span>Services</a>
-        <a href="./team.html"><span>04</span>Our Team</a>
-        <a href="./articles.html"><span>05</span>Insights</a>
-        <a href="./offices.html"><span>06</span>Offices</a>
-        <a href="./contact.html"><span>07</span>Contact</a>
+
+        <a href="./index.html">
+          <span>01</span>
+          Home
+        </a>
+
+        <a href="./about.html">
+          <span>02</span>
+          About
+        </a>
+
+        <a href="./services.html">
+          <span>03</span>
+          Services
+        </a>
+
+        <a href="./team.html">
+          <span>04</span>
+          Our Team
+        </a>
+
+        <a href="./articles.html">
+          <span>05</span>
+          Insights
+        </a>
+
+        <a href="./offices.html">
+          <span>06</span>
+          Offices
+        </a>
+
+        <a href="./contact.html">
+          <span>07</span>
+          Contact
+        </a>
+
       </nav>
+
+
       <div class="mobile-menu-footer">
-        <span>PREACH LAW &amp; CO.</span>
-        <span>ADVOCATES · ADVISORS · CONSULTANTS</span>
+
+        <span>
+          ASTRONIS
+        </span>
+
+        <span>
+          ADVOCATES · ADVISORS · CONSULTANTS
+        </span>
+
       </div>
+
     </div>
+
   </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
 
   <main>
 
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
     <section class="hero">
+
       <div class="hero-image">
-        <img src="./1787380943943.png" alt="Preach Law & Co. office">
+
+        <img
+          src="./1787380943943.png"
+          alt="ASTRONIS legal office"
+        >
+
       </div>
+
+
       <div class="hero-overlay"></div>
 
-      <div class="hero-orbs" aria-hidden="true">
+
+      <!-- BLUE AMBIENT ORBS -->
+
+      <div
+        class="hero-orbs"
+        aria-hidden="true"
+      >
+
         <span class="orb orb-1"></span>
         <span class="orb orb-2"></span>
         <span class="orb orb-3"></span>
         <span class="orb orb-4"></span>
+
       </div>
+
 
       <div class="hero-grid"></div>
+
       <div class="hero-noise"></div>
+
       <div class="hero-glow glow-one"></div>
+
       <div class="hero-glow glow-two"></div>
 
+
+      <!-- HERO CONTENT -->
+
       <div class="hero-inner">
+
         <div class="hero-label reveal">
+
           <span class="label-line"></span>
-          <span>LAW · ADVISORY · STRATEGY</span>
+
+          <span>
+            LAW · ADVISORY · STRATEGY
+          </span>
+
         </div>
+
 
         <h1 class="hero-title">
-          <span class="line"><span>Law with</span></span>
-          <span class="line"><span><em>clarity.</em></span></span>
-          <span class="line"><span>Strategy with</span></span>
-          <span class="line accent-line"><span>purpose.</span></span>
+
+          <span class="line">
+            <span>
+              Law with
+            </span>
+          </span>
+
+          <span class="line">
+            <span>
+              <em>clarity.</em>
+            </span>
+          </span>
+
+          <span class="line">
+            <span>
+              Strategy with
+            </span>
+          </span>
+
+          <span class="line accent-line">
+            <span>
+              purpose.
+            </span>
+          </span>
+
         </h1>
 
+
         <div class="hero-bottom">
+
           <div class="hero-description">
-            <p>Preach Law &amp; Co. brings together legal representation, regulatory insight and professional advisory services for individuals, businesses and institutions.</p>
+
+            <p>
+              ASTRONIS brings together legal
+              representation, regulatory insight and
+              professional advisory services for
+              individuals, businesses and institutions.
+            </p>
+
           </div>
-          <a href="./services.html" class="hero-button magnetic">
-            <span>Explore Our Practice</span>
-            <span class="button-icon"><i data-lucide="arrow-down-right"></i></span>
+
+
+          <a
+            href="./services.html"
+            class="hero-button magnetic"
+          >
+
+            <span>
+              Explore Our Practice
+            </span>
+
+            <span class="button-icon">
+
+              <i data-lucide="arrow-down-right"></i>
+
+            </span>
+
           </a>
+
         </div>
+
       </div>
+
 
       <div class="hero-side">
-        <span>DELHI · INDIA</span>
-        <span>EST. 2015</span>
+
+        <span>
+          DELHI · INDIA
+        </span>
+
+        <span>
+          EST. 2015
+        </span>
+
       </div>
+
 
       <div class="hero-scroll">
-        <span>SCROLL TO EXPLORE</span>
+
+        <span>
+          SCROLL TO EXPLORE
+        </span>
+
         <div class="scroll-line"></div>
+
       </div>
 
-      <div class="hero-number">01</div>
+
+      <div class="hero-number">
+        01
+      </div>
+
     </section>
+
+
+    <!-- ===================================================
+         PHILOSOPHY
+    ==================================================== -->
 
     <section class="philosophy section">
+
       <div class="philosophy-bg"></div>
+
       <div class="container">
+
         <div class="philosophy-layout">
+
           <div class="philosophy-label reveal">
-            <span class="eyebrow">OUR PHILOSOPHY</span>
-            <span class="philosophy-index">01 / 06</span>
+
+            <span class="eyebrow">
+              OUR PHILOSOPHY
+            </span>
+
+            <span class="philosophy-index">
+              01 / 06
+            </span>
+
           </div>
+
+
           <div class="philosophy-main">
-            <h2 class="reveal">Strategy before action.<br><em>Precision before everything.</em></h2>
-            <p class="large-text reveal">Effective dispute resolution demands a tailored strategy aligned with our client's objectives.</p>
-            <p class="reveal">Our dedicated legal team places paramount importance on comprehending our clients and their unique circumstances.</p>
-            <p class="reveal">This deep understanding enables us to precisely identify our clients' aims and collaborate with them to chart the optimal path forward.</p>
-            <a href="./about.html" class="text-link light reveal">
-              <span>More About The Firm</span>
+
+            <h2 class="reveal">
+
+              Strategy before action.
+              <br>
+
+              <em>
+                Precision before everything.
+              </em>
+
+            </h2>
+
+
+            <p class="large-text reveal">
+
+              Effective dispute resolution demands
+              a tailored strategy aligned with our
+              client's objectives.
+
+            </p>
+
+
+            <p class="reveal">
+
+              Our dedicated legal team places
+              paramount importance on comprehending
+              our clients and their unique circumstances.
+
+            </p>
+
+
+            <p class="reveal">
+
+              This deep understanding enables us to
+              precisely identify our clients' aims and
+              collaborate with them to chart the optimal
+              path forward.
+
+            </p>
+
+
+            <a
+              href="./about.html"
+              class="text-link light reveal"
+            >
+
+              <span>
+                More About The Firm
+              </span>
+
               <i data-lucide="arrow-up-right"></i>
+
             </a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <section class="marquee-section" aria-label="Firm principles">
-      <div class="marquee" id="marquee">
+
+    <!-- ===================================================
+         MARQUEE
+    ==================================================== -->
+
+    <section
+      class="marquee-section"
+      aria-label="Firm principles"
+    >
+
+      <div
+        class="marquee"
+        id="marquee"
+      >
+
         <div class="marquee-track">
-          <span>LAW</span><i aria-hidden="true">✦</i>
-          <span>STRATEGY</span><i aria-hidden="true">✦</i>
-          <span>JUSTICE</span><i aria-hidden="true">✦</i>
-          <span>PRECISION</span><i aria-hidden="true">✦</i>
+
+          <span>LAW</span>
+          <i aria-hidden="true">✦</i>
+
+          <span>STRATEGY</span>
+          <i aria-hidden="true">✦</i>
+
+          <span>JUSTICE</span>
+          <i aria-hidden="true">✦</i>
+
+          <span>PRECISION</span>
+          <i aria-hidden="true">✦</i>
+
         </div>
-        <div class="marquee-track" aria-hidden="true">
-          <span>LAW</span><i aria-hidden="true">✦</i>
-          <span>STRATEGY</span><i aria-hidden="true">✦</i>
-          <span>JUSTICE</span><i aria-hidden="true">✦</i>
-          <span>PRECISION</span><i aria-hidden="true">✦</i>
+
+
+        <div
+          class="marquee-track"
+          aria-hidden="true"
+        >
+
+          <span>LAW</span>
+          <i aria-hidden="true">✦</i>
+
+          <span>STRATEGY</span>
+          <i aria-hidden="true">✦</i>
+
+          <span>JUSTICE</span>
+          <i aria-hidden="true">✦</i>
+
+          <span>PRECISION</span>
+          <i aria-hidden="true">✦</i>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- ===================================================
+         STATS
+    ==================================================== -->
 
     <section class="stats-section">
+
       <div class="container stats-grid">
+
         <div class="stat reveal">
-          <div class="stat-number"><span class="counter" data-target="3000">0</span><sup>+</sup></div>
-          <span>Cases Solved</span>
+
+          <div class="stat-number">
+
+            <span
+              class="counter"
+              data-target="3000"
+            >
+              0
+            </span>
+
+            <sup>+</sup>
+
+          </div>
+
+          <span>
+            Cases Solved
+          </span>
+
         </div>
+
+
         <div class="stat reveal">
-          <div class="stat-number"><span class="counter" data-target="3000">0</span><sup>+</sup></div>
-          <span>Clients Served</span>
+
+          <div class="stat-number">
+
+            <span
+              class="counter"
+              data-target="3000"
+            >
+              0
+            </span>
+
+            <sup>+</sup>
+
+          </div>
+
+          <span>
+            Clients Served
+          </span>
+
         </div>
+
+
         <div class="stat reveal">
-          <div class="stat-number"><span class="counter" data-target="20">0</span><sup>+</sup></div>
-          <span>Practice Areas</span>
+
+          <div class="stat-number">
+
+            <span
+              class="counter"
+              data-target="20"
+            >
+              0
+            </span>
+
+            <sup>+</sup>
+
+          </div>
+
+          <span>
+            Practice Areas
+          </span>
+
         </div>
+
+
         <div class="stat reveal">
-          <div class="stat-number"><span class="counter" data-target="10">0</span><sup>+</sup></div>
-          <span>Years of Experience</span>
+
+          <div class="stat-number">
+
+            <span
+              class="counter"
+              data-target="10"
+            >
+              0
+            </span>
+
+            <sup>+</sup>
+
+          </div>
+
+          <span>
+            Years of Experience
+          </span>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- ===================================================
+         PRACTICE
+    ==================================================== -->
 
     <section class="practice section">
+
       <div class="container">
+
         <div class="section-top">
+
           <div>
-            <span class="eyebrow reveal">FEATURED EXPERTISE</span>
-            <h2 class="section-title reveal">Knowledge that<br><em>protects.</em></h2>
+
+            <span class="eyebrow reveal">
+              FEATURED EXPERTISE
+            </span>
+
+            <h2 class="section-title reveal">
+
+              Knowledge that
+              <br>
+
+              <em>
+                protects.
+              </em>
+
+            </h2>
+
           </div>
-          <p class="section-intro reveal">Comprehensive legal services designed around complex business and individual requirements.</p>
+
+
+          <p class="section-intro reveal">
+
+            Comprehensive legal services designed
+            around complex business and individual
+            requirements.
+
+          </p>
+
         </div>
+
 
         <div class="practice-grid">
-          <a href="./litigation.html" class="practice-card practice-card-large reveal">
-            <div class="practice-card-top"><span>01</span><i data-lucide="gavel"></i></div>
-            <div class="practice-card-content">
-              <h3>Litigation &amp;<br>Dispute Resolution</h3>
-              <p>Strategic representation across civil, criminal, commercial and specialist disputes.</p>
-              <span class="card-link">Explore Litigation<i data-lucide="arrow-up-right"></i></span>
+
+
+          <!-- CARD 01 -->
+
+          <a
+            href="./litigation.html"
+            class="practice-card practice-card-large reveal"
+          >
+
+            <div class="practice-card-top">
+
+              <span>
+                01
+              </span>
+
+              <i data-lucide="gavel"></i>
+
             </div>
+
+
+            <div class="practice-card-content">
+
+              <h3>
+
+                Litigation &amp;
+                <br>
+                Dispute Resolution
+
+              </h3>
+
+
+              <p>
+
+                Strategic representation across
+                civil, criminal, commercial and
+                specialist disputes.
+
+              </p>
+
+
+              <span class="card-link">
+
+                Explore Litigation
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
           </a>
 
-          <a href="./ipr.html" class="practice-card reveal">
-            <div class="practice-card-top"><span>02</span><i data-lucide="copyright"></i></div>
-            <div class="practice-card-content">
-              <h3>Intellectual<br>Property</h3>
-              <p>Trademark, patent, copyright, design and IPR advisory.</p>
-              <span class="card-link">Explore IPR<i data-lucide="arrow-up-right"></i></span>
+
+          <!-- CARD 02 -->
+
+          <a
+            href="./ipr.html"
+            class="practice-card reveal"
+          >
+
+            <div class="practice-card-top">
+
+              <span>
+                02
+              </span>
+
+              <i data-lucide="copyright"></i>
+
             </div>
+
+
+            <div class="practice-card-content">
+
+              <h3>
+
+                Intellectual
+                <br>
+                Property
+
+              </h3>
+
+
+              <p>
+
+                Trademark, patent, copyright,
+                design and IPR advisory.
+
+              </p>
+
+
+              <span class="card-link">
+
+                Explore IPR
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
           </a>
 
-          <a href="./startup.html" class="practice-card reveal">
-            <div class="practice-card-top"><span>03</span><i data-lucide="rocket"></i></div>
-            <div class="practice-card-content">
-              <h3>Startups &amp;<br>Corporate</h3>
-              <p>Incorporation, governance, compliance and contracts.</p>
-              <span class="card-link">Explore Startup Services<i data-lucide="arrow-up-right"></i></span>
+
+          <!-- CARD 03 -->
+
+          <a
+            href="./startup.html"
+            class="practice-card reveal"
+          >
+
+            <div class="practice-card-top">
+
+              <span>
+                03
+              </span>
+
+              <i data-lucide="rocket"></i>
+
             </div>
+
+
+            <div class="practice-card-content">
+
+              <h3>
+
+                Startups &amp;
+                <br>
+                Corporate
+
+              </h3>
+
+
+              <p>
+
+                Incorporation, governance,
+                compliance and contracts.
+
+              </p>
+
+
+              <span class="card-link">
+
+                Explore Startup Services
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
           </a>
 
-          <a href="./consulting.html" class="practice-card reveal">
-            <div class="practice-card-top"><span>04</span><i data-lucide="briefcase-business"></i></div>
-            <div class="practice-card-content">
-              <h3>Consulting &amp;<br>Advisory</h3>
-              <p>Commercial, taxation, accounting, secretarial and regulatory advisory.</p>
-              <span class="card-link">Explore Consulting<i data-lucide="arrow-up-right"></i></span>
+
+          <!-- CARD 04 -->
+
+          <a
+            href="./consulting.html"
+            class="practice-card reveal"
+          >
+
+            <div class="practice-card-top">
+
+              <span>
+                04
+              </span>
+
+              <i data-lucide="briefcase-business"></i>
+
             </div>
+
+
+            <div class="practice-card-content">
+
+              <h3>
+
+                Consulting &amp;
+                <br>
+                Advisory
+
+              </h3>
+
+
+              <p>
+
+                Commercial, taxation, accounting,
+                secretarial and regulatory advisory.
+
+              </p>
+
+
+              <span class="card-link">
+
+                Explore Consulting
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
           </a>
 
-          <a href="./fintech.html" class="practice-card practice-card-wide reveal">
-            <div class="practice-card-top"><span>05</span><i data-lucide="landmark"></i></div>
-            <div class="practice-card-content">
-              <h3>Fintech &amp;<br>Financial Regulation</h3>
-              <p>Regulatory and advisory support for financial businesses, NBFCs, payments, FEMA and related compliance.</p>
-              <span class="card-link">Explore Fintech<i data-lucide="arrow-up-right"></i></span>
+
+          <!-- CARD 05 -->
+
+          <a
+            href="./fintech.html"
+            class="practice-card practice-card-wide reveal"
+          >
+
+            <div class="practice-card-top">
+
+              <span>
+                05
+              </span>
+
+              <i data-lucide="landmark"></i>
+
             </div>
+
+
+            <div class="practice-card-content">
+
+              <h3>
+
+                Fintech &amp;
+                <br>
+                Financial Regulation
+
+              </h3>
+
+
+              <p>
+
+                Regulatory and advisory support
+                for financial businesses, NBFCs,
+                payments, FEMA and related compliance.
+
+              </p>
+
+
+              <span class="card-link">
+
+                Explore Fintech
+
+                <i data-lucide="arrow-up-right"></i>
+
+              </span>
+
+            </div>
+
           </a>
+
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- ===================================================
+         CTA
+    ==================================================== -->
 
     <section class="cta-section">
+
       <div class="cta-bg"></div>
+
       <div class="container cta-content">
-        <span class="eyebrow reveal">START A CONVERSATION</span>
-        <h2 class="reveal">The right legal<br><em>strategy starts here.</em></h2>
-        <p class="cta-description reveal">Tell us about your legal, regulatory or business requirement.</p>
-        <a href="./contact.html" class="cta-button magnetic reveal">
-          <span>Contact The Firm</span>
+
+        <span class="eyebrow reveal">
+          START A CONVERSATION
+        </span>
+
+
+        <h2 class="reveal">
+
+          The right legal
+          <br>
+
+          <em>
+            strategy starts here.
+          </em>
+
+        </h2>
+
+
+        <p class="cta-description reveal">
+
+          Tell us about your legal, regulatory
+          or business requirement.
+
+        </p>
+
+
+        <a
+          href="./contact.html"
+          class="cta-button magnetic reveal"
+        >
+
+          <span>
+            Contact The Firm
+          </span>
+
           <i data-lucide="arrow-up-right"></i>
+
         </a>
+
       </div>
+
     </section>
 
+
+    <!-- ===================================================
+         CONTACT PREVIEW
+    ==================================================== -->
+
     <section class="contact-preview section">
+
       <div class="container">
+
         <div class="contact-preview-grid">
+
+
           <div>
-            <span class="eyebrow reveal">VISIT THE FIRM</span>
-            <h2 class="contact-title reveal">Let's discuss<br><em>your matter.</em></h2>
+
+            <span class="eyebrow reveal">
+              VISIT THE FIRM
+            </span>
+
+            <h2 class="contact-title reveal">
+
+              Let's discuss
+              <br>
+
+              <em>
+                your matter.
+              </em>
+
+            </h2>
+
           </div>
+
+
           <div class="contact-details reveal">
+
+
             <div class="contact-item">
-              <span>REGISTERED OFFICE</span>
-              <p>E-111-B, Nawada Housing Complex,<br>Dwarka More,<br>New Delhi – 110059</p>
+
+              <span>
+                REGISTERED OFFICE
+              </span>
+
+              <p>
+
+                E-111-B, Nawada Housing Complex,
+                <br>
+
+                Dwarka More,
+                <br>
+
+                New Delhi – 110059
+
+              </p>
+
             </div>
+
+
             <div class="contact-item">
-              <span>PHONE</span>
-              <a href="tel:+919311664455">+91 93116 64455</a>
-              <a href="tel:01146574455">011 4657 4455</a>
+
+              <span>
+                PHONE
+              </span>
+
+              <a href="tel:+919311664455">
+                +91 93116 64455
+              </a>
+
+              <a href="tel:01146574455">
+                011 4657 4455
+              </a>
+
             </div>
+
+
             <div class="contact-item">
-              <span>EMAIL</span>
-              <a href="mailto:admin@preachlaw.com">admin@preachlaw.com</a>
+
+              <span>
+                EMAIL
+              </span>
+
+              <a href="mailto:admin@preachlaw.com">
+                admin@preachlaw.com
+              </a>
+
             </div>
+
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top-expanded">
-        
-        <div class="footer-brand-section">
-          <a href="./index.html" class="brand">
-            <div class="brand-mark"><span>P</span></div>
-            <div class="brand-text">
-              <strong>Preach Law &amp; Co.</strong>
-              <small>(Advocate &amp; Attorney)</small>
-            </div>
-          </a>
-
-          <!-- Social Media Icons using FontAwesome -->
-          <div class="social-links">
-            <a href="https://www.facebook.com/preachlawco" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://twitter.com/PreachLawLLP" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/company/preachlawco/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/preachlawllp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://wa.me/919311664455" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-
-          <!-- Contact Details -->
-          <div class="contact-info-footer">
-            <h3>Contact Us</h3>
-            <p>
-              Reg. Office: E-111-B, Nawada Housing Complex,<br>
-              Dwarka More, New Delhi-110059
-            </p>
-            <a href="tel:+919311664455">+91-9311664455</a> / 
-            <a href="tel:01146574455">01146574455</a>
-          </div>
-        </div>
-
-        <!-- Useful Links Grid WITH ACTUAL FILE PATHS -->
-        <div class="footer-useful-links">
-          <h3>Useful Links</h3>
-          <div class="links-grid">
-            
-            <ul>
-              <li><a href="./about.html">Our Company</a></li>
-              <li><a href="./litigation.html">Litigation</a></li>
-              <li><a href="./ipr.html">IPR Litigation</a></li>
-              <li><a href="./income-tax.html">Income Tax Law</a></li>
-              <li><a href="./cyber-theft.html">IPR Cyber Theft</a></li>
-            </ul>
-
-            <ul>
-              <li><a href="./team.html">Meet Our Team</a></li>
-              <li><a href="./fssai.html">FSSAI</a></li>
-              <li><a href="./articles.html">Blogs / Articles</a></li>
-              <li><a href="./services.html">Best Services</a></li>
-              <li><a href="./section-8.html">Section 8 Company</a></li>
-            </ul>
-
-            <ul>
-              <li><a href="./setup-business.html">Set-up Business</a></li>
-              <li><a href="./restructuring.html">Restructuring Services</a></li>
-              <li><a href="./correspondent-bank.html">Correspondent Bank</a></li>
-              <li><a href="./fdi.html">FDI in India</a></li>
-              <li><a href="./transfer-pricing.html">Transfer Pricing</a></li>
-            </ul>
-
-            <ul>
-              <li><a href="./trademark.html">Trademark Registration</a></li>
-              <li><a href="./patent.html">Patent Registration</a></li>
-              <li><a href="./copyright.html">Copyright Registration</a></li>
-              <li><a href="./legal-reports.html">Legal Reports</a></li>
-              <li><a href="./fema-pmla.html">FEMA &amp; PMLA</a></li>
-            </ul>
-
-          </div>
-        </div>
-        
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2015–2030 Preach Law LLP. All Rights Reserved.</span>
-        <span>DELHI · INDIA</span>
-      </div>
-    </div>
-  </footer>
 
   <!-- =====================================================
-       FLOATING CONTACT BUTTONS
+       FOOTER
   ====================================================== -->
-  <a href="tel:+919311664455" class="float-btn phone-btn" aria-label="Call Us">
+
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <div class="footer-top-expanded">
+
+
+        <!-- FOOTER BRAND -->
+
+        <div class="footer-brand-section">
+
+          <a
+            href="./index.html"
+            class="brand"
+          >
+
+            <div class="brand-mark">
+              <span>A</span>
+            </div>
+
+            <div class="brand-text">
+
+              <strong>
+                ASTRONIS
+              </strong>
+
+              <small>
+                Strategic Legal Counsel
+              </small>
+
+            </div>
+
+          </a>
+
+
+          <!-- SOCIAL MEDIA -->
+
+          <div class="social-links">
+
+            <a
+              href="https://www.facebook.com/preachlawco"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+
+            <a
+              href="https://twitter.com/PreachLawLLP"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+
+            <a
+              href="https://www.linkedin.com/company/preachlawco/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+
+            <a
+              href="https://www.instagram.com/preachlawllp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+
+            <a
+              href="https://wa.me/919311664455"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+          </div>
+
+
+          <!-- CONTACT -->
+
+          <div class="contact-info-footer">
+
+            <h3>
+              Contact Us
+            </h3>
+
+            <p>
+
+              Reg. Office:
+              E-111-B, Nawada Housing Complex,
+              <br>
+
+              Dwarka More,
+              New Delhi-110059
+
+            </p>
+
+            <a href="tel:+919311664455">
+              +91-9311664455
+            </a>
+
+            /
+
+            <a href="tel:01146574455">
+              01146574455
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- USEFUL LINKS -->
+
+        <div class="footer-useful-links">
+
+          <h3>
+            Useful Links
+          </h3>
+
+
+          <div class="links-grid">
+
+
+            <ul>
+
+              <li>
+                <a href="./about.html">
+                  Our Company
+                </a>
+              </li>
+
+              <li>
+                <a href="./litigation.html">
+                  Litigation
+                </a>
+              </li>
+
+              <li>
+                <a href="./ipr.html">
+                  IPR Litigation
+                </a>
+              </li>
+
+              <li>
+                <a href="./income-tax.html">
+                  Income Tax Law
+                </a>
+              </li>
+
+              <li>
+                <a href="./cyber-theft.html">
+                  IPR Cyber Theft
+                </a>
+              </li>
+
+            </ul>
+
+
+            <ul>
+
+              <li>
+                <a href="./team.html">
+                  Meet Our Team
+                </a>
+              </li>
+
+              <li>
+                <a href="./fssai.html">
+                  FSSAI
+                </a>
+              </li>
+
+              <li>
+                <a href="./articles.html">
+                  Blogs / Articles
+                </a>
+              </li>
+
+              <li>
+                <a href="./services.html">
+                  Best Services
+                </a>
+              </li>
+
+              <li>
+                <a href="./section-8.html">
+                  Section 8 Company
+                </a>
+              </li>
+
+            </ul>
+
+
+            <ul>
+
+              <li>
+                <a href="./setup-business.html">
+                  Set-up Business
+                </a>
+              </li>
+
+              <li>
+                <a href="./restructuring.html">
+                  Restructuring Services
+                </a>
+              </li>
+
+              <li>
+                <a href="./correspondent-bank.html">
+                  Correspondent Bank
+                </a>
+              </li>
+
+              <li>
+                <a href="./fdi.html">
+                  FDI in India
+                </a>
+              </li>
+
+              <li>
+                <a href="./transfer-pricing.html">
+                  Transfer Pricing
+                </a>
+              </li>
+
+            </ul>
+
+
+            <ul>
+
+              <li>
+                <a href="./trademark.html">
+                  Trademark Registration
+                </a>
+              </li>
+
+              <li>
+                <a href="./patent.html">
+                  Patent Registration
+                </a>
+              </li>
+
+              <li>
+                <a href="./copyright.html">
+                  Copyright Registration
+                </a>
+              </li>
+
+              <li>
+                <a href="./legal-reports.html">
+                  Legal Reports
+                </a>
+              </li>
+
+              <li>
+                <a href="./fema-pmla.html">
+                  FEMA &amp; PMLA
+                </a>
+              </li>
+
+            </ul>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FOOTER BOTTOM -->
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2015–2030 ASTRONIS. All Rights Reserved.
+        </span>
+
+        <span>
+          DELHI · INDIA
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       FLOATING PHONE
+  ====================================================== -->
+
+  <a
+    href="tel:+919311664455"
+    class="float-btn phone-btn"
+    aria-label="Call Us"
+  >
+
     <i class="fa-solid fa-phone"></i>
-  </a>
-  <a href="https://wa.me/919311664455" class="float-btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us">
-    <i class="fa-brands fa-whatsapp"></i>
+
   </a>
 
-  <script src="./js/navigation.js" defer></script>
-  <script src="./js/animations.js" defer></script>
-  <script src="./js/motion-background.js" defer></script>
-  <script src="./js/main.js" defer></script>
+
+  <!-- =====================================================
+       FLOATING WHATSAPP
+  ====================================================== -->
+
+  <a
+    href="https://wa.me/919311664455"
+    class="float-btn whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp Us"
+  >
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+  </a>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script
+    src="./js/navigation.js"
+    defer
+  ></script>
+
+  <script
+    src="./js/animations.js"
+    defer
+  ></script>
+
+  <script
+    src="./js/motion-background.js"
+    defer
+  ></script>
+
+  <script
+    src="./js/main.js"
+    defer
+  ></script>
+
+
+  <!-- =====================================================
+       LUCIDE ICON INITIALIZATION
+  ====================================================== -->
 
   <script>
-    window.addEventListener("load", function () {
-      if (window.lucide && typeof window.lucide.createIcons === "function") {
-        window.lucide.createIcons();
+
+    window.addEventListener(
+      "load",
+      function () {
+
+        if (
+          window.lucide &&
+          typeof window.lucide.createIcons === "function"
+        ) {
+
+          window.lucide.createIcons();
+
+        }
+
       }
-    });
+    );
+
   </script>
 
+
+  <!-- =====================================================
+       DISCLAIMER LOGIC
+  ====================================================== -->
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var disclaimer = document.getElementById("disclaimer");
-      var agreeBtn = document.getElementById("agreeBtn");
-      var disagreeBtn = document.getElementById("disagreeBtn");
-      if (!disclaimer) return;
 
-      function closeDisclaimer() {
-        disclaimer.classList.add("is-hidden");
-        document.body.classList.remove("disclaimer-open");
-        setTimeout(function () { disclaimer.style.display = "none"; }, 550);
-      }
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
 
-      if (agreeBtn) agreeBtn.addEventListener("click", closeDisclaimer);
-      if (disagreeBtn) disagreeBtn.addEventListener("click", function () { window.history.back(); });
+        var disclaimer =
+          document.getElementById("disclaimer");
 
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") closeDisclaimer();
-      });
+        var agreeBtn =
+          document.getElementById("agreeBtn");
 
-      setTimeout(function () {
-        if (disclaimer && !disclaimer.classList.contains("is-hidden")) {
-          if (agreeBtn) agreeBtn.onclick = closeDisclaimer;
+        var disagreeBtn =
+          document.getElementById("disagreeBtn");
+
+
+        if (!disclaimer) return;
+
+
+        function closeDisclaimer() {
+
+          disclaimer.classList.add("is-hidden");
+
+          document.body.classList.remove(
+            "disclaimer-open"
+          );
+
+          setTimeout(
+            function () {
+
+              disclaimer.style.display = "none";
+
+            },
+            550
+          );
+
         }
-      }, 1000);
-    });
+
+
+        if (agreeBtn) {
+
+          agreeBtn.addEventListener(
+            "click",
+            closeDisclaimer
+          );
+
+        }
+
+
+        if (disagreeBtn) {
+
+          disagreeBtn.addEventListener(
+            "click",
+            function () {
+
+              window.history.back();
+
+            }
+          );
+
+        }
+
+
+        document.addEventListener(
+          "keydown",
+          function (event) {
+
+            if (event.key === "Escape") {
+
+              closeDisclaimer();
+
+            }
+
+          }
+        );
+
+
+        setTimeout(
+          function () {
+
+            if (
+              disclaimer &&
+              !disclaimer.classList.contains(
+                "is-hidden"
+              )
+            ) {
+
+              if (agreeBtn) {
+
+                agreeBtn.onclick =
+                  closeDisclaimer;
+
+              }
+
+            }
+
+          },
+          1000
+        );
+
+      }
+    );
+
   </script>
 
 </body>
-</html>
+  </html>
