@@ -19,6 +19,18 @@
 
   <meta name="author" content="ASTRONIS">
 
+  <!-- FAVICON / LOGO -->
+  <link
+    rel="icon"
+    type="image/jpeg"
+    href="./IMG-20260906-WA0008.jpg"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="./IMG-20260906-WA0008.jpg"
+  >
+
   <!-- =====================================================
        FONTS
   ====================================================== -->
@@ -95,6 +107,70 @@
 
 
     /* =====================================================
+       ASTRONIS PERMANENT LOGO
+    ====================================================== */
+
+    .astronis-logo {
+      display: block;
+
+      width: 190px;
+      height: auto;
+
+      max-height: 65px;
+
+      object-fit: contain;
+
+      object-position: center;
+
+      border: none;
+
+      outline: none;
+
+      flex-shrink: 0;
+
+      transition:
+        transform 0.35s ease,
+        opacity 0.35s ease,
+        filter 0.35s ease;
+    }
+
+    .brand:hover .astronis-logo {
+      transform: translateY(-1px);
+      opacity: 0.94;
+    }
+
+
+    /* Navbar logo container */
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      min-width: 0;
+
+      text-decoration: none;
+    }
+
+
+    /* Remove old logo components */
+
+    .brand .brand-mark {
+      display: none !important;
+    }
+
+    .brand .brand-text {
+      display: none !important;
+    }
+
+
+    /* Footer logo */
+
+    .footer-brand-section .brand {
+      width: fit-content;
+    }
+
+
+    /* =====================================================
        PAGE LOADER
     ====================================================== */
 
@@ -115,18 +191,42 @@
 
     .loader-monogram {
       border-color: rgba(95, 174, 255, 0.5) !important;
+
       background:
         radial-gradient(
           circle,
           rgba(59, 153, 255, 0.18),
           transparent 70%
         ) !important;
+
       box-shadow:
         0 0 45px rgba(48, 144, 255, 0.18);
+
+      overflow: hidden;
     }
 
+    /* Loader uses the actual ASTRONIS logo */
+
     .loader-monogram span {
-      color: #72bdff !important;
+      display: none !important;
+    }
+
+    .loader-monogram::before {
+      content: "";
+
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      background-image:
+        url("./IMG-20260906-WA0008.jpg");
+
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      border-radius: inherit;
     }
 
     .loader-rule {
@@ -226,6 +326,7 @@
         ) !important;
 
       color: white !important;
+
       box-shadow:
         0 12px 35px rgba(41, 135, 230, 0.25);
     }
@@ -254,35 +355,6 @@
       -webkit-backdrop-filter: blur(14px);
     }
 
-    .brand-mark {
-      background:
-        linear-gradient(
-          145deg,
-          #0a2852,
-          #123f75
-        ) !important;
-
-      border-color:
-        rgba(111, 190, 255, 0.35) !important;
-
-      box-shadow:
-        inset 0 0 20px rgba(74, 164, 255, 0.08),
-        0 0 25px rgba(50, 139, 240, 0.08);
-    }
-
-    .brand-mark span {
-      color: #8ac9ff !important;
-    }
-
-    .brand-text strong {
-      color: #f4f8ff !important;
-      letter-spacing: 0.04em;
-    }
-
-    .brand-text small {
-      color: #8faacc !important;
-    }
-
     .desktop-nav a {
       color: #a9bfd9 !important;
     }
@@ -293,6 +365,7 @@
 
     .nav-contact {
       color: #dcecff !important;
+
       border-color:
         rgba(105, 186, 255, 0.25) !important;
 
@@ -315,20 +388,27 @@
 
     .menu-button {
       background: transparent !important;
+
       border: none !important;
+
       outline: none !important;
 
       display: flex !important;
+
       flex-direction: column;
+
       justify-content: center;
+
       align-items: flex-end;
 
       gap: 7px;
 
       width: 44px;
+
       height: 44px;
 
       padding: 0;
+
       cursor: pointer;
     }
 
@@ -336,6 +416,7 @@
       display: block;
 
       width: 28px;
+
       height: 2px;
 
       background:
@@ -346,6 +427,7 @@
         ) !important;
 
       transition: all 0.3s ease;
+
       border-radius: 2px;
 
       box-shadow:
@@ -399,6 +481,7 @@
 
     .hero {
       position: relative;
+
       overflow: hidden;
 
       background:
@@ -412,14 +495,17 @@
 
     .hero-image {
       position: absolute;
+
       inset: 0;
 
       z-index: 0;
+
       overflow: hidden;
     }
 
     .hero-image img {
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
@@ -434,6 +520,7 @@
 
     .hero-overlay {
       position: absolute;
+
       inset: 0;
 
       z-index: 1;
@@ -454,6 +541,7 @@
 
     .hero-orbs {
       position: absolute;
+
       inset: 0;
 
       z-index: 2;
@@ -479,9 +567,11 @@
 
     .orb-1 {
       width: 420px;
+
       height: 420px;
 
       top: -120px;
+
       left: -100px;
 
       background:
@@ -495,9 +585,11 @@
 
     .orb-2 {
       width: 360px;
+
       height: 360px;
 
       bottom: -140px;
+
       right: -80px;
 
       background:
@@ -511,9 +603,11 @@
 
     .orb-3 {
       width: 300px;
+
       height: 300px;
 
       top: 35%;
+
       right: 8%;
 
       background:
@@ -526,9 +620,11 @@
 
     .orb-4 {
       width: 260px;
+
       height: 260px;
 
       bottom: 8%;
+
       left: 15%;
 
       background:
@@ -544,6 +640,7 @@
     .hero-scroll,
     .hero-number {
       position: relative;
+
       z-index: 3;
     }
 
@@ -574,6 +671,7 @@
 
     .hero-title em {
       color: #76bfff !important;
+
       text-shadow:
         0 0 35px rgba(68, 161, 255, 0.18);
     }
@@ -897,6 +995,7 @@
         ) !important;
 
       position: relative;
+
       overflow: hidden;
     }
 
@@ -998,7 +1097,9 @@
 
     .footer-top-expanded {
       display: flex;
+
       flex-direction: column;
+
       gap: 40px;
 
       padding-bottom: 40px;
@@ -1010,6 +1111,7 @@
     @media (min-width: 992px) {
       .footer-top-expanded {
         flex-direction: row;
+
         justify-content: space-between;
       }
     }
@@ -1035,9 +1137,11 @@
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       width: 45px;
+
       height: 45px;
 
       border:
@@ -1146,6 +1250,7 @@
       list-style: none;
 
       padding: 0;
+
       margin: 0;
     }
 
@@ -1201,6 +1306,7 @@
       bottom: 25px;
 
       width: 55px;
+
       height: 55px;
 
       border-radius: 50%;
@@ -1208,6 +1314,7 @@
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       font-size: 26px;
@@ -1284,11 +1391,13 @@
 
     ::selection {
       background: rgba(60, 151, 244, 0.35);
+
       color: #ffffff;
     }
 
     ::-moz-selection {
       background: rgba(60, 151, 244, 0.35);
+
       color: #ffffff;
     }
 
@@ -1307,6 +1416,36 @@
 
 
     /* =====================================================
+       MOBILE LOGO
+    ====================================================== */
+
+    @media (max-width: 768px) {
+
+      .astronis-logo {
+        width: 155px;
+
+        max-height: 52px;
+      }
+
+    }
+
+
+    /* =====================================================
+       SMALL MOBILE
+    ====================================================== */
+
+    @media (max-width: 480px) {
+
+      .astronis-logo {
+        width: 135px;
+
+        max-height: 46px;
+      }
+
+    }
+
+
+    /* =====================================================
        MOBILE FLOATING BUTTONS
     ====================================================== */
 
@@ -1314,6 +1453,7 @@
 
       .float-btn {
         width: 48px;
+
         height: 48px;
 
         bottom: 18px;
@@ -1331,23 +1471,28 @@
 
       .orb-1 {
         width: 260px;
+
         height: 260px;
       }
 
       .orb-2 {
         width: 240px;
+
         height: 240px;
       }
 
       .orb-3 {
         width: 180px;
+
         height: 180px;
       }
 
       .orb-4 {
         width: 170px;
+
         height: 170px;
       }
+
     }
 
   </style>
@@ -1368,7 +1513,9 @@
       loader.classList.add("is-hidden");
 
       setTimeout(function () {
+
         loader.style.display = "none";
+
       }, 700);
 
     });
@@ -1520,27 +1667,19 @@
 
     <div class="nav-container">
 
+      <!-- PERMANENT ASTRONIS LOGO -->
+
       <a
         href="./index.html"
         class="brand"
         aria-label="ASTRONIS Home"
       >
 
-        <div class="brand-mark">
-          <span>A</span>
-        </div>
-
-        <div class="brand-text">
-
-          <strong>
-            ASTRONIS
-          </strong>
-
-          <small>
-            Strategic Legal Counsel
-          </small>
-
-        </div>
+        <img
+          src="./IMG-20260906-WA0008.jpg"
+          alt="ASTRONIS — Strategic Legal Counsel"
+          class="astronis-logo"
+        >
 
       </a>
 
@@ -1616,6 +1755,23 @@
   >
 
     <div class="mobile-menu-inner">
+
+      <!-- MOBILE LOGO -->
+
+      <a
+        href="./index.html"
+        class="mobile-brand"
+        aria-label="ASTRONIS Home"
+      >
+
+        <img
+          src="./IMG-20260906-WA0008.jpg"
+          alt="ASTRONIS"
+          class="astronis-logo"
+        >
+
+      </a>
+
 
       <nav aria-label="Mobile navigation">
 
@@ -2549,23 +2705,14 @@
           <a
             href="./index.html"
             class="brand"
+            aria-label="ASTRONIS Home"
           >
 
-            <div class="brand-mark">
-              <span>A</span>
-            </div>
-
-            <div class="brand-text">
-
-              <strong>
-                ASTRONIS
-              </strong>
-
-              <small>
-                Strategic Legal Counsel
-              </small>
-
-            </div>
+            <img
+              src="./IMG-20260906-WA0008.jpg"
+              alt="ASTRONIS — Strategic Legal Counsel"
+              class="astronis-logo"
+            >
 
           </a>
 
